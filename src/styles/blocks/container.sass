@@ -15,7 +15,7 @@
     background-color: $light-bg-color
 
     .container.is-open &
-      transform: translate3d(0px, 0, 0);
+      transform: translate3d(0px, 0, 0)
 
   .container__body
     transform: translate3d(0px, 0, 0)
@@ -35,9 +35,13 @@
   .container__sidebar
     display: block
     width: 30%
-    min-width: 320px
+    min-width: 280px
+    max-width: 300px
     box-sizing: border-box
     padding: 40px
+    // position: fixed
+    // z-index: 1
+    // overflow: hidden
     background-color: $light-bg-color
 
   .container__body
