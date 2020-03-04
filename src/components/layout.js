@@ -39,6 +39,18 @@ const TemplateWrapper = ({ children }) => {
               }
             }
           }
+          allDatoCmsWork {
+            edges {
+              node {
+                id
+                coverImage {
+                  fluid(maxWidth: 450) {
+                    ...GatsbyDatoCmsSizes
+                  }
+                }
+              }
+            }
+          }
         }
       `}
       render={data => (
