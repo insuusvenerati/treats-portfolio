@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import ImgModal from "../components/imgmodal"
 import Masonry from "react-masonry-component"
+import Lightbox from "react-image-lightbox"
 
 const DatoContainer = () => {
   const data = useStaticQuery(graphql`
@@ -14,6 +14,7 @@ const DatoContainer = () => {
             coverImage {
               fluid(maxWidth: 450) {
                 ...GatsbyDatoCmsSizes
+                src
               }
             }
           }
@@ -24,7 +25,8 @@ const DatoContainer = () => {
 
   const [edges] = useState(data.allDatoCmsWork.edges)
   const [isOpen, setOpen] = useState(false)
-  const [selectedImage, setSelectedImage] = useState()
+  const [selectedImage, setSelectedImage] = useState({})
+
   return (
     <>
       {edges ? (
@@ -34,9 +36,8 @@ const DatoContainer = () => {
               <div key={work.id} className="showcase__item">
                 <figure
                   onClick={() => {
-                    setSelectedImage(work.id)
+                    setSelectedImage(() => work.coverImage.fluid)
                     setOpen(!isOpen)
-                    console.log(selectedImage)
                   }}
                   className="card"
                 >
@@ -51,13 +52,15 @@ const DatoContainer = () => {
           })}
         </Masonry>
       ) : (
-        <button onClick={() => console.log(edges)}>Debug Data</button>
+        <h1>There was an error loading images</h1>
       )}
-      {isOpen && (
-        <ImgModal
-          img={edges.coverImage.fluid}
-          setOpen={() => setOpen(!isOpen)}
+      {isOpen && selectedImage ? (
+        <Lightbox
+          mainSrc={selectedImage.src}
+          onCloseRequest={() => setOpen(!isOpen)}
         />
+      ) : (
+        <h1></h1>
       )}
     </>
   )

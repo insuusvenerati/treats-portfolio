@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from "gatsby"
 import { HelmetDatoCms } from "gatsby-source-datocms"
 
 import "../styles/index.sass"
+import "react-image-lightbox/style.css"
 
 const TemplateWrapper = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false)
