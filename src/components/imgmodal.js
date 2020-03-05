@@ -5,7 +5,7 @@ import { SRLWrapper } from "simple-react-lightbox"
 const ImgModal = ({ img }) => {
   return (
     <SRLWrapper>
-      <Img fixed={img} />
+      <Img fluid={img} />
     </SRLWrapper>
   )
 }
