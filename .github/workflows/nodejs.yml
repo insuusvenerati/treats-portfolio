@@ -28,7 +28,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "13.x"
+
       - run: yarn
       - run: yarn build
         env:
           CI: true
+          dato_api: ${{ secrets.DATO_API_TOKEN }}
