@@ -21,6 +21,5 @@ jobs:
     - uses: borales/actions-yarn@v2.0.0
       with:
         cmd: build
-    - uses: borales/actions-yarn@v2.0.0
       env:
         CI: true
