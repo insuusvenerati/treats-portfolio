@@ -1,3 +1,7 @@
+/* eslint-disable react/no-danger */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql, Link } from 'gatsby';
@@ -39,21 +43,9 @@ const TemplateWrapper = ({ children }) => {
               }
             }
           }
-          allDatoCmsWork {
-            edges {
-              node {
-                id
-                coverImage {
-                  fluid(maxWidth: 450) {
-                    ...GatsbyDatoCmsSizes
-                  }
-                }
-              }
-            }
-          }
         }
       `}
-      render={data => (
+      render={(data) => (
         <div className={`container ${showMenu ? 'is-open' : ''}`}>
           <HelmetDatoCms
             favicon={data.datoCmsSite.faviconMetaTags}
@@ -102,7 +94,7 @@ const TemplateWrapper = ({ children }) => {
                 <div className="mobile-header__menu">
                   <a
                     href="#"
-                    onClick={e => {
+                    onClick={(e) => {
                       e.preventDefault();
                       setShowMenu(!showMenu);
                     }}
