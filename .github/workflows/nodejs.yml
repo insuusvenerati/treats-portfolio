@@ -33,4 +33,4 @@ jobs:
             ${{ runner.os }}-yarn-
         env:
           CI: true
-          dato_api: ${{ secrets.DATO_API_TOKEN }}
+          DATO_API_TOKEN: ${{ secrets.DATO_API_TOKEN }}
