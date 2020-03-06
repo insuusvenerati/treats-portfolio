@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -12,8 +14,12 @@ const DatoContainer = () => {
           node {
             id
             coverImage {
-              fluid(maxWidth: 700) {
+              fluid(maxWidth: 1100) {
                 ...GatsbyDatoCmsSizes
+                src
+              }
+              fixed(width: 1100) {
+                ...GatsbyDatoCmsFixed
                 src
               }
             }
@@ -36,13 +42,13 @@ const DatoContainer = () => {
               <div role="presentation" key={work.id} className="showcase__item">
                 <figure
                   onClick={() => {
-                    setSelectedImage(() => work.coverImage.fluid);
+                    setSelectedImage(() => work.coverImage.fixed);
                     setOpen(!isOpen);
                   }}
                   className="card"
                 >
-                  {work.coverImage.fluid ? (
-                    <Img fluid={work.coverImage.fluid} />
+                  {work.coverImage.fixed ? (
+                    <Img fluid={work.coverImage.fixed} />
                   ) : (
                     <h1>No Image</h1>
                   )}
@@ -54,13 +60,11 @@ const DatoContainer = () => {
       ) : (
         <h1>There was an error loading images</h1>
       )}
-      {isOpen && selectedImage ? (
+      {isOpen && selectedImage && (
         <Lightbox
           mainSrc={selectedImage.src}
           onCloseRequest={() => setOpen(!isOpen)}
         />
-      ) : (
-        <h1></h1>
       )}
     </>
   );
