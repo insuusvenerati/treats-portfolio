@@ -17,9 +17,7 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.0",
     "react-image-lightbox": "^5.1.1",
-    "react-masonry-component": "^6.2.1",
-    "react-slick": "^0.25.2",
-    "slick-carousel": "^1.8.1"
+    "react-masonry-component": "^6.2.1"
   },
   "keywords": [
     "gatsby"
@@ -30,7 +28,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "version": "conventional-changelog -p angular -i CHANGELOG.md",
-    "format": "prettier --write \"src/**/*.js\""
+    "format": "prettier --write \"src/**/*.jsx\""
   },
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
