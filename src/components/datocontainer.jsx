@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import Masonry from "react-masonry-component"
-import Lightbox from "react-image-lightbox"
+import React, { useState } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import Masonry from 'react-masonry-component';
+import Lightbox from 'react-image-lightbox';
 
 const DatoContainer = () => {
   const data = useStaticQuery(graphql`
@@ -12,7 +12,7 @@ const DatoContainer = () => {
           node {
             id
             coverImage {
-              fluid(maxWidth: 450) {
+              fluid(maxWidth: 700) {
                 ...GatsbyDatoCmsSizes
                 src
               }
@@ -21,11 +21,11 @@ const DatoContainer = () => {
         }
       }
     }
-  `)
+  `);
 
-  const [edges] = useState(data.allDatoCmsWork.edges)
-  const [isOpen, setOpen] = useState(false)
-  const [selectedImage, setSelectedImage] = useState({})
+  const [edges] = useState(data.allDatoCmsWork.edges);
+  const [isOpen, setOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState({});
 
   return (
     <>
@@ -33,11 +33,11 @@ const DatoContainer = () => {
         <Masonry className="showcase">
           {edges.map(({ node: work }) => {
             return (
-              <div key={work.id} className="showcase__item">
+              <div role="presentation" key={work.id} className="showcase__item">
                 <figure
                   onClick={() => {
-                    setSelectedImage(() => work.coverImage.fluid)
-                    setOpen(!isOpen)
+                    setSelectedImage(() => work.coverImage.fluid);
+                    setOpen(!isOpen);
                   }}
                   className="card"
                 >
@@ -48,7 +48,7 @@ const DatoContainer = () => {
                   )}
                 </figure>
               </div>
-            )
+            );
           })}
         </Masonry>
       ) : (
@@ -63,7 +63,7 @@ const DatoContainer = () => {
         <h1></h1>
       )}
     </>
-  )
-}
+  );
+};
 
-export default DatoContainer
+export default DatoContainer;

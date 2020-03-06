@@ -1,14 +1,13 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import { StaticQuery, graphql } from "gatsby"
-import { HelmetDatoCms } from "gatsby-source-datocms"
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql, Link } from 'gatsby';
+import { HelmetDatoCms } from 'gatsby-source-datocms';
 
-import "../styles/index.sass"
-import "react-image-lightbox/style.css"
+import '../styles/index.sass';
+import 'react-image-lightbox/style.css';
 
 const TemplateWrapper = ({ children }) => {
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
   return (
     <StaticQuery
       query={graphql`
@@ -55,7 +54,7 @@ const TemplateWrapper = ({ children }) => {
         }
       `}
       render={data => (
-        <div className={`container ${showMenu ? "is-open" : ""}`}>
+        <div className={`container ${showMenu ? 'is-open' : ''}`}>
           <HelmetDatoCms
             favicon={data.datoCmsSite.faviconMetaTags}
             seo={data.datoCmsHome.seoMetaTags}
@@ -69,7 +68,7 @@ const TemplateWrapper = ({ children }) => {
                 className="sidebar__intro"
                 dangerouslySetInnerHTML={{
                   __html:
-                    data.datoCmsHome.introTextNode.childMarkdownRemark.html
+                    data.datoCmsHome.introTextNode.childMarkdownRemark.html,
                 }}
               />
               <ul className="sidebar__menu">
@@ -88,7 +87,7 @@ const TemplateWrapper = ({ children }) => {
                     target="blank"
                     className={`social social--${profile.profileType.toLowerCase()}`}
                   >
-                    {" "}
+                    {' '}
                   </a>
                 ))}
               </p>
@@ -104,8 +103,8 @@ const TemplateWrapper = ({ children }) => {
                   <a
                     href="#"
                     onClick={e => {
-                      e.preventDefault()
-                      setShowMenu(!showMenu)
+                      e.preventDefault();
+                      setShowMenu(!showMenu);
                     }}
                   />
                 </div>
@@ -119,11 +118,11 @@ const TemplateWrapper = ({ children }) => {
         </div>
       )}
     />
-  )
-}
+  );
+};
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.object
-}
+  children: PropTypes.object,
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
