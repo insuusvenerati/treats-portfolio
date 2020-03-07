@@ -52,7 +52,10 @@ const TemplateWrapper = ({ children }) => {
             seo={data.datoCmsHome.seoMetaTags}
           />
           <div className="container__sidebar">
-            <div className="sidebar">
+            <div
+              className="sidebar"
+              style={{ position: 'fixed', width: '300px' }}
+            >
               <h6 className="sidebar__title">
                 <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
               </h6>
@@ -65,7 +68,10 @@ const TemplateWrapper = ({ children }) => {
               />
               <ul className="sidebar__menu">
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/">BG & illustration</Link>
+                </li>
+                <li>
+                  <Link to="/about">visdev</Link>
                 </li>
                 <li>
                   <Link to="/about">About</Link>

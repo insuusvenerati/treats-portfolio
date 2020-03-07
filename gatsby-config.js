@@ -9,6 +9,13 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-transformer-remark',
     {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        width: 1100,
+        defaultQuality: 100,
+      },
+    },
+    {
       resolve: 'gatsby-source-datocms',
       options: {
         apiToken: process.env.DATO_API_TOKEN,
