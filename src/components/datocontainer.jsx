@@ -7,21 +7,34 @@ import Masonry from 'react-masonry-component';
 import Lightbox from 'react-image-lightbox';
 
 const DatoContainer = () => {
+  // const data = useStaticQuery(graphql`
+  //   query DatoContainerQuery {
+  //     allDatoCmsWork {
+  //       edges {
+  //         node {
+  //           id
+  //           coverImage {
+  //             fixed(width: 1100) {
+  //               ...GatsbyDatoCmsFixed
+  //               src
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+
   const data = useStaticQuery(graphql`
-    query DatoContainerQuery {
-      allDatoCmsWork {
+    query AssetQuery {
+      allDatoCmsAsset {
         edges {
           node {
             id
-            coverImage {
-              fluid(maxWidth: 1100) {
-                ...GatsbyDatoCmsSizes
-                src
-              }
-              fixed(width: 1100) {
-                ...GatsbyDatoCmsFixed
-                src
-              }
+            tags
+            fixed(width: 1100) {
+              ...GatsbyDatoCmsFixed
+              src
             }
           }
         }
@@ -29,7 +42,7 @@ const DatoContainer = () => {
     }
   `);
 
-  const [edges] = useState(data.allDatoCmsWork.edges);
+  const [edges] = useState(data.allDatoCmsAsset.edges);
   const [isOpen, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState({});
 
@@ -37,25 +50,19 @@ const DatoContainer = () => {
     <>
       {edges ? (
         <Masonry className="showcase">
-          {edges.map(({ node: work }) => {
-            return (
-              <div role="presentation" key={work.id} className="showcase__item">
-                <figure
-                  onClick={() => {
-                    setSelectedImage(() => work.coverImage.fixed);
-                    setOpen(!isOpen);
-                  }}
-                  className="card"
-                >
-                  {work.coverImage.fixed ? (
-                    <Img fluid={work.coverImage.fixed} />
-                  ) : (
-                    <h1>No Image</h1>
-                  )}
-                </figure>
-              </div>
-            );
-          })}
+          {edges.map(({ node: work }) => (
+            <div role="presentation" key={work.id} className="showcase__item">
+              <figure
+                onClick={() => {
+                  setSelectedImage(() => work.fixed);
+                  setOpen(!isOpen);
+                }}
+                className="card"
+              >
+                {work.fixed ? <Img fluid={work.fixed} /> : <h1>No Image</h1>}
+              </figure>
+            </div>
+          ))}
         </Masonry>
       ) : (
         <h1>There was an error loading images</h1>
