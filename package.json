@@ -1,7 +1,7 @@
 {
   "name": "gatsby-datocms-demo",
   "description": "Gatsby DatoCMS creative portfolio demo",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Stefano Verna <s.verna@datocms.com>",
   "dependencies": {
     "dotenv": "^8.1.0",
@@ -28,8 +28,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md",
-    "format": "prettier --write \"src/**/*.jsx\""
+    "version": "conventional-changelog -p angular -i CHANGELOG.md"
   },
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
