@@ -30,7 +30,7 @@ const DatoContainer = () => {
 
   const [edges] = useState(data.allDatoCmsAsset.edges);
   const [isOpen, setOpen] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(7);
+  const [photoIndex, setPhotoIndex] = useState(0);
 
   return (
     <>
@@ -39,12 +39,13 @@ const DatoContainer = () => {
           {edges.map(({ node: work }) => (
             <div role="presentation" key={work.id} className="showcase__item">
               <figure
-                onClick={() => {
-                  setPhotoIndex(
-                    edges.findIndex((edge) => edge.node.id === work.id),
-                  );
-                  setOpen(!isOpen);
-                }}
+                // onClick={() => {
+                //   setPhotoIndex(
+                //     edges.findIndex((edge) => edge.node.id === work.id),
+                //   );
+                //   setOpen(!isOpen);
+                // }}
+                onClick={() => noMethodForThis}
                 className="card"
               >
                 {work.fluid ? <Img fluid={work.fluid} /> : <h1>No Image</h1>}
