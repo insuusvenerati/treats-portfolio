@@ -5,26 +5,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Masonry from 'react-masonry-component';
 import Lightbox from 'react-image-lightbox';
+// import findIndex from 'lodash.findindex';
 
 const DatoContainer = () => {
-  // const data = useStaticQuery(graphql`
-  //   query DatoContainerQuery {
-  //     allDatoCmsWork {
-  //       edges {
-  //         node {
-  //           id
-  //           coverImage {
-  //             fixed(width: 1100) {
-  //               ...GatsbyDatoCmsFixed
-  //               src
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
-
   const data = useStaticQuery(graphql`
     query AssetQuery {
       allDatoCmsAsset {
@@ -45,6 +28,7 @@ const DatoContainer = () => {
   const [edges] = useState(data.allDatoCmsAsset.edges);
   const [isOpen, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState({});
+  const [photoIndex, setPhotoIndex] = useState(0);
 
   return (
     <>
@@ -54,8 +38,14 @@ const DatoContainer = () => {
             <div role="presentation" key={work.id} className="showcase__item">
               <figure
                 onClick={() => {
-                  setSelectedImage(() => work.fixed);
+                  setSelectedImage(work.fixed);
+                  setPhotoIndex(
+                    edges.findIndex((edge) => edge.node.id === work.id),
+                  );
                   setOpen(!isOpen);
+                  console.log(photoIndex);
+                  console.log(selectedImage);
+                  console.log(edges[photoIndex].node.fixed.src);
                 }}
                 className="card"
               >
@@ -69,8 +59,16 @@ const DatoContainer = () => {
       )}
       {isOpen && selectedImage && (
         <Lightbox
-          mainSrc={selectedImage.src}
+          mainSrc={edges[photoIndex].node.fixed.src}
+          nextSrc={edges[(photoIndex + 1) % edges.length].node.fixed.src}
+          prevSrc={
+            edges[(photoIndex + edges.length - 1) % edges.length].node.fixed.src
+          }
+          onMovePrevRequest={() => setPhotoIndex(photoIndex + edges.length - 1) % edges.length}
+          onMoveNextRequest={() => setPhotoIndex(photoIndex + 1) % edges.length}
           onCloseRequest={() => setOpen(!isOpen)}
+          clickOutsideToClose
+          onClick={console.log(edges[photoIndex])}
         />
       )}
     </>
