@@ -9,6 +9,14 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-transformer-remark',
     {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: process.env.SENTRY_DSN,
+        environment: process.env.NODE_ENV,
+        enabled: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sharp',
       options: {
         width: 1100,

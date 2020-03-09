@@ -6,9 +6,14 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
+import * as Sentry from '@sentry/browser';
 
 import '../styles/index.sass';
 import 'react-image-lightbox/style.css';
+
+Sentry.init({
+  release: `treats-porfolio@${process.env.npm_package_version}`,
+});
 
 const TemplateWrapper = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -120,7 +125,8 @@ const TemplateWrapper = ({ children }) => {
 };
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.object,
+  // eslint-disable-next-line react/require-default-props
+  children: PropTypes.node.isRequired,
 };
 
 export default TemplateWrapper;
