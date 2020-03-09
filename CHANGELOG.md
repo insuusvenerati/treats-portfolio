@@ -1,3 +1,20 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.3.0](https://github.com/insuusvenerati/datocms-Gatsby-portfolio-demo/compare/v1.0.1...v1.3.0) (2020-03-09)
+
+
+### Features
+
+* **errors:** adds sentry for error checking and errorboundry ([532dbb7](https://github.com/insuusvenerati/datocms-Gatsby-portfolio-demo/commit/532dbb76e473d436a96becbe68ead8e0e32a0c69))
+
+
+### Bug Fixes
+
+* commits yarn lock file to fix travis build ([7b66e9f](https://github.com/insuusvenerati/datocms-Gatsby-portfolio-demo/commit/7b66e9f4e3ad96a3b03463a92f2d30618ea7bc39))
+* **gallery:** fixes crash in prev / next ([7dfd9d5](https://github.com/insuusvenerati/datocms-Gatsby-portfolio-demo/commit/7dfd9d575283ff29884094c6bbc96da3f11765d4))
+
 ## [1.0.1](https://github.com/insuusvenerati/datocms-Gatsby-portfolio-demo/compare/4e169c883e2b3264000bd3509ace4660fa61e892...v1.0.1) (2020-03-05)
 
 
