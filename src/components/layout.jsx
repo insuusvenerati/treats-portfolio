@@ -120,7 +120,8 @@ const TemplateWrapper = ({ children }) => {
 };
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.object,
+  // eslint-disable-next-line react/require-default-props
+  children: PropTypes.shape,
 };
 
 export default TemplateWrapper;
