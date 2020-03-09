@@ -18,6 +18,10 @@ const DatoContainer = () => {
               ...GatsbyDatoCmsFixed
               src
             }
+            fluid(maxWidth: 900) {
+              ...GatsbyDatoCmsFluid
+              src
+            }
           }
         }
       }
@@ -43,7 +47,7 @@ const DatoContainer = () => {
                 }}
                 className="card"
               >
-                {work.fixed ? <Img fluid={work.fixed} /> : <h1>No Image</h1>}
+                {work.fluid ? <Img fluid={work.fluid} /> : <h1>No Image</h1>}
               </figure>
             </div>
           ))}
@@ -53,10 +57,10 @@ const DatoContainer = () => {
       )}
       {isOpen && (
         <Lightbox
-          mainSrc={edges[photoIndex].node.fixed.src}
-          nextSrc={edges[(photoIndex + 1) % edges.length].node.fixed.src}
+          mainSrc={edges[photoIndex].node.fluid.src}
+          nextSrc={edges[(photoIndex + 1) % edges.length].node.fluid.src}
           prevSrc={
-            edges[(photoIndex + edges.length - 1) % edges.length].node.fixed.src
+            edges[(photoIndex + edges.length - 1) % edges.length].node.fluid.src
           }
           onMovePrevRequest={() => setPhotoIndex((photoIndex + edges.length - 1) % edges.length)}
           onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % edges.length)}
