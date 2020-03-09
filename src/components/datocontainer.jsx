@@ -7,24 +7,6 @@ import Masonry from 'react-masonry-component';
 import Lightbox from 'react-image-lightbox';
 
 const DatoContainer = () => {
-  // const data = useStaticQuery(graphql`
-  //   query DatoContainerQuery {
-  //     allDatoCmsWork {
-  //       edges {
-  //         node {
-  //           id
-  //           coverImage {
-  //             fixed(width: 1100) {
-  //               ...GatsbyDatoCmsFixed
-  //               src
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
-
   const data = useStaticQuery(graphql`
     query AssetQuery {
       allDatoCmsAsset {
@@ -36,6 +18,10 @@ const DatoContainer = () => {
               ...GatsbyDatoCmsFixed
               src
             }
+            fluid(maxWidth: 900) {
+              ...GatsbyDatoCmsFluid
+              src
+            }
           }
         }
       }
@@ -44,7 +30,7 @@ const DatoContainer = () => {
 
   const [edges] = useState(data.allDatoCmsAsset.edges);
   const [isOpen, setOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState({});
+  const [photoIndex, setPhotoIndex] = useState(7);
 
   return (
     <>
@@ -54,12 +40,14 @@ const DatoContainer = () => {
             <div role="presentation" key={work.id} className="showcase__item">
               <figure
                 onClick={() => {
-                  setSelectedImage(() => work.fixed);
+                  setPhotoIndex(
+                    edges.findIndex((edge) => edge.node.id === work.id),
+                  );
                   setOpen(!isOpen);
                 }}
                 className="card"
               >
-                {work.fixed ? <Img fluid={work.fixed} /> : <h1>No Image</h1>}
+                {work.fluid ? <Img fluid={work.fluid} /> : <h1>No Image</h1>}
               </figure>
             </div>
           ))}
@@ -67,10 +55,18 @@ const DatoContainer = () => {
       ) : (
         <h1>There was an error loading images</h1>
       )}
-      {isOpen && selectedImage && (
+      {isOpen && (
         <Lightbox
-          mainSrc={selectedImage.src}
+          mainSrc={edges[photoIndex].node.fluid.src}
+          nextSrc={edges[(photoIndex + 1) % edges.length].node.fluid.src}
+          prevSrc={
+            edges[(photoIndex + edges.length - 1) % edges.length].node.fluid.src
+          }
+          onMovePrevRequest={() => setPhotoIndex((photoIndex + edges.length - 1) % edges.length)}
+          onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % edges.length)}
           onCloseRequest={() => setOpen(!isOpen)}
+          clickOutsideToClose
+          discourageDownloads
         />
       )}
     </>
