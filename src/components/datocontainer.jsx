@@ -26,7 +26,7 @@ const DatoContainer = () => {
 
   const [edges] = useState(data.allDatoCmsAsset.edges);
   const [isOpen, setOpen] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(0);
+  const [photoIndex, setPhotoIndex] = useState(7);
 
   return (
     <>
@@ -40,8 +40,6 @@ const DatoContainer = () => {
                     edges.findIndex((edge) => edge.node.id === work.id),
                   );
                   setOpen(!isOpen);
-                  // console.log(photoIndex);
-                  // console.log(selectedImage);
                 }}
                 className="card"
               >
@@ -60,8 +58,8 @@ const DatoContainer = () => {
           prevSrc={
             edges[(photoIndex + edges.length - 1) % edges.length].node.fixed.src
           }
-          onMovePrevRequest={() => setPhotoIndex((i) => i - 1)}
-          onMoveNextRequest={() => setPhotoIndex((i) => i + 1)}
+          onMovePrevRequest={() => setPhotoIndex((photoIndex + edges.length - 1) % edges.length)}
+          onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % edges.length)}
           onCloseRequest={() => setOpen(!isOpen)}
           clickOutsideToClose
           discourageDownloads
