@@ -1,21 +1,18 @@
 /* eslint-disable react/no-danger */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql, Link } from 'gatsby';
-import { HelmetDatoCms } from 'gatsby-source-datocms';
 import * as Sentry from '@sentry/browser';
+import { graphql, Link, StaticQuery } from 'gatsby';
+import { HelmetDatoCms } from 'gatsby-source-datocms';
+import React, { useState } from 'react';
+import { LayoutQueryQuery } from '../graphqlTypes';
 
-import '../styles/index.sass';
 import 'react-image-lightbox/style.css';
+import '../styles/index.sass';
 
 Sentry.init({
   release: `treats-porfolio@${process.env.npm_package_version}`,
 });
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper: React.FC<LayoutQueryQuery> = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <StaticQuery
@@ -50,25 +47,18 @@ const TemplateWrapper = ({ children }) => {
           }
         }
       `}
-      render={(data) => (
+      render={(data): React.ReactNode => (
         <div className={`container ${showMenu ? 'is-open' : ''}`}>
-          <HelmetDatoCms
-            favicon={data.datoCmsSite.faviconMetaTags}
-            seo={data.datoCmsHome.seoMetaTags}
-          />
+          <HelmetDatoCms favicon={data.datoCmsSite.faviconMetaTags} seo={data.datoCmsHome.seoMetaTags} />
           <div className="container__sidebar">
-            <div
-              className="sidebar"
-              style={{ position: 'fixed', width: '300px' }}
-            >
+            <div className="sidebar" style={{ position: 'fixed', width: '300px' }}>
               <h6 className="sidebar__title">
                 <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
               </h6>
               <div
                 className="sidebar__intro"
                 dangerouslySetInnerHTML={{
-                  __html:
-                    data.datoCmsHome.introTextNode.childMarkdownRemark.html,
+                  __html: data.datoCmsHome.introTextNode.childMarkdownRemark.html,
                 }}
               />
               <ul className="sidebar__menu">
@@ -94,9 +84,7 @@ const TemplateWrapper = ({ children }) => {
                   </a>
                 ))}
               </p>
-              <div className="sidebar__copyright">
-                {data.datoCmsHome.copyright}
-              </div>
+              <div className="sidebar__copyright">{data.datoCmsHome.copyright}</div>
             </div>
           </div>
           <div className="container__body">
@@ -105,7 +93,7 @@ const TemplateWrapper = ({ children }) => {
                 <div className="mobile-header__menu">
                   <a
                     href="#"
-                    onClick={(e) => {
+                    onClick={(e): void => {
                       e.preventDefault();
                       setShowMenu(!showMenu);
                     }}
@@ -122,11 +110,6 @@ const TemplateWrapper = ({ children }) => {
       )}
     />
   );
-};
-
-TemplateWrapper.propTypes = {
-  // eslint-disable-next-line react/require-default-props
-  children: PropTypes.node.isRequired,
 };
 
 export default TemplateWrapper;
