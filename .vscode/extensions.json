@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "ofhumanbondage.react-proptypes-intellisense",
+    "pflannery.vscode-versionlens",
+    "kumar-harsh.graphql-for-vscode"
+  ],
+  "unwantedRecommendations": []
+}
