@@ -1,4 +1,6 @@
-require('dotenv').config();
+require('dotenv').config({
+  path: '.env',
+});
 
 module.exports = {
   siteMetadata: {
@@ -8,6 +10,13 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-plugin-typescript',
+      options: {
+        isTSX: true,
+        allExtensions: true,
+      },
+    },
     {
       resolve: 'gatsby-plugin-sentry',
       options: {
