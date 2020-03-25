@@ -3,8 +3,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import Layout from '../components/layout';
+import { AboutQueryQuery } from '../graphqlTypes';
 
-const About = ({ data: { about } }) => (
+const About: React.FC<AboutQueryQuery> = ({ data: { about } }) => (
   <Layout>
     <article className="sheet">
       <HelmetDatoCms seo={about.seoMetaTags} />

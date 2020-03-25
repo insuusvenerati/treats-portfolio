@@ -1,26 +1,27 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
-  },
+  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+  plugins: ['jsdoc'],
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
+    'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
+    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from @typescript-eslint/eslint-plugin
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'plugin:jsdoc/recommended',
   ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
   parserOptions: {
+    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
+    sourceType: 'module', // Allows for the use of imports
     ecmaFeatures: {
-      jsx: true,
+      jsx: true, // Allows for the parsing of JSX
     },
-    ecmaVersion: 2018,
-    sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
   rules: {
+    'react/prop-types': 'off',
+    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+  },
+  settings: {
+    react: {
+      version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
+    },
   },
 };

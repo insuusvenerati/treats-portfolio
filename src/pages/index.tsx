@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import DatoContainer from '../components/datocontainer';
 import ErrorBoundry from '../components/errorboundry';
 
-const IndexPage = () => (
+const IndexPage: React.FC = () => (
   <ErrorBoundry>
     <Layout>
       <DatoContainer />
