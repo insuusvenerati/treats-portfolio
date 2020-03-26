@@ -5627,14 +5627,14 @@ export enum SitePageFieldsEnum {
   PluginCreatorVersion = 'pluginCreator___version',
   PluginCreatorPluginOptionsIsTsx = 'pluginCreator___pluginOptions___isTSX',
   PluginCreatorPluginOptionsAllExtensions = 'pluginCreator___pluginOptions___allExtensions',
+  PluginCreatorPluginOptionsDsn = 'pluginCreator___pluginOptions___dsn',
+  PluginCreatorPluginOptionsEnvironment = 'pluginCreator___pluginOptions___environment',
+  PluginCreatorPluginOptionsEnabled = 'pluginCreator___pluginOptions___enabled',
   PluginCreatorPluginOptionsWidth = 'pluginCreator___pluginOptions___width',
   PluginCreatorPluginOptionsDefaultQuality = 'pluginCreator___pluginOptions___defaultQuality',
   PluginCreatorPluginOptionsApiToken = 'pluginCreator___pluginOptions___apiToken',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
-  PluginCreatorPluginOptionsDsn = 'pluginCreator___pluginOptions___dsn',
-  PluginCreatorPluginOptionsEnvironment = 'pluginCreator___pluginOptions___environment',
-  PluginCreatorPluginOptionsEnabled = 'pluginCreator___pluginOptions___enabled',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
   PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
   PluginCreatorSsrApIs = 'pluginCreator___ssrAPIs',
@@ -5826,14 +5826,14 @@ export enum SitePluginFieldsEnum {
   Version = 'version',
   PluginOptionsIsTsx = 'pluginOptions___isTSX',
   PluginOptionsAllExtensions = 'pluginOptions___allExtensions',
+  PluginOptionsDsn = 'pluginOptions___dsn',
+  PluginOptionsEnvironment = 'pluginOptions___environment',
+  PluginOptionsEnabled = 'pluginOptions___enabled',
   PluginOptionsWidth = 'pluginOptions___width',
   PluginOptionsDefaultQuality = 'pluginOptions___defaultQuality',
   PluginOptionsApiToken = 'pluginOptions___apiToken',
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
-  PluginOptionsDsn = 'pluginOptions___dsn',
-  PluginOptionsEnvironment = 'pluginOptions___environment',
-  PluginOptionsEnabled = 'pluginOptions___enabled',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
   SsrApIs = 'ssrAPIs',
@@ -5958,27 +5958,27 @@ export type SitePluginPluginOptions = {
   __typename?: 'SitePluginPluginOptions';
   isTSX?: Maybe<Scalars['Boolean']>;
   allExtensions?: Maybe<Scalars['Boolean']>;
+  dsn?: Maybe<Scalars['String']>;
+  environment?: Maybe<Scalars['String']>;
+  enabled?: Maybe<Scalars['Boolean']>;
   width?: Maybe<Scalars['Int']>;
   defaultQuality?: Maybe<Scalars['Int']>;
   apiToken?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
-  dsn?: Maybe<Scalars['String']>;
-  environment?: Maybe<Scalars['String']>;
-  enabled?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
+  dsn?: Maybe<StringQueryOperatorInput>;
+  environment?: Maybe<StringQueryOperatorInput>;
+  enabled?: Maybe<BooleanQueryOperatorInput>;
   width?: Maybe<IntQueryOperatorInput>;
   defaultQuality?: Maybe<IntQueryOperatorInput>;
   apiToken?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
-  dsn?: Maybe<StringQueryOperatorInput>;
-  environment?: Maybe<StringQueryOperatorInput>;
-  enabled?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {
@@ -6092,13 +6092,13 @@ export type PagesQueryQuery = { __typename?: 'Query' } & {
   };
 };
 
-export type AssetQueryQueryVariables = {};
+export type BgTagsQueryVariables = {};
 
-export type AssetQueryQuery = { __typename?: 'Query' } & {
-  allDatoCmsAsset?: { __typename?: 'DatoCmsAssetConnection' } & {
+export type BgTagsQuery = { __typename?: 'Query' } & {
+  allDatoCmsAsset: { __typename?: 'DatoCmsAssetConnection' } & {
     edges: Array<
       { __typename?: 'DatoCmsAssetEdge' } & {
-        node: { __typename?: 'DatoCmsAsset' } & Pick<DatoCmsAsset, 'id' | 'tags'> & {
+        node: { __typename?: 'DatoCmsAsset' } & Pick<DatoCmsAsset, 'id'> & {
             fixed?: Maybe<
               { __typename?: 'DatoCmsFixed' } & Pick<DatoCmsFixed, 'src'> & GatsbyDatoCmsFixedFragment
             >;
@@ -6132,10 +6132,29 @@ export type LayoutQueryQuery = { __typename?: 'Query' } & {
         >;
       }
   >;
-  allDatoCmsSocialProfile?: { __typename?: 'DatoCmsSocialProfileConnection' } & {
+  allDatoCmsSocialProfile: { __typename?: 'DatoCmsSocialProfileConnection' } & {
     edges: Array<
       { __typename?: 'DatoCmsSocialProfileEdge' } & {
         node: { __typename?: 'DatoCmsSocialProfile' } & Pick<DatoCmsSocialProfile, 'profileType' | 'url'>;
+      }
+    >;
+  };
+};
+
+export type VisdevTagsQueryVariables = {};
+
+export type VisdevTagsQuery = { __typename?: 'Query' } & {
+  allDatoCmsAsset: { __typename?: 'DatoCmsAssetConnection' } & {
+    edges: Array<
+      { __typename?: 'DatoCmsAssetEdge' } & {
+        node: { __typename?: 'DatoCmsAsset' } & Pick<DatoCmsAsset, 'id'> & {
+            fixed?: Maybe<
+              { __typename?: 'DatoCmsFixed' } & Pick<DatoCmsFixed, 'src'> & GatsbyDatoCmsFixedFragment
+            >;
+            fluid?: Maybe<
+              { __typename?: 'DatoCmsFluid' } & Pick<DatoCmsFluid, 'src'> & GatsbyDatoCmsFluidFragment
+            >;
+          };
       }
     >;
   };
@@ -6147,6 +6166,11 @@ export type AboutQueryQuery = { __typename?: 'Query' } & {
   about?: Maybe<
     { __typename?: 'DatoCmsAboutPage' } & Pick<DatoCmsAboutPage, 'title' | 'subtitle'> & {
         seoMetaTags?: Maybe<{ __typename?: 'DatoCmsSeoMetaTags' } & GatsbyDatoCmsSeoMetaTagsFragment>;
+        photo?: Maybe<
+          { __typename?: 'DatoCmsFileField' } & {
+            fluid?: Maybe<{ __typename?: 'DatoCmsFluid' } & GatsbyDatoCmsSizesFragment>;
+          }
+        >;
         bioNode?: Maybe<
           { __typename?: 'DatoCmsTextNode' } & {
             childMarkdownRemark?: Maybe<{ __typename?: 'MarkdownRemark' } & Pick<MarkdownRemark, 'html'>>;

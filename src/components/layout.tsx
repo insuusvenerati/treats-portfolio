@@ -63,13 +63,13 @@ const TemplateWrapper: React.FC<LayoutQueryQuery> = ({ children }) => {
               />
               <ul className="sidebar__menu">
                 <li>
-                  <Link to="/">BG & illustration</Link>
+                  <Link to="/">bg & illustration</Link>
                 </li>
                 <li>
-                  <Link to="/about">visdev</Link>
+                  <Link to="/visdev">visdev</Link>
                 </li>
                 <li>
-                  <Link to="/about">About</Link>
+                  <Link to="/about">about</Link>
                 </li>
               </ul>
               <p className="sidebar__social">
