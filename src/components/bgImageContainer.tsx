@@ -3,16 +3,15 @@ import Img from 'gatsby-image';
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
-import { AssetQueryQuery } from '../graphqlTypes';
+import { BgTagsQuery } from '../graphqlTypes';
 
-const DatoContainer: React.FC<AssetQueryQuery> = () => {
+const BGImageContainer: React.FC<BgTagsQuery> = () => {
   const data = useStaticQuery(graphql`
-    query AssetQuery {
-      allDatoCmsAsset {
+    query BGTags {
+      allDatoCmsAsset(filter: { tags: { in: "bg" } }) {
         edges {
           node {
             id
-            tags
             fixed(width: 1100) {
               ...GatsbyDatoCmsFixed
               src
@@ -80,4 +79,4 @@ const DatoContainer: React.FC<AssetQueryQuery> = () => {
   );
 };
 
-export default DatoContainer;
+export default BGImageContainer;

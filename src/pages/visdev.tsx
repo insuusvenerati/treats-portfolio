@@ -1,14 +1,14 @@
 import React from 'react';
 import Layout from '../components/layout';
-import BGImageContainer from '../components/bgImageContainer';
+import VisdevImageContainer from '../components/visdevImageContainer';
 import ErrorBoundry from '../components/errorboundry';
 
-const IndexPage: React.FC = () => (
+const VisdevPage: React.FC = () => (
   <ErrorBoundry>
     <Layout>
-      <BGImageContainer />
+      <VisdevImageContainer />
     </Layout>
   </ErrorBoundry>
 );
 
-export default IndexPage;
+export default VisdevPage;
