@@ -1,6 +1,6 @@
 {
   "editor.tabSize": 2,
-  "typescript.validate.enable": true,
+  "typescript.validate.enable": false,
   "files.trimTrailingWhitespace": true,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
