@@ -1119,7 +1119,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@codechecks/build-size-watcher@^0.1.0":
+"@codechecks/build-size-watcher@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@codechecks/build-size-watcher/-/build-size-watcher-0.1.0.tgz#fb823b6eafb116c154e263d4ac39f3893607f8af"
   integrity sha512-3tACk1kDSfdvs75e8jCRt0prk38c4urdoej6Kx/Ebj61rKO+uNdv8Jz4f7TLexzTAEwMW1VnkqtsSIt2ob4PHA==
@@ -1130,7 +1130,7 @@
     gzip-size "^5.0.0"
     lodash "^4.17.11"
 
-"@codechecks/client@^0.1.10":
+"@codechecks/client@0.1.10":
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/@codechecks/client/-/client-0.1.10.tgz#41fe736c424976d9feb8116b131fb9c1f099d105"
   integrity sha512-rvX+LknmMohsLTU8mHJqIcNTo8fKfw6A5i7JvT6JJWqwCLi+TujHpRO8BLf48iF96+gU5viVvKfRaUyhc3wloA==
@@ -16455,7 +16455,7 @@ type@^2.0.0:
   resolved "https://registry.yarnpkg.com/type/-/type-2.0.0.tgz#5f16ff6ef2eb44f260494dae271033b29c09a9c3"
   integrity sha512-KBt58xCHry4Cejnc2ISQAF7QY+ORngsWfxezO68+12hKV6lQY8P/psIkcbjeHWn7MqcgciWJyCCevFMJdIXpow==
 
-typecov@^0.2.2:
+typecov@0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/typecov/-/typecov-0.2.2.tgz#553bd2fdaafc8562e5b514f3489f335d76883ae9"
   integrity sha512-iyvO3t8jEPIhGvPQmumt7G0eU5pXfx+9zC0/ZIubWW1fkub2aTos5KJ1Rhm7okgmL3e7O4xkwHwR5mBzCI06fQ==
