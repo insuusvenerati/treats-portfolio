@@ -4,4 +4,7 @@ node_js:
 
 cache:
   yarn: true
-script: yarn build
+script:
+- |
+  yarn build
+  yarn codechecks
