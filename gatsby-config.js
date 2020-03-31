@@ -11,6 +11,9 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-transformer-remark',
     {
+      resolve: 'gatsby-plugin-emotion',
+    },
+    {
       resolve: 'gatsby-plugin-typescript',
       options: {
         isTSX: true,

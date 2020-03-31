@@ -6092,55 +6092,6 @@ export type PagesQueryQuery = { __typename?: 'Query' } & {
   };
 };
 
-export type BgTagsQueryVariables = {};
-
-export type BgTagsQuery = { __typename?: 'Query' } & {
-  allDatoCmsAsset: { __typename?: 'DatoCmsAssetConnection' } & {
-    edges: Array<
-      { __typename?: 'DatoCmsAssetEdge' } & {
-        node: { __typename?: 'DatoCmsAsset' } & Pick<DatoCmsAsset, 'id'> & {
-            fixed?: Maybe<
-              { __typename?: 'DatoCmsFixed' } & Pick<DatoCmsFixed, 'src'> & GatsbyDatoCmsFixedFragment
-            >;
-            fluid?: Maybe<
-              { __typename?: 'DatoCmsFluid' } & Pick<DatoCmsFluid, 'src'> & GatsbyDatoCmsFluidFragment
-            >;
-          };
-      }
-    >;
-  };
-};
-
-export type LayoutQueryQueryVariables = {};
-
-export type LayoutQueryQuery = { __typename?: 'Query' } & {
-  datoCmsSite?: Maybe<
-    { __typename?: 'DatoCmsSite' } & {
-      globalSeo?: Maybe<{ __typename?: 'DatoCmsGlobalSeo' } & Pick<DatoCmsGlobalSeo, 'siteName'>>;
-      faviconMetaTags?: Maybe<
-        { __typename?: 'DatoCmsFaviconMetaTags' } & GatsbyDatoCmsFaviconMetaTagsFragment
-      >;
-    }
-  >;
-  datoCmsHome?: Maybe<
-    { __typename?: 'DatoCmsHome' } & Pick<DatoCmsHome, 'copyright'> & {
-        seoMetaTags?: Maybe<{ __typename?: 'DatoCmsSeoMetaTags' } & GatsbyDatoCmsSeoMetaTagsFragment>;
-        introTextNode?: Maybe<
-          { __typename?: 'DatoCmsTextNode' } & {
-            childMarkdownRemark?: Maybe<{ __typename?: 'MarkdownRemark' } & Pick<MarkdownRemark, 'html'>>;
-          }
-        >;
-      }
-  >;
-  allDatoCmsSocialProfile: { __typename?: 'DatoCmsSocialProfileConnection' } & {
-    edges: Array<
-      { __typename?: 'DatoCmsSocialProfileEdge' } & {
-        node: { __typename?: 'DatoCmsSocialProfile' } & Pick<DatoCmsSocialProfile, 'profileType' | 'url'>;
-      }
-    >;
-  };
-};
-
 export type VisdevTagsQueryVariables = {};
 
 export type VisdevTagsQuery = { __typename?: 'Query' } & {
