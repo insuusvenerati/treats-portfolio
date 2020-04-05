@@ -11,20 +11,23 @@
     "gatsby": "^2.18.8",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-emotion": "^4.2.1",
+    "gatsby-plugin-preact": "^3.2.1",
     "gatsby-plugin-react-helmet": "^3.1.16",
     "gatsby-plugin-sass": "^2.1.24",
     "gatsby-plugin-sentry": "^1.0.1",
     "gatsby-plugin-sharp": "^2.4.7",
     "gatsby-plugin-typescript": "^2.2.2",
+    "gatsby-plugin-webpack-size": "^1.0.0",
     "gatsby-source-datocms": "^2.1.20",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-remark": "^2.6.39",
-    "node-sass": "^4.11.0",
+    "preact": "^10.3.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.0",
     "react-image-lightbox": "^5.1.1",
-    "react-masonry-component": "^6.2.1"
+    "react-masonry-component": "^6.2.1",
+    "sass": "^1.26.3"
   },
   "keywords": [
     "gatsby"
