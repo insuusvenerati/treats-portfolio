@@ -1,34 +1,15 @@
-import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
-import { BgTagsQuery } from '../graphqlTypes';
+import useBgImageData from '../hooks/useBgImageData';
 
-const BGImageContainer: React.FC<BgTagsQuery> = () => {
-  const data = useStaticQuery(graphql`
-    query BGTags {
-      allDatoCmsAsset(filter: { tags: { in: "bg" } }) {
-        edges {
-          node {
-            id
-            fixed(width: 1100) {
-              ...GatsbyDatoCmsFixed
-              src
-            }
-            fluid(maxWidth: 900) {
-              ...GatsbyDatoCmsFluid
-              src
-            }
-          }
-        }
-      }
-    }
-  `);
+const BGImageContainer: React.FC = () => {
+  const { allDatoCmsAsset } = useBgImageData();
 
   const [isOpen, setOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-  const edges = data.allDatoCmsAsset.edges;
+  const edges = allDatoCmsAsset.edges;
 
   return (
     <>
@@ -37,12 +18,12 @@ const BGImageContainer: React.FC<BgTagsQuery> = () => {
           <>
             {edges ? (
               <Masonry className="showcase">
-                {edges.map(({ node }) => (
+                {edges.map(({ node }: any) => (
                   <div role="presentation" key={node.id} className="showcase__item">
                     {node.fluid ? (
                       <figure
                         onClick={(): void => {
-                          setPhotoIndex(edges.findIndex((edge) => edge.node.id === node.id));
+                          setPhotoIndex(edges.findIndex((edge: any) => edge.node.id === node.id));
                           setOpen(!isOpen);
                         }}
                         className="card"
