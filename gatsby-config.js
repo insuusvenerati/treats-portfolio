@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   siteMetadata: {
-    title: 'Creative Portfolio',
+    title: 'Laura Norwood',
   },
   plugins,
 };

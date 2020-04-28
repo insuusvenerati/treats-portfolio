@@ -1,8 +1,9 @@
-import Img from 'gatsby-image';
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 import useBgImageData from '../hooks/useBgImageData';
+import ImageCard from './ImageCard';
 
 const BGImageContainer: React.FC = () => {
   const { allDatoCmsAsset } = useBgImageData();
@@ -13,37 +14,18 @@ const BGImageContainer: React.FC = () => {
 
   return (
     <>
-      {React.useMemo(() => {
-        return (
-          <>
-            {edges ? (
-              <Masonry className="showcase">
-                {edges.map(({ node }: any) => (
-                  <div role="presentation" key={node.id} className="showcase__item">
-                    {node.fluid ? (
-                      <figure
-                        onClick={(): void => {
-                          setPhotoIndex(edges.findIndex((edge: any) => edge.node.id === node.id));
-                          setOpen(!isOpen);
-                        }}
-                        className="card"
-                      >
-                        <Img fluid={node.fluid} />
-                      </figure>
-                    ) : (
-                      <h1>Error</h1>
-                    )}
-                  </div>
-                ))}
-              </Masonry>
-            ) : (
-              <div>
-                <h1>There was an error loading images</h1>
-              </div>
-            )}
-          </>
-        );
-      }, [edges])}
+      <Masonry className="showcase">
+        {edges.map(({ node }) => (
+          <ImageCard
+            key={node.id}
+            isOpen={isOpen}
+            setPhotoIndex={setPhotoIndex}
+            setOpen={setOpen}
+            node={node}
+            edges={edges}
+          />
+        ))}
+      </Masonry>
       {isOpen && (
         <Lightbox
           mainSrc={edges[photoIndex].node.fixed.src}

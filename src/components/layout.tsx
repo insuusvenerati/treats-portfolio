@@ -19,8 +19,8 @@ const TemplateWrapper: React.FC = ({ children }) => {
       <div className={`container ${showMenu ? 'is-open' : ''}`}>
         <HelmetDatoCms favicon={datoCmsSite.faviconMetaTags} seo={datoCmsHome.seoMetaTags} />
         <div className="container__sidebar">
-          <div className="sidebar" style={{ position: 'fixed', width: '300px' }}>
-            <h6 className="sidebar__title">
+          <div className="sidebar">
+            <h6 style={{ fontFamily: 'Montserrat' }} className="sidebar__title">
               <Link to="/">{datoCmsSite.globalSeo.siteName}</Link>
             </h6>
             <div
@@ -47,12 +47,9 @@ const TemplateWrapper: React.FC = ({ children }) => {
                   href={profile.url}
                   target="blank"
                   className={`social social--${profile.profileType.toLowerCase()}`}
-                >
-                  {' '}
-                </a>
+                ></a>
               ))}
             </p>
-            <div className="sidebar__copyright">{datoCmsHome.copyright}</div>
           </div>
         </div>
         <div className="container__body">

@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-const useBgImageData = () => {
-  const bgImageData = useStaticQuery(
+const useVisdevImageData = () => {
+  const visdevImageData = useStaticQuery(
     graphql`
-      query BGTags {
-        allDatoCmsAsset(filter: { tags: { in: "bg" } }) {
+      query VisdevTags {
+        allDatoCmsAsset(filter: { tags: { in: "visdev" } }) {
           edges {
             node {
               id
@@ -12,7 +12,7 @@ const useBgImageData = () => {
                 ...GatsbyDatoCmsFixed
                 src
               }
-              fluid(maxWidth: 2000) {
+              fluid(maxWidth: 900) {
                 ...GatsbyDatoCmsFluid
                 src
               }
@@ -22,7 +22,7 @@ const useBgImageData = () => {
       }
     `,
   );
-  return bgImageData;
+  return visdevImageData;
 };
 
-export default useBgImageData;
+export default useVisdevImageData;
