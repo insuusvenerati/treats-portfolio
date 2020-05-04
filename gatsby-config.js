@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 require('dotenv').config({
   path: '.env',
 });
@@ -5,10 +6,37 @@ require('dotenv').config({
 const plugins = [
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sass',
-  'gatsby-transformer-remark',
+  'gatsby-plugin-nprogress',
   {
-    resolve: 'gatsby-plugin-emotion',
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: `Laura Norwood`,
+      short_name: `Laura Norwood`,
+      start_url: `/`,
+      background_color: `#F0E6E0`,
+      theme_color: `#9DAD9E`,
+      display: `standalone`,
+    },
   },
+  'gatsby-plugin-offline',
+  {
+    resolve: `gatsby-plugin-scroll-reveal`,
+    options: {
+      threshold: 1,
+    },
+  },
+  {
+    resolve: `gatsby-plugin-purgecss`,
+    options: {
+      printRejected: true, // Print removed selectors and processed file names
+      develop: false, // Enable while using `gatsby develop`
+      // tailwind: true, // Enable tailwindcss support
+      whitelist: ['social--twitter', 'social--instagram', 'social--email', 'social--cat'], // Don't remove this selector
+      // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+      // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+    },
+  },
+  'gatsby-transformer-remark',
   {
     resolve: 'gatsby-plugin-typescript',
     options: {
@@ -37,7 +65,6 @@ const plugins = [
       apiToken: process.env.DATO_API_TOKEN,
     },
   },
-  'gatsby-plugin-webpack-size',
 ];
 
 if (process.env.NODE_ENV === 'production') {

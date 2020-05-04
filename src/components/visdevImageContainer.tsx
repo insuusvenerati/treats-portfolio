@@ -1,30 +1,30 @@
-import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
 import { VisdevTagsQuery } from '../graphqlTypes';
+import useVisdevImageData from '../hooks/useVisdevImageData';
+import ImageCard from './ImageCard';
 
 const VisdevImageContainer: React.FC<VisdevTagsQuery> = () => {
+  const { allDatoCmsAsset } = useVisdevImageData();
+
   const [isOpen, setOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-  const edges = data.allDatoCmsAsset.edges;
+  const edges = allDatoCmsAsset.edges;
 
   return (
     <>
       <Masonry className="showcase">
         {edges.map(({ node }) => (
-          <div role="presentation" key={node.id} className="showcase__item">
-            <figure
-              onClick={(): void => {
-                setPhotoIndex(edges.findIndex((edge) => edge.node.id === node.id));
-                setOpen(!isOpen);
-              }}
-              className="card"
-            >
-              <Img fluid={node.fluid} />
-            </figure>
-          </div>
+          <ImageCard
+            key={node.id}
+            isOpen={isOpen}
+            setPhotoIndex={setPhotoIndex}
+            setOpen={setOpen}
+            node={node}
+            edges={edges}
+          />
         ))}
       </Masonry>
       )

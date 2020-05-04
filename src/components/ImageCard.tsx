@@ -12,7 +12,9 @@ const ImageCard: React.FC = ({ edges, node, setPhotoIndex, setOpen, isOpen }) =>
           }}
           className="card"
         >
-          <Img fluid={node.fluid} className="card__image" />
+          <div data-sal-delay="0" data-sal-easing="ease" data-sal="slide-up">
+            <Img fluid={node.fluid} className="card__image" />
+          </div>
         </figure>
       </div>
     </>
