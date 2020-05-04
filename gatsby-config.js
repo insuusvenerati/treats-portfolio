@@ -6,19 +6,6 @@ require('dotenv').config({
 const plugins = [
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sass',
-  'gatsby-plugin-nprogress',
-  {
-    resolve: `gatsby-plugin-manifest`,
-    options: {
-      name: `Laura Norwood`,
-      short_name: `Laura Norwood`,
-      start_url: `/`,
-      background_color: `#F0E6E0`,
-      theme_color: `#9DAD9E`,
-      display: `standalone`,
-    },
-  },
-  'gatsby-plugin-offline',
   {
     resolve: `gatsby-plugin-scroll-reveal`,
     options: {
@@ -32,8 +19,8 @@ const plugins = [
       develop: false, // Enable while using `gatsby develop`
       // tailwind: true, // Enable tailwindcss support
       whitelist: ['social--twitter', 'social--instagram', 'social--email', 'social--cat'], // Don't remove this selector
-      // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-      // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      ignore: ['/styles/index.sass', 'node_modules/sal.js/dist/sal.css'], // Ignore files/folders
+      // whitelistPatterns: ['/^[data-sal]/'],
     },
   },
   'gatsby-transformer-remark',
@@ -67,9 +54,9 @@ const plugins = [
   },
 ];
 
-if (process.env.NODE_ENV === 'production') {
-  plugins.push('gatsby-plugin-preact');
-}
+// if (process.env.NODE_ENV === 'production') {
+//   plugins.push('gatsby-plugin-preact');
+// }
 
 module.exports = {
   siteMetadata: {
