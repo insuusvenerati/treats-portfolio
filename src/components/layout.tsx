@@ -24,7 +24,7 @@ const TemplateWrapper: React.FC = ({ children }) => {
       <div className={`container ${showMenu ? 'is-open' : ''}`}>
         <HelmetDatoCms favicon={datoCmsSite.faviconMetaTags} seo={datoCmsHome.seoMetaTags} />
         <div className="container__sidebar">
-          <div data-sal-delay="0" data-sal-easing="ease" data-sal="slide-up" className="sidebar">
+          <div className="sidebar">
             <h6 style={{ fontFamily: 'Montserrat' }} className="sidebar__title">
               <Link to="/">{datoCmsSite.globalSeo.siteName}</Link>
             </h6>

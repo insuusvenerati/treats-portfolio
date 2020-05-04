@@ -9,18 +9,20 @@ const plugins = [
   {
     resolve: `gatsby-plugin-scroll-reveal`,
     options: {
-      threshold: 1,
+      threshold: 0.5,
     },
   },
   {
     resolve: `gatsby-plugin-purgecss`,
     options: {
-      printRejected: true, // Print removed selectors and processed file names
-      develop: false, // Enable while using `gatsby develop`
-      // tailwind: true, // Enable tailwindcss support
+      printRejected: true,
+      develop: false,
       whitelist: ['social--twitter', 'social--instagram', 'social--email', 'social--cat'], // Don't remove this selector
-      ignore: ['/styles/index.sass', 'node_modules/sal.js/dist/sal.css'], // Ignore files/folders
-      // whitelistPatterns: ['/^[data-sal]/'],
+      ignore: [
+        '/styles/index.sass',
+        'node_modules/sal.js/dist/sal.css',
+        'node_modules/react-image-lightbox/style.css',
+      ],
     },
   },
   'gatsby-transformer-remark',
@@ -54,9 +56,9 @@ const plugins = [
   },
 ];
 
-// if (process.env.NODE_ENV === 'production') {
-//   plugins.push('gatsby-plugin-preact');
-// }
+if (process.env.NODE_ENV === 'production') {
+  plugins.push('gatsby-plugin-preact');
+}
 
 module.exports = {
   siteMetadata: {
