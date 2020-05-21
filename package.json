@@ -33,7 +33,8 @@
     "react-modal": "^3.11.2",
     "react-perfect-scrollbar": "^1.5.8",
     "react-unsplash-wrapper": "^1.1.5",
-    "sass": "^1.26.3"
+    "sass": "^1.26.3",
+    "snyk": "^1.323.1"
   },
   "keywords": [
     "gatsby"
@@ -50,7 +51,9 @@
     "types": "graphql-codegen --config codegen.yml",
     "types:dev": "graphql-codegen --watch --config codegen.yml",
     "codechecks": "codechecks",
-    "sanity": "node sanity.js"
+    "sanity": "node sanity.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "devDependencies": {
     "@codechecks/build-size-watcher": "^0.1.0",
@@ -89,5 +92,6 @@
     "skip": {
       "tag": true
     }
-  }
+  },
+  "snyk": true
 }
