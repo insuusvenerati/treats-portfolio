@@ -47,9 +47,7 @@ const TemplateWrapper: React.FC = ({ children }) => {
             </ul>
             <p className="sidebar__social">
               {allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
-                <>
-                  <AnimatedAnchor profile={profile}></AnimatedAnchor>
-                </>
+                <AnimatedAnchor key={profile} profile={profile}></AnimatedAnchor>
               ))}
               <a
                 onClick={(): void => setOpen(!isOpen)}

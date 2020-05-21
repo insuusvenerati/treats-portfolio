@@ -1,4 +1,3 @@
-import Img from 'gatsby-image';
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
