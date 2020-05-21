@@ -1,68 +1,32 @@
-import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
 import { VisdevTagsQuery } from '../graphqlTypes';
+import useVisdevImageData from '../hooks/useVisdevImageData';
+import ImageCard from './ImageCard';
 
 const VisdevImageContainer: React.FC<VisdevTagsQuery> = () => {
-  const data = useStaticQuery(graphql`
-    query VisdevTags {
-      allDatoCmsAsset(filter: { tags: { in: "visdev" } }) {
-        edges {
-          node {
-            id
-            fixed(width: 1100) {
-              ...GatsbyDatoCmsFixed
-              src
-            }
-            fluid(maxWidth: 900) {
-              ...GatsbyDatoCmsFluid
-              src
-            }
-          }
-        }
-      }
-    }
-  `);
+  const { allDatoCmsAsset } = useVisdevImageData();
 
   const [isOpen, setOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-  const edges = data.allDatoCmsAsset.edges;
+  const edges = allDatoCmsAsset.edges;
 
   return (
     <>
-      {React.useMemo(() => {
-        return (
-          <>
-            {edges ? (
-              <Masonry className="showcase">
-                {edges.map(({ node }) => (
-                  <div role="presentation" key={node.id} className="showcase__item">
-                    {node.fluid ? (
-                      <figure
-                        onClick={(): void => {
-                          setPhotoIndex(edges.findIndex((edge) => edge.node.id === node.id));
-                          setOpen(!isOpen);
-                        }}
-                        className="card"
-                      >
-                        <Img fluid={node.fluid} />
-                      </figure>
-                    ) : (
-                      <h1>Error</h1>
-                    )}
-                  </div>
-                ))}
-              </Masonry>
-            ) : (
-              <div>
-                <h1>There was an error loading images</h1>
-              </div>
-            )}
-          </>
-        );
-      }, [edges])}
+      <Masonry className="showcase">
+        {edges.map(({ node }) => (
+          <ImageCard
+            key={node.id}
+            isOpen={isOpen}
+            setPhotoIndex={setPhotoIndex}
+            setOpen={setOpen}
+            node={node}
+            edges={edges}
+          />
+        ))}
+      </Masonry>
+      )
       {isOpen && (
         <Lightbox
           mainSrc={edges[photoIndex].node.fixed.src}

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 require('dotenv').config({
   path: '.env',
 });
@@ -5,10 +6,29 @@ require('dotenv').config({
 const plugins = [
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sass',
-  'gatsby-transformer-remark',
+  'gatsby-plugin-nprogress',
+  'gatsby-plugin-manifest',
+  'gatsby-plugin-offline',
   {
-    resolve: 'gatsby-plugin-emotion',
+    resolve: `gatsby-plugin-scroll-reveal`,
+    options: {
+      threshold: 0.1,
+    },
   },
+  {
+    resolve: `gatsby-plugin-purgecss`,
+    options: {
+      printRejected: true,
+      develop: false,
+      whitelist: ['social--twitter', 'social--instagram', 'social--email', 'social--cat'], // Don't remove this selector
+      ignore: [
+        '/styles/index.sass',
+        'node_modules/sal.js/dist/sal.css',
+        'node_modules/react-image-lightbox/style.css',
+      ],
+    },
+  },
+  'gatsby-transformer-remark',
   {
     resolve: 'gatsby-plugin-typescript',
     options: {
@@ -37,7 +57,6 @@ const plugins = [
       apiToken: process.env.DATO_API_TOKEN,
     },
   },
-  'gatsby-plugin-webpack-size',
 ];
 
 if (process.env.NODE_ENV === 'production') {
@@ -46,7 +65,7 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   siteMetadata: {
-    title: 'Creative Portfolio',
+    title: 'Laura Norwood',
   },
   plugins,
 };
