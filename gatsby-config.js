@@ -6,10 +6,13 @@ require('dotenv').config({
 const plugins = [
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sass',
+  'gatsby-plugin-nprogress',
+  'gatsby-plugin-manifest',
+  'gatsby-plugin-offline',
   {
     resolve: `gatsby-plugin-scroll-reveal`,
     options: {
-      threshold: 0.5,
+      threshold: 0.1,
     },
   },
   {
