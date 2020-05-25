@@ -6,7 +6,6 @@ require('dotenv').config({
 const plugins = [
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sass',
-  'gatsby-plugin-nprogress',
   'gatsby-plugin-manifest',
   'gatsby-plugin-offline',
   {
