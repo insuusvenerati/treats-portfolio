@@ -24,7 +24,7 @@
     "gatsby-source-datocms": "^2.1.29",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-remark": "^2.7.1",
-    "preact": "^10.3.4",
+    "preact": "^10.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
