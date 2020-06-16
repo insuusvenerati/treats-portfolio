@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AnimatedAnchor: React.FC<{ profile: string }> = ({ profile, children }) => {
+const AnimatedAnchor = ({ profile, children }) => {
   const [isHovered, setHovered] = useState(false);
   return (
     <a
@@ -12,8 +12,8 @@ const AnimatedAnchor: React.FC<{ profile: string }> = ({ profile, children }) =>
           ? `animated pulse infinite social social--${profile.profileType.toLowerCase()}`
           : `social social--${profile.profileType.toLowerCase()}`
       }
-      onMouseLeave={(): void => setHovered(false)}
-      onMouseEnter={(): void => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setHovered(true)}
     >
       {children}
     </a>

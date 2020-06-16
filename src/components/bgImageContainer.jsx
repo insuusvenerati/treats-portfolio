@@ -5,7 +5,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 import useBgImageData from '../hooks/useBgImageData';
 import ImageCard from './ImageCard';
 
-const BGImageContainer: React.FC = () => {
+const BGImageContainer = () => {
   const { allDatoCmsAsset } = useBgImageData();
 
   const [isOpen, setOpen] = useState(false);
@@ -31,9 +31,9 @@ const BGImageContainer: React.FC = () => {
           mainSrc={edges[photoIndex].node.fixed.src}
           nextSrc={edges[(photoIndex + 1) % edges.length].node.fixed.src}
           prevSrc={edges[(photoIndex + edges.length - 1) % edges.length].node.fixed.src}
-          onMovePrevRequest={(): void => setPhotoIndex((photoIndex + edges.length - 1) % edges.length)}
-          onMoveNextRequest={(): void => setPhotoIndex((photoIndex + 1) % edges.length)}
-          onCloseRequest={(): void => setOpen(!isOpen)}
+          onMovePrevRequest={() => setPhotoIndex((photoIndex + edges.length - 1) % edges.length)}
+          onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % edges.length)}
+          onCloseRequest={() => setOpen(!isOpen)}
           clickOutsideToClose
           discourageDownloads={false}
         />

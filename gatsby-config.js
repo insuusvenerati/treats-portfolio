@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 require('dotenv').config({
   path: '.env',
 });
@@ -6,34 +5,37 @@ require('dotenv').config({
 const plugins = [
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sass',
-  'gatsby-plugin-nprogress',
-  'gatsby-plugin-manifest',
-  'gatsby-plugin-offline',
+  {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: "Laura Norwood",
+      short_name: "Laura Norwood",
+      start_url: "/",
+      background_color: "#F0E6E0",
+      theme_color: "#9DAD9F",
+      // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+      // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+      display: "standalone",
+      // icon: "src/images/icon.png", // This path is relative to the root of the site.
+      // An optional attribute which provides support for CORS check.
+      // If you do not provide a crossOrigin option, it will skip CORS for manifest.
+      // Any invalid keyword or empty string defaults to `anonymous`
+      crossOrigin: ``,
+    },
+  },
+  `gatsby-plugin-postcss`,
+  `gatsby-transformer-remark`,
+  `gatsby-plugin-webpack-size`,
+  {
+    resolve: `gatsby-plugin-offline`,
+    options: {
+      precachePages: [`/visdev/`, `/about/`],
+    },
+  },
   {
     resolve: `gatsby-plugin-scroll-reveal`,
     options: {
       threshold: 0.1,
-    },
-  },
-  {
-    resolve: `gatsby-plugin-purgecss`,
-    options: {
-      printRejected: true,
-      develop: false,
-      whitelist: ['social--twitter', 'social--instagram', 'social--email', 'social--cat'], // Don't remove this selector
-      ignore: [
-        '/styles/index.sass',
-        'node_modules/sal.js/dist/sal.css',
-        'node_modules/react-image-lightbox/style.css',
-      ],
-    },
-  },
-  'gatsby-transformer-remark',
-  {
-    resolve: 'gatsby-plugin-typescript',
-    options: {
-      isTSX: true,
-      allExtensions: true,
     },
   },
   {

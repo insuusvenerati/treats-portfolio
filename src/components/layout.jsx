@@ -13,7 +13,7 @@ Sentry.init({
   release: `treats-porfolio@${process.env.npm_package_version}`,
 });
 
-const TemplateWrapper: React.FC = ({ children }) => {
+const Layout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   const { datoCmsSite, datoCmsHome, allDatoCmsSocialProfile } = useLayoutData();
   const [isOpen, setOpen] = useState(false);
@@ -50,9 +50,9 @@ const TemplateWrapper: React.FC = ({ children }) => {
                 <AnimatedAnchor key={profile} profile={profile}></AnimatedAnchor>
               ))}
               <a
-                onClick={(): void => setOpen(!isOpen)}
-                onMouseLeave={(): void => setHovered(false)}
-                onMouseEnter={(): void => setHovered(true)}
+                onClick={() => setOpen(!isOpen)}
+                onMouseLeave={() => setHovered(false)}
+                onMouseEnter={() => setHovered(true)}
                 className={isHovered ? `animated pulse infinite social social--cat` : `social social--cat`}
                 style={{ cursor: 'pointer' }}
               >
@@ -67,7 +67,7 @@ const TemplateWrapper: React.FC = ({ children }) => {
               <div className="mobile-header__menu">
                 <a
                   href="#"
-                  onClick={(e): void => {
+                  onClick={(e) => {
                     e.preventDefault();
                     setShowMenu(!showMenu);
                   }}
@@ -85,4 +85,4 @@ const TemplateWrapper: React.FC = ({ children }) => {
   );
 };
 
-export default TemplateWrapper;
+export default Layout;

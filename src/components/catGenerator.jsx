@@ -20,7 +20,7 @@ const style = {
   },
 };
 
-const CatGenerator: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
+const CatGenerator = ({ isOpen }) => {
   return (
     <Modal style={style} isOpen={isOpen}>
       <Unsplash style={{ borderRadius: '12px' }} width="100" height="100" keywords="cat" />

@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import BGImageContainer from '../components/bgImageContainer';
 import ErrorBoundry from '../components/errorboundry';
 
-const IndexPage: React.FC = () => (
+const IndexPage = () => (
   <ErrorBoundry>
     <Layout>
       <BGImageContainer />

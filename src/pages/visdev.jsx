@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import VisdevImageContainer from '../components/visdevImageContainer';
 import ErrorBoundry from '../components/errorboundry';
 
-const VisdevPage: React.FC = () => (
+const VisdevPage = () => (
   <ErrorBoundry>
     <Layout>
       <VisdevImageContainer />
