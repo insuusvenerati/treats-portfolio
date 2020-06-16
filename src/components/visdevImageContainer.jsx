@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
-import { VisdevTagsQuery } from '../graphqlTypes';
 import useVisdevImageData from '../hooks/useVisdevImageData';
 import ImageCard from './ImageCard';
 
-const VisdevImageContainer: React.FC<VisdevTagsQuery> = () => {
+const VisdevImageContainer = () => {
   const { allDatoCmsAsset } = useVisdevImageData();
 
   const [isOpen, setOpen] = useState(false);
@@ -32,9 +31,9 @@ const VisdevImageContainer: React.FC<VisdevTagsQuery> = () => {
           mainSrc={edges[photoIndex].node.fixed.src}
           nextSrc={edges[(photoIndex + 1) % edges.length].node.fixed.src}
           prevSrc={edges[(photoIndex + edges.length - 1) % edges.length].node.fixed.src}
-          onMovePrevRequest={(): void => setPhotoIndex((photoIndex + edges.length - 1) % edges.length)}
-          onMoveNextRequest={(): void => setPhotoIndex((photoIndex + 1) % edges.length)}
-          onCloseRequest={(): void => setOpen(!isOpen)}
+          onMovePrevRequest={() => setPhotoIndex((photoIndex + edges.length - 1) % edges.length)}
+          onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % edges.length)}
+          onCloseRequest={()=> setOpen(!isOpen)}
           clickOutsideToClose
           discourageDownloads={false}
         />

@@ -4,9 +4,8 @@ import Img from 'gatsby-image';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import React from 'react';
 import Layout from '../components/layout';
-import { AboutQueryQuery } from '../graphqlTypes';
 
-const About: React.FC<AboutQueryQuery> = ({ data: { about } }) => (
+const About = ({ data: { about } }) => (
   <Layout>
     <article className="sheet">
       <HelmetDatoCms seo={about.seoMetaTags} />
