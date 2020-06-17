@@ -8,13 +8,11 @@ const useVisdevImageData = () => {
           edges {
             node {
               id
-              fixed(width: 1100) {
+              fixed(width: 1400) {
                 ...GatsbyDatoCmsFixed
-                src
               }
-              fluid(maxWidth: 900) {
+              fluid(maxWidth: 2000) {
                 ...GatsbyDatoCmsFluid
-                src
               }
             }
           }

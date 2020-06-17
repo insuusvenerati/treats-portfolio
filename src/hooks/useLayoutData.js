@@ -31,6 +31,14 @@ const useLayoutData = () => {
             }
           }
         }
+        allDatoCmsAsset(filter: { tags: { eq: "sidebar" } }) {
+          nodes {
+            fixed(width: 225) {
+              ...GatsbyDatoCmsFixed
+              src
+            }
+          }
+        }
       }
     `,
   );

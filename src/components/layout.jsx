@@ -1,30 +1,29 @@
 /* eslint-disable react/no-danger */
-import * as Sentry from '@sentry/browser';
 import { Link } from 'gatsby';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import React, { useState } from 'react';
 import 'react-image-lightbox/style.css';
 import useLayoutData from '../hooks/useLayoutData';
 import '../styles/index.sass';
-import CatGenerator from './catGenerator';
 import AnimatedAnchor from './animatedAnchor';
-
-Sentry.init({
-  release: `treats-porfolio@${process.env.npm_package_version}`,
-});
+import CatGenerator from './catGenerator';
+import ErrorBoundry from './errorboundry';
 
 const Layout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const { datoCmsSite, datoCmsHome, allDatoCmsSocialProfile } = useLayoutData();
+  const { datoCmsSite, datoCmsHome, allDatoCmsSocialProfile, allDatoCmsAsset } = useLayoutData();
   const [isOpen, setOpen] = useState(false);
   const [isHovered, setHovered] = useState(false);
 
   return (
-    <>
+    <ErrorBoundry>
       <div className={`container ${showMenu ? 'is-open' : ''}`}>
         <HelmetDatoCms favicon={datoCmsSite.faviconMetaTags} seo={datoCmsHome.seoMetaTags} />
         <div className="container__sidebar">
-          <div className="sidebar">
+          <div
+            style={{ backgroundImage: `url(${allDatoCmsAsset.nodes[0].fixed.src})` }}
+            className={`sidebar`}
+          >
             <h6 style={{ fontFamily: 'Montserrat' }} className="sidebar__title">
               <Link to="/">{datoCmsSite.globalSeo.siteName}</Link>
             </h6>
@@ -45,20 +44,20 @@ const Layout = ({ children }) => {
                 <Link to="/about">about</Link>
               </li>
             </ul>
-            <p className="sidebar__social">
+            <p>
               {allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
-                <AnimatedAnchor key={profile} profile={profile}></AnimatedAnchor>
+                <a
+                  key={profile.profileType}
+                  className={`social social--${profile.profileType.toLowerCase()}`}
+                ></a>
               ))}
               <a
                 onClick={() => setOpen(!isOpen)}
-                onMouseLeave={() => setHovered(false)}
-                onMouseEnter={() => setHovered(true)}
-                className={isHovered ? `animated pulse infinite social social--cat` : `social social--cat`}
+                className="social social--cat"
                 style={{ cursor: 'pointer' }}
-              >
-                <CatGenerator isOpen={isOpen} />
-              </a>
+              ></a>
             </p>
+            <CatGenerator isOpen={isOpen} />
           </div>
         </div>
         <div className="container__body">
@@ -81,7 +80,7 @@ const Layout = ({ children }) => {
           {children}
         </div>
       </div>
-    </>
+    </ErrorBoundry>
   );
 };
 

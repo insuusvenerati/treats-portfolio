@@ -36,6 +36,7 @@ const BGImageContainer = () => {
           onCloseRequest={() => setOpen(!isOpen)}
           clickOutsideToClose
           discourageDownloads={false}
+          enableZoom={true}
         />
       )}
     </>

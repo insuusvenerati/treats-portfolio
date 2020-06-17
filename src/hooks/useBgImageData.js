@@ -8,7 +8,7 @@ const useBgImageData = () => {
           edges {
             node {
               id
-              fixed(width: 1100) {
+              fixed(width: 1400) {
                 ...GatsbyDatoCmsFixed
                 src
               }

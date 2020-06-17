@@ -3,19 +3,20 @@ require('dotenv').config({
 });
 
 const plugins = [
+  `gatsby-plugin-postcss`,
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sass',
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      name: "Laura Norwood",
-      short_name: "Laura Norwood",
-      start_url: "/",
-      background_color: "#F0E6E0",
-      theme_color: "#9DAD9F",
+      name: 'Laura Norwood',
+      short_name: 'Laura Norwood',
+      start_url: '/',
+      background_color: '#F0E6E0',
+      theme_color: '#9DAD9F',
       // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
       // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-      display: "standalone",
+      display: 'standalone',
       // icon: "src/images/icon.png", // This path is relative to the root of the site.
       // An optional attribute which provides support for CORS check.
       // If you do not provide a crossOrigin option, it will skip CORS for manifest.
@@ -23,7 +24,6 @@ const plugins = [
       crossOrigin: ``,
     },
   },
-  `gatsby-plugin-postcss`,
   `gatsby-transformer-remark`,
   `gatsby-plugin-webpack-size`,
   {
@@ -48,10 +48,10 @@ const plugins = [
   },
   {
     resolve: 'gatsby-plugin-sharp',
-    options: {
-      width: 1100,
-      defaultQuality: 100,
-    },
+    // options: {
+    //   width: 1100,
+    //   defaultQuality: 100,
+    // },
   },
   {
     resolve: 'gatsby-source-datocms',

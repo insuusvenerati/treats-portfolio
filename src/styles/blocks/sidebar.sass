@@ -2,21 +2,27 @@
   .sidebar
     position: fixed
     width: 225px
-    height: 400px
-    background-image: url('https://www.datocms-assets.com/23328/1586921343-sidebarbg.png')
+    height: auto
     border-radius: 20px
     padding: 20px
     margin-left: 15px
 
+.behind
+  z-index: -1
 
 .sidebar
   position: fixed
   width: 225px
-  height: 400px
-  background-image: url('https://www.datocms-assets.com/23328/1586921343-sidebarbg.png')
+  height: auto
+  // max-height: 275px
   border-radius: 20px
   padding: 20px
   margin-left: 15px
+  transition: all 0.1s ease-out
+
+.expanded
+  max-height: 480px
+  z-index: 1
 
 .sidebar__title
   a
@@ -72,9 +78,6 @@
     &.is-active a
       font-weight: bold
       color: $active-color
-
-.sidebar__social
-  margin-bottom: 20px
 
 .sidebar__copyright
   color: $light-body-color
