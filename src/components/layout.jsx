@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import 'react-image-lightbox/style.css';
 import useLayoutData from '../hooks/useLayoutData';
 import '../styles/index.sass';
-import AnimatedAnchor from './animatedAnchor';
 import CatGenerator from './catGenerator';
 import ErrorBoundry from './errorboundry';
 
@@ -13,7 +12,6 @@ const Layout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   const { datoCmsSite, datoCmsHome, allDatoCmsSocialProfile, allDatoCmsAsset } = useLayoutData();
   const [isOpen, setOpen] = useState(false);
-  const [isHovered, setHovered] = useState(false);
 
   return (
     <ErrorBoundry>
@@ -49,6 +47,7 @@ const Layout = ({ children }) => {
                 <a
                   key={profile.profileType}
                   className={`social social--${profile.profileType.toLowerCase()}`}
+                  style={{ cursor: 'pointer' }}
                 ></a>
               ))}
               <a
