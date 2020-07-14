@@ -29,7 +29,7 @@
     "react-modal": "^3.11.2",
     "react-perfect-scrollbar": "^1.5.8",
     "react-unsplash-wrapper": "^1.1.5",
-    "sass": "^1.26.8",
+    "sass": "^1.26.9",
     "tailwindcss": "^1.4.6"
   },
   "keywords": [
