@@ -11,7 +11,7 @@ import ErrorBoundary from './errorBoundary';
 const Layout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   const { datoCmsSite, datoCmsHome, allDatoCmsSocialProfile, allDatoCmsAsset } = useLayoutData();
-  const [isOpen, setOpen] = useState(false);
+  // const [isOpen, setOpen] = useState(false);
 
   return (
     <ErrorBoundary>
@@ -42,21 +42,25 @@ const Layout = ({ children }) => {
                 <Link to="/about">about</Link>
               </li>
             </ul>
-            <p>
+            <p className="centered">
               {allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
                 <a
-  key={profile.profileType}
-  className={`social social--${profile.profileType.toLowerCase()}`}
-  style={{cursor: 'pointer'}}
-  />
+                  key={profile.profileType}
+                  className={`social social--${profile.profileType.toLowerCase()}`}
+                  style={{ cursor: 'pointer' }}
+                  href={profile.url}
+                  target="_blank"
+                  rel="noreferrer"
+                />
               ))}
-              <a
-  onClick={() => setOpen(!isOpen)}
-  className="social social--cat"
-  style={{cursor: 'pointer'}}
-  />
+              {/* TODO Cat Generator */}
+              {/*<a*/}
+              {/*  onClick={() => setOpen(!isOpen)}*/}
+              {/*  className="social social--cat"*/}
+              {/*  style={{ cursor: 'pointer' }}*/}
+              {/*/>*/}
             </p>
-            <CatGenerator isOpen={isOpen} />
+            {/*<CatGenerator isOpen={isOpen} />*/}
           </div>
         </div>
         <div className="container__body">
