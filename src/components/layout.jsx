@@ -6,7 +6,7 @@ import 'react-image-lightbox/style.css';
 import useLayoutData from '../hooks/useLayoutData';
 import '../styles/index.sass';
 import CatGenerator from './catGenerator';
-import ErrorBoundry from './errorboundry';
+import ErrorBoundary from './errorBoundary';
 
 const Layout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <ErrorBoundry>
+    <ErrorBoundary>
       <div className={`container ${showMenu ? 'is-open' : ''}`}>
         <HelmetDatoCms favicon={datoCmsSite.faviconMetaTags} seo={datoCmsHome.seoMetaTags} />
         <div className="container__sidebar">
@@ -45,16 +45,16 @@ const Layout = ({ children }) => {
             <p>
               {allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
                 <a
-                  key={profile.profileType}
-                  className={`social social--${profile.profileType.toLowerCase()}`}
-                  style={{ cursor: 'pointer' }}
-                ></a>
+  key={profile.profileType}
+  className={`social social--${profile.profileType.toLowerCase()}`}
+  style={{cursor: 'pointer'}}
+  />
               ))}
               <a
-                onClick={() => setOpen(!isOpen)}
-                className="social social--cat"
-                style={{ cursor: 'pointer' }}
-              ></a>
+  onClick={() => setOpen(!isOpen)}
+  className="social social--cat"
+  style={{cursor: 'pointer'}}
+  />
             </p>
             <CatGenerator isOpen={isOpen} />
           </div>
@@ -79,7 +79,7 @@ const Layout = ({ children }) => {
           {children}
         </div>
       </div>
-    </ErrorBoundry>
+    </ErrorBoundary>
   );
 };
 

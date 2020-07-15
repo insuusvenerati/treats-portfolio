@@ -1,14 +1,14 @@
 import React from 'react';
 import Layout from '../components/layout';
 import BGImageContainer from '../components/bgImageContainer';
-import ErrorBoundry from '../components/errorboundry';
+import ErrorBoundary from '../components/errorBoundary';
 
 const IndexPage = () => (
-  <ErrorBoundry>
+  <ErrorBoundary>
     <Layout>
       <BGImageContainer />
     </Layout>
-  </ErrorBoundry>
+  </ErrorBoundary>
 );
 
 export default IndexPage;

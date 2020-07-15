@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as Sentry from '@sentry/browser';
 
-export default class ErrorBoundry extends Component {
+export default class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = { error: null };
