@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
 const useBgImageData = () => {
-  const bgImageData = useStaticQuery(
+  return useStaticQuery(
     graphql`
       query BGTags {
-        allDatoCmsAsset(filter: { tags: { in: "bg" } }) {
+        allDatoCmsAsset(filter: { tags: { in: "bg" } }, sort: { fields: createdAt, order: DESC }) {
           edges {
             node {
               id
@@ -22,7 +22,6 @@ const useBgImageData = () => {
       }
     `,
   );
-  return bgImageData;
 };
 
 export default useBgImageData;

@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
 const useVisdevImageData = () => {
-  const visdevImageData = useStaticQuery(
+  return useStaticQuery(
     graphql`
       query VisdevTags {
         allDatoCmsAsset(filter: { tags: { in: "visdev" } }) {
@@ -20,7 +20,6 @@ const useVisdevImageData = () => {
       }
     `,
   );
-  return visdevImageData;
 };
 
 export default useVisdevImageData;

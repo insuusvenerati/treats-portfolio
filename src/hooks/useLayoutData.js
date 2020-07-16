@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
 const useLayoutData = () => {
-  const layoutData = useStaticQuery(
+  return useStaticQuery(
     graphql`
       query LayoutQuery {
         datoCmsSite {
@@ -42,7 +42,6 @@ const useLayoutData = () => {
       }
     `,
   );
-  return layoutData;
 };
 
 export default useLayoutData;
