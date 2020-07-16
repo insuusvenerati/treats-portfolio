@@ -1198,12 +1198,14 @@ type SitePluginPackageJsonPeerDependencies {
 type SitePluginPluginOptions {
     apiToken: String
     background_color: String
+    cacheDigest: String
     cache_busting_mode: String
     crossOrigin: String
     display: String
     dsn: String
     enabled: Boolean
     environment: String
+    icon: String
     include_favicon: Boolean
     legacy: Boolean
     name: String
@@ -1215,6 +1217,7 @@ type SitePluginPluginOptions {
     theme_color: String
     theme_color_in_head: Boolean
     threshold: Float
+    trackingId: String
 }
 
 type SiteSiteMetadata {
@@ -4344,12 +4347,14 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginFilepath
     pluginCreator___pluginOptions___apiToken
     pluginCreator___pluginOptions___background_color
+    pluginCreator___pluginOptions___cacheDigest
     pluginCreator___pluginOptions___cache_busting_mode
     pluginCreator___pluginOptions___crossOrigin
     pluginCreator___pluginOptions___display
     pluginCreator___pluginOptions___dsn
     pluginCreator___pluginOptions___enabled
     pluginCreator___pluginOptions___environment
+    pluginCreator___pluginOptions___icon
     pluginCreator___pluginOptions___include_favicon
     pluginCreator___pluginOptions___legacy
     pluginCreator___pluginOptions___name
@@ -4361,6 +4366,7 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___theme_color
     pluginCreator___pluginOptions___theme_color_in_head
     pluginCreator___pluginOptions___threshold
+    pluginCreator___pluginOptions___trackingId
     pluginCreator___resolve
     pluginCreator___ssrAPIs
     pluginCreator___version
@@ -4475,12 +4481,14 @@ enum SitePluginFieldsEnum {
     pluginFilepath
     pluginOptions___apiToken
     pluginOptions___background_color
+    pluginOptions___cacheDigest
     pluginOptions___cache_busting_mode
     pluginOptions___crossOrigin
     pluginOptions___display
     pluginOptions___dsn
     pluginOptions___enabled
     pluginOptions___environment
+    pluginOptions___icon
     pluginOptions___include_favicon
     pluginOptions___legacy
     pluginOptions___name
@@ -4492,6 +4500,7 @@ enum SitePluginFieldsEnum {
     pluginOptions___theme_color
     pluginOptions___theme_color_in_head
     pluginOptions___threshold
+    pluginOptions___trackingId
     resolve
     ssrAPIs
     version
@@ -5376,12 +5385,14 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
 input SitePluginPluginOptionsFilterInput {
     apiToken: StringQueryOperatorInput
     background_color: StringQueryOperatorInput
+    cacheDigest: StringQueryOperatorInput
     cache_busting_mode: StringQueryOperatorInput
     crossOrigin: StringQueryOperatorInput
     display: StringQueryOperatorInput
     dsn: StringQueryOperatorInput
     enabled: BooleanQueryOperatorInput
     environment: StringQueryOperatorInput
+    icon: StringQueryOperatorInput
     include_favicon: BooleanQueryOperatorInput
     legacy: BooleanQueryOperatorInput
     name: StringQueryOperatorInput
@@ -5393,6 +5404,7 @@ input SitePluginPluginOptionsFilterInput {
     theme_color: StringQueryOperatorInput
     theme_color_in_head: BooleanQueryOperatorInput
     threshold: FloatQueryOperatorInput
+    trackingId: StringQueryOperatorInput
 }
 
 input SitePluginSortInput {
