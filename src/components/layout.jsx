@@ -1,11 +1,11 @@
 /* eslint-disable react/no-danger */
+import { node } from 'prop-types';
 import { Link } from 'gatsby';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import React, { useState } from 'react';
 import 'react-image-lightbox/style.css';
 import useLayoutData from '../hooks/useLayoutData';
 import '../styles/index.sass';
-import CatGenerator from './catGenerator';
 import ErrorBoundary from './errorBoundary';
 
 const Layout = ({ children }) => {
@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
               {allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
                 <a
                   key={profile.profileType}
-                  className={`social social--${profile.profileType.toLowerCase()}`}
+                  className={`social grow social--${profile.profileType.toLowerCase()}`}
                   style={{ cursor: 'pointer' }}
                   href={profile.url}
                   target="_blank"
@@ -88,3 +88,7 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+
+Layout.propTypes = {
+  children: node,
+};
