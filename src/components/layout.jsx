@@ -7,6 +7,7 @@ import 'react-image-lightbox/style.css';
 import useLayoutData from '../hooks/useLayoutData';
 import '../styles/index.sass';
 import ErrorBoundary from './errorBoundary';
+import ImageTooltip from './imageTooltip';
 
 const Layout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -54,12 +55,15 @@ const Layout = ({ children }) => {
                 />
               ))}
               {/* TODO Cat Generator */}
-              {/*<a*/}
-              {/*  onClick={() => setOpen(!isOpen)}*/}
-              {/*  className="social social--cat"*/}
-              {/*  style={{ cursor: 'pointer' }}*/}
-              {/*/>*/}
+              <a
+                data-tip
+                data-event="click"
+                data-for="catGenerator"
+                className="social social--cat grow"
+                style={{ cursor: 'pointer' }}
+              />
             </p>
+            <ImageTooltip />
             {/*<CatGenerator isOpen={isOpen} />*/}
           </div>
         </div>

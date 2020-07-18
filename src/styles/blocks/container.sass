@@ -7,19 +7,22 @@
     right: 0
     bottom: 0
     left: 0
-    z-index: 2
     transform: translate3d(-400px, 0, 0)
     transition: transform 0.2s ease-in-out
+    z-index: 2
 
     .container.is-open &
       transform: translate3d(0px, 60px, 0)
+      z-index: 2
 
   .container__body
     transform: translate3d(0px, 0, 0)
     transition: transform 0.2s ease-in-out
+    z-index: 0
 
     .container.is-open &
       transform: translate3d(300px, 0, 0)
+      z-index: 2
 
 @media screen and (min-width: 768px) and (max-width: 899px)
   .container__sidebar
@@ -30,9 +33,9 @@
     right: 0
     bottom: 0
     left: 0
-    z-index: 2
     transform: translate3d(-400px, 0, 0)
     transition: transform 0.2s ease-in-out
+    z-index: 1
 
     .container.is-open &
       transform: translate3d(0px, 60px, 0)
@@ -40,6 +43,7 @@
   .container__body
     transform: translate3d(0px, 0, 0)
     transition: transform 0.2s ease-in-out
+    z-index: 0
 
     .container.is-open &
       transform: translate3d(300px, 0, 0)
@@ -48,7 +52,6 @@
   .container
     display: flex
     padding: 0
-
   .container__mobile-header
     display: none
 
@@ -59,10 +62,12 @@
     max-width: 300px
     box-sizing: border-box
     padding: 40px
+    z-index: 1
 
   .container__body
     flex: 1
     padding-left: 40px
+    z-index: 0
 
   .container__body--white
     background-color: white
