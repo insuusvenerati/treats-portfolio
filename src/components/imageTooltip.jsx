@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import CatGenerator from './catGenerator';
-import { motion } from 'framer-motion';
 
 const ImageTooltip = () => {
   return (
