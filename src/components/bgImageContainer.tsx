@@ -5,12 +5,13 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 import useBgImageData from '../hooks/useBgImageData';
 import ImageCard from './ImageCard';
 
-const BGImageContainer = () => {
-  const { allDatoCmsAsset } = useBgImageData();
+const BGImageContainer: React.FC = () => {
+  const {
+    allDatoCmsAsset: { edges },
+  } = useBgImageData();
 
   const [isOpen, setOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-  const edges = allDatoCmsAsset.edges;
 
   return (
     <>

@@ -6,6 +6,13 @@ const plugins = [
   `gatsby-plugin-postcss`,
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sass',
+  // {
+  //   resolve: '@mkitio/gatsby-theme-password-protect',
+  //   options: {
+  //     password: process.env.GATSBY_PAGE_PASSWORD,
+  //     pagePaths: ['/visdev'],
+  //   },
+  // },
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
@@ -25,7 +32,6 @@ const plugins = [
     },
   },
   `gatsby-transformer-remark`,
-  `gatsby-plugin-webpack-size`,
   {
     resolve: `gatsby-plugin-offline`,
     options: {

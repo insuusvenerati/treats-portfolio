@@ -2,7 +2,7 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import CatGenerator from './catGenerator';
 
-const ImageTooltip = () => {
+const ImageTooltip: React.FC = () => {
   return (
     // <motion.div animate={{ rotate: 360 }} transition={{ duration: 2 }}>
     <ReactTooltip

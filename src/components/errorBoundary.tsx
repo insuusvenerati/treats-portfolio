@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
+/* eslint-disable */
+import React, { Component, ErrorInfo } from 'react';
 import * as Sentry from '@sentry/browser';
 
-export default class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { error: null };
-  }
+type ErrorBoundaryState = {
+  error: string | null;
+};
 
-  componentDidCatch(error, errorInfo) {
+export default class ErrorBoundary extends Component<ErrorBoundaryState> {
+  state: ErrorBoundaryState = { error: null };
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     this.setState({ error });
     Sentry.configureScope((scope) => {
       Object.keys(errorInfo).forEach((key) => {
+        // @ts-ignore
         scope.setExtra(key, errorInfo[key]);
       });
     });
