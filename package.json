@@ -5,7 +5,6 @@
   "author": "Stefano Verna <s.verna@datocms.com>",
   "dependencies": {
     "@mkitio/gatsby-theme-password-protect": "^2.1.2",
-    "animate.css": "^4.1.0",
     "framer-motion": "^2.1.0",
     "gatsby": "^2.24.7",
     "gatsby-cli": "^2.12.63",
@@ -43,7 +42,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "serve": "gatsby serve --open"
+    "serve": "gatsby serve --open",
+    "lint": "eslint --ext .tsx src/"
   },
   "devDependencies": {
     "@types/node": "^14.0.13",
