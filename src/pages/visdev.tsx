@@ -1,5 +1,5 @@
 import React from 'react';
-import {PageProps} from 'gatsby';
+import { PageProps } from 'gatsby';
 import Layout from '../components/layout';
 import VisdevImageContainer from '../components/visdevImageContainer';
 
