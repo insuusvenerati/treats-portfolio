@@ -12,7 +12,7 @@ const ImageTooltip = () => {
       id="catGenerator"
       place="top"
       effect="solid"
-      offset={{ right: 80, bottom: 15 }}
+      offset={{ right: 80, bottom: 8 }}
       // backgroundColor="#95816f"
       backgroundColor={'rgba(0,0,0,0.0)'}
     >

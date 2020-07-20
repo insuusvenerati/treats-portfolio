@@ -9,10 +9,9 @@ import '../styles/index.sass';
 import ErrorBoundary from './errorBoundary';
 import ImageTooltip from './imageTooltip';
 
-const Layout = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   const { datoCmsSite, datoCmsHome, allDatoCmsSocialProfile, allDatoCmsAsset } = useLayoutData();
-  // const [isOpen, setOpen] = useState(false);
 
   return (
     <ErrorBoundary>
@@ -34,13 +33,19 @@ const Layout = ({ children }) => {
             />
             <ul className="sidebar__menu">
               <li>
-                <Link to="/">bg & illustration</Link>
+                <Link activeStyle={{ color: '#5d6b5b' }} to="/">
+                  bg & illustration
+                </Link>
               </li>
               <li>
-                <Link to="/visdev">visdev</Link>
+                <Link activeStyle={{ color: '#5d6b5b' }} to="/visdev">
+                  visdev
+                </Link>
               </li>
               <li>
-                <Link to="/about">about</Link>
+                <Link activeStyle={{ color: '#5d6b5b' }} to="/about">
+                  about
+                </Link>
               </li>
             </ul>
             <p className="centered">
@@ -54,7 +59,6 @@ const Layout = ({ children }) => {
                   rel="noreferrer"
                 />
               ))}
-              {/* TODO Cat Generator */}
               <a
                 data-tip
                 data-event="click"
@@ -64,7 +68,6 @@ const Layout = ({ children }) => {
               />
             </p>
             <ImageTooltip />
-            {/*<CatGenerator isOpen={isOpen} />*/}
           </div>
         </div>
         <div className="container__body">
