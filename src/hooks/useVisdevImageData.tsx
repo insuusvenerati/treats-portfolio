@@ -1,20 +1,19 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import { ImageData } from './types/imageData';
 
-const useBgImageData = () => {
-  return useStaticQuery(
+const useVisdevImageData = (): ImageData => {
+  return useStaticQuery<ImageData>(
     graphql`
-      query BGTags {
-        allDatoCmsAsset(filter: { tags: { in: "bg" } }, sort: { fields: createdAt, order: DESC }) {
+      query VisdevTags {
+        allDatoCmsAsset(filter: { tags: { in: "visdev" } }) {
           edges {
             node {
               id
               fixed(width: 1400) {
                 ...GatsbyDatoCmsFixed
-                src
               }
               fluid(maxWidth: 2000) {
                 ...GatsbyDatoCmsFluid
-                src
               }
             }
           }
@@ -24,4 +23,4 @@ const useBgImageData = () => {
   );
 };
 
-export default useBgImageData;
+export default useVisdevImageData;

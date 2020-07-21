@@ -4,7 +4,7 @@ import Masonry from 'react-masonry-component';
 import useVisdevImageData from '../hooks/useVisdevImageData';
 import ImageCard from './ImageCard';
 
-const VisdevImageContainer = () => {
+const VisdevImageContainer: React.FC = () => {
   const { allDatoCmsAsset } = useVisdevImageData();
 
   const [isOpen, setOpen] = useState(false);
@@ -33,7 +33,7 @@ const VisdevImageContainer = () => {
           prevSrc={edges[(photoIndex + edges.length - 1) % edges.length].node.fixed.src}
           onMovePrevRequest={() => setPhotoIndex((photoIndex + edges.length - 1) % edges.length)}
           onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % edges.length)}
-          onCloseRequest={()=> setOpen(!isOpen)}
+          onCloseRequest={() => setOpen(!isOpen)}
           clickOutsideToClose
           discourageDownloads={false}
         />

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import CatGenerator from './catGenerator';
 
-const ImageTooltip = () => {
+const ImageTooltip: React.FC = () => {
   return (
     // <motion.div animate={{ rotate: 360 }} transition={{ duration: 2 }}>
     <ReactTooltip
@@ -12,7 +12,7 @@ const ImageTooltip = () => {
       id="catGenerator"
       place="top"
       effect="solid"
-      offset={{ right: 80, bottom: 15 }}
+      offset={{ right: 80, bottom: 8 }}
       // backgroundColor="#95816f"
       backgroundColor={'rgba(0,0,0,0.0)'}
     >

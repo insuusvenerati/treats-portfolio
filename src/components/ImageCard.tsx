@@ -1,7 +1,20 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import Img, { FluidObject } from 'gatsby-image';
+import { DatoCmsAssetNodes } from '../hooks/types/imageData';
 
-const ImageCard = ({ edges, node, setPhotoIndex, setOpen, isOpen }) => {
+type ImageCardProps = {
+  setOpen: (isOpen: boolean) => void;
+  // TODO What argument type goes here?
+  setPhotoIndex: (edges: any) => void;
+  isOpen: boolean;
+  edges: Array<DatoCmsAssetNodes>;
+  node: {
+    fluid: FluidObject;
+    id: number;
+  };
+};
+
+const ImageCard: React.FC<ImageCardProps> = ({ edges, node, setPhotoIndex, setOpen, isOpen }) => {
   return (
     <>
       <div role="presentation" className="showcase__item">
