@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { ImageData } from './types/imageData';
+import { VisDevImageData } from './types/imageData';
 
-const useVisdevImageData = (): ImageData => {
-  return useStaticQuery<ImageData>(
+const useVisdevImageData = (): VisDevImageData => {
+  return useStaticQuery<VisDevImageData>(
     graphql`
       query VisdevTags {
         allDatoCmsAsset(filter: { tags: { in: "visdev" } }) {
