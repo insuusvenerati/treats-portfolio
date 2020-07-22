@@ -20,7 +20,10 @@ export type BgImageData = {
   };
 };
 export type VisDevImageData = {
-  allDatoCmsAsset: {
+  desktopVisdevImage: {
+    edges: Array<DatoCmsAssetNodes>;
+  };
+  mobileVisdevImage: {
     edges: Array<DatoCmsAssetNodes>;
   };
 };

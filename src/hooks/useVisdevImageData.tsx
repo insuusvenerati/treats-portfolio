@@ -5,14 +5,27 @@ const useVisdevImageData = (): VisDevImageData => {
   return useStaticQuery<VisDevImageData>(
     graphql`
       query VisdevTags {
-        allDatoCmsAsset(filter: { tags: { in: "visdev" } }) {
+        desktopVisdevImage: allDatoCmsAsset(filter: { tags: { in: "visdev" } }) {
           edges {
             node {
               id
               fixed(width: 1400) {
                 ...GatsbyDatoCmsFixed
               }
-              fluid(maxWidth: 2000) {
+              fluid(maxWidth: 800) {
+                ...GatsbyDatoCmsFluid
+              }
+            }
+          }
+        }
+        mobileVisdevImage: allDatoCmsAsset(filter: { tags: { in: "visdev" } }) {
+          edges {
+            node {
+              id
+              fixed(width: 400) {
+                ...GatsbyDatoCmsFixed
+              }
+              fluid(maxWidth: 300) {
                 ...GatsbyDatoCmsFluid
               }
             }

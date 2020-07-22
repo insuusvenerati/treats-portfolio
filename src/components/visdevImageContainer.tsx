@@ -3,36 +3,60 @@ import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
 import useVisdevImageData from '../hooks/useVisdevImageData';
 import ImageCard from './ImageCard';
+import { isMobile, isBrowser } from 'react-device-detect';
 
 const VisdevImageContainer: React.FC = () => {
-  const { allDatoCmsAsset } = useVisdevImageData();
+  const {
+    desktopVisdevImage: { edges: desktopVisdevImage },
+    mobileVisdevImage: { edges: mobileVisdevImage },
+  } = useVisdevImageData();
 
   const [isOpen, setOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-  const edges = allDatoCmsAsset.edges;
 
   return (
     <>
-      <Masonry className="showcase">
-        {edges.map(({ node }) => (
-          <ImageCard
-            key={node.id}
-            isOpen={isOpen}
-            setPhotoIndex={setPhotoIndex}
-            setOpen={setOpen}
-            node={node}
-            edges={edges}
-          />
-        ))}
-      </Masonry>
+      {isBrowser && (
+        <Masonry className="showcase">
+          {desktopVisdevImage.map(({ node }) => (
+            <ImageCard
+              key={node.id}
+              isOpen={isOpen}
+              setPhotoIndex={setPhotoIndex}
+              setOpen={setOpen}
+              node={node}
+              edges={desktopVisdevImage}
+            />
+          ))}
+        </Masonry>
+      )}
+      {isMobile && (
+        <Masonry className="showcase">
+          {mobileVisdevImage.map(({ node }) => (
+            <ImageCard
+              key={node.id}
+              isOpen={isOpen}
+              setPhotoIndex={setPhotoIndex}
+              setOpen={setOpen}
+              node={node}
+              edges={mobileVisdevImage}
+            />
+          ))}
+        </Masonry>
+      )}
       )
       {isOpen && (
         <Lightbox
-          mainSrc={edges[photoIndex].node.fixed.src}
-          nextSrc={edges[(photoIndex + 1) % edges.length].node.fixed.src}
-          prevSrc={edges[(photoIndex + edges.length - 1) % edges.length].node.fixed.src}
-          onMovePrevRequest={() => setPhotoIndex((photoIndex + edges.length - 1) % edges.length)}
-          onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % edges.length)}
+          mainSrc={desktopVisdevImage[photoIndex].node.fixed.src}
+          nextSrc={desktopVisdevImage[(photoIndex + 1) % desktopVisdevImage.length].node.fixed.src}
+          prevSrc={
+            desktopVisdevImage[(photoIndex + desktopVisdevImage.length - 1) % desktopVisdevImage.length].node
+              .fixed.src
+          }
+          onMovePrevRequest={() =>
+            setPhotoIndex((photoIndex + desktopVisdevImage.length - 1) % desktopVisdevImage.length)
+          }
+          onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % desktopVisdevImage.length)}
           onCloseRequest={() => setOpen(!isOpen)}
           clickOutsideToClose
           discourageDownloads={false}

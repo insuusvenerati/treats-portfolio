@@ -19,9 +19,9 @@ export const fontWeights = {
 };
 // #9BAA9D
 export const colors = {
-  text: '#292B25',
+  text: '#111111',
   background: '#f0e6e0',
-  primary: '#292B25',
+  primary: '#111111',
   secondary: '#292B25',
   highlight: '#9BAA9D',
   accent: '#9BAA9D',

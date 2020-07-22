@@ -38,7 +38,7 @@ const Layout: React.FC = ({ children }) => {
             </li>
             <li>
               <Link activeStyle={{ color: '#5d6b5b' }} to="/about">
-                about
+                about & contact
               </Link>
             </li>
           </ul>
