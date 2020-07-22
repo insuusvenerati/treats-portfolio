@@ -5,7 +5,10 @@ const useBgImageData = (): ImageData => {
   return useStaticQuery<ImageData>(
     graphql`
       query BGTags {
-        allDatoCmsAsset(filter: { tags: { in: "bg" } }, sort: { fields: createdAt, order: DESC }) {
+        desktopBgImage: allDatoCmsAsset(
+          filter: { tags: { in: "bg" } }
+          sort: { fields: createdAt, order: DESC }
+        ) {
           edges {
             node {
               id
@@ -13,7 +16,25 @@ const useBgImageData = (): ImageData => {
                 ...GatsbyDatoCmsFixed
                 src
               }
-              fluid(maxWidth: 2000) {
+              fluid(maxWidth: 600) {
+                ...GatsbyDatoCmsFluid
+                src
+              }
+            }
+          }
+        }
+        mobileBgImage: allDatoCmsAsset(
+          filter: { tags: { in: "bg" } }
+          sort: { fields: createdAt, order: DESC }
+        ) {
+          edges {
+            node {
+              id
+              fixed(width: 400) {
+                ...GatsbyDatoCmsFixed
+                src
+              }
+              fluid(maxWidth: 300) {
                 ...GatsbyDatoCmsFluid
                 src
               }

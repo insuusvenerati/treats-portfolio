@@ -12,7 +12,10 @@ export type DatoCmsAssetNodes = {
 };
 
 export type ImageData = {
-  allDatoCmsAsset: {
+  desktopBgImage: {
+    edges: Array<DatoCmsAssetNodes>;
+  };
+  mobileBgImage: {
     edges: Array<DatoCmsAssetNodes>;
   };
 };

@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./src/**/*.jsx'],
+  purge: ['./src/**/*.tsx'],
   target: 'relaxed',
   prefix: '',
   important: false,
@@ -643,6 +643,7 @@ module.exports = {
     borderWidth: ['responsive'],
     boxShadow: ['responsive', 'hover', 'focus'],
     boxSizing: ['responsive'],
+    container: ['responsive'],
     cursor: ['responsive'],
     display: ['responsive'],
     divideColor: ['responsive'],

@@ -15,6 +15,7 @@ type ImageCardProps = {
 };
 
 const ImageCard: React.FC<ImageCardProps> = ({ edges, node, setPhotoIndex, setOpen, isOpen }) => {
+  const sources = [];
   return (
     <>
       <div role="presentation" className="showcase__item">

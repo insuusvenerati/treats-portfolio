@@ -2,6 +2,7 @@
 import { graphql, PageProps } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
+import ContactPage from '../gatsby-theme-contact/components/contact-page';
 import React from 'react';
 import Layout from '../components/layout';
 
@@ -53,6 +54,9 @@ const About: React.FC<AboutPageProps> = ({ data: { about } }) => {
             }}
           />
         </div>
+      </article>
+      <article className="sheet">
+        <ContactPage />
       </article>
     </Layout>
   );
