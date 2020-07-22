@@ -4,7 +4,6 @@ import Form from './form';
 
 const ContactPage: React.FC = () => (
   <section
-    className="sheet__inner"
     sx={{
       mb: 3,
       display: 'grid',
