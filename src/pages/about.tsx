@@ -54,8 +54,6 @@ const About: React.FC<AboutPageProps> = ({ data: { about } }) => {
             }}
           />
         </div>
-      </article>
-      <article className="sheet">
         <ContactPage />
       </article>
     </Layout>
@@ -73,7 +71,7 @@ export const query = graphql`
       title
       subtitle
       photo {
-        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(maxWidth: 600) {
           ...GatsbyDatoCmsSizes
         }
       }
