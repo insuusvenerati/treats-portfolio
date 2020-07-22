@@ -1,11 +1,14 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { ImageData } from './types/imageData';
+import { BgImageData } from './types/imageData';
 
-const useBgImageData = (): ImageData => {
-  return useStaticQuery<ImageData>(
+const useBgImageData = (): BgImageData => {
+  return useStaticQuery<BgImageData>(
     graphql`
       query BGTags {
-        allDatoCmsAsset(filter: { tags: { in: "bg" } }, sort: { fields: createdAt, order: DESC }) {
+        desktopBgImage: allDatoCmsAsset(
+          filter: { tags: { in: "bg" } }
+          sort: { fields: createdAt, order: DESC }
+        ) {
           edges {
             node {
               id
@@ -13,7 +16,25 @@ const useBgImageData = (): ImageData => {
                 ...GatsbyDatoCmsFixed
                 src
               }
-              fluid(maxWidth: 2000) {
+              fluid(maxWidth: 800) {
+                ...GatsbyDatoCmsFluid
+                src
+              }
+            }
+          }
+        }
+        mobileBgImage: allDatoCmsAsset(
+          filter: { tags: { in: "bg" } }
+          sort: { fields: createdAt, order: DESC }
+        ) {
+          edges {
+            node {
+              id
+              fixed(width: 400) {
+                ...GatsbyDatoCmsFixed
+                src
+              }
+              fluid(maxWidth: 300) {
                 ...GatsbyDatoCmsFluid
                 src
               }

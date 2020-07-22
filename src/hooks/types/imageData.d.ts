@@ -11,8 +11,19 @@ export type DatoCmsAssetNodes = {
   };
 };
 
-export type ImageData = {
-  allDatoCmsAsset: {
+export type BgImageData = {
+  desktopBgImage: {
+    edges: Array<DatoCmsAssetNodes>;
+  };
+  mobileBgImage: {
+    edges: Array<DatoCmsAssetNodes>;
+  };
+};
+export type VisDevImageData = {
+  desktopVisdevImage: {
+    edges: Array<DatoCmsAssetNodes>;
+  };
+  mobileVisdevImage: {
     edges: Array<DatoCmsAssetNodes>;
   };
 };

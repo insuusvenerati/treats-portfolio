@@ -3,9 +3,21 @@ require('dotenv').config({
 });
 
 const plugins = [
-  `gatsby-plugin-postcss`,
   'gatsby-plugin-react-helmet',
-  'gatsby-plugin-sass',
+  {
+    resolve: `gatsby-theme-contact`,
+    options: {
+      contactPath: '/contact',
+      successPath: '/thanks',
+    },
+  },
+  {
+    resolve: `gatsby-plugin-sass`,
+    options: {
+      processCssUrls: false,
+      implementation: require('sass'),
+    },
+  },
   // {
   //   resolve: '@mkitio/gatsby-theme-password-protect',
   //   options: {
