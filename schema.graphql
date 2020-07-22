@@ -971,6 +971,7 @@ type Query {
     allSiteBuildMetadata(filter: SiteBuildMetadataFilterInput, limit: Int, skip: Int, sort: SiteBuildMetadataSortInput): SiteBuildMetadataConnection!
     allSitePage(filter: SitePageFilterInput, limit: Int, skip: Int, sort: SitePageSortInput): SitePageConnection!
     allSitePlugin(filter: SitePluginFilterInput, limit: Int, skip: Int, sort: SitePluginSortInput): SitePluginConnection!
+    allSiteSiteMetadata(filter: SiteSiteMetadataFilterInput, limit: Int, skip: Int, sort: SiteSiteMetadataSortInput): SiteSiteMetadataConnection!
     datoCmsAboutPage(bio: StringQueryOperatorInput, bioNode: DatoCmsTextNodeFilterInput, children: NodeFilterListInput, gatsbypreview: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, locale: StringQueryOperatorInput, meta: DatoCmsMetaFieldFilterInput, model: DatoCmsModelFilterInput, originalId: StringQueryOperatorInput, parent: NodeFilterInput, photo: DatoCmsFileFieldFilterInput, seoMetaTags: DatoCmsSeoMetaTagsFilterInput, seoSettings: DatoCmsSeoFieldFilterInput, subtitle: StringQueryOperatorInput, title: StringQueryOperatorInput): DatoCmsAboutPage
     datoCmsAsset(author: StringQueryOperatorInput, basename: StringQueryOperatorInput, blurhash: StringQueryOperatorInput, children: NodeFilterListInput, colors: DatoCmsColorFieldFilterListInput, copyright: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, exifInfo: JSONQueryOperatorInput, filename: StringQueryOperatorInput, fixed: DatoCmsFixedFilterInput, fluid: DatoCmsFluidFilterInput, format: StringQueryOperatorInput, height: IntQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isImage: BooleanQueryOperatorInput, mimeType: StringQueryOperatorInput, notes: StringQueryOperatorInput, originalId: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, resolutions: DatoCmsFixedFilterInput, size: IntQueryOperatorInput, sizes: DatoCmsFluidFilterInput, smartTags: StringQueryOperatorInput, tags: StringQueryOperatorInput, url: StringQueryOperatorInput, video: DatoCmsAssetVideoFilterInput, width: IntQueryOperatorInput): DatoCmsAsset
     datoCmsFaviconMetaTags(children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, tags: JSONQueryOperatorInput): DatoCmsFaviconMetaTags
@@ -989,6 +990,7 @@ type Query {
     siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
     sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, matchPath: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
     sitePlugin(browserAPIs: StringQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeAPIs: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput, parent: NodeFilterInput, pluginFilepath: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, resolve: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, version: StringQueryOperatorInput): SitePlugin
+    siteSiteMetadata(children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, social: SocialFilterListInput, title: StringQueryOperatorInput): SiteSiteMetadata
 }
 
 type Site implements Node {
@@ -1200,28 +1202,70 @@ type SitePluginPluginOptions {
     background_color: String
     cacheDigest: String
     cache_busting_mode: String
+    contactPath: String
     crossOrigin: String
     display: String
     dsn: String
     enabled: Boolean
     environment: String
     icon: String
+    implementation: SitePluginPluginOptionsImplementation
     include_favicon: Boolean
     legacy: Boolean
     name: String
     path: String
     pathCheck: Boolean
     precachePages: [String]
+    processCssUrls: Boolean
     short_name: String
     start_url: String
+    successPath: String
     theme_color: String
     theme_color_in_head: Boolean
     threshold: Float
     trackingId: String
 }
 
-type SiteSiteMetadata {
+type SitePluginPluginOptionsImplementation {
+    info: String
+}
+
+type SiteSiteMetadata implements Node {
+    children: [Node!]!
+    id: ID!
+    internal: Internal!
+    parent: Node
+    social: [Social]
     title: String
+}
+
+type SiteSiteMetadataConnection {
+    distinct(field: SiteSiteMetadataFieldsEnum!): [String!]!
+    edges: [SiteSiteMetadataEdge!]!
+    group(field: SiteSiteMetadataFieldsEnum!, limit: Int, skip: Int): [SiteSiteMetadataGroupConnection!]!
+    nodes: [SiteSiteMetadata!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type SiteSiteMetadataEdge {
+    next: SiteSiteMetadata
+    node: SiteSiteMetadata!
+    previous: SiteSiteMetadata
+}
+
+type SiteSiteMetadataGroupConnection {
+    edges: [SiteSiteMetadataEdge!]!
+    field: String!
+    fieldValue: String
+    nodes: [SiteSiteMetadata!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type Social {
+    name: String
+    url: String!
 }
 
 enum DatoCmsAboutPageFieldsEnum {
@@ -4189,6 +4233,47 @@ enum SiteFieldsEnum {
     pathPrefix
     polyfill
     port
+    siteMetadata___children
+    siteMetadata___children___children
+    siteMetadata___children___children___children
+    siteMetadata___children___children___id
+    siteMetadata___children___id
+    siteMetadata___children___internal___content
+    siteMetadata___children___internal___contentDigest
+    siteMetadata___children___internal___description
+    siteMetadata___children___internal___fieldOwners
+    siteMetadata___children___internal___ignoreType
+    siteMetadata___children___internal___mediaType
+    siteMetadata___children___internal___owner
+    siteMetadata___children___internal___type
+    siteMetadata___children___parent___children
+    siteMetadata___children___parent___id
+    siteMetadata___id
+    siteMetadata___internal___content
+    siteMetadata___internal___contentDigest
+    siteMetadata___internal___description
+    siteMetadata___internal___fieldOwners
+    siteMetadata___internal___ignoreType
+    siteMetadata___internal___mediaType
+    siteMetadata___internal___owner
+    siteMetadata___internal___type
+    siteMetadata___parent___children
+    siteMetadata___parent___children___children
+    siteMetadata___parent___children___id
+    siteMetadata___parent___id
+    siteMetadata___parent___internal___content
+    siteMetadata___parent___internal___contentDigest
+    siteMetadata___parent___internal___description
+    siteMetadata___parent___internal___fieldOwners
+    siteMetadata___parent___internal___ignoreType
+    siteMetadata___parent___internal___mediaType
+    siteMetadata___parent___internal___owner
+    siteMetadata___parent___internal___type
+    siteMetadata___parent___parent___children
+    siteMetadata___parent___parent___id
+    siteMetadata___social
+    siteMetadata___social___name
+    siteMetadata___social___url
     siteMetadata___title
 }
 
@@ -4349,20 +4434,24 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___background_color
     pluginCreator___pluginOptions___cacheDigest
     pluginCreator___pluginOptions___cache_busting_mode
+    pluginCreator___pluginOptions___contactPath
     pluginCreator___pluginOptions___crossOrigin
     pluginCreator___pluginOptions___display
     pluginCreator___pluginOptions___dsn
     pluginCreator___pluginOptions___enabled
     pluginCreator___pluginOptions___environment
     pluginCreator___pluginOptions___icon
+    pluginCreator___pluginOptions___implementation___info
     pluginCreator___pluginOptions___include_favicon
     pluginCreator___pluginOptions___legacy
     pluginCreator___pluginOptions___name
     pluginCreator___pluginOptions___path
     pluginCreator___pluginOptions___pathCheck
     pluginCreator___pluginOptions___precachePages
+    pluginCreator___pluginOptions___processCssUrls
     pluginCreator___pluginOptions___short_name
     pluginCreator___pluginOptions___start_url
+    pluginCreator___pluginOptions___successPath
     pluginCreator___pluginOptions___theme_color
     pluginCreator___pluginOptions___theme_color_in_head
     pluginCreator___pluginOptions___threshold
@@ -4483,20 +4572,24 @@ enum SitePluginFieldsEnum {
     pluginOptions___background_color
     pluginOptions___cacheDigest
     pluginOptions___cache_busting_mode
+    pluginOptions___contactPath
     pluginOptions___crossOrigin
     pluginOptions___display
     pluginOptions___dsn
     pluginOptions___enabled
     pluginOptions___environment
     pluginOptions___icon
+    pluginOptions___implementation___info
     pluginOptions___include_favicon
     pluginOptions___legacy
     pluginOptions___name
     pluginOptions___path
     pluginOptions___pathCheck
     pluginOptions___precachePages
+    pluginOptions___processCssUrls
     pluginOptions___short_name
     pluginOptions___start_url
+    pluginOptions___successPath
     pluginOptions___theme_color
     pluginOptions___theme_color_in_head
     pluginOptions___threshold
@@ -4504,6 +4597,99 @@ enum SitePluginFieldsEnum {
     resolve
     ssrAPIs
     version
+}
+
+enum SiteSiteMetadataFieldsEnum {
+    children
+    children___children
+    children___children___children
+    children___children___children___children
+    children___children___children___id
+    children___children___id
+    children___children___internal___content
+    children___children___internal___contentDigest
+    children___children___internal___description
+    children___children___internal___fieldOwners
+    children___children___internal___ignoreType
+    children___children___internal___mediaType
+    children___children___internal___owner
+    children___children___internal___type
+    children___children___parent___children
+    children___children___parent___id
+    children___id
+    children___internal___content
+    children___internal___contentDigest
+    children___internal___description
+    children___internal___fieldOwners
+    children___internal___ignoreType
+    children___internal___mediaType
+    children___internal___owner
+    children___internal___type
+    children___parent___children
+    children___parent___children___children
+    children___parent___children___id
+    children___parent___id
+    children___parent___internal___content
+    children___parent___internal___contentDigest
+    children___parent___internal___description
+    children___parent___internal___fieldOwners
+    children___parent___internal___ignoreType
+    children___parent___internal___mediaType
+    children___parent___internal___owner
+    children___parent___internal___type
+    children___parent___parent___children
+    children___parent___parent___id
+    id
+    internal___content
+    internal___contentDigest
+    internal___description
+    internal___fieldOwners
+    internal___ignoreType
+    internal___mediaType
+    internal___owner
+    internal___type
+    parent___children
+    parent___children___children
+    parent___children___children___children
+    parent___children___children___id
+    parent___children___id
+    parent___children___internal___content
+    parent___children___internal___contentDigest
+    parent___children___internal___description
+    parent___children___internal___fieldOwners
+    parent___children___internal___ignoreType
+    parent___children___internal___mediaType
+    parent___children___internal___owner
+    parent___children___internal___type
+    parent___children___parent___children
+    parent___children___parent___id
+    parent___id
+    parent___internal___content
+    parent___internal___contentDigest
+    parent___internal___description
+    parent___internal___fieldOwners
+    parent___internal___ignoreType
+    parent___internal___mediaType
+    parent___internal___owner
+    parent___internal___type
+    parent___parent___children
+    parent___parent___children___children
+    parent___parent___children___id
+    parent___parent___id
+    parent___parent___internal___content
+    parent___parent___internal___contentDigest
+    parent___parent___internal___description
+    parent___parent___internal___fieldOwners
+    parent___parent___internal___ignoreType
+    parent___parent___internal___mediaType
+    parent___parent___internal___owner
+    parent___parent___internal___type
+    parent___parent___parent___children
+    parent___parent___parent___id
+    social
+    social___name
+    social___url
+    title
 }
 
 enum SortOrderEnum {
@@ -5387,24 +5573,32 @@ input SitePluginPluginOptionsFilterInput {
     background_color: StringQueryOperatorInput
     cacheDigest: StringQueryOperatorInput
     cache_busting_mode: StringQueryOperatorInput
+    contactPath: StringQueryOperatorInput
     crossOrigin: StringQueryOperatorInput
     display: StringQueryOperatorInput
     dsn: StringQueryOperatorInput
     enabled: BooleanQueryOperatorInput
     environment: StringQueryOperatorInput
     icon: StringQueryOperatorInput
+    implementation: SitePluginPluginOptionsImplementationFilterInput
     include_favicon: BooleanQueryOperatorInput
     legacy: BooleanQueryOperatorInput
     name: StringQueryOperatorInput
     path: StringQueryOperatorInput
     pathCheck: BooleanQueryOperatorInput
     precachePages: StringQueryOperatorInput
+    processCssUrls: BooleanQueryOperatorInput
     short_name: StringQueryOperatorInput
     start_url: StringQueryOperatorInput
+    successPath: StringQueryOperatorInput
     theme_color: StringQueryOperatorInput
     theme_color_in_head: BooleanQueryOperatorInput
     threshold: FloatQueryOperatorInput
     trackingId: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsImplementationFilterInput {
+    info: StringQueryOperatorInput
 }
 
 input SitePluginSortInput {
@@ -5413,12 +5607,31 @@ input SitePluginSortInput {
 }
 
 input SiteSiteMetadataFilterInput {
+    children: NodeFilterListInput
+    id: StringQueryOperatorInput
+    internal: InternalFilterInput
+    parent: NodeFilterInput
+    social: SocialFilterListInput
     title: StringQueryOperatorInput
+}
+
+input SiteSiteMetadataSortInput {
+    fields: [SiteSiteMetadataFieldsEnum]
+    order: [SortOrderEnum] = [ASC]
 }
 
 input SiteSortInput {
     fields: [SiteFieldsEnum]
     order: [SortOrderEnum] = [ASC]
+}
+
+input SocialFilterInput {
+    name: StringQueryOperatorInput
+    url: StringQueryOperatorInput
+}
+
+input SocialFilterListInput {
+    elemMatch: SocialFilterInput
 }
 
 input StringQueryOperatorInput {
