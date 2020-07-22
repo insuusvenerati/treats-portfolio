@@ -4,6 +4,8 @@ require('dotenv').config({
 
 const plugins = [
   'gatsby-plugin-react-helmet',
+  `gatsby-plugin-robots-txt`,
+  `gatsby-plugin-sitemap`,
   {
     resolve: `gatsby-theme-contact`,
     options: {
@@ -91,6 +93,7 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://ljnorwood.com`,
     title: 'Laura Norwood',
   },
   plugins,
