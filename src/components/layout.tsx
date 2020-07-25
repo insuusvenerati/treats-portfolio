@@ -9,20 +9,34 @@ import ImageTooltip from './imageTooltip';
 
 const Layout: React.FC = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const { datoCmsSite, datoCmsHome, allDatoCmsSocialProfile, allDatoCmsAsset } = useLayoutData();
+  const {
+    datoCmsSite,
+    datoCmsHome,
+    allDatoCmsSocialProfile,
+    sidebar,
+    catImages: { nodes: catImages },
+  } = useLayoutData();
+  const [catImage, setCatImage] = useState(catImages[0].fixed);
+
+  const generateCatImageHandler = () => {
+    const randomCatImage = catImages[Math.floor(Math.random() * catImages.length)].fixed;
+    setCatImage(randomCatImage);
+  };
 
   return (
     <div className={`container ${showMenu ? 'is-open' : ''}`}>
-      <HelmetDatoCms favicon={datoCmsSite.faviconMetaTags} seo={datoCmsHome.seoMetaTags} />
+      <HelmetDatoCms favicon={datoCmsSite?.faviconMetaTags} seo={datoCmsHome?.seoMetaTags} />
+
       <div className="container__sidebar">
-        <div style={{ backgroundImage: `url(${allDatoCmsAsset.nodes[0].fixed.src})` }} className={`sidebar`}>
+        <ImageTooltip generateRandomCatImageHandler={generateCatImageHandler} catImage={catImage} />
+        <div style={{ backgroundImage: `url(${sidebar?.nodes[0]?.fixed?.src})` }} className={`sidebar`}>
           <h6 style={{ fontFamily: 'Montserrat' }} className="sidebar__title">
-            <Link to="/">{datoCmsSite.globalSeo.siteName}</Link>
+            <Link to="/">{datoCmsSite?.globalSeo?.siteName}</Link>
           </h6>
           <div
             className="sidebar__intro"
             dangerouslySetInnerHTML={{
-              __html: datoCmsHome.introTextNode.childMarkdownRemark.html,
+              __html: datoCmsHome?.introTextNode?.childMarkdownRemark?.html,
             }}
           />
           <ul className="sidebar__menu">
@@ -61,7 +75,6 @@ const Layout: React.FC = ({ children }) => {
               style={{ cursor: 'pointer' }}
             />
           </p>
-          <ImageTooltip />
         </div>
       </div>
       <div className="container__body">

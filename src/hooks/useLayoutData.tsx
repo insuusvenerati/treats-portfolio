@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { LayoutData } from './types/layoutData';
+import { LayoutQueryQuery } from '../../types/graphql-types';
 
-const useLayoutData = (): LayoutData => {
-  return useStaticQuery<LayoutData>(
+const useLayoutData = (): LayoutQueryQuery => {
+  return useStaticQuery<LayoutQueryQuery>(
     graphql`
       query LayoutQuery {
         datoCmsSite {
@@ -32,11 +32,18 @@ const useLayoutData = (): LayoutData => {
             }
           }
         }
-        allDatoCmsAsset(filter: { tags: { eq: "sidebar" } }) {
+        sidebar: allDatoCmsAsset(filter: { tags: { eq: "sidebar" } }) {
           nodes {
             fixed(width: 225) {
               ...GatsbyDatoCmsFixed
               src
+            }
+          }
+        }
+        catImages: allDatoCmsAsset(filter: { tags: { eq: "cats" } }) {
+          nodes {
+            fixed(width: 149) {
+              ...GatsbyDatoCmsFixed
             }
           }
         }

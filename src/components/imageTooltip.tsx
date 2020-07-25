@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import CatGenerator from './catGenerator';
+import { FixedObject } from 'gatsby-image';
 
-const ImageTooltip: React.FC = () => {
+const ImageTooltip: React.FC<{ catImage: FixedObject; generateRandomCatImageHandler: () => void }> = ({
+  catImage,
+  generateRandomCatImageHandler,
+}) => {
   return (
-    // <motion.div animate={{ rotate: 360 }} transition={{ duration: 2 }}>
     <ReactTooltip
+      afterHide={generateRandomCatImageHandler}
       className="tooltip"
       globalEventOff="click"
       type="dark"
@@ -16,9 +20,8 @@ const ImageTooltip: React.FC = () => {
       // backgroundColor="#95816f"
       backgroundColor={'rgba(0,0,0,0.0)'}
     >
-      <CatGenerator />
+      <CatGenerator catImageFixed={catImage} />
     </ReactTooltip>
-    // </motion.div>
   );
 };
 
