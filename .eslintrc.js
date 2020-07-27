@@ -22,5 +22,6 @@ module.exports = {
   rules: {
     'react/prop-types': 0,
     'no-console': 'error',
+    '@typescript-eslint/unbound-method': 0,
   },
 };

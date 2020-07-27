@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const ErrorMessage = () => (
-  <p>Sorry, we could not reach our servers. Please try again later.</p>
-)
+const ErrorMessage = ({ errors }) => <p>{errors && errors}</p>;
 
-export default ErrorMessage
+export default ErrorMessage;

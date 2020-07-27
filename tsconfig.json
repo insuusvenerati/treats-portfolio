@@ -1,22 +1,16 @@
 {
-  "include": ["./src/**/*"],
-  "exclude": ["./types/*.ts"],
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": ["dom"],
-    // "allowJs": true,
-    // "checkJs": true,
+    "module": "commonjs",
+    "target": "esnext",
     "jsx": "preserve",
-    "moduleResolution": "node",
-    "allowJs": true,
-    "outDir": "./build",
-    "strict": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "noImplicitAny": true,
+    "lib": ["dom", "esnext"],
+    "strict": false,
     "noEmit": true,
-    "skipLibCheck": true
-  }
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": false,
+    "skipLibCheck": true,
+    "allowJs": true
+  },
+  "exclude": ["node_modules", "public", ".cache"]
 }

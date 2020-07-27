@@ -1,13 +1,13 @@
 import React from 'react';
 import Img, { FluidObject } from 'gatsby-image';
-import { DatoCmsAssetNodes } from '../hooks/types/imageData';
+import { DatoCmsAssetConnection } from '../../types/graphql-types';
 
 type ImageCardProps = {
   setOpen: (isOpen: boolean) => void;
   // TODO What argument type goes here?
   setPhotoIndex: (edges: any) => void;
   isOpen: boolean;
-  edges: Array<DatoCmsAssetNodes>;
+  edges: Array<DatoCmsAssetConnection>;
   node: {
     fluid: FluidObject;
     id: number;

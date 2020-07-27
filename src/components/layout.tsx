@@ -1,5 +1,4 @@
 /* eslint-disable react/no-danger */
-import { node } from 'prop-types';
 import { Link } from 'gatsby';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import React, { useState } from 'react';
@@ -60,7 +59,7 @@ const Layout: React.FC = ({ children }) => {
             {allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
               <a
                 key={profile.profileType}
-                className={`social grow social--${profile.profileType.toLowerCase()}`}
+                className={`social grow social--${profile?.profileType.toLowerCase()}`}
                 style={{ cursor: 'pointer' }}
                 href={profile.url}
                 target="_blank"
@@ -90,7 +89,7 @@ const Layout: React.FC = ({ children }) => {
               />
             </div>
             <div className="mobile-header__logo">
-              <Link to="/">{datoCmsSite.globalSeo.siteName}</Link>
+              <Link to="/">{datoCmsSite?.globalSeo.siteName}</Link>
             </div>
           </div>
         </div>
@@ -101,7 +100,3 @@ const Layout: React.FC = ({ children }) => {
 };
 
 export default Layout;
-
-Layout.propTypes = {
-  children: node,
-};

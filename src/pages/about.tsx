@@ -5,6 +5,7 @@ import { HelmetDatoCms } from 'gatsby-source-datocms';
 import ContactPage from '../gatsby-theme-contact/components/contact-page';
 import React from 'react';
 import Layout from '../components/layout';
+import Form from '../components/form';
 
 type Tags = {
   tagName: string;
@@ -55,6 +56,7 @@ const About: React.FC<AboutPageProps> = ({ data: { about } }) => {
         </div>
         <div style={{ marginLeft: '100px', marginTop: '70px' }} className="sheet__inner">
           <ContactPage />
+          {/*<Form />*/}
         </div>
       </article>
     </Layout>
