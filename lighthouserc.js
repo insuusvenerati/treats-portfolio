@@ -6,9 +6,7 @@ module.exports = {
       isSinglePageApplication: true,
     },
     assert: {
-      assertions: {
-        'categories:performance': ['warn', { minScore: 0.9 }],
-      },
+      preset: 'lighthouse:recommended',
     },
     upload: {
       target: 'lhci',
