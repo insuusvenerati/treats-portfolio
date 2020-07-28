@@ -4,10 +4,10 @@
   "version": "5.0.0",
   "author": "Stefano Verna <s.verna@datocms.com>",
   "resolutions": {
-    "gatsby/graphql": "14.7.0",
-    "gatsby-plugin-codegen/**/graphql": "14.7.0",
-    "apollo/graphql": "14.7.0",
-    "apollo-language-server/graphql": "14.7.0"
+    "gatsby/graphql": "15.3.0",
+    "gatsby-plugin-codegen/**/graphql": "15.3.0",
+    "apollo/graphql": "15.3.0",
+    "apollo-language-server/graphql": "15.3.0"
   },
   "dependencies": {
     "@mkitio/gatsby-theme-password-protect": "^2.1.2",
