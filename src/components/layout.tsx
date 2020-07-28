@@ -24,18 +24,18 @@ const Layout: React.FC = ({ children }) => {
 
   return (
     <div className={`container ${showMenu ? 'is-open' : ''}`}>
-      <HelmetDatoCms favicon={datoCmsSite?.faviconMetaTags} seo={datoCmsHome?.seoMetaTags} />
+      <HelmetDatoCms favicon={datoCmsSite.faviconMetaTags} seo={datoCmsHome.seoMetaTags} />
 
       <div className="container__sidebar">
         <ImageTooltip generateRandomCatImageHandler={generateCatImageHandler} catImage={catImage} />
-        <div style={{ backgroundImage: `url(${sidebar?.nodes[0]?.fixed?.src})` }} className={`sidebar`}>
+        <div style={{ backgroundImage: `url(${sidebar.nodes[0].fixed.src})` }} className={`sidebar`}>
           <h6 style={{ fontFamily: 'Montserrat' }} className="sidebar__title">
-            <Link to="/">{datoCmsSite?.globalSeo?.siteName}</Link>
+            <Link to="/">{datoCmsSite.globalSeo.siteName}</Link>
           </h6>
           <div
             className="sidebar__intro"
             dangerouslySetInnerHTML={{
-              __html: datoCmsHome?.introTextNode?.childMarkdownRemark?.html,
+              __html: datoCmsHome.introTextNode.childMarkdownRemark.html,
             }}
           />
           <ul className="sidebar__menu">
@@ -59,7 +59,7 @@ const Layout: React.FC = ({ children }) => {
             {allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
               <a
                 key={profile.profileType}
-                className={`social grow social--${profile?.profileType.toLowerCase()}`}
+                className={`social grow social--${profile.profileType.toLowerCase()}`}
                 style={{ cursor: 'pointer' }}
                 href={profile.url}
                 target="_blank"
@@ -89,7 +89,7 @@ const Layout: React.FC = ({ children }) => {
               />
             </div>
             <div className="mobile-header__logo">
-              <Link to="/">{datoCmsSite?.globalSeo.siteName}</Link>
+              <Link to="/">{datoCmsSite.globalSeo.siteName}</Link>
             </div>
           </div>
         </div>
