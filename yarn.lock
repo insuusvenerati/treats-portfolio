@@ -1493,7 +1493,7 @@
     core-js "^3.4.1"
     regenerator-runtime "^0.13.3"
 
-"@lhci/cli@^0.4.3":
+"@lhci/cli@0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@lhci/cli/-/cli-0.4.3.tgz#ee50227fe19301a00f50e7fe7744ae82d5fd4768"
   integrity sha512-We3A/smz/j1N3lgvXust4X0EFkj3+N/eaW8837xb7nbOd8yRR4siBVTO1gD7CdpUy7ogyZ8Li01Uke6RjaqATw==
@@ -2264,7 +2264,7 @@
   dependencies:
     csstype "^2.6.6"
 
-"@types/theme-ui@*", "@types/theme-ui@^0.3.5":
+"@types/theme-ui@*", "@types/theme-ui@0.3.5":
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/@types/theme-ui/-/theme-ui-0.3.5.tgz#5cacd59e6480ab3cc4ac5fe07bc29d6c65b27eb8"
   integrity sha512-BdsT396+tkn13HFfDQqzjFOh25tfbLXF/F1c9JlrV9lnqV0V7IhFSVODbtmGA27CkBBF/u/DcB3S8Yjt3ZnSXg==
@@ -16345,7 +16345,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.9.7:
+typescript@3.9.7:
   version "3.9.7"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
