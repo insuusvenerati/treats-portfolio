@@ -990,7 +990,7 @@ type Query {
     siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
     sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, matchPath: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
     sitePlugin(browserAPIs: StringQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeAPIs: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput, parent: NodeFilterInput, pluginFilepath: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, resolve: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, version: StringQueryOperatorInput): SitePlugin
-    siteSiteMetadata(children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, social: SocialFilterListInput, title: StringQueryOperatorInput): SiteSiteMetadata
+    siteSiteMetadata(children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, siteUrl: StringQueryOperatorInput, social: SocialFilterListInput, title: StringQueryOperatorInput): SiteSiteMetadata
 }
 
 type Site implements Node {
@@ -1216,7 +1216,6 @@ type SitePluginPluginOptions {
     path: String
     pathCheck: Boolean
     precachePages: [String]
-    processCssUrls: Boolean
     short_name: String
     start_url: String
     successPath: String
@@ -1235,6 +1234,7 @@ type SiteSiteMetadata implements Node {
     id: ID!
     internal: Internal!
     parent: Node
+    siteUrl: String
     social: [Social]
     title: String
 }
@@ -4271,6 +4271,7 @@ enum SiteFieldsEnum {
     siteMetadata___parent___internal___type
     siteMetadata___parent___parent___children
     siteMetadata___parent___parent___id
+    siteMetadata___siteUrl
     siteMetadata___social
     siteMetadata___social___name
     siteMetadata___social___url
@@ -4448,7 +4449,6 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___path
     pluginCreator___pluginOptions___pathCheck
     pluginCreator___pluginOptions___precachePages
-    pluginCreator___pluginOptions___processCssUrls
     pluginCreator___pluginOptions___short_name
     pluginCreator___pluginOptions___start_url
     pluginCreator___pluginOptions___successPath
@@ -4586,7 +4586,6 @@ enum SitePluginFieldsEnum {
     pluginOptions___path
     pluginOptions___pathCheck
     pluginOptions___precachePages
-    pluginOptions___processCssUrls
     pluginOptions___short_name
     pluginOptions___start_url
     pluginOptions___successPath
@@ -4686,6 +4685,7 @@ enum SiteSiteMetadataFieldsEnum {
     parent___parent___internal___type
     parent___parent___parent___children
     parent___parent___parent___id
+    siteUrl
     social
     social___name
     social___url
@@ -5587,7 +5587,6 @@ input SitePluginPluginOptionsFilterInput {
     path: StringQueryOperatorInput
     pathCheck: BooleanQueryOperatorInput
     precachePages: StringQueryOperatorInput
-    processCssUrls: BooleanQueryOperatorInput
     short_name: StringQueryOperatorInput
     start_url: StringQueryOperatorInput
     successPath: StringQueryOperatorInput
@@ -5611,6 +5610,7 @@ input SiteSiteMetadataFilterInput {
     id: StringQueryOperatorInput
     internal: InternalFilterInput
     parent: NodeFilterInput
+    siteUrl: StringQueryOperatorInput
     social: SocialFilterListInput
     title: StringQueryOperatorInput
 }

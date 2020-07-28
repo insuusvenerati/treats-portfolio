@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { LayoutQueryQuery } from '../../types/graphql-types';
+import { LayoutQuery } from './__generated__/LayoutQuery';
 
-const useLayoutData = (): LayoutQueryQuery => {
-  return useStaticQuery<LayoutQueryQuery>(
+const useLayoutData = (): LayoutQuery => {
+  return useStaticQuery<LayoutQuery>(
     graphql`
       query LayoutQuery {
         datoCmsSite {

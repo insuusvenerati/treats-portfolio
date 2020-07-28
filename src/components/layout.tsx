@@ -1,5 +1,4 @@
 /* eslint-disable react/no-danger */
-import { node } from 'prop-types';
 import { Link } from 'gatsby';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import React, { useState } from 'react';
@@ -25,18 +24,18 @@ const Layout: React.FC = ({ children }) => {
 
   return (
     <div className={`container ${showMenu ? 'is-open' : ''}`}>
-      <HelmetDatoCms favicon={datoCmsSite?.faviconMetaTags} seo={datoCmsHome?.seoMetaTags} />
+      <HelmetDatoCms favicon={datoCmsSite.faviconMetaTags} seo={datoCmsHome.seoMetaTags} />
 
       <div className="container__sidebar">
         <ImageTooltip generateRandomCatImageHandler={generateCatImageHandler} catImage={catImage} />
-        <div style={{ backgroundImage: `url(${sidebar?.nodes[0]?.fixed?.src})` }} className={`sidebar`}>
+        <div style={{ backgroundImage: `url(${sidebar.nodes[0].fixed.src})` }} className={`sidebar`}>
           <h6 style={{ fontFamily: 'Montserrat' }} className="sidebar__title">
-            <Link to="/">{datoCmsSite?.globalSeo?.siteName}</Link>
+            <Link to="/">{datoCmsSite.globalSeo.siteName}</Link>
           </h6>
           <div
             className="sidebar__intro"
             dangerouslySetInnerHTML={{
-              __html: datoCmsHome?.introTextNode?.childMarkdownRemark?.html,
+              __html: datoCmsHome.introTextNode.childMarkdownRemark.html,
             }}
           />
           <ul className="sidebar__menu">
@@ -101,7 +100,3 @@ const Layout: React.FC = ({ children }) => {
 };
 
 export default Layout;
-
-Layout.propTypes = {
-  children: node,
-};
