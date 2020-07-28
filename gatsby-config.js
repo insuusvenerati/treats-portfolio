@@ -6,7 +6,6 @@ const plugins = [
   'gatsby-plugin-react-helmet',
   `gatsby-plugin-robots-txt`,
   `gatsby-plugin-sitemap`,
-  `gatsby-plugin-codegen`,
   {
     resolve: `gatsby-theme-contact`,
     options: {
@@ -78,6 +77,10 @@ const plugins = [
 
 if (process.env.NODE_ENV === 'production') {
   plugins.push('gatsby-plugin-preact');
+}
+
+if (process.env.NODE_ENV === 'development') {
+  plugins.push(`gatsby-plugin-codegen`);
 }
 
 module.exports = {
