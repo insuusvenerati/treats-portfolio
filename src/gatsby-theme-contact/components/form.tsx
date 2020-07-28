@@ -1,51 +1,55 @@
 import React, { FormEvent, useState } from 'react';
-
+import axios, { AxiosError } from 'axios';
 import FormInputs from './form-inputs';
 import FormControls from './form-controls';
+import ErrorMessage from './error-message';
+import SuccessMessage from './success-message';
 
 const Form: React.FC = () => {
-  const [formFields, setFormFields] = useState({});
+  const [formServerState, setFormServerState] = useState({
+    submitting: false,
+    status: { ok: null, msg: '' },
+  });
 
-  const contactFormSubmit = async (api, data) => {
-    let res: any = await fetch(api, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-
-    res = await res.json()
-
-    if (res.success) {
-      return {
-        result: true,
-      }
+  const handleServerResponse = (ok: boolean, msg: string, form: HTMLFormElement) => {
+    setFormServerState({ submitting: false, status: { ok, msg } });
+    if (ok) {
+      form.reset();
     }
-    return {
-      result: false,
-      ...res,
-    }
-  }
+  };
 
-  const handleFormSubmit = (event: FormEvent) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    fetch(`https://formspree.io/xoqkypla`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const form = event.target;
+    axios({
+      method: 'post',
+      url: 'https://getform.io/f/151bff71-21c9-4429-8bbd-f63f8ba81321',
+      data: new FormData(form as HTMLFormElement),
+    })
+      .then(() => {
+        handleServerResponse(true, 'Thanks', form as HTMLFormElement);
+      })
+      .catch((error: AxiosError<string>) => {
+        handleServerResponse(false, error.message, form as HTMLFormElement);
+      });
+  };
+
+  const FormErrorMessage: React.FC = () => {
+    if (formServerState.status.ok === null) {
+      return null;
+    } else if (formServerState.status.ok) {
+      return <SuccessMessage />;
+    } else {
+      return <ErrorMessage />;
+    }
   };
 
   return (
-    <form onSubmit={handleFormSubmit} name="Contact">
+    <form onSubmit={handleSubmit} name="Contact">
       <section>
-        <>
-          <FormInputs formFields={formFields} />
-          <FormControls />
-        </>
+        <FormErrorMessage />
+        <FormInputs />
+        <FormControls />
       </section>
     </form>
   );
