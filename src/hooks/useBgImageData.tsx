@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { BgTagsQuery } from '../../types/graphql-types';
+import { BGTags } from './__generated__/BGTags';
 
-const useBgImageData = (): BgTagsQuery => {
-  return useStaticQuery<BgTagsQuery>(
+const useBgImageData = (): BGTags => {
+  return useStaticQuery<BGTags>(
     graphql`
       query BGTags {
         desktopBgImage: allDatoCmsAsset(

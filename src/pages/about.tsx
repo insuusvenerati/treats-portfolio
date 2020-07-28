@@ -1,41 +1,15 @@
 /* eslint-disable react/no-danger */
 import { graphql, PageProps } from 'gatsby';
-import Img, { FluidObject } from 'gatsby-image';
+import Img from 'gatsby-image';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import ContactPage from '../gatsby-theme-contact/components/contact-page';
 import React from 'react';
 import Layout from '../components/layout';
-import Form from '../components/form';
+import { AboutQuery } from './__generated__/AboutQuery';
 
-type Tags = {
-  tagName: string;
-  content: string;
-  attributes: {
-    property: string;
-    content: string;
-    name: string;
-  };
-};
-
-interface AboutPageProps extends PageProps {
-  data: {
-    about: {
-      seoMetaTags: {
-        tags: Array<Tags>;
-      };
-      title: string;
-      subtitle: string;
-      photo: {
-        fluid: FluidObject;
-      };
-      bioNode: {
-        childMarkdownRemark: {
-          html: string;
-        };
-      };
-    };
-  };
-}
+type AboutPageProps = {
+  data: AboutQuery;
+} & PageProps;
 
 const About: React.FC<AboutPageProps> = ({ data: { about } }) => {
   return (
@@ -56,7 +30,6 @@ const About: React.FC<AboutPageProps> = ({ data: { about } }) => {
         </div>
         <div style={{ marginLeft: '100px', marginTop: '70px' }} className="sheet__inner">
           <ContactPage />
-          {/*<Form />*/}
         </div>
       </article>
     </Layout>

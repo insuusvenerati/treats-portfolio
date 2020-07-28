@@ -3,7 +3,7 @@ import { Input, Label, Textarea } from 'theme-ui';
 
 type LabeledInputProps = {
   label: string;
-  as?: ForwardRefExoticComponent<any>;
+  as?: ForwardRefExoticComponent<unknown>;
   // name: string;
   required?: boolean;
   minLength?: number;

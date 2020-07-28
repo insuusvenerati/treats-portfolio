@@ -1,17 +1,13 @@
 import React from 'react';
-import Img, { FluidObject } from 'gatsby-image';
-import { DatoCmsAssetConnection } from '../../types/graphql-types';
+import Img from 'gatsby-image';
+import { BGTags_desktopBgImage_edges, BGTags_desktopBgImage_edges_node } from '../hooks/__generated__/BGTags';
 
 type ImageCardProps = {
   setOpen: (isOpen: boolean) => void;
-  // TODO What argument type goes here?
-  setPhotoIndex: (edges: any) => void;
+  setPhotoIndex: (photoIndex: number) => void;
   isOpen: boolean;
-  edges: Array<DatoCmsAssetConnection>;
-  node: {
-    fluid: FluidObject;
-    id: number;
-  };
+  edges: Array<BGTags_desktopBgImage_edges>;
+  node: BGTags_desktopBgImage_edges_node;
 };
 
 const ImageCard: React.FC<ImageCardProps> = ({ edges, node, setPhotoIndex, setOpen, isOpen }) => {
