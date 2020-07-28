@@ -13,7 +13,7 @@ module.exports = {
     upload: {
       target: 'lhci',
       serverBaseUrl: 'https://secret-lake-49706.herokuapp.com/',
-      token: process.env.LHCI_TOKEN,
+      token: process.env.LCHI_TOKEN,
     },
   },
 };
