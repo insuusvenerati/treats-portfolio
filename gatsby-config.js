@@ -40,7 +40,6 @@ const plugins = [
     },
   },
   `gatsby-transformer-remark`,
-  `gatsby-plugin-remove-serviceworker`,
   {
     resolve: `gatsby-plugin-offline`,
     options: {
