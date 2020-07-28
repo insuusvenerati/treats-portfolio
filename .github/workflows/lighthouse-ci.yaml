@@ -19,7 +19,7 @@ jobs:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
       - name: run Lighthouse CI
         run: |
-          npm install -g @lhci/cli@0.3.x
+          npm install -g @lhci/cli@0.4.3
           lhci autorun || echo "LHCI failed!"
         env:
           LCHI_TOKEN: ${{ secrets.LCHI_TOKEN }}
