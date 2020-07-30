@@ -10248,16 +10248,6 @@
               "defaultValue": null
             },
             {
-              "name": "precachePages",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "threshold",
               "description": "",
               "type": {
@@ -10309,6 +10299,16 @@
             },
             {
               "name": "trackingId",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "precachePages",
               "description": "",
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -11242,22 +11242,6 @@
               "deprecationReason": null
             },
             {
-              "name": "precachePages",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "threshold",
               "description": null,
               "args": [],
@@ -11325,6 +11309,22 @@
                 "kind": "SCALAR",
                 "name": "String",
                 "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "precachePages",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -12717,12 +12717,6 @@
               "deprecationReason": null
             },
             {
-              "name": "pluginCreator___pluginOptions___precachePages",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "pluginCreator___pluginOptions___threshold",
               "description": null,
               "isDeprecated": false,
@@ -12754,6 +12748,12 @@
             },
             {
               "name": "pluginCreator___pluginOptions___trackingId",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pluginCreator___pluginOptions___precachePages",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -45953,12 +45953,6 @@
               "deprecationReason": null
             },
             {
-              "name": "pluginOptions___precachePages",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "pluginOptions___threshold",
               "description": null,
               "isDeprecated": false,
@@ -45990,6 +45984,12 @@
             },
             {
               "name": "pluginOptions___trackingId",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pluginOptions___precachePages",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
