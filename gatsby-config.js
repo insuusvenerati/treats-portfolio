@@ -40,12 +40,7 @@ const plugins = [
     },
   },
   `gatsby-transformer-remark`,
-  {
-    resolve: `gatsby-plugin-offline`,
-    options: {
-      precachePages: [`/visdev/`, `/about/`, '/'],
-    },
-  },
+
   {
     resolve: `gatsby-plugin-scroll-reveal`,
     options: {
@@ -70,6 +65,12 @@ const plugins = [
     resolve: `gatsby-plugin-google-analytics`,
     options: {
       trackingId: `UA-110954146-2`,
+    },
+  },
+  {
+    resolve: `gatsby-plugin-offline`,
+    options: {
+      precachePages: [`/visdev/`, `/about/`, '/'],
     },
   },
 ];

@@ -1,2 +1,5 @@
 node_modules
 public
+gatsby-config.js
+gatsby-node.js
+gatsby-browser.js
