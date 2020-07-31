@@ -3,7 +3,7 @@ import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
 import useVisdevImageData from '../hooks/useVisdevImageData';
 import ImageCard from './ImageCard';
-import { isMobile, isBrowser } from 'react-device-detect';
+import { isBrowser, isMobile } from 'react-device-detect';
 
 const VisdevImageContainer: React.FC = () => {
   const {

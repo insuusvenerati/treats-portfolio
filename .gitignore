@@ -13,3 +13,6 @@ yarn-error.log
 /lsp/
 /.idea/
 /.lighthouseci/
+.graphqlconfig
+schema.graphql
+schema.json

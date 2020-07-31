@@ -4,7 +4,7 @@ import Masonry from 'react-masonry-component';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import useBgImageData from '../hooks/useBgImageData';
 import ImageCard from './ImageCard';
-import { isMobile, isBrowser } from 'react-device-detect';
+import { isBrowser, isMobile } from 'react-device-detect';
 
 const BGImageContainer: React.FC = () => {
   const {
