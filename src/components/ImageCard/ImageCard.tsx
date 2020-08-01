@@ -1,6 +1,9 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import { BGTags_desktopBgImage_edges, BGTags_desktopBgImage_edges_node } from '../hooks/__generated__/BGTags';
+import {
+  BGTags_desktopBgImage_edges,
+  BGTags_desktopBgImage_edges_node,
+} from '../../hooks/__generated__/BGTags';
 
 type ImageCardProps = {
   setOpen: (isOpen: boolean) => void;
@@ -15,6 +18,10 @@ const ImageCard: React.FC<ImageCardProps> = ({ edges, node, setPhotoIndex, setOp
     <>
       <div role="presentation" className="showcase__item">
         <figure
+          onKeyDown={() => {
+            setPhotoIndex(edges.findIndex((edge) => edge.node.id === node.id));
+            setOpen(!isOpen);
+          }}
           onClick={() => {
             setPhotoIndex(edges.findIndex((edge) => edge.node.id === node.id));
             setOpen(!isOpen);

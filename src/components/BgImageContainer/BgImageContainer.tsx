@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
 import 'react-perfect-scrollbar/dist/css/styles.css';
-import useBgImageData from '../hooks/useBgImageData';
-import ImageCard from './ImageCard';
+import useBgImageData from '../../hooks/useBgImageData';
+import ImageCard from '../ImageCard/ImageCard';
 import { isBrowser, isMobile } from 'react-device-detect';
 
-const BGImageContainer: React.FC = () => {
+const BgImageContainer: React.FC = () => {
   const {
     desktopBgImage: { edges: desktopBgImage },
     mobileBgImage: { edges: mobileBgImage },
@@ -66,4 +66,4 @@ const BGImageContainer: React.FC = () => {
   );
 };
 
-export default BGImageContainer;
+export default BgImageContainer;

@@ -3,7 +3,10 @@ import React from 'react';
 const SuccessMessage: React.FC = () => (
   <>
     <h2>
-      Message received <span>🐸</span>
+      Message received{' '}
+      <span role="img" aria-label="frog emoji">
+        🐸
+      </span>
     </h2>
   </>
 );

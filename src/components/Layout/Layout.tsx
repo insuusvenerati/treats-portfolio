@@ -3,8 +3,8 @@ import { Link } from 'gatsby';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import React, { useState } from 'react';
 import 'react-image-lightbox/style.css';
-import useLayoutData from '../hooks/useLayoutData';
-import ImageTooltip from './imageTooltip';
+import useLayoutData from '../../hooks/useLayoutData';
+import ImageTooltip from '../ImageTooltip/ImageTooltip';
 import { AwesomeButton } from 'react-awesome-button';
 
 const Layout: React.FC = ({ children }) => {
@@ -61,15 +61,19 @@ const Layout: React.FC = ({ children }) => {
               <AwesomeButton key={profile.profileType} style={{ width: '55px', marginRight: '4px' }}>
                 <a
                   className={`social social--${profile.profileType.toLowerCase()}`}
-                  style={{ cursor: 'pointer' }}
+                  style={{
+                    cursor: 'pointer',
+                  }}
                   href={profile.url}
                   target="_blank"
                   rel="noreferrer"
-                />
+                >
+                  <span />
+                </a>
               </AwesomeButton>
             ))}
             <AwesomeButton style={{ width: '55px' }}>
-              <a
+              <span
                 data-tip
                 data-event="click"
                 data-for="catGenerator"
