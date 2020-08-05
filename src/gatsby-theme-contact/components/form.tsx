@@ -25,6 +25,7 @@ const Form: React.FC = () => {
       method: 'post',
       url: 'https://getform.io/f/151bff71-21c9-4429-8bbd-f63f8ba81321',
       data: new FormData(form as HTMLFormElement),
+      headers: { 'Content-Type': 'application/json' },
     })
       .then(() => {
         handleServerResponse(true, 'Thanks', form as HTMLFormElement);

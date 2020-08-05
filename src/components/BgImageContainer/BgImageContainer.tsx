@@ -4,7 +4,6 @@ import Masonry from 'react-masonry-component';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import useBgImageData from '../../hooks/useBgImageData';
 import ImageCard from '../ImageCard/ImageCard';
-import { isBrowser, isMobile } from 'react-device-detect';
 
 const BgImageContainer: React.FC = () => {
   const {
@@ -15,36 +14,34 @@ const BgImageContainer: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
+  const zippedImages = desktopBgImage.map((element, index) => {
+    return [element, mobileBgImage[index]];
+  });
+
   return (
     <>
-      {isBrowser && (
-        <Masonry className="showcase">
-          {desktopBgImage.map(({ node }) => (
+      <Masonry className="showcase">
+        {zippedImages.map(([desktopImage, mobileImage]) => {
+          const sources = [
+            mobileImage.node.fluid,
+            {
+              ...desktopImage.node.fluid,
+              media: `(min-width: 768px)`,
+            },
+          ];
+          return (
             <ImageCard
-              key={node.id}
               isOpen={isOpen}
-              setPhotoIndex={setPhotoIndex}
               setOpen={setOpen}
-              node={node}
+              setPhotoIndex={setPhotoIndex}
+              key={desktopImage.node.id}
+              sources={sources}
               edges={desktopBgImage}
+              node={desktopImage.node}
             />
-          ))}
-        </Masonry>
-      )}
-      {isMobile && (
-        <Masonry className="showcase">
-          {mobileBgImage.map(({ node }) => (
-            <ImageCard
-              key={node.id}
-              isOpen={isOpen}
-              setPhotoIndex={setPhotoIndex}
-              setOpen={setOpen}
-              node={node}
-              edges={mobileBgImage}
-            />
-          ))}
-        </Masonry>
-      )}
+          );
+        })}
+      </Masonry>
       {isOpen && (
         <Lightbox
           mainSrc={desktopBgImage[photoIndex].node.fixed.src}
