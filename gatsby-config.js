@@ -6,7 +6,7 @@ const plugins = [
   'gatsby-plugin-react-helmet',
   `gatsby-plugin-robots-txt`,
   `gatsby-plugin-sitemap`,
-  `gatsby-plugin-codegen`,
+  `gatsby-plugin-typescript`,
   {
     resolve: `gatsby-theme-contact`,
     options: {
@@ -41,13 +41,7 @@ const plugins = [
     },
   },
   `gatsby-transformer-remark`,
-  `gatsby-plugin-remove-serviceworker`,
-  {
-    resolve: `gatsby-plugin-offline`,
-    options: {
-      precachePages: [`/visdev/`, `/about/`, '/'],
-    },
-  },
+
   {
     resolve: `gatsby-plugin-scroll-reveal`,
     options: {
@@ -74,10 +68,27 @@ const plugins = [
       trackingId: `UA-110954146-2`,
     },
   },
+  {
+    resolve: `gatsby-plugin-offline`,
+    options: {
+      precachePages: [`/visdev/`, `/about/`, '/'],
+    },
+  },
 ];
 
 if (process.env.NODE_ENV === 'production') {
-  plugins.push('gatsby-plugin-preact');
+  plugins.push('gatsby-plugin-preact', {
+    resolve: 'gatsby-plugin-sentry',
+    options: {
+      dsn: process.env.SENTRY_DSN,
+      environment: process.env.NODE_ENV,
+      enabled: true,
+    },
+  });
+}
+
+if (process.env.NODE_ENV === 'development') {
+  plugins.push(`gatsby-plugin-codegen`);
 }
 
 module.exports = {

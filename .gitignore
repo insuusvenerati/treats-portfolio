@@ -12,3 +12,7 @@ yarn-error.log
 .netlify
 /lsp/
 /.idea/
+/.lighthouseci/
+.graphqlconfig
+schema.graphql
+schema.json

@@ -12,7 +12,7 @@ const useVisdevImageData = (): VisdevTags => {
               fixed(width: 1400) {
                 ...GatsbyDatoCmsFixed
               }
-              fluid(maxWidth: 800) {
+              fluid(maxWidth: 600) {
                 ...GatsbyDatoCmsFluid
               }
             }

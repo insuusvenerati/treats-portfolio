@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageProps } from 'gatsby';
-import Layout from '../components/layout';
-import VisdevImageContainer from '../components/visdevImageContainer';
+import Layout from '../components/Layout';
+import VisdevImageContainer from '../components/VisdevImageContainer';
 
 const VisdevPage: React.FC<PageProps> = () => (
   <Layout>

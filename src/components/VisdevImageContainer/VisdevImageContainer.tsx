@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
-import 'react-perfect-scrollbar/dist/css/styles.css';
-import useBgImageData from '../hooks/useBgImageData';
-import ImageCard from './ImageCard';
-import { isMobile, isBrowser } from 'react-device-detect';
+import useVisdevImageData from '../../hooks/useVisdevImageData';
+import ImageCard from '../ImageCard/ImageCard';
+import { isBrowser, isMobile } from 'react-device-detect';
 
-const BGImageContainer: React.FC = () => {
+const VisdevImageContainer: React.FC = () => {
   const {
-    desktopBgImage: { edges: desktopBgImage },
-    mobileBgImage: { edges: mobileBgImage },
-  } = useBgImageData();
+    desktopVisdevImage: { edges: desktopVisdevImage },
+    mobileVisdevImage: { edges: mobileVisdevImage },
+  } = useVisdevImageData();
 
   const [isOpen, setOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
@@ -19,51 +18,52 @@ const BGImageContainer: React.FC = () => {
     <>
       {isBrowser && (
         <Masonry className="showcase">
-          {desktopBgImage.map(({ node }) => (
+          {desktopVisdevImage.map(({ node }) => (
             <ImageCard
               key={node.id}
               isOpen={isOpen}
               setPhotoIndex={setPhotoIndex}
               setOpen={setOpen}
               node={node}
-              edges={desktopBgImage}
+              edges={desktopVisdevImage}
             />
           ))}
         </Masonry>
       )}
       {isMobile && (
         <Masonry className="showcase">
-          {mobileBgImage.map(({ node }) => (
+          {mobileVisdevImage.map(({ node }) => (
             <ImageCard
               key={node.id}
               isOpen={isOpen}
               setPhotoIndex={setPhotoIndex}
               setOpen={setOpen}
               node={node}
-              edges={mobileBgImage}
+              edges={mobileVisdevImage}
             />
           ))}
         </Masonry>
       )}
+      )
       {isOpen && (
         <Lightbox
-          mainSrc={desktopBgImage[photoIndex].node.fixed.src}
-          nextSrc={desktopBgImage[(photoIndex + 1) % desktopBgImage.length].node.fixed.src}
+          mainSrc={desktopVisdevImage[photoIndex].node.fixed.src}
+          nextSrc={desktopVisdevImage[(photoIndex + 1) % desktopVisdevImage.length].node.fixed.src}
           prevSrc={
-            desktopBgImage[(photoIndex + desktopBgImage.length - 1) % desktopBgImage.length].node.fixed.src
+            desktopVisdevImage[(photoIndex + desktopVisdevImage.length - 1) % desktopVisdevImage.length].node
+              .fixed.src
           }
           onMovePrevRequest={() =>
-            setPhotoIndex((photoIndex + desktopBgImage.length - 1) % desktopBgImage.length)
+            setPhotoIndex((photoIndex + desktopVisdevImage.length - 1) % desktopVisdevImage.length)
           }
-          onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % desktopBgImage.length)}
+          onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % desktopVisdevImage.length)}
           onCloseRequest={() => setOpen(!isOpen)}
           clickOutsideToClose
           discourageDownloads={false}
-          enableZoom={true}
         />
       )}
     </>
   );
 };
 
-export default BGImageContainer;
+export default VisdevImageContainer;

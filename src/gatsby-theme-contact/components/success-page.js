@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import React from 'react'
-import { jsx } from 'theme-ui'
+import React from 'react';
+import { jsx } from 'theme-ui';
 
-import Layout from './layout'
-import SuccessMessage from './success-message'
+import Layout from './layout';
+import SuccessMessage from './success-message';
 
 const Success = () => (
   <Layout>
@@ -11,6 +11,6 @@ const Success = () => (
       <SuccessMessage />
     </section>
   </Layout>
-)
+);
 
-export default Success
+export default Success;

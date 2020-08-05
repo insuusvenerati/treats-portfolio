@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import ContactPage from '../gatsby-theme-contact/components/contact-page';
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { AboutQuery } from './__generated__/AboutQuery';
 
 type AboutPageProps = {

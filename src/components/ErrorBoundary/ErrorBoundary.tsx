@@ -1,4 +1,4 @@
-import React, {Component, ErrorInfo} from 'react';
+import React, { Component, ErrorInfo } from 'react';
 import * as Sentry from '@sentry/browser';
 
 type ErrorBoundaryState = {

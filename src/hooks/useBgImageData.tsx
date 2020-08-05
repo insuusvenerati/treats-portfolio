@@ -16,7 +16,7 @@ const useBgImageData = (): BGTags => {
                 ...GatsbyDatoCmsFixed
                 src
               }
-              fluid(maxWidth: 800) {
+              fluid(maxWidth: 600) {
                 ...GatsbyDatoCmsFluid
                 src
               }

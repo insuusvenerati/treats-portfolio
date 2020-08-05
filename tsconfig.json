@@ -12,5 +12,6 @@
     "skipLibCheck": true,
     "allowJs": true
   },
-  "exclude": ["node_modules", "public", ".cache"]
+  "exclude": ["node_modules", "public", ".cache"],
+  "include": ["src", ".eslintrc.js"]
 }
