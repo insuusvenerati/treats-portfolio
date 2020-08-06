@@ -51,7 +51,7 @@
     "serve": "gatsby serve --host=0.0.0.0",
     "clean": "gatsby clean",
     "lint": "eslint --ext .tsx src/",
-    "serve:lhci": "npm run serve"
+    "serve:lhci": "yarn serve"
   },
   "devDependencies": {
     "@lhci/cli": "0.4.3",

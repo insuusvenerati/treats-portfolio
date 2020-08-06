@@ -13,19 +13,35 @@ const VisdevImageContainer: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
+  const zippedImages = desktopVisdevImage.map((element, index) => {
+    return [element, mobileVisdevImage[index]];
+  });
+
   return (
     <>
       <Masonry className="showcase">
-        {desktopVisdevImage.map(({ node }) => (
-          <ImageCard
-            key={node.id}
-            isOpen={isOpen}
-            setPhotoIndex={setPhotoIndex}
-            setOpen={setOpen}
-            node={node}
-            edges={desktopVisdevImage}
-          />
-        ))}
+        {zippedImages.map(([desktopImage, mobileImage]) => {
+          const sources = [
+            mobileImage.node.fluid,
+            {
+              ...desktopImage.node.fluid,
+              media: `(min-width: 768px)`,
+            },
+          ];
+          return (
+            <>
+              <ImageCard
+                key={desktopImage.node.id}
+                isOpen={isOpen}
+                setPhotoIndex={setPhotoIndex}
+                setOpen={setOpen}
+                node={desktopImage.node}
+                edges={desktopVisdevImage}
+                sources={sources}
+              />
+            </>
+          );
+        })}
       </Masonry>
       )
       {isOpen && (
