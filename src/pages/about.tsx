@@ -28,7 +28,7 @@ const About: React.FC<AboutPageProps> = ({ data: { about } }) => {
             }}
           />
         </div>
-        <div style={{ marginLeft: '100px', marginTop: '70px' }} className="sheet__inner">
+        <div className="sheet__inner contact">
           <ContactPage />
         </div>
       </article>
