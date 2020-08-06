@@ -3,7 +3,6 @@ import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
 import useVisdevImageData from '../../hooks/useVisdevImageData';
 import ImageCard from '../ImageCard/ImageCard';
-import { isBrowser, isMobile } from 'react-device-detect';
 
 const VisdevImageContainer: React.FC = () => {
   const {
@@ -16,34 +15,18 @@ const VisdevImageContainer: React.FC = () => {
 
   return (
     <>
-      {isBrowser && (
-        <Masonry className="showcase">
-          {desktopVisdevImage.map(({ node }) => (
-            <ImageCard
-              key={node.id}
-              isOpen={isOpen}
-              setPhotoIndex={setPhotoIndex}
-              setOpen={setOpen}
-              node={node}
-              edges={desktopVisdevImage}
-            />
-          ))}
-        </Masonry>
-      )}
-      {isMobile && (
-        <Masonry className="showcase">
-          {mobileVisdevImage.map(({ node }) => (
-            <ImageCard
-              key={node.id}
-              isOpen={isOpen}
-              setPhotoIndex={setPhotoIndex}
-              setOpen={setOpen}
-              node={node}
-              edges={mobileVisdevImage}
-            />
-          ))}
-        </Masonry>
-      )}
+      <Masonry className="showcase">
+        {desktopVisdevImage.map(({ node }) => (
+          <ImageCard
+            key={node.id}
+            isOpen={isOpen}
+            setPhotoIndex={setPhotoIndex}
+            setOpen={setOpen}
+            node={node}
+            edges={desktopVisdevImage}
+          />
+        ))}
+      </Masonry>
       )
       {isOpen && (
         <Lightbox

@@ -16,7 +16,7 @@ type ImageCardProps = {
   isOpen: boolean;
   edges: Array<BGTags_desktopBgImage_edges>;
   node: BGTags_desktopBgImage_edges_node;
-  sources: Array<Sources>;
+  sources?: Array<Sources>;
 };
 
 const ImageCard: React.FC<ImageCardProps> = ({ edges, node, setPhotoIndex, setOpen, isOpen, sources }) => {
