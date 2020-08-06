@@ -5,7 +5,8 @@ import ImageCard from '../ImageCard/ImageCard';
 
 const LazyLightbox = React.lazy(() => import('react-image-lightbox'));
 
-const BgImageContainer: React.FC = () => {
+const BgImageContainer = (): JSX.Element => {
+  const isSSR = typeof window === 'undefined';
   const {
     desktopBgImage: { edges: desktopBgImage },
     mobileBgImage: { edges: mobileBgImage },
@@ -42,7 +43,7 @@ const BgImageContainer: React.FC = () => {
           );
         })}
       </Masonry>
-      {isOpen && (
+      {!isSSR && isOpen && (
         <React.Suspense fallback={<h1>Loading...</h1>}>
           <LazyLightbox
             mainSrc={desktopBgImage[photoIndex].node.fixed.src}

@@ -6,6 +6,7 @@ const LazyMasonry = React.lazy(() => import('react-masonry-component'));
 const LazyLightbox = React.lazy(() => import('react-image-lightbox'));
 
 const VisdevImageContainer: React.FC = () => {
+  const isSSR = typeof window === 'undefined';
   const {
     desktopVisdevImage: { edges: desktopVisdevImage },
     mobileVisdevImage: { edges: mobileVisdevImage },
@@ -20,32 +21,34 @@ const VisdevImageContainer: React.FC = () => {
 
   return (
     <>
-      <React.Suspense fallback={<h1>Loading...</h1>}>
-        <LazyMasonry className="showcase">
-          {zippedImages.map(([desktopImage, mobileImage]) => {
-            const sources = [
-              mobileImage.node.fluid,
-              {
-                ...desktopImage.node.fluid,
-                media: `(min-width: 768px)`,
-              },
-            ];
-            return (
-              <ImageCard
-                key={desktopImage.node.id}
-                isOpen={isOpen}
-                setPhotoIndex={setPhotoIndex}
-                setOpen={setOpen}
-                node={desktopImage.node}
-                edges={desktopVisdevImage}
-                sources={sources}
-              />
-            );
-          })}
-        </LazyMasonry>
-      </React.Suspense>
+      {!isSSR && (
+        <React.Suspense fallback={<h1>Loading...</h1>}>
+          <LazyMasonry className="showcase">
+            {zippedImages.map(([desktopImage, mobileImage]) => {
+              const sources = [
+                mobileImage.node.fluid,
+                {
+                  ...desktopImage.node.fluid,
+                  media: `(min-width: 768px)`,
+                },
+              ];
+              return (
+                <ImageCard
+                  key={desktopImage.node.id}
+                  isOpen={isOpen}
+                  setPhotoIndex={setPhotoIndex}
+                  setOpen={setOpen}
+                  node={desktopImage.node}
+                  edges={desktopVisdevImage}
+                  sources={sources}
+                />
+              );
+            })}
+          </LazyMasonry>
+        </React.Suspense>
+      )}
       )
-      {isOpen && (
+      {!isSSR && isOpen && (
         <React.Suspense fallback={<h1>Loading...</h1>}>
           <LazyLightbox
             mainSrc={desktopVisdevImage[photoIndex].node.fixed.src}
