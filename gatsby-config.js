@@ -49,14 +49,6 @@ const plugins = [
     },
   },
   {
-    resolve: 'gatsby-plugin-sentry',
-    options: {
-      dsn: process.env.SENTRY_DSN,
-      environment: process.env.NODE_ENV,
-      enabled: true,
-    },
-  },
-  {
     resolve: 'gatsby-source-datocms',
     options: {
       apiToken: process.env.DATO_API_TOKEN,
@@ -75,17 +67,6 @@ const plugins = [
     },
   },
 ];
-
-if (process.env.NODE_ENV === 'production') {
-  plugins.push({
-    resolve: 'gatsby-plugin-sentry',
-    options: {
-      dsn: process.env.SENTRY_DSN,
-      environment: process.env.NODE_ENV,
-      enabled: true,
-    },
-  });
-}
 
 if (process.env.NODE_ENV === 'development') {
   plugins.push(`gatsby-plugin-codegen`);

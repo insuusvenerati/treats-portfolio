@@ -16,3 +16,4 @@ yarn-error.log
 .graphqlconfig
 schema.graphql
 schema.json
+.sentryclirc
