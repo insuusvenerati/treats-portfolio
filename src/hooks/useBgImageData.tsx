@@ -5,24 +5,24 @@ const useBgImageData = (): BGTags => {
   return useStaticQuery<BGTags>(
     graphql`
       query BGTags {
-        # desktopBgImage: allDatoCmsAsset(
-        #   filter: { tags: { in: "bg" } }
-        #   sort: { fields: createdAt, order: DESC }
-        # ) {
-        #   edges {
-        #     node {
-        #       id
-        #       fixed(width: 1400) {
-        #         ...GatsbyDatoCmsFixed
-        #         src
-        #       }
-        #       fluid(imgixParams: { w: "654" }) {
-        #         ...GatsbyDatoCmsFluid
-        #         src
-        #       }
-        #     }
-        #   }
-        # }
+        desktopBgImage: allDatoCmsAsset(
+          filter: { tags: { in: "bg" } }
+          sort: { fields: createdAt, order: DESC }
+        ) {
+          edges {
+            node {
+              id
+              fixed(width: 1400) {
+                ...GatsbyDatoCmsFixed
+                src
+              }
+              fluid(imgixParams: { w: "654" }) {
+                ...GatsbyDatoCmsFluid
+                src
+              }
+            }
+          }
+        }
         mobileBgImage: allDatoCmsAsset(
           filter: { tags: { in: "bg" } }
           sort: { fields: createdAt, order: DESC }
