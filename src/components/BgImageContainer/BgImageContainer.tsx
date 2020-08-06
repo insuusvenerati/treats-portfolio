@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
-import 'react-perfect-scrollbar/dist/css/styles.css';
 import useBgImageData from '../../hooks/useBgImageData';
 import ImageCard from '../ImageCard/ImageCard';
 

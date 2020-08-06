@@ -29,15 +29,17 @@ const VisdevImageContainer: React.FC = () => {
             },
           ];
           return (
-            <ImageCard
-              key={desktopImage.node.id}
-              isOpen={isOpen}
-              setPhotoIndex={setPhotoIndex}
-              setOpen={setOpen}
-              node={desktopImage.node}
-              edges={desktopVisdevImage}
-              sources={sources}
-            />
+            <>
+              <ImageCard
+                key={desktopImage.node.id}
+                isOpen={isOpen}
+                setPhotoIndex={setPhotoIndex}
+                setOpen={setOpen}
+                node={desktopImage.node}
+                edges={desktopVisdevImage}
+                sources={sources}
+              />
+            </>
           );
         })}
       </Masonry>

@@ -17,7 +17,8 @@ module.exports = {
     },
     ecmaVersion: 11,
     sourceType: 'module',
-    project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
+    project: ['./tsconfig.json'],
   },
   plugins: ['@typescript-eslint', 'react'],
   rules: {

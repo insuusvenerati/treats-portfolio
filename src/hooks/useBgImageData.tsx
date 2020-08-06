@@ -16,7 +16,7 @@ const useBgImageData = (): BGTags => {
                 ...GatsbyDatoCmsFixed
                 src
               }
-              fluid(maxWidth: 600) {
+              fluid(imgixParams: { w: "654" }) {
                 ...GatsbyDatoCmsFluid
                 src
               }
@@ -34,7 +34,7 @@ const useBgImageData = (): BGTags => {
                 ...GatsbyDatoCmsFixed
                 src
               }
-              fluid(maxWidth: 300) {
+              fluid(imgixParams: { w: "350" }) {
                 ...GatsbyDatoCmsFluid
                 src
               }
