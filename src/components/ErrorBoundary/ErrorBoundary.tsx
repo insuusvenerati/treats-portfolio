@@ -18,7 +18,7 @@ export default class ErrorBoundary extends Component<ErrorBoundaryState> {
     Sentry.captureException(error);
   }
 
-  render() {
+  render(): JSX.Element {
     const { error } = this.state;
     const { children } = this.props;
     if (error) {
