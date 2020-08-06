@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import Lightbox from 'react-image-lightbox';
 import Masonry from 'react-masonry-component';
 import useBgImageData from '../../hooks/useBgImageData';
 import ImageCard from '../ImageCard/ImageCard';
+
+const LazyLightbox = React.lazy(() => import('react-image-lightbox'));
 
 const BgImageContainer: React.FC = () => {
   const {
@@ -42,21 +43,23 @@ const BgImageContainer: React.FC = () => {
         })}
       </Masonry>
       {isOpen && (
-        <Lightbox
-          mainSrc={desktopBgImage[photoIndex].node.fixed.src}
-          nextSrc={desktopBgImage[(photoIndex + 1) % desktopBgImage.length].node.fixed.src}
-          prevSrc={
-            desktopBgImage[(photoIndex + desktopBgImage.length - 1) % desktopBgImage.length].node.fixed.src
-          }
-          onMovePrevRequest={() =>
-            setPhotoIndex((photoIndex + desktopBgImage.length - 1) % desktopBgImage.length)
-          }
-          onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % desktopBgImage.length)}
-          onCloseRequest={() => setOpen(!isOpen)}
-          clickOutsideToClose
-          discourageDownloads={false}
-          enableZoom={true}
-        />
+        <React.Suspense fallback={<h1>Loading...</h1>}>
+          <LazyLightbox
+            mainSrc={desktopBgImage[photoIndex].node.fixed.src}
+            nextSrc={desktopBgImage[(photoIndex + 1) % desktopBgImage.length].node.fixed.src}
+            prevSrc={
+              desktopBgImage[(photoIndex + desktopBgImage.length - 1) % desktopBgImage.length].node.fixed.src
+            }
+            onMovePrevRequest={() =>
+              setPhotoIndex((photoIndex + desktopBgImage.length - 1) % desktopBgImage.length)
+            }
+            onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % desktopBgImage.length)}
+            onCloseRequest={() => setOpen(!isOpen)}
+            clickOutsideToClose
+            discourageDownloads={false}
+            enableZoom={true}
+          />
+        </React.Suspense>
       )}
     </>
   );

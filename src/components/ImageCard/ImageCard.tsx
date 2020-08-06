@@ -30,7 +30,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ edges, node, setPhotoIndex, setOp
           }}
           className="card"
         >
-          <div data-sal-duration="200" data-sal-delay="0" data-sal-easing="ease" data-sal="slide-up">
+          <div>
             <Img fluid={sources} className="card__image" />
           </div>
         </figure>
