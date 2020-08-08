@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import 'react-image-lightbox/style.css';
 import useLayoutData from '../../hooks/useLayoutData';
 import ImageTooltip from '../ImageTooltip/ImageTooltip';
-import { AwesomeButton } from 'react-awesome-button';
 
 const Layout: React.FC = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -58,29 +57,28 @@ const Layout: React.FC = ({ children }) => {
           </ul>
           <p className="centered">
             {allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
-              <AwesomeButton key={profile.profileType} style={{ width: '55px', marginRight: '4px' }}>
-                <a
-                  className={`social social--${profile.profileType.toLowerCase()}`}
-                  style={{
-                    cursor: 'pointer',
-                  }}
-                  href={profile.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span />
-                </a>
-              </AwesomeButton>
+              <a
+                className={`social grow social--${profile.profileType.toLowerCase()}`}
+                key={profile.profileType}
+                style={{
+                  cursor: 'pointer',
+                }}
+                href={profile.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span />
+              </a>
             ))}
-            <AwesomeButton style={{ width: '55px' }}>
+            <a style={{ width: '55px' }}>
               <span
                 data-tip
                 data-event="click"
                 data-for="catGenerator"
-                className="social social--cat"
+                className="social social--cat grow"
                 style={{ cursor: 'pointer' }}
               />
-            </AwesomeButton>
+            </a>
           </p>
         </div>
       </div>
