@@ -1,5 +1,4 @@
 import './src/styles/index.sass';
-import 'react-awesome-button/dist/styles.css';
 import * as Sentry from '@sentry/react';
 import packageJson from './package.json';
 
