@@ -13,11 +13,4 @@ yarn-error.log
 /lsp/
 /.idea/
 /.lighthouseci/
-.graphqlconfig
-schema.graphql
-schema.json
 .sentryclirc
-apollo.config.js
-__generated__/*
-src/hooks/__generated__/*
-src/pages/__generated__/*
