@@ -66,11 +66,8 @@ const plugins = [
       precachePages: [`/visdev/`, `/about/`, '/'],
     },
   },
+  `gatsby-plugin-codegen`,
 ];
-
-if (process.env.NODE_ENV === 'development') {
-  plugins.push(`gatsby-plugin-codegen`);
-}
 
 module.exports = {
   siteMetadata: {
