@@ -1,5 +1,9 @@
 language: node_js
 node_js: 14
 
-cache: yarn
-script: yarn lint
+jobs:
+  - name: 'Lint'
+    cache: yarn
+    script: yarn lint
+  - name: 'Release'
+    script: yarn semantic-release
