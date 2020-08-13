@@ -1994,7 +1994,7 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@semantic-release/changelog@^5.0.1":
+"@semantic-release/changelog@5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/changelog/-/changelog-5.0.1.tgz#50a84b63e5d391b7debfe021421589fa2bcdafe4"
   integrity sha512-unvqHo5jk4dvAf2nZ3aw4imrlwQ2I50eVVvq9D47Qc3R+keNqepx1vDYwkjF8guFXnOYaYcR28yrZWno1hFbiw==
@@ -2004,7 +2004,7 @@
     fs-extra "^9.0.0"
     lodash "^4.17.4"
 
-"@semantic-release/commit-analyzer@^8.0.0", "@semantic-release/commit-analyzer@^8.0.1":
+"@semantic-release/commit-analyzer@8.0.1", "@semantic-release/commit-analyzer@^8.0.0":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-8.0.1.tgz#5d2a37cd5a3312da0e3ac05b1ca348bf60b90bca"
   integrity sha512-5bJma/oB7B4MtwUkZC2Bf7O1MHfi4gWe4mA+MIQ3lsEV0b422Bvl1z5HRpplDnMLHH3EXMoRdEng6Ds5wUqA3A==
@@ -2022,7 +2022,7 @@
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.2.0.tgz#ee9d5a09c9969eade1ec864776aeda5c5cddbbf0"
   integrity sha512-9Tj/qn+y2j+sjCI3Jd+qseGtHjOAeg7dU2/lVcqIQ9TV3QDaDXDYXcoOHU+7o2Hwh8L8ymL4gfuO7KxDs3q2zg==
 
-"@semantic-release/github@^7.0.0", "@semantic-release/github@^7.0.7":
+"@semantic-release/github@7.0.7", "@semantic-release/github@^7.0.0":
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.0.7.tgz#e3999b06433d08871acd68ecec2b4e212c05d09f"
   integrity sha512-Sai2UucYQ+5rJzKVEVJ4eiZNDdoo0/CzfpValBdeU5h97uJE7t4CoBTmUWkiXlPOx46CSw1+JhI+PHC1PUxVZw==
@@ -2044,7 +2044,7 @@
     p-retry "^4.0.0"
     url-join "^4.0.0"
 
-"@semantic-release/npm@^7.0.0":
+"@semantic-release/npm@^7.0.0", "@semantic-release/npm@^7.0.5":
   version "7.0.5"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-7.0.5.tgz#61c45691abb863f6939cca6aac958d3c22508632"
   integrity sha512-D+oEmsx9aHE1q806NFQwSC9KdBO8ri/VO99eEz0wWbX2jyLqVyWr7t0IjKC8aSnkkQswg/4KN/ZjfF6iz1XOpw==
@@ -2063,7 +2063,7 @@
     semver "^7.1.2"
     tempy "^0.5.0"
 
-"@semantic-release/release-notes-generator@^9.0.0", "@semantic-release/release-notes-generator@^9.0.1":
+"@semantic-release/release-notes-generator@9.0.1", "@semantic-release/release-notes-generator@^9.0.0":
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-9.0.1.tgz#732d285d103064f2a64f08a32031551ebb4f918b"
   integrity sha512-bOoTiH6SiiR0x2uywSNR7uZcRDl22IpZhj+Q5Bn0v+98MFtOMhCxFhbrKQjhbYoZw7vps1mvMRmFkp/g6R9cvQ==
@@ -2089,7 +2089,7 @@
     "@sentry/utils" "5.20.1"
     tslib "^1.9.3"
 
-"@sentry/cli@^1.55.1":
+"@sentry/cli@1.55.1":
   version "1.55.1"
   resolved "https://registry.yarnpkg.com/@sentry/cli/-/cli-1.55.1.tgz#91b11cf3c0118e095bc9f3b0e27dc3c3a7873557"
   integrity sha512-qqSiBS7Hvo19+pv09MlIxF1kx5il0VPePZt/AeLSjVd1sFA/a9kzPCSz8dwVQG7xnmxAw3IG0kNgarSnk4MN0g==
@@ -5982,7 +5982,7 @@ cyclist@^1.0.1:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
-cypress@^4.12.1:
+cypress@4.12.1:
   version "4.12.1"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-4.12.1.tgz#0ead1b9f4c0917d69d8b57f996b6e01fe693b6ec"
   integrity sha512-9SGIPEmqU8vuRA6xst2CMTYd9sCFCxKSzrHt0wr+w2iAQMCIIsXsQ5Gplns1sT6LDbZcmLv6uehabAOl3fhc9Q==
@@ -6666,15 +6666,15 @@ dot-prop@^5.1.0, dot-prop@^5.2.0:
   dependencies:
     is-obj "^2.0.0"
 
+dotenv@8.2.0, dotenv@^8.0.0, dotenv@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
+
 dotenv@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-5.0.1.tgz#a5317459bd3d79ab88cff6e44057a6a3fbb1fcef"
   integrity sha512-4As8uPrjfwb7VXC+WnLCbXK7y+Ueb2B3zgNCePYfhxS1PYeaO1YTeplffTEcbfLhvFNGLAz90VvJs9yomG7bow==
-
-dotenv@^8.0.0, dotenv@^8.2.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
-  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
 
 download@^6.2.2:
   version "6.2.5"
@@ -7137,7 +7137,7 @@ eslint-plugin-import@^2.22.0:
     resolve "^1.17.0"
     tsconfig-paths "^3.9.0"
 
-eslint-plugin-jsx-a11y@^6.3.1:
+eslint-plugin-jsx-a11y@6.3.1, eslint-plugin-jsx-a11y@^6.3.1:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.3.1.tgz#99ef7e97f567cc6a5b8dd5ab95a94a67058a2660"
   integrity sha512-i1S+P+c3HOlBJzMFORRbC58tHa65Kbo8b52/TwCwSKLohwvpfT5rm2GjGWzOHTEuq4xxf2aRlHHTtmExDQOP+g==
@@ -16337,7 +16337,7 @@ selfsigned@^1.10.7:
   dependencies:
     node-forge "0.9.0"
 
-semantic-release@^17.1.1:
+semantic-release@17.1.1:
   version "17.1.1"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.1.1.tgz#d9775968e841b2b7c5020559e4481aea8520ca75"
   integrity sha512-9H+207eynBJElrQBHySZm+sIEoJeUhPA2zU4cdlY1QSInd2lnE8GRD2ALry9EassE22c9WW+aCREwBhro5AIIg==
@@ -17132,7 +17132,7 @@ stackframe@^1.1.1:
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.2.0.tgz#52429492d63c62eb989804c11552e3d22e779303"
   integrity sha512-GrdeshiRmS1YLMYgzF16olf2jJ/IzxXY9lhKOskuVziubpTYcYqyOwYeJKzQkwy7uN0fYSsbsC4RQaXf9LCrYA==
 
-start-server-and-test@^1.11.2:
+start-server-and-test@1.11.2:
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/start-server-and-test/-/start-server-and-test-1.11.2.tgz#9144b7b6f25197148f159f261ae80119afbb17d5"
   integrity sha512-rk1zS5WQvdbc8slE5hPtzfji1dFSnBAfm+vSjToZNrBvozHJvuAG80xE5u8N4tQjg3Ej1Crjc19J++r28HGJgg==
