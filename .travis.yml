@@ -1,15 +1,14 @@
 language: node_js
 node_js: 14
 
-
+cache:
+  yarn: true
+  directories: /home/travis/.cache
 
 jobs:
   include:
     - stage: 'Lint'
       script: yarn lint
-      cache:
-        yarn: true
-        directories: ~./cache
 
     - stage: 'End to end tests'
       script: yarn test:e2e:ci
