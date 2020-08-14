@@ -26,9 +26,24 @@ const LabeledInput: React.FC<LabeledInputProps> = ({ as = Input, label, ...props
 const FormInput: React.FC = () => {
   return (
     <>
-      <LabeledInput name="name" label="Name" type="text" required placeholder="Enter your name" />
-      <LabeledInput name="email" label="Email" type="email" required placeholder="Enter your email" />
       <LabeledInput
+        data-cy="input-name"
+        name="name"
+        label="Name"
+        type="text"
+        required
+        placeholder="Enter your name"
+      />
+      <LabeledInput
+        data-cy="input-email"
+        name="email"
+        label="Email"
+        type="email"
+        required
+        placeholder="Enter your email"
+      />
+      <LabeledInput
+        data-cy="input-message"
         name="message"
         label="Message"
         as={Textarea}

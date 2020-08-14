@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    'cypress/globals': true,
   },
   parser: '@typescript-eslint/parser',
   extends: [
@@ -9,6 +10,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:cypress/recommended',
     // 'plugin:jsx-a11y/recommended',
   ],
   parserOptions: {
@@ -20,7 +22,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
   },
-  plugins: ['@typescript-eslint', 'react'],
+  plugins: ['@typescript-eslint', 'react', 'cypress'],
   rules: {
     'react/prop-types': 0,
     'no-console': 'error',

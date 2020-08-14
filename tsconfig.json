@@ -11,7 +11,7 @@
     "noUnusedLocals": false,
     "skipLibCheck": true,
     "allowJs": true
-  },
-  "exclude": ["node_modules", "public", ".cache"],
-  "include": ["src", ".eslintrc.js"]
+  }
+  // "exclude": ["node_modules", "public", ".cache", "cypress/**/*"],
+  // "include": ["src/**/*", "*.js", "cypress/**/*"]
 }

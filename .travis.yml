@@ -7,6 +7,9 @@ jobs:
       cache: yarn
       script: yarn lint
 
+    - stage: 'End to end tests'
+      script: yarn test:e2e:ci
+
     - stage: 'Release'
       if: branch = master
       script: yarn semantic-release
