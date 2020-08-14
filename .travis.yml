@@ -1,10 +1,15 @@
 language: node_js
 node_js: 14
 
+cache:
+  yarn: true
+  npm: true
+  directories:
+    - ~./cache
+
 jobs:
   include:
     - stage: 'Lint'
-      cache: yarn
       script: yarn lint
 
     - stage: 'End to end tests'
