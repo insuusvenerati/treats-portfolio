@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 require('dotenv').config({ path: `.env` });
 
 module.exports = {
@@ -17,7 +18,6 @@ module.exports = {
       '@semantic-release/npm',
       {
         npmPublish: false,
-        tarballDir: false,
       },
     ],
   ],
