@@ -1,10 +1,10 @@
 language: node_js
 node_js: 14
 
-cache:
-  yarn: true
-  directories:
-    - ~./cache
+# cache:
+#   yarn: true
+#   directories:
+#     - ~./cache
 
 jobs:
   include:
