@@ -3,7 +3,7 @@ node_js: 14
 
 cache:
   yarn: true
-  directories: /home/travis/.cache
+  directories: ~/.cache
 
 jobs:
   include:
