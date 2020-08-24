@@ -1,5 +1,6 @@
 {
   "baseUrl": "http://localhost:8000/",
   "integrationFolder": "cypress/e2e",
-  "projectId": "1b5izy"
+  "projectId": "1b5izy",
+  "video": false
 }
