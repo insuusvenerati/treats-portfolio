@@ -52,7 +52,7 @@
     "clean": "gatsby clean",
     "lint": "eslint --ext .tsx src/",
     "cy:open": "cypress open",
-    "cy:run": "cypress run --record --key 53382e56-8748-4616-9383-d52bf321dd41",
+    "cy:run": "cypress run",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
     "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
     "serve:lhci": "yarn serve",
