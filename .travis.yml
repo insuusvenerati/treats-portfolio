@@ -16,3 +16,9 @@ jobs:
     - stage: 'Release'
       if: branch = master
       script: yarn semantic-release
+
+    - stage: 'Deploy'
+      if: branch = master
+      script:
+        - yarn build
+        - yarn deploy
