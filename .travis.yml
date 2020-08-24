@@ -1,12 +1,25 @@
 language: node_js
 node_js: 14
 
+cache:
+  yarn: true
+  directories: ~/.cache
+
+stages:
+  - 'Build assets'
+  - 'Lint and e2e tests'
+  - 'Deploy and Release'
+
 jobs:
   include:
-    - stage: 'Lint'
-      cache: yarn
-      script: yarn lint
+    - stage: 'Build assets'
+    - script: yarn build
 
-    - stage: 'Release'
-      if: branch = master
-      script: yarn semantic-release
+    - stage: 'Lint and e2e tests'
+    - script: yarn lint
+    - script: yarn test:e2e:ci
+
+    - stage: 'Deploy and Release'
+      if: NOT type IN (pull_request) AND branch = master
+    - script: yarn semantic-release
+    - script: yarn deploy

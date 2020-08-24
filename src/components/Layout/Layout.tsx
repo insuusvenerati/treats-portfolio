@@ -26,11 +26,13 @@ const Layout: React.FC = ({ children }) => {
     <div className={`container ${showMenu ? 'is-open' : ''}`}>
       <HelmetDatoCms favicon={datoCmsSite.faviconMetaTags} seo={datoCmsHome.seoMetaTags} />
 
-      <div className="container__sidebar">
+      <div data-cy="sidebar-container" className="container__sidebar">
         <ImageTooltip generateRandomCatImageHandler={generateCatImageHandler} catImage={catImage} />
         <div style={{ backgroundImage: `url(${sidebar.nodes[0].fixed.src})` }} className={`sidebar`}>
           <h6 style={{ fontFamily: 'Montserrat' }} className="sidebar__title">
-            <Link to="/">{datoCmsSite.globalSeo.siteName}</Link>
+            <Link data-cy="site-title" to="/">
+              {datoCmsSite.globalSeo.siteName}
+            </Link>
           </h6>
           <div
             className="sidebar__intro"
@@ -38,7 +40,7 @@ const Layout: React.FC = ({ children }) => {
               __html: datoCmsHome.introTextNode.childMarkdownRemark.html,
             }}
           />
-          <ul className="sidebar__menu">
+          <ul data-cy="sidebar-menu" className="sidebar__menu">
             <li>
               <Link activeStyle={{ color: '#5d6b5b' }} to="/">
                 bg & illustration
@@ -55,7 +57,7 @@ const Layout: React.FC = ({ children }) => {
               </Link>
             </li>
           </ul>
-          <p className="centered">
+          <p data-cy="icon-row" className="centered">
             {allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
               <a
                 className={`social grow social--${profile.profileType.toLowerCase()}`}

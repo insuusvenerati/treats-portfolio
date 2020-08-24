@@ -1,5 +1,8 @@
 # Gatsby Portfolio Website
 
+[![Build Status](https://travis-ci.com/insuusvenerati/treats-portfolio.svg?branch=master)](https://travis-ci.com/insuusvenerati/treats-portfolio)
+[![codecov](https://codecov.io/gh/insuusvenerati/datocms-Gatsby-portfolio-demo/branch/master/graph/badge.svg)](https://codecov.io/gh/insuusvenerati/datocms-Gatsby-portfolio-demo)
+
 This repo contains a static website written with [GatsbyJS](https://www.gatsbyjs.org/), integrated with content coming from [DatoCMS](https://www.datocms.com).
 
 This is the current portfolio for LJ Norwood.
@@ -31,6 +34,7 @@ module.exports = {
 ```
 
 Env
+
 ```
 SENTRY_DSN=
 DATO_API_TOKEN=

@@ -46,7 +46,7 @@ const Form: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} name="Contact">
+    <form data-cy="contact-form" onSubmit={handleSubmit} name="Contact">
       <section>
         <FormErrorMessage />
         <FormInputs />
