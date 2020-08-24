@@ -8,18 +8,24 @@ cache:
 stages:
   - 'Build assets'
   - 'Lint and e2e tests'
-  - 'Deploy and Release'
+  - name: 'Deploy and Release'
+    if: NOT type IN (pull_request) AND branch = master
 
 jobs:
   include:
     - stage: 'Build assets'
-    - script: yarn build
+      script: yarn build
 
     - stage: 'Lint and e2e tests'
-    - script: yarn lint
-    - script: yarn test:e2e:ci
+      script: yarn lint
+
+    - stage: 'Lint and e2e tests'
+      script: yarn test:e2e:ci
 
     - stage: 'Deploy and Release'
-      if: NOT type IN (pull_request) AND branch = master
-    - script: yarn semantic-release
-    - script: yarn deploy
+      # if: NOT type IN (pull_request) AND branch = master
+      script: yarn semantic-release
+
+    - stage: 'Deploy and Release'
+      # if: NOT type IN (pull_request) AND branch = master
+      script: yarn deploy
