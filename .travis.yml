@@ -16,17 +16,10 @@ jobs:
       script: yarn build
 
     - stage: 'Lint and e2e tests'
-
-      script: yarn lint
-      name: 'Lint'
-
-      script: yarn test:e2e:ci
-      name: 'E2E'
+    - script: yarn lint
+    - script: yarn test:e2e:ci
 
     - stage: 'Deploy and Release'
       if: NOT type IN (pull_request) AND branch = master
-      script: yarn semantic-release
-      name: 'Release'
-
-      script: yarn deploy
-      name: 'Deploy'
+    - script: yarn semantic-release
+    - script: yarn deploy
