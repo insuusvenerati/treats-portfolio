@@ -4,3 +4,4 @@ gatsby-config.js
 gatsby-node.js
 gatsby-browser.js
 cypress/**/*
+instrumented

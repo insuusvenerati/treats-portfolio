@@ -21,6 +21,7 @@ jobs:
 
     - stage: 'Lint and e2e tests'
       script: yarn test:e2e:ci
+      after_success: bash <(curl -s https://codecov.io/bash)
 
     - stage: 'Deploy and Release'
       # if: NOT type IN (pull_request) AND branch = master

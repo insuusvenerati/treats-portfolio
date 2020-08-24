@@ -15,3 +15,5 @@ yarn-error.log
 /.lighthouseci/
 .sentryclirc
 cypress/videos
+coverage
+.nyc_output
