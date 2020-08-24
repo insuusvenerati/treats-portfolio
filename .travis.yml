@@ -13,7 +13,7 @@ stages:
 jobs:
   include:
     - stage: 'Build assets'
-      script: yarn build
+    - script: yarn build
 
     - stage: 'Lint and e2e tests'
     - script: yarn lint
