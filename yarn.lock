@@ -8721,10 +8721,10 @@ gatsby-telemetry@^1.3.23:
     node-fetch "2.6.0"
     uuid "3.4.0"
 
-gatsby-theme-contact@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-contact/-/gatsby-theme-contact-1.0.4.tgz#65b00190ba463f2326a996db3af84bb5b77c46db"
-  integrity sha512-2o0IcB78y3FCgr1VRS/DOghYr1/yAfvbDr1LYoAXuWMcARAO05CUuN8MDkcmhSUTs2+17yNqqIsW84phl0lA0Q==
+gatsby-theme-contact@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-contact/-/gatsby-theme-contact-1.0.6.tgz#7c3d47c49c7bf6e398d83ce7fdc975098719296f"
+  integrity sha512-gFPstBQH0dR5Vcqlqrhfcyyepa5fAo8O55OIr2eV7p5CLz533+wdlWgCzmEU/W/iDTAcTeL4hf1pWl0koddinw==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
