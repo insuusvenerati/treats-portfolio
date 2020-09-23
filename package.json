@@ -29,7 +29,7 @@
     "gatsby-plugin-scroll-reveal": "^0.0.7",
     "gatsby-plugin-sharp": "^2.6.23",
     "gatsby-plugin-sitemap": "^2.4.11",
-    "gatsby-source-datocms": "^2.3.0",
+    "gatsby-source-datocms": "^2.4.0",
     "gatsby-theme-contact": "^1.0.4",
     "gatsby-transformer-remark": "^2.8.27",
     "react": "^16.13.1",
