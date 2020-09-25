@@ -30,7 +30,7 @@
     "gatsby-plugin-scroll-reveal": "^0.0.7",
     "gatsby-plugin-sharp": "^2.6.23",
     "gatsby-plugin-sitemap": "^2.4.11",
-    "gatsby-source-datocms": "^2.3.0",
+    "gatsby-source-datocms": "^2.4.0",
     "gatsby-theme-contact": "^1.0.4",
     "gatsby-transformer-remark": "^2.8.27",
     "react": "^16.13.1",
@@ -39,7 +39,7 @@
     "react-image-lightbox": "^5.1.1",
     "react-masonry-component": "^6.2.1",
     "react-perfect-scrollbar": "^1.5.8",
-    "react-tooltip": "^4.2.7",
+    "react-tooltip": "^4.2.8",
     "sass": "^1.26.10"
   },
   "keywords": [
