@@ -8,14 +8,6 @@ const plugins = [
   `gatsby-plugin-sitemap`,
   `gatsby-plugin-typescript`,
   {
-    resolve: `gatsby-plugin-s3`,
-    options: {
-      bucketName: 'ljnorwood.com',
-      protocol: 'https',
-      hostname: 'ljnorwood.com',
-    },
-  },
-  {
     resolve: `gatsby-theme-contact`,
     options: {
       contactPath: '/contact',
@@ -71,7 +63,7 @@ const plugins = [
   {
     resolve: `gatsby-plugin-offline`,
     options: {
-      precachePages: [`/visdev/`, `/about/`, '/'],
+      precachePages: [`/visdev/`, `/about/`, '/shop'],
     },
   },
   `gatsby-plugin-codegen`,
