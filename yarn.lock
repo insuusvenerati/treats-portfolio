@@ -9407,10 +9407,10 @@ gatsby-recipes@^0.1.57:
     ws "^7.3.0"
     xstate "^4.11.0"
 
-gatsby-source-datocms@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-datocms/-/gatsby-source-datocms-2.3.0.tgz#ab59b92da0ed18b2572a96032cce83971d25c4bb"
-  integrity sha512-K/GIdUBV2LmM5opu9SPbl2C0tcD2V3zBHotLVguyWvLSfaakHeK/El2bYU2vLnbvQ1tEgmDUFF7qe8ZUfwxstw==
+gatsby-source-datocms@^2.4.0:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-datocms/-/gatsby-source-datocms-2.4.1.tgz#3f413f5c2d2197fae82b42d3e4401ef5aebc6bda"
+  integrity sha512-MR6JrAHcQhUs+KRJtUd2qKpQd2fA84nrj8KO4vl6G6xP9ATN5mh5wsVEBYE75RxCVfADAfzMIvAhAtTuY75HqQ==
   dependencies:
     core-js "^3.2.1"
     datocms-client ">=3.0.34"
@@ -16717,10 +16717,10 @@ react-social-icons@^4.1.0:
   dependencies:
     prop-types "^15.6.2"
 
-react-tooltip@^4.2.7:
-  version "4.2.7"
-  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-4.2.7.tgz#245b26aa23bc8ca877f9086ad169207d77281894"
-  integrity sha512-z5T3gNplT76rkT7ZImfx/uXfBtS+x7+WK2H8MVZ5skSwETDDx0hs0+P0jwL5gYDaBvsZ7LYiCBzAOd3tN85CMA==
+react-tooltip@^4.2.8:
+  version "4.2.9"
+  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-4.2.9.tgz#0dd08d14191f5d0e56b51c822fa20c2d81a24272"
+  integrity sha512-DgZyg5oxk9/orgePDLLeuDtlwwYv7CalJRahk9nNsoEJDzIO58GC6zSAet4bKTm6c01hg1z3EocP9H0nmMHTMA==
   dependencies:
     prop-types "^15.7.2"
     uuid "^7.0.3"
