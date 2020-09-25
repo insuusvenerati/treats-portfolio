@@ -50,7 +50,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "npx -n \"-r dotenv/config\" gatsby-plugin-s3 deploy --yes",
+    "deploy:firebase": "firebase deploy",
+    "serve:firebase": "firebase serve --only hosting",
     "serve": "gatsby serve --host=0.0.0.0",
     "clean": "gatsby clean",
     "lint": "eslint --ext .tsx src/",

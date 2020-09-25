@@ -1,6 +1,6 @@
-import './src/styles/index.sass';
 import * as Sentry from '@sentry/react';
 import packageJson from './package.json';
+import './src/styles/index.sass';
 
 export const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(

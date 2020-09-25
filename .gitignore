@@ -17,3 +17,4 @@ yarn-error.log
 cypress/videos
 coverage
 .nyc_output
+.firebase
