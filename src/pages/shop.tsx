@@ -1,20 +1,30 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Masonry from 'react-masonry-component';
-import useSWR from 'swr';
 import Layout from '../components/Layout';
+import { ShopPageQuery } from './__generated__/ShopPageQuery';
 
-const url = `https://api.gumroad.com/v2/products?access_token=${process.env.GATSBY_GUMROAD_ACCESS_TOKEN}`;
+export const query = graphql`
+  query ShopPageQuery {
+    allGumroadProductType {
+      edges {
+        node {
+          id
+          image
+          name
+          url
+        }
+      }
+    }
+  }
+`;
 
-/*
- @todo Type useSWR
-*/
-const Shop = (): JSX.Element => {
-  const { data } = useSWR(url, (url) => fetch(url).then((res) => res.json()));
+type Data = {
+  data: ShopPageQuery;
+};
 
+const Shop = ({ data }: Data): JSX.Element => {
   return (
     <>
       <Helmet>
@@ -22,15 +32,15 @@ const Shop = (): JSX.Element => {
       </Helmet>
       <Layout>
         <Masonry className="showcase">
-          {!data ? (
+          {!data.allGumroadProductType.edges ? (
             <h1>Loading...</h1>
           ) : (
-            data.products.map((product) => {
+            data.allGumroadProductType.edges.map(({ node: product }) => {
               return (
                 <div key={product.id} role="presentation" className="showcase__item">
                   <figure className="card">
-                    <img className="card__image" src={product.preview_url} alt="" />
-                    <a className="gumroad-button" href={product.short_url}>
+                    <img className="card__image" src={product.image} alt="" />
+                    <a className="gumroad-button" href={product.url}>
                       Buy my product
                     </a>
                   </figure>
