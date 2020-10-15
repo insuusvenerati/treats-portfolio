@@ -6128,10 +6128,10 @@ dateformat@^3.0.0:
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
   integrity sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==
 
-datocms-client@>=3.0.34:
-  version "3.0.34"
-  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-3.0.34.tgz#1d4eb6df62201d809ad76256b073507eef601188"
-  integrity sha512-qLF1zNW7T251ImaVYJaWUdI17UfZiO/nECsTSGNQvxpZw2YT/n2jgy6RiPs76dBxgU1cRw7eVr5gIoO+jjoUSg==
+datocms-client@>=3.1.0:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-3.1.1.tgz#eb54a5fa26662cbb17bf390d1d831a4b97baaa62"
+  integrity sha512-6i4ZK/TjcYvoRLZfNz46aNc4EoINe619f7TsrcD6OgHCH2YvWv2Yu1Z4V1dXPHVnssvGn9Kgm+F8Zs3vsemdJA==
   dependencies:
     "@iarna/toml" "^2.2.3"
     arr-diff "^4.0.0"
@@ -6160,6 +6160,7 @@ datocms-client@>=3.0.34:
     ora "4.0.3"
     pluralize "^8.0.0"
     pretty-error "^2.1.1"
+    promise-limit "^2.7.0"
     proxy-polyfill "^0.3.0"
     pusher-js "^5.0.3"
     qs "^6.9.1"
@@ -6167,6 +6168,7 @@ datocms-client@>=3.0.34:
     request "^2.88.0"
     rimraf "^3.0.0"
     speakingurl "^14.0.1"
+    terser-webpack-plugin "^1.4.2"
     tmp "^0.1.0"
     traverse "^0.6.6"
     truncate "^2.1.0"
@@ -8696,16 +8698,16 @@ gatsby-recipes@^0.1.57:
     ws "^7.3.0"
     xstate "^4.11.0"
 
-gatsby-source-datocms@^2.4.0:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/gatsby-source-datocms/-/gatsby-source-datocms-2.4.1.tgz#3f413f5c2d2197fae82b42d3e4401ef5aebc6bda"
-  integrity sha512-MR6JrAHcQhUs+KRJtUd2qKpQd2fA84nrj8KO4vl6G6xP9ATN5mh5wsVEBYE75RxCVfADAfzMIvAhAtTuY75HqQ==
+gatsby-source-datocms@^2.5.2:
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/gatsby-source-datocms/-/gatsby-source-datocms-2.5.7.tgz#53f0849352f60d24159726a41f9ce4d2683bfea8"
+  integrity sha512-UniBNNEX+CIgTI+hDIpRZL0Sdq1+KNg63/EcNHA0sVWeTyVYSVlT2u57yTeneDP9Yxcec/PM+57x/pds+OAiBw==
   dependencies:
     core-js "^3.2.1"
-    datocms-client ">=3.0.34"
+    datocms-client ">=3.1.0"
     fs-extra ">=8.1.0"
     humps ">=2.0.1"
-    imgix-url-params "11.2.0"
+    imgix-url-params ">=11.2.0"
     json-stringify-safe ">=5.0.1"
     md5 "2.2.1"
     object-assign "^4.1.1"
@@ -10236,10 +10238,10 @@ imagesloaded@^4.0.0:
   dependencies:
     ev-emitter "^1.0.0"
 
-imgix-url-params@11.2.0:
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/imgix-url-params/-/imgix-url-params-11.2.0.tgz#77dace7df4980067b35b49da5c5db68bec2d9112"
-  integrity sha512-KSSnTUFMOlbgUr4S2jKhiDGfsmtH18MCV27OhbhQhB2obUM/XXrdx8B6ZyG5t/xaJKJHD/nB8cCLqNYm3ypDrg==
+imgix-url-params@>=11.2.0:
+  version "11.9.1"
+  resolved "https://registry.yarnpkg.com/imgix-url-params/-/imgix-url-params-11.9.1.tgz#b8ac85fd666aa72a1d0a985336407612d4504d59"
+  integrity sha512-qWrqFegX9hQmQ+mhoxbg8cBQRrvskdYS5KXiAv/n1m775giZPqsZhIx+qWkdGkKAMG3We+pafcP+VRqEJVgX9Q==
 
 import-cwd@^2.0.0:
   version "2.1.0"
@@ -15228,6 +15230,11 @@ promise-inflight@^1.0.1, promise-inflight@~1.0.1:
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
 
+promise-limit@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/promise-limit/-/promise-limit-2.7.0.tgz#eb5737c33342a030eaeaecea9b3d3a93cb592b26"
+  integrity sha512-7nJ6v5lnJsXwGprnGXga4wx6d1POjvi5Qmf1ivTRxTjH4Z/9Czja/UCMLVmB9N93GeWOU93XaFaEt6jbuoagNw==
+
 promise-queue@2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/promise-queue/-/promise-queue-2.2.5.tgz#2f6f5f7c0f6d08109e967659c79b88a9ed5e93b4"
@@ -16799,6 +16806,13 @@ serialize-javascript@^3.1.0:
   dependencies:
     randombytes "^2.1.0"
 
+serialize-javascript@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-4.0.0.tgz#b525e1238489a5ecfc42afacc3fe99e666f4b1aa"
+  integrity sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==
+  dependencies:
+    randombytes "^2.1.0"
+
 serve-index@^1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/serve-index/-/serve-index-1.9.1.tgz#d3768d69b1e7d82e5ce050fff5b453bea12a9239"
@@ -18130,6 +18144,21 @@ terminal-link@^2.1.1:
   dependencies:
     ansi-escapes "^4.2.1"
     supports-hyperlinks "^2.0.0"
+
+terser-webpack-plugin@^1.4.2:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-1.4.5.tgz#a217aefaea330e734ffacb6120ec1fa312d6040b"
+  integrity sha512-04Rfe496lN8EYruwi6oPQkG0vo8C+HT49X687FZnpPF0qMAIHONI6HEXYPKDOE8e5HjXTyKfqRd/agHtH0kOtw==
+  dependencies:
+    cacache "^12.0.2"
+    find-cache-dir "^2.1.0"
+    is-wsl "^1.1.0"
+    schema-utils "^1.0.0"
+    serialize-javascript "^4.0.0"
+    source-map "^0.6.1"
+    terser "^4.1.2"
+    webpack-sources "^1.4.0"
+    worker-farm "^1.7.0"
 
 terser-webpack-plugin@^1.4.3, terser-webpack-plugin@^1.4.4:
   version "1.4.4"
