@@ -1,5 +1,5 @@
-import React from 'react';
 import Img, { FluidObject } from 'gatsby-image';
+import React from 'react';
 import {
   BGTags_desktopBgImage_edges,
   BGTags_desktopBgImage_edges_node,
