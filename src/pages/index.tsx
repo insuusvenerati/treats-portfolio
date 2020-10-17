@@ -1,8 +1,8 @@
-import * as React from 'react';
-import Layout from '../components/Layout';
-import BgImageContainer from '../components/BgImageContainer';
-import { PageProps } from 'gatsby';
 import * as Sentry from '@sentry/react';
+import { PageProps } from 'gatsby';
+import * as React from 'react';
+import BgImageContainer from '../components/BgImageContainer';
+import Layout from '../components/Layout';
 
 const IndexPage: React.FC<PageProps> = () => (
   <Layout>

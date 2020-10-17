@@ -1,31 +1,36 @@
 language: node_js
 node_js: 14
-
 cache:
   yarn: true
-  directories: ~/.cache
-
+  directories: '~/.cache'
 stages:
-  - 'Build assets'
-  - 'Lint and e2e tests'
-  - name: 'Deploy and Release'
-    if: NOT type IN (pull_request) AND branch = master
-
+  - Build assets
+  - Lint and e2e tests
+  # - name: Deploy and Release
+  #   if: NOT type IN (pull_request) AND branch = master
 jobs:
   include:
-    - stage: 'Build assets'
+    - stage: Build assets
       script: yarn build
-
-    - stage: 'Lint and e2e tests'
+    - stage: Lint and e2e tests
       script: yarn lint
-
-    - stage: 'Lint and e2e tests'
+    - stage: Lint and e2e tests
       script: yarn test:e2e:ci
+      after_success: bash <(curl -s https://codecov.io/bash)
+    # - stage: Deploy and Release
+    #   script:
+    #     - yarn build
+    #     - yarn deploy
+    # - stage: Deploy and Release
+    #   script: yarn semantic-release
 
-    - stage: 'Deploy and Release'
-      # if: NOT type IN (pull_request) AND branch = master
-      script: yarn semantic-release
+deploy:
+  provider: firebase
+  token:
+    secure: 'y/0n+WbEv//FNUdKsRPziE0W7ch6JQ9qEoPpqhzegt6zgZUdJtT5cYVRJwwUCrP1ZJMwCsscPxuBJpnA1g+2KhIPvAb4q+QR22rkJdyDjK0NO8Jb9mAXQTLXH0Nv6x6kx/F4qBDIp6m5muIgc539se9w2QqUQAfeaqhM3fpfOc8b3LMr75D5/17qsrzE55/7MkjQuxqsRoYpUy4dIDneK5Hd0iWCdlinlLOgXQxVg/H7FwCd8RBieUmnmoDupVY5Lz9yQ08BvijV/Gyg4IhJwYP2TuT0za7sVmmysFT5kFWQ8KJqqEBOOEBzg0hCOKgFp+DW5tzOwz6z70E8ofa2FvdZ2kc7bC75VzT30e/2OLuyHUFHisjgPu4s7/eDTKRQSvLPzJh8e8WsewxhzYWK/RNOtkVZlLub8IRXXDp+QNCI0TYb52qGeuTgtC61nX5NMqKE3YL/SRRy47rowkotFs2YuQd4fMNELdRSc93akQHbAUtOFkcc6yz6aPG9KSVqq5mUpLMvCMbfvH9MzzVOJyd2jBo2oObs9DiBKPzT8+igtmMZy/dJEVfx0pGRwOLaP87WeJ3T/nxXqxdWuSSMsBpEU7trzHiTnywR9vA5O9+VtjDbtA549TWiJAdYQXjTEK8wybF+wGh/W3/PnovvtZEm3H/PcPgqZNLuuYsoHhQ='
+  on:
+    branch: master
+    condition: NOT type IN (pull_request) AND branch = master
 
-    - stage: 'Deploy and Release'
-      # if: NOT type IN (pull_request) AND branch = master
-      script: yarn deploy
+after_deploy:
+  - yarn semantic-release
