@@ -13,7 +13,6 @@ const Layout: React.FC = ({ children }) => {
     datoCmsHome,
     allDatoCmsSocialProfile,
     sidebar,
-    social,
     catImages: { nodes: catImages },
   } = useLayoutData();
   const [catImage, setCatImage] = useState(catImages[0].fixed);
