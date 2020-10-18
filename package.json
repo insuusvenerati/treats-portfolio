@@ -27,7 +27,6 @@
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-s3": "^0.3.5",
     "gatsby-plugin-sass": "^2.3.12",
-    "gatsby-plugin-scroll-reveal": "^0.0.7",
     "gatsby-plugin-sharp": "^2.6.23",
     "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-source-datocms": "^2.4.0",

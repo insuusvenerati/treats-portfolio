@@ -49,13 +49,6 @@ const plugins = [
     },
   },
   `gatsby-transformer-remark`,
-
-  {
-    resolve: `gatsby-plugin-scroll-reveal`,
-    options: {
-      threshold: 0.1,
-    },
-  },
   {
     resolve: 'gatsby-source-datocms',
     options: {
