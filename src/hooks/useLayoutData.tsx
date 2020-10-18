@@ -29,13 +29,18 @@ const useLayoutData = (): LayoutQuery => {
             node {
               profileType
               url
+              icon {
+                fluid(maxWidth: 60, imgixParams: { fm: "webp" }) {
+                  ...GatsbyDatoCmsFluid_noBase64
+                }
+              }
             }
           }
         }
         sidebar: allDatoCmsAsset(filter: { tags: { eq: "sidebar" } }) {
           nodes {
             fixed(width: 225) {
-              ...GatsbyDatoCmsFixed
+              ...GatsbyDatoCmsFixed_noBase64
               src
             }
           }
@@ -43,8 +48,13 @@ const useLayoutData = (): LayoutQuery => {
         catImages: allDatoCmsAsset(filter: { tags: { eq: "cats" } }) {
           nodes {
             fixed(width: 149) {
-              ...GatsbyDatoCmsFixed
+              ...GatsbyDatoCmsFixed_noBase64
             }
+          }
+        }
+        catIcon: datoCmsAsset(tags: { eq: "caticon" }) {
+          fixed(width: 60, imgixParams: { fm: "webp" }) {
+            ...GatsbyDatoCmsFixed_noBase64
           }
         }
       }

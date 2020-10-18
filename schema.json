@@ -2067,6 +2067,16 @@
                   "defaultValue": null
                 },
                 {
+                  "name": "icon",
+                  "description": "",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "DatoCmsFileFieldFilterInput",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
                   "name": "position",
                   "description": "",
                   "type": {
@@ -10278,16 +10288,6 @@
               "defaultValue": null
             },
             {
-              "name": "threshold",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "FloatQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "apiToken",
               "description": "",
               "type": {
@@ -11272,18 +11272,6 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "threshold",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Float",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -12730,12 +12718,6 @@
             },
             {
               "name": "pluginCreator___pluginOptions___cacheDigest",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginCreator___pluginOptions___threshold",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -27142,6 +27124,297 @@
           "possibleTypes": null
         },
         {
+          "kind": "INPUT_OBJECT",
+          "name": "DatoCmsFileFieldFilterInput",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "size",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "IntQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "width",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "IntQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "height",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "IntQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "path",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "format",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "isImage",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BooleanQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdAt",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "DateQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "url",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "notes",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "author",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "copyright",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "originalId",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "tags",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "smartTags",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "filename",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "basename",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "exifInfo",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "JSONQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "mimeType",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "colors",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "DatoCmsColorFieldFilterListInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "blurhash",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "video",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "DatoCmsAssetVideoFilterInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "fluid",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "DatoCmsFluidFilterInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "sizes",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "DatoCmsFluidFilterInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "fixed",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "DatoCmsFixedFilterInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "resolutions",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "DatoCmsFixedFilterInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "alt",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "title",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "customData",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "JSONQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
           "kind": "OBJECT",
           "name": "DatoCmsSocialProfile",
           "description": null,
@@ -27189,6 +27462,18 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "JSON",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "DatoCmsFileField",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -27347,6 +27632,550 @@
           "possibleTypes": null
         },
         {
+          "kind": "OBJECT",
+          "name": "DatoCmsFileField",
+          "description": null,
+          "fields": [
+            {
+              "name": "size",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "width",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "height",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "path",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "format",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "isImage",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "createdAt",
+              "description": null,
+              "args": [
+                {
+                  "name": "formatString",
+                  "description": "Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "fromNow",
+                  "description": "Returns a string generated with Moment.js' `fromNow` function",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "difference",
+                  "description": "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "locale",
+                  "description": "Configures the locale Moment.js will use to format the date.",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Date",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "url",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "notes",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "author",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "copyright",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "originalId",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "tags",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "smartTags",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "filename",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "basename",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "exifInfo",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "JSON",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "mimeType",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "colors",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "DatoCmsColorField",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "blurhash",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "video",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "DatoCmsAssetVideo",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "fluid",
+              "description": null,
+              "args": [
+                {
+                  "name": "maxWidth",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": "800"
+                },
+                {
+                  "name": "maxHeight",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "sizes",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "imgixParams",
+                  "description": null,
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "DatoCmsImgixParams",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "DatoCmsFluid",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "sizes",
+              "description": null,
+              "args": [
+                {
+                  "name": "maxWidth",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": "800"
+                },
+                {
+                  "name": "maxHeight",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "sizes",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "imgixParams",
+                  "description": null,
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "DatoCmsImgixParams",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "DatoCmsFluid",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "fixed",
+              "description": null,
+              "args": [
+                {
+                  "name": "width",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": "400"
+                },
+                {
+                  "name": "height",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "imgixParams",
+                  "description": null,
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "DatoCmsImgixParams",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "DatoCmsFixed",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "resolutions",
+              "description": null,
+              "args": [
+                {
+                  "name": "width",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": "400"
+                },
+                {
+                  "name": "height",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "imgixParams",
+                  "description": null,
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "DatoCmsImgixParams",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "DatoCmsFixed",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "alt",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "customData",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "JSON",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
           "kind": "INPUT_OBJECT",
           "name": "DatoCmsSocialProfileFilterInput",
           "description": null,
@@ -27388,6 +28217,16 @@
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "JSONQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "icon",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "DatoCmsFileFieldFilterInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -27567,6 +28406,408 @@
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
+            },
+            {
+              "name": "icon___size",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___width",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___height",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___path",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___format",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___isImage",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___createdAt",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___url",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___notes",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___author",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___copyright",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___originalId",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___tags",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___smartTags",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___filename",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___basename",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___exifInfo",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___mimeType",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___colors",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___colors___red",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___colors___green",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___colors___blue",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___colors___alpha",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___colors___rgb",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___colors___hex",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___blurhash",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___video___muxPlaybackId",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___video___frameRate",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___video___duration",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___video___streamingUrl",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "icon___video___thumbnailUrl",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___video___mp4Url",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fluid___base64",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fluid___tracedSVG",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fluid___aspectRatio",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fluid___width",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fluid___height",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fluid___src",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fluid___srcSet",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fluid___sizes",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___sizes___base64",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___sizes___tracedSVG",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___sizes___aspectRatio",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___sizes___width",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___sizes___height",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___sizes___src",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___sizes___srcSet",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___sizes___sizes",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fixed___base64",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fixed___tracedSVG",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fixed___aspectRatio",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fixed___width",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fixed___height",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fixed___src",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fixed___srcSet",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___fixed___sizes",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___resolutions___base64",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___resolutions___tracedSVG",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___resolutions___aspectRatio",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___resolutions___width",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___resolutions___height",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___resolutions___src",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___resolutions___srcSet",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___resolutions___sizes",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___alt",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___title",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+            },
+            {
+              "name": "icon___customData",
+              "description": null,
+              "isDeprecated": true,
+              "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
             },
             {
               "name": "position",
@@ -29125,297 +30366,6 @@
           "possibleTypes": null
         },
         {
-          "kind": "INPUT_OBJECT",
-          "name": "DatoCmsFileFieldFilterInput",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "size",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "IntQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "width",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "IntQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "height",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "IntQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "path",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "format",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "isImage",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdAt",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "DateQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "url",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "notes",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "author",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "copyright",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "originalId",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "tags",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "smartTags",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "filename",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "basename",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "exifInfo",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "JSONQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "mimeType",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "colors",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "DatoCmsColorFieldFilterListInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "blurhash",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "video",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "DatoCmsAssetVideoFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "fluid",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "DatoCmsFluidFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "sizes",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "DatoCmsFluidFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "fixed",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "DatoCmsFixedFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "resolutions",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "DatoCmsFixedFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "alt",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "title",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "StringQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "customData",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "JSONQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
           "kind": "OBJECT",
           "name": "DatoCmsAboutPage",
           "description": null,
@@ -29641,550 +30591,6 @@
               "ofType": null
             }
           ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "DatoCmsFileField",
-          "description": null,
-          "fields": [
-            {
-              "name": "size",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "width",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "height",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "path",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "format",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "isImage",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "createdAt",
-              "description": null,
-              "args": [
-                {
-                  "name": "formatString",
-                  "description": "Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "fromNow",
-                  "description": "Returns a string generated with Moment.js' `fromNow` function",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Boolean",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "difference",
-                  "description": "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "locale",
-                  "description": "Configures the locale Moment.js will use to format the date.",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Date",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "url",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "notes",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "author",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "copyright",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "originalId",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "tags",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "smartTags",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "filename",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "basename",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "exifInfo",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "JSON",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "mimeType",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "colors",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "DatoCmsColorField",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "blurhash",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "video",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "DatoCmsAssetVideo",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "fluid",
-              "description": null,
-              "args": [
-                {
-                  "name": "maxWidth",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": "800"
-                },
-                {
-                  "name": "maxHeight",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "sizes",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "imgixParams",
-                  "description": null,
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "DatoCmsImgixParams",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "DatoCmsFluid",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "sizes",
-              "description": null,
-              "args": [
-                {
-                  "name": "maxWidth",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": "800"
-                },
-                {
-                  "name": "maxHeight",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "sizes",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "imgixParams",
-                  "description": null,
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "DatoCmsImgixParams",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "DatoCmsFluid",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "fixed",
-              "description": null,
-              "args": [
-                {
-                  "name": "width",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": "400"
-                },
-                {
-                  "name": "height",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "imgixParams",
-                  "description": null,
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "DatoCmsImgixParams",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "DatoCmsFixed",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "resolutions",
-              "description": null,
-              "args": [
-                {
-                  "name": "width",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": "400"
-                },
-                {
-                  "name": "height",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "imgixParams",
-                  "description": null,
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "DatoCmsImgixParams",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "DatoCmsFixed",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "alt",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "title",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "customData",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "JSON",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
           "enumValues": null,
           "possibleTypes": null
         },
@@ -45966,12 +46372,6 @@
             },
             {
               "name": "pluginOptions___cacheDigest",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "pluginOptions___threshold",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null

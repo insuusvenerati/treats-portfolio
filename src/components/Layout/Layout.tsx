@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import 'react-image-lightbox/style.css';
 import useLayoutData from '../../hooks/useLayoutData';
 import ImageTooltip from '../ImageTooltip/ImageTooltip';
+import Img from 'gatsby-image';
 
 const Layout: React.FC = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -57,10 +58,10 @@ const Layout: React.FC = ({ children }) => {
               </Link>
             </li>
           </ul>
-          <p data-cy="icon-row" className="centered">
+          <div data-cy="icon-row" className="centered">
             {allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
               <a
-                className={`social grow social--${profile.profileType.toLowerCase()}`}
+                className={`social grow`}
                 key={profile.profileType}
                 style={{
                   cursor: 'pointer',
@@ -69,7 +70,7 @@ const Layout: React.FC = ({ children }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <span />
+                <Img alt={profile.profileType} fluid={profile.icon.fluid} />
               </a>
             ))}
             <a style={{ width: '55px' }}>
@@ -81,7 +82,7 @@ const Layout: React.FC = ({ children }) => {
                 style={{ cursor: 'pointer' }}
               />
             </a>
-          </p>
+          </div>
         </div>
       </div>
       <div className="container__body">
