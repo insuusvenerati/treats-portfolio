@@ -62,7 +62,7 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@cypress/code-coverage": "3.8.1",
+    "@cypress/code-coverage": "3.9.2",
     "@lhci/cli": "0.4.3",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/commit-analyzer": "8.0.1",
