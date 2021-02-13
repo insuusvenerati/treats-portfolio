@@ -2637,6 +2637,13 @@
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-0.0.30.tgz#dc1e40f7af3b9c815013a7860e6252f6352a84df"
   integrity sha512-orGL5LXERPYsLov6CWs3Fh6203+dXzJkR7OnddIr2514Hsecwc8xRpzCapshBbKFImCsvS/mk6+FWiN5LyZJAQ==
 
+"@types/dotenv@^8.2.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@types/dotenv/-/dotenv-8.2.0.tgz#5cd64710c3c98e82d9d15844375a33bf1b45d053"
+  integrity sha512-ylSC9GhfRH7m1EUXBXofhgx4lUWmFeQDINW5oLuS+gxWdfUeW4zJdeVTYVkexEW+e2VUvlZR2kGnGGipAWR7kw==
+  dependencies:
+    dotenv "*"
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
@@ -3055,6 +3062,13 @@
   integrity sha512-GGG9fzDRscuLdYVpJSTOfTPLHHEXadrUI/LNZ0vAIXrof5whWL8Nyxc2x2EhilrajZ+7DgZUuT+nuiVF4/Z7fA==
   dependencies:
     wonka "^4.0.14"
+
+"@wardpeet/gatsby-image-nextgen@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@wardpeet/gatsby-image-nextgen/-/gatsby-image-nextgen-0.0.1.tgz#f64795f1f9d8f78fac6c00fb91f09781940bd563"
+  integrity sha512-7L6O1RjmogC07NbXO4Av+XSCbetoP2YtkYqYa0ga4/rSp57rp61pBPP7apW+Y3PqTT9avs/y+kCgwC/oJbqcWQ==
+  dependencies:
+    prop-types "^15.7.2"
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -7305,7 +7319,7 @@ dot-prop@^5.1.0, dot-prop@^5.2.0:
   dependencies:
     is-obj "^2.0.0"
 
-dotenv@8.2.0, dotenv@^8.0.0, dotenv@^8.2.0:
+dotenv@*, dotenv@8.2.0, dotenv@^8.0.0, dotenv@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
   integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
