@@ -27,6 +27,7 @@ steps:
   - name: tests
     image: cypress/included:6.5.0
     commands:
+      - cypress install
       - yarn test:e2e:ci
     environment:
       DATO_API_TOKEN:
