@@ -31,6 +31,15 @@ steps:
       GATSBY_SENTRY_DSN:
         from_secret: GATSBY_SENTRY_DSN
 
+  - name: deploy
+    image: sofixa/drone-firebase
+    token: $$FIREBASE_TOKEN
+    message: Autodeploy of commit $$COMMIT
+    targets: hosting
+    environment:
+      FIREBASE_TOKEN:
+        from_secret: FIREBASE_TOKEN
+
 volumes:
   - name: cypress-cache
     host:
