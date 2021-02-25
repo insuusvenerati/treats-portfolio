@@ -24,17 +24,6 @@ steps:
       GATSBY_SENTRY_DSN:
         from_secret: GATSBY_SENTRY_DSN
 
-  - name: tests
-    image: cypress/included:6.5.0
-    commands:
-      - cypress install
-      - yarn test:e2e:ci
-    environment:
-      DATO_API_TOKEN:
-        from_secret: DATO_API_TOKEN
-      GATSBY_SENTRY_DSN:
-        from_secret: GATSBY_SENTRY_DSN
-
   - name: rebuild-cache
     image: drillster/drone-volume-cache
     volumes:
@@ -45,6 +34,17 @@ steps:
       mount:
         - ./.cache
         - /root/.cache
+
+  - name: tests
+    image: cypress/included:6.5.0
+    commands:
+      - cypress install
+      - yarn test:e2e:ci
+    environment:
+      DATO_API_TOKEN:
+        from_secret: DATO_API_TOKEN
+      GATSBY_SENTRY_DSN:
+        from_secret: GATSBY_SENTRY_DSN
 
 volumes:
   - name: cache
