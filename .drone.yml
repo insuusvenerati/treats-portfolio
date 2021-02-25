@@ -10,13 +10,13 @@ steps:
     settings:
       restore: true
       mount:
-        - ./node_modules
         - ./.cache
+        - /root/.cache
 
   - name: 'build and install'
     image: node
     commands:
-      - yarn install
+      - yarn install --frozen-lockfile
       - yarn build
     environment:
       DATO_API_TOKEN:
@@ -42,8 +42,8 @@ steps:
     settings:
       rebuild: true
       mount:
-        - ./node_modules
         - ./.cache
+        - /root/.cache
 
 volumes:
   - name: cache
