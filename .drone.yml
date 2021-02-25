@@ -1,0 +1,42 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: restore-cache
+    image: drillster/drone-volume-cache
+    volumes:
+      - name: cache
+        path: /cache
+    settings:
+      restore: true
+      mount:
+        - ./node_modules
+        - ./.cache
+
+  - name: test
+    image: node
+    commands:
+      - yarn install
+      - yarn build
+      - yarn test:e2e:ci
+    environment:
+      DATO_API_TOKEN:
+        from_secret: DATO_API_TOKEN
+      GATSBY_SENTRY_DSN:
+        from_secret: GATSBY_SENTRY_DSN
+
+  - name: rebuild-cache
+    image: drillster/drone-volume-cache
+    volumes:
+      - name: cache
+        path: /cache
+    settings:
+      rebuild: true
+      mount:
+        - ./node_modules
+        - ./.cache
+
+volumes:
+  - name: cache
+    host:
+      path: /tmp/cache
