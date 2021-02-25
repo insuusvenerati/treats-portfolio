@@ -1,20 +1,13 @@
 kind: pipeline
+type: docker
 name: default
 
 steps:
-  - name: restore-cache
-    image: drillster/drone-volume-cache
-    volumes:
-      - name: cache
-        path: /cache
-    settings:
-      restore: true
-      mount:
-        - ./.cache
-        - /root/.cache
-
   - name: 'build and install'
-    image: node
+    image: cypress/included:6.5.0
+    volumes:
+      - name: cypress-cache
+        path: /root/.cache/Cypress
     commands:
       - yarn install --frozen-lockfile
       - yarn build
@@ -24,19 +17,11 @@ steps:
       GATSBY_SENTRY_DSN:
         from_secret: GATSBY_SENTRY_DSN
 
-  - name: rebuild-cache
-    image: drillster/drone-volume-cache
-    volumes:
-      - name: cache
-        path: /cache
-    settings:
-      rebuild: true
-      mount:
-        - ./.cache
-        - /root/.cache
-
   - name: tests
     image: cypress/included:6.5.0
+    volumes:
+      - name: cypress-cache
+        path: /root/.cache/Cypress
     commands:
       - cypress install
       - yarn test:e2e:ci
@@ -47,6 +32,6 @@ steps:
         from_secret: GATSBY_SENTRY_DSN
 
 volumes:
-  - name: cache
+  - name: cypress-cache
     host:
-      path: /tmp/cache
+      path: /tmp/cypress-cache
