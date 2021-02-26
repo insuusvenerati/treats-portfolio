@@ -3,7 +3,7 @@ type: docker
 name: default
 
 steps:
-  - name: install_deps
+  - name: install
     image: cypress/included:6.5.0
     volumes:
       - name: cypress-cache
@@ -24,7 +24,7 @@ steps:
       GATSBY_SENTRY_DSN:
         from_secret: GATSBY_SENTRY_DSN
     depends_on:
-      - install_deps
+      - install
 
   - name: tests
     image: cypress/included:6.5.0
@@ -40,7 +40,7 @@ steps:
       GATSBY_SENTRY_DSN:
         from_secret: GATSBY_SENTRY_DSN
     depends_on:
-      - install_deps
+      - install
 
   - name: deploy
     image: node
