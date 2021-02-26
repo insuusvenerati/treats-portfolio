@@ -5,17 +5,11 @@ name: default
 steps:
   - name: install
     image: cypress/included:6.5.0
-    volumes:
-      - name: cypress-cache
-        path: /root/.cache/Cypress
     commands:
       - yarn install --frozen-lockfile
 
   - name: build
     image: cypress/included:6.5.0
-    volumes:
-      - name: cypress-cache
-        path: /root/.cache/Cypress
     commands:
       - yarn build
     environment:
@@ -26,21 +20,18 @@ steps:
     depends_on:
       - install
 
-  - name: tests
-    image: cypress/included:6.5.0
-    volumes:
-      - name: cypress-cache
-        path: /root/.cache/Cypress
-    commands:
-      - cypress install
-      - yarn test:e2e:ci
-    environment:
-      DATO_API_TOKEN:
-        from_secret: DATO_API_TOKEN
-      GATSBY_SENTRY_DSN:
-        from_secret: GATSBY_SENTRY_DSN
-    depends_on:
-      - install
+  # - name: tests
+  #   image: cypress/included:6.5.0
+  #   commands:
+  #     - cypress install
+  #     - yarn test:e2e:ci
+  #   environment:
+  #     DATO_API_TOKEN:
+  #       from_secret: DATO_API_TOKEN
+  #     GATSBY_SENTRY_DSN:
+  #       from_secret: GATSBY_SENTRY_DSN
+  #   depends_on:
+  #     - install
 
   - name: deploy
     image: node
@@ -57,7 +48,6 @@ steps:
           - pull_request
     depends_on:
       - build
-      - tests
 
   - name: semantic-release
     image: node
@@ -69,12 +59,9 @@ steps:
       event:
         exclude:
           - pull_request
+    environment:
+      GH_TOKEN:
+        from_secret: GH_TOKEN
     depends_on:
       - build
-      - tests
       - deploy
-
-volumes:
-  - name: cypress-cache
-    host:
-      path: /tmp/cypress-cache
