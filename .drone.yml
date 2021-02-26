@@ -36,7 +36,8 @@ steps:
   - name: deploy
     image: node
     commands:
-      - npx firebase-ci deploy
+      - yarn global add firebase-tools firebase-ci
+      - firebase-ci deploy
     environment:
       FIREBASE_TOKEN:
         from_secret: FIREBASE_TOKEN
