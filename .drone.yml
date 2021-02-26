@@ -5,17 +5,17 @@ name: default
 steps:
   - name: install
     image: cypress/included:6.5.0
-    volumes:
-      - name: cypress-cache
-        path: /root/.cache/Cypress
+    # volumes:
+    #   - name: cypress-cache
+    #     path: /root/.cache/Cypress
     commands:
       - yarn install --frozen-lockfile
 
   - name: build
     image: cypress/included:6.5.0
-    volumes:
-      - name: cypress-cache
-        path: /root/.cache/Cypress
+    # volumes:
+    #   - name: cypress-cache
+    #     path: /root/.cache/Cypress
     commands:
       - yarn build
     environment:
@@ -28,9 +28,9 @@ steps:
 
   - name: tests
     image: cypress/included:6.5.0
-    volumes:
-      - name: cypress-cache
-        path: /root/.cache/Cypress
+    # volumes:
+    #   - name: cypress-cache
+    #     path: /root/.cache/Cypress
     commands:
       - cypress install
       - yarn test:e2e:ci
@@ -73,8 +73,7 @@ steps:
       - build
       - tests
       - deploy
-
-volumes:
-  - name: cypress-cache
-    host:
-      path: /tmp/cypress-cache
+# volumes:
+#   - name: cypress-cache
+#     host:
+#       path: /tmp/cypress-cache
