@@ -20,18 +20,18 @@ steps:
     depends_on:
       - install
 
-  - name: tests
-    image: cypress/included:6.5.0
-    commands:
-      - cypress install
-      - yarn test:e2e:ci
-    environment:
-      DATO_API_TOKEN:
-        from_secret: DATO_API_TOKEN
-      GATSBY_SENTRY_DSN:
-        from_secret: GATSBY_SENTRY_DSN
-    depends_on:
-      - install
+  # - name: tests
+  #   image: cypress/included:6.5.0
+  #   commands:
+  #     - cypress install
+  #     - yarn test:e2e:ci
+  #   environment:
+  #     DATO_API_TOKEN:
+  #       from_secret: DATO_API_TOKEN
+  #     GATSBY_SENTRY_DSN:
+  #       from_secret: GATSBY_SENTRY_DSN
+  #   depends_on:
+  #     - install
 
   - name: deploy
     image: node
@@ -48,7 +48,6 @@ steps:
           - pull_request
     depends_on:
       - build
-      - tests
 
   - name: semantic-release
     image: node
@@ -65,5 +64,4 @@ steps:
         from_secret: GH_TOKEN
     depends_on:
       - build
-      - tests
       - deploy
