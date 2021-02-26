@@ -8,14 +8,6 @@ const plugins = [
   `gatsby-plugin-sitemap`,
   `gatsby-plugin-typescript`,
   {
-    resolve: `gatsby-plugin-s3`,
-    options: {
-      bucketName: 'ljnorwood.com',
-      protocol: 'https',
-      hostname: 'ljnorwood.com',
-    },
-  },
-  {
     resolve: `gatsby-theme-contact`,
     options: {
       contactPath: '/contact',
@@ -45,7 +37,7 @@ const plugins = [
       theme_color: '#9DAD9F',
       display: 'standalone',
       icon: 'src/images/icon_catbot.png',
-      crossOrigin: ``,
+      crossOrigin: `anonymous`,
     },
   },
   `gatsby-transformer-remark`,

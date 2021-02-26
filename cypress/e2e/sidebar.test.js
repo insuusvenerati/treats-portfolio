@@ -11,9 +11,15 @@ describe('Sidebar contains correct content', () => {
     cy.get('[data-cy=sidebar-menu]').contains('about & contact');
   });
   it('has correct icons', () => {
-    cy.get('[data-cy=icon-row]').get('a.social--twitter');
-    cy.get('[data-cy=icon-row]').get('a.social--instagram');
-    cy.get('[data-cy=icon-row]').get('a.social--email');
+    cy.get('[data-cy=icon-row]').get(
+      '.centered > .social:nth-child(1) > .gatsby-image-wrapper > picture > img',
+    );
+    cy.get('[data-cy=icon-row]').get(
+      '.centered > .social:nth-child(2) > .gatsby-image-wrapper > picture > img',
+    );
+    cy.get('[data-cy=icon-row]').get(
+      '.centered > .social:nth-child(3) > .gatsby-image-wrapper > picture > img',
+    );
     cy.get('[data-cy=icon-row]').get('[data-for=catGenerator]').get('span.social--cat');
   });
 });
