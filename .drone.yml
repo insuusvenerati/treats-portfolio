@@ -3,19 +3,28 @@ type: docker
 name: default
 
 steps:
-  - name: 'build and install'
+  - name: install_deps
     image: cypress/included:6.5.0
     volumes:
       - name: cypress-cache
         path: /root/.cache/Cypress
     commands:
       - yarn install --frozen-lockfile
+
+  - name: 'build and install'
+    image: cypress/included:6.5.0
+    volumes:
+      - name: cypress-cache
+        path: /root/.cache/Cypress
+    commands:
       - yarn build
     environment:
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
       GATSBY_SENTRY_DSN:
         from_secret: GATSBY_SENTRY_DSN
+    depends_on:
+      - install_deps
 
   - name: tests
     image: cypress/included:6.5.0
@@ -30,6 +39,8 @@ steps:
         from_secret: DATO_API_TOKEN
       GATSBY_SENTRY_DSN:
         from_secret: GATSBY_SENTRY_DSN
+    depends_on:
+      - install_deps
 
   - name: deploy
     image: node
