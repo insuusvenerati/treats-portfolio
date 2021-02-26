@@ -1,0 +1,80 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: install_deps
+    image: cypress/included:6.5.0
+    volumes:
+      - name: cypress-cache
+        path: /root/.cache/Cypress
+    commands:
+      - yarn install --frozen-lockfile
+
+  - name: 'build and install'
+    image: cypress/included:6.5.0
+    volumes:
+      - name: cypress-cache
+        path: /root/.cache/Cypress
+    commands:
+      - yarn build
+    environment:
+      DATO_API_TOKEN:
+        from_secret: DATO_API_TOKEN
+      GATSBY_SENTRY_DSN:
+        from_secret: GATSBY_SENTRY_DSN
+    depends_on:
+      - install_deps
+
+  - name: tests
+    image: cypress/included:6.5.0
+    volumes:
+      - name: cypress-cache
+        path: /root/.cache/Cypress
+    commands:
+      - cypress install
+      - yarn test:e2e:ci
+    environment:
+      DATO_API_TOKEN:
+        from_secret: DATO_API_TOKEN
+      GATSBY_SENTRY_DSN:
+        from_secret: GATSBY_SENTRY_DSN
+    depends_on:
+      - install_deps
+
+  - name: deploy
+    image: node
+    commands:
+      - npx firebase-ci deploy
+    environment:
+      FIREBASE_TOKEN:
+        from_secret: FIREBASE_TOKEN
+    when:
+      branch:
+        - master
+      event:
+        exclude:
+          - pull_request
+    depends_on:
+      - 'build and install'
+      - tests
+
+  - name: semantic-release
+    image: node
+    commands:
+      - yarn semantic-release
+    when:
+      branch:
+        - master
+      event:
+        exclude:
+          - pull_request
+    depends_on:
+      - 'build and install'
+      - tests
+      - deploy
+
+volumes:
+  - name: cypress-cache
+    host:
+      path: /tmp/cypress-cache
