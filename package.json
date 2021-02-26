@@ -39,7 +39,7 @@
     "react-masonry-component": "^6.2.1",
     "react-perfect-scrollbar": "^1.5.8",
     "react-tooltip": "^4.2.8",
-    "sass": "^1.26.10"
+    "sass": "^1.32.6"
   },
   "keywords": [
     "gatsby"
