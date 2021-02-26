@@ -11,7 +11,7 @@ steps:
     commands:
       - yarn install --frozen-lockfile
 
-  - name: 'build and install'
+  - name: build
     image: cypress/included:6.5.0
     volumes:
       - name: cypress-cache
