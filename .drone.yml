@@ -7,11 +7,23 @@ steps:
     image: cypress/included:6.5.0
     commands:
       - yarn install --frozen-lockfile
+    when:
+      branch:
+        - master
+        - develop
+        - 'feature/*'
+        - 'hotfix/*'
 
   - name: build
     image: cypress/included:6.5.0
     commands:
       - yarn build
+    when:
+      branch:
+        - master
+        - develop
+        - 'feature/*'
+        - 'hotfix/*'
     environment:
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
