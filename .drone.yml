@@ -4,12 +4,12 @@ name: default
 
 steps:
   - name: install
-    image: cypress/included:6.5.0
+    image: cypress/included:6.6.0
     commands:
       - yarn install --frozen-lockfile
 
   - name: build
-    image: cypress/included:6.5.0
+    image: cypress/included:6.6.0
     commands:
       - yarn build
     environment:
