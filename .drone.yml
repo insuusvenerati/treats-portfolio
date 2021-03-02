@@ -73,7 +73,7 @@ steps:
     image: node
     commands:
       - yarn global add firebase-tools firebase-ci
-      - firebase-ci hosting:channel:deploy "${DRONE_BRANCH}"
+      - firebase hosting:channel:deploy "${DRONE_BRANCH}"
     environment:
       FIREBASE_TOKEN:
         from_secret: FIREBASE_TOKEN
