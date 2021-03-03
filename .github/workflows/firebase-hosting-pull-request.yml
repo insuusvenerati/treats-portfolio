@@ -9,6 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile && yarn build
+        env:
+          DATO_API_TOKEN: ${{ secrets.DATO_API_TOKEN }}
+          GATSBY_SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
@@ -16,5 +19,3 @@ jobs:
           projectId: treats-portfolio
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
-          DATO_API_TOKEN: ${{ secrets.DATO_API_TOKEN }}
-          GATSBY_SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
