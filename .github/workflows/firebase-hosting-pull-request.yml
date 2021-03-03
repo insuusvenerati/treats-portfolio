@@ -16,3 +16,5 @@ jobs:
           projectId: treats-portfolio
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
+          DATO_API_TOKEN: ${{ secrets.DATO_API_TOKEN }}
+          GATSBY_SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
