@@ -22,4 +22,4 @@ jobs:
           npm install -g @lhci/cli@0.4.3
           lhci autorun || echo "LHCI failed!"
         env:
-          LCHI_TOKEN: ${{ secrets.LCHI_TOKEN }}
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

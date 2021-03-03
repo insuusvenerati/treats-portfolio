@@ -10,7 +10,7 @@ module.exports = {
     },
     upload: {
       target: 'lhci',
-      serverBaseUrl: 'https://secret-lake-49706.herokuapp.com/',
+      serverBaseUrl: 'https://stiforr-lighthouse.herokuapp.com/',
       token: process.env.LCHI_TOKEN,
     },
   },
