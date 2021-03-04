@@ -59,7 +59,7 @@ const plugins = [
       precachePages: [`/visdev/`, `/about/`, '/'],
     },
   },
-  `gatsby-plugin-codegen`,
+  // `gatsby-plugin-codegen`,
 ];
 
 module.exports = {
