@@ -9,7 +9,6 @@ steps:
     settings:
       backend: 'filesystem'
       restore: true
-      cache_key: 'volume'
       archive_format: 'gzip'
       # filesystem_cache_root: "/tmp/cache"
       mount:
@@ -40,7 +39,6 @@ steps:
     settings:
       backend: 'filesystem'
       rebuild: true
-      cache_key: 'volume'
       archive_format: 'gzip'
       # filesystem_cache_root: "/tmp/cache"
       mount:
