@@ -46,6 +46,8 @@ steps:
     volumes:
       - name: cache
         path: /tmp/cache
+    depends_on:
+      - install
 
   - name: build
     image: node
