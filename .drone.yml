@@ -31,6 +31,8 @@ steps:
           - 'hotfix/*'
         exlude:
           - 'renovate/*'
+    depends_on:
+      - restore-cache-with-filesystem
 
   - name: rebuild-cache-with-filesystem
     image: meltwater/drone-cache:dev
@@ -71,9 +73,10 @@ steps:
       - install
 
   - name: lighthouse
-    image: stiforr/node-chrome:latest
+    image: stiforr/node-chrome:v1
+    pull: true
     commands:
-      - yarn lhci autorun
+      - lhci autorun
     when:
       branch:
         include:
