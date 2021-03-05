@@ -41,7 +41,7 @@ steps:
   - name: lighthouse
     image: stiforr/node-chrome:latest
     commands:
-      - lhci autorun
+      - yarn lhci autorun
     when:
       branch:
         include:
