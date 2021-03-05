@@ -3,6 +3,21 @@ type: docker
 name: default
 
 steps:
+  - name: restore-cache-with-filesystem
+    image: meltwater/drone-cache:dev
+    pull: true
+    settings:
+      backend: 'filesystem'
+      restore: true
+      cache_key: 'volume'
+      archive_format: 'gzip'
+      # filesystem_cache_root: "/tmp/cache"
+      mount:
+        - 'node_modules'
+    volumes:
+      - name: cache
+        path: /tmp/cache
+
   - name: install
     image: node
     commands:
@@ -16,6 +31,21 @@ steps:
           - 'hotfix/*'
         exlude:
           - 'renovate/*'
+
+  - name: rebuild-cache-with-filesystem
+    image: meltwater/drone-cache:dev
+    pull: true
+    settings:
+      backend: 'filesystem'
+      rebuild: true
+      cache_key: 'volume'
+      archive_format: 'gzip'
+      # filesystem_cache_root: "/tmp/cache"
+      mount:
+        - 'node_modules'
+    volumes:
+      - name: cache
+        path: /tmp/cache
 
   - name: build
     image: node
@@ -40,7 +70,6 @@ steps:
 
   - name: lighthouse
     image: stiforr/node-chrome:latest
-    privileged: true
     commands:
       - yarn lhci autorun
     when:
@@ -92,26 +121,6 @@ steps:
     depends_on:
       - build
 
-  # - name: deploy_preview
-  #   image: node
-  #   commands:
-  #     - yarn global add firebase-tools firebase-ci
-  #     - firebase use default
-  #     - firebase hosting:channel:deploy "${DRONE_BRANCH}"
-  #   environment:
-  #     FIREBASE_TOKEN:
-  #       from_secret: FIREBASE_TOKEN
-  #   when:
-  #     branch:
-  #       - 'feature/*'
-  #       - develop
-  #     event:
-  #       exclude:
-  #         - pull_request
-  #         - tag
-  #   depends_on:
-  #     - build
-
   - name: semantic-release
     image: node
     commands:
@@ -129,3 +138,8 @@ steps:
     depends_on:
       - build
       - deploy
+
+volumes:
+  - name: cache
+    host:
+      path: /var/lib/cache
