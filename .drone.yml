@@ -39,7 +39,7 @@ steps:
       - install
 
   - name: lighthouse
-    image: patrickhulce/lhci-client
+    image: stiforr/node-chrome:latest
     commands:
       - lhci autorun
     when:
