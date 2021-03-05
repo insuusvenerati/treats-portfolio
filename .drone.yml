@@ -39,7 +39,7 @@ steps:
       - install
 
   - name: lighthouse
-    image: patrickhulce/lhci-client
+    image: cypress/included:6.5.0
     commands:
       - yarn lhci autorun
     when:
