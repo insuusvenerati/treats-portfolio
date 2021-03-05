@@ -11,7 +11,7 @@ module.exports = {
     upload: {
       target: 'lhci',
       serverBaseUrl: 'https://stiforr-lighthouse.herokuapp.com/',
-      token: process.env.LCHI_TOKEN,
+      token: 'aa4f21ca-7b29-4a71-a1f9-f4d7e0d9dbef',
     },
   },
 };
