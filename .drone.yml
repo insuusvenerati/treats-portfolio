@@ -39,7 +39,7 @@ steps:
       - install
 
   - name: lighthouse
-    image: node
+    image: patrickhulce/lhci-client
     commands:
       - yarn lhci autorun
     when:
