@@ -40,6 +40,7 @@ steps:
 
   - name: lighthouse
     image: stiforr/node-chrome:latest
+    privileged: true
     commands:
       - yarn lhci autorun
     when:
