@@ -4,6 +4,10 @@ jobs:
   lhci:
     name: Lighthouse
     runs-on: ubuntu-latest
+    env:
+      DATO_API_TOKEN: ${{ secrets.DATO_API_TOKEN }}
+      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 14.x
@@ -11,10 +15,6 @@ jobs:
         with:
           node-version: 14.x
       - name: Install, Build
-        env:
-          DATO_API_TOKEN: ${{ secrets.DATO_API_TOKEN }}
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-          LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
         run: |
           yarn install --frozen-lockfile
           yarn build
