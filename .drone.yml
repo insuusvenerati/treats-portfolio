@@ -76,7 +76,7 @@ steps:
       - build
 
   - name: lighthouse
-    image: stiforr/node-chrome:v1
+    image: stiforr/node-chrome:v2
     pull: true
     commands:
       - lhci autorun
