@@ -3,6 +3,29 @@ type: docker
 name: default
 
 steps:
+  - name: restore-cache-with-filesystem
+    image: meltwater/drone-cache:dev
+    pull: true
+    settings:
+      restore: true
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      archive_format: 'gzip'
+      bucket: stiforr-drone-cache
+      region: us-east-1
+      # filesystem_cache_root: "/tmp/cache"
+      mount:
+        - 'node_modules'
+        - '.cache'
+        - 'public'
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: aws_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: aws_secret_access_key
+    volumes:
+      - name: cache
+        path: /tmp/cache
+
   - name: install
     image: node
     commands:
@@ -16,6 +39,8 @@ steps:
           - 'hotfix/*'
         exlude:
           - 'renovate/*'
+    depends_on:
+      - restore-cache-with-filesystem
 
   - name: build
     image: node
@@ -37,6 +62,55 @@ steps:
         from_secret: GATSBY_SENTRY_DSN
     depends_on:
       - install
+
+  # - name: lighthouse
+  #   image: stiforr/node-chrome:v2
+  #   pull: true
+  #   commands:
+  #     - lhci autorun
+  #   when:
+  #     branch:
+  #       include:
+  #         - master
+  #         - develop
+  #         - 'feature/*'
+  #         - 'hotfix/*'
+  #       exlude:
+  #         - 'renovate/*'
+  #   environment:
+  #     LHCI_TOKEN:
+  #       from_secret: LHCI_TOKEN
+  #     LHCI_GITHUB_APP_TOKEN:
+  #       from_secret: LHCI_GITHUB_APP_TOKEN
+  #   depends_on:
+  #     - install
+  #     - build
+
+  - name: rebuild-cache-with-filesystem
+    image: meltwater/drone-cache:dev
+    pull: true
+    settings:
+      rebuild: true
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      archive_format: 'gzip'
+      bucket: stiforr-drone-cache
+      region: us-east-1
+      # filesystem_cache_root: "/tmp/cache"
+      mount:
+        - 'node_modules'
+        - '.cache'
+        - 'public'
+    volumes:
+      - name: cache
+        path: /tmp/cache
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: aws_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: aws_secret_access_key
+    depends_on:
+      - install
+      - build
 
   # - name: tests
   #   image: cypress/included:6.5.0
@@ -69,26 +143,6 @@ steps:
     depends_on:
       - build
 
-  # - name: deploy_preview
-  #   image: node
-  #   commands:
-  #     - yarn global add firebase-tools firebase-ci
-  #     - firebase use default
-  #     - firebase hosting:channel:deploy "${DRONE_BRANCH}"
-  #   environment:
-  #     FIREBASE_TOKEN:
-  #       from_secret: FIREBASE_TOKEN
-  #   when:
-  #     branch:
-  #       - 'feature/*'
-  #       - develop
-  #     event:
-  #       exclude:
-  #         - pull_request
-  #         - tag
-  #   depends_on:
-  #     - build
-
   - name: semantic-release
     image: node
     commands:
@@ -106,3 +160,8 @@ steps:
     depends_on:
       - build
       - deploy
+
+volumes:
+  - name: cache
+    host:
+      path: /var/lib/cache
