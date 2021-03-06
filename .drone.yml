@@ -28,7 +28,7 @@ steps:
         path: /tmp/cache
 
   - name: install
-    image: node
+    image: node:15.11.0-alpine3.10
     commands:
       - yarn install --frozen-lockfile
     when:
@@ -44,7 +44,7 @@ steps:
       - restore-cache-with-filesystem
 
   - name: build
-    image: node
+    image: node:15.11.0-alpine3.10
     commands:
       - yarn build
     when:
@@ -129,7 +129,7 @@ steps:
   #     - install
 
   - name: deploy
-    image: node
+    image: node:15.11.0-alpine3.10
     commands:
       - yarn global add firebase-tools firebase-ci
       - firebase-ci deploy
@@ -147,7 +147,7 @@ steps:
       - build
 
   - name: semantic-release
-    image: node
+    image: node:15.11.0-alpine3.10
     commands:
       - yarn semantic-release
     when:
