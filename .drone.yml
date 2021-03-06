@@ -11,12 +11,19 @@ steps:
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       archive_format: 'gzip'
+      bucket: stiforr-drone-cache
+      region: us-east-1
       # filesystem_cache_root: "/tmp/cache"
       mount:
         - 'node_modules'
         - '.cache'
         - 'public'
         - '.lighthouseci'
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: aws_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: aws_secret_access_key
     volumes:
       - name: cache
         path: /tmp/cache
@@ -62,6 +69,7 @@ steps:
     image: stiforr/node-chrome:v3
     pull: true
     commands:
+      - su node
       - yarn lhci autorun
     when:
       branch:
@@ -89,6 +97,8 @@ steps:
       rebuild: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       archive_format: 'gzip'
+      bucket: stiforr-drone-cache
+      region: us-east-1
       # filesystem_cache_root: "/tmp/cache"
       mount:
         - 'node_modules'
@@ -98,6 +108,11 @@ steps:
     volumes:
       - name: cache
         path: /tmp/cache
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: aws_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: aws_secret_access_key
     depends_on:
       - install
       - build
