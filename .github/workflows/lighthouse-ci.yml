@@ -1,4 +1,4 @@
-name: CI
+name: Lighthouse CI
 on: [push]
 jobs:
   lhci:
@@ -11,9 +11,12 @@ jobs:
         with:
           node-version: 14.x
       - name: Install, Build
+        env:
+          DATO_API_TOKEN: ${{ secrets.DATO_API_TOKEN }}
         run: |
           yarn install --frozen-lockfile
           yarn build
+
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.7.x
