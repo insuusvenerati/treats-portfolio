@@ -17,7 +17,6 @@ steps:
         - 'node_modules'
         - '.cache'
         - 'public'
-        - '.lighthouseci'
     environment:
       AWS_ACCESS_KEY_ID:
         from_secret: aws_access_key_id
@@ -102,7 +101,6 @@ steps:
         - 'node_modules'
         - '.cache'
         - 'public'
-        - '.lighthouseci'
     volumes:
       - name: cache
         path: /tmp/cache
