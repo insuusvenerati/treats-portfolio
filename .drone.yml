@@ -64,7 +64,7 @@ steps:
       - install
 
   - name: lighthouse
-    image: stiforr/node-chrome:v3
+    image: stiforr/node-chrome:v4
     pull: true
     user: node
     commands:
