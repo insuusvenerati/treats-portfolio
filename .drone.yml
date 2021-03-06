@@ -52,6 +52,7 @@ steps:
         path: /tmp/cache
     depends_on:
       - install
+      - build
 
   - name: build
     image: node
