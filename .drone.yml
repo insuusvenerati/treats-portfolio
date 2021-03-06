@@ -69,7 +69,6 @@ steps:
     pull: true
     user: node
     commands:
-      - su node
       - yarn lhci autorun
     when:
       branch:
