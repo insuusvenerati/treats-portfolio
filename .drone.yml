@@ -67,6 +67,7 @@ steps:
   - name: lighthouse
     image: stiforr/node-chrome:v3
     pull: true
+    user: node
     commands:
       - su node
       - yarn lhci autorun
