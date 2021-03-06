@@ -7,7 +7,6 @@ steps:
     image: meltwater/drone-cache:dev
     pull: true
     settings:
-      backend: 'filesystem'
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       archive_format: 'gzip'
@@ -93,7 +92,6 @@ steps:
     image: meltwater/drone-cache:dev
     pull: true
     settings:
-      backend: 'filesystem'
       rebuild: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       archive_format: 'gzip'
