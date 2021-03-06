@@ -35,25 +35,6 @@ steps:
     depends_on:
       - restore-cache-with-filesystem
 
-  - name: rebuild-cache-with-filesystem
-    image: meltwater/drone-cache:dev
-    pull: true
-    settings:
-      backend: 'filesystem'
-      rebuild: true
-      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
-      archive_format: 'gzip'
-      # filesystem_cache_root: "/tmp/cache"
-      mount:
-        - 'node_modules'
-        - '.cache'
-    volumes:
-      - name: cache
-        path: /tmp/cache
-    depends_on:
-      - install
-      - build
-
   - name: build
     image: node
     commands:
@@ -74,6 +55,25 @@ steps:
         from_secret: GATSBY_SENTRY_DSN
     depends_on:
       - install
+
+  - name: rebuild-cache-with-filesystem
+    image: meltwater/drone-cache:dev
+    pull: true
+    settings:
+      backend: 'filesystem'
+      rebuild: true
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      archive_format: 'gzip'
+      # filesystem_cache_root: "/tmp/cache"
+      mount:
+        - 'node_modules'
+        - '.cache'
+    volumes:
+      - name: cache
+        path: /tmp/cache
+    depends_on:
+      - install
+      - build
 
   - name: lighthouse
     image: stiforr/node-chrome:v1
