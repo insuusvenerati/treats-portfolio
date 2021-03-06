@@ -16,6 +16,7 @@ steps:
         - 'node_modules'
         - '.cache'
         - 'public'
+        - '.lighthouseci'
     volumes:
       - name: cache
         path: /tmp/cache
@@ -57,26 +58,6 @@ steps:
     depends_on:
       - install
 
-  - name: rebuild-cache-with-filesystem
-    image: meltwater/drone-cache:dev
-    pull: true
-    settings:
-      backend: 'filesystem'
-      rebuild: true
-      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
-      archive_format: 'gzip'
-      # filesystem_cache_root: "/tmp/cache"
-      mount:
-        - 'node_modules'
-        - '.cache'
-        - 'public'
-    volumes:
-      - name: cache
-        path: /tmp/cache
-    depends_on:
-      - install
-      - build
-
   - name: lighthouse
     image: stiforr/node-chrome:v2
     pull: true
@@ -96,6 +77,27 @@ steps:
         from_secret: LHCI_TOKEN
       LHCI_GITHUB_APP_TOKEN:
         from_secret: LHCI_GITHUB_APP_TOKEN
+    depends_on:
+      - install
+      - build
+
+  - name: rebuild-cache-with-filesystem
+    image: meltwater/drone-cache:dev
+    pull: true
+    settings:
+      backend: 'filesystem'
+      rebuild: true
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      archive_format: 'gzip'
+      # filesystem_cache_root: "/tmp/cache"
+      mount:
+        - 'node_modules'
+        - '.cache'
+        - 'public'
+        - '.lighthouseci'
+    volumes:
+      - name: cache
+        path: /tmp/cache
     depends_on:
       - install
       - build
