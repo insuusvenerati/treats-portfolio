@@ -127,6 +127,7 @@ steps:
     when:
       branch:
         - main
+        - develop
       event:
         exclude:
           - pull_request
