@@ -63,30 +63,6 @@ steps:
     depends_on:
       - install
 
-  # - name: lighthouse
-  #   image: stiforr/node-chrome:v4
-  #   pull: true
-  #   user: node
-  #   commands:
-  #     - yarn lhci autorun
-  #   when:
-  #     branch:
-  #       include:
-  #         - master
-  #         - develop
-  #         - 'feature/*'
-  #         - 'hotfix/*'
-  #       exlude:
-  #         - 'renovate/*'
-  #   environment:
-  #     LHCI_TOKEN:
-  #       from_secret: LHCI_TOKEN
-  #     LHCI_GITHUB_APP_TOKEN:
-  #       from_secret: LHCI_GITHUB_APP_TOKEN
-  #   depends_on:
-  #     - install
-  #     - build
-
   - name: rebuild-cache-with-filesystem
     image: meltwater/drone-cache:dev
     pull: true
