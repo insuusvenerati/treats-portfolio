@@ -14,10 +14,12 @@ module.exports = {
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     '@semantic-release/github',
+    '@semantic-release/npm',
     [
-      '@semantic-release/npm',
+      '@semantic-release/git',
       {
-        npmPublish: false,
+        assets: ['package.json', 'CHANGELOG.MD'],
+        message: 'chore(release): ${nextRelease.version} [CI SKIP]\n\n${nextRelease.notes}',
       },
     ],
   ],
