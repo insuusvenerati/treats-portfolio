@@ -2,6 +2,7 @@
 require('dotenv').config({ path: `.env` });
 
 module.exports = {
+  branches: ['main', { name: 'develop', prerelease: true }],
   repositoryUrl: 'https://github.com/insuusvenerati/treats-portfolio',
   tagFormat: '${version}',
   plugins: [
