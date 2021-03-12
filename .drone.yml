@@ -17,6 +17,10 @@ steps:
         - 'node_modules'
         - '.cache'
         - 'public'
+    when:
+      branch:
+        exclude:
+          - 'renovate/*'
     environment:
       AWS_ACCESS_KEY_ID:
         from_secret: aws_access_key_id
@@ -33,7 +37,7 @@ steps:
     when:
       branch:
         include:
-          - master
+          - main
           - develop
           - 'feature/*'
           - 'hotfix/*'
@@ -49,7 +53,7 @@ steps:
     when:
       branch:
         include:
-          - master
+          - main
           - develop
           - 'feature/*'
           - 'hotfix/*'
@@ -112,7 +116,7 @@ steps:
         from_secret: FIREBASE_TOKEN
     when:
       branch:
-        - master
+        - main
       event:
         exclude:
           - pull_request
@@ -126,7 +130,8 @@ steps:
       - yarn semantic-release
     when:
       branch:
-        - master
+        - main
+        - develop
       event:
         exclude:
           - pull_request
