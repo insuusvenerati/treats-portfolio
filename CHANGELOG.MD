@@ -1,3 +1,10 @@
+## [8.0.1-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.0.0...8.0.1-develop.1) (2021-03-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency gatsby-theme-contact to v2 ([5f71eae](https://github.com/insuusvenerati/treats-portfolio/commit/5f71eae09466554a4a54ed255655212c050f9a5a))
+
 # [8.0.0](https://github.com/insuusvenerati/treats-portfolio/compare/7.0.0...8.0.0) (2021-03-12)
 
 

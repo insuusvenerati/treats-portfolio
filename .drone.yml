@@ -84,6 +84,10 @@ steps:
     volumes:
       - name: cache
         path: /tmp/cache
+    when:
+      branch:
+        exclude:
+          - 'renovate/*'
     environment:
       AWS_ACCESS_KEY_ID:
         from_secret: aws_access_key_id
