@@ -9701,10 +9701,10 @@ gatsby-telemetry@^2.0.0:
     node-fetch "^2.6.1"
     uuid "3.4.0"
 
-gatsby-theme-contact@^1.0.4:
-  version "1.0.6"
-  resolved "https://npm.stiforr.tech/gatsby-theme-contact/-/gatsby-theme-contact-1.0.6.tgz#7c3d47c49c7bf6e398d83ce7fdc975098719296f"
-  integrity sha512-gFPstBQH0dR5Vcqlqrhfcyyepa5fAo8O55OIr2eV7p5CLz533+wdlWgCzmEU/W/iDTAcTeL4hf1pWl0koddinw==
+gatsby-theme-contact@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.stiforr.tech/gatsby-theme-contact/-/gatsby-theme-contact-2.0.0.tgz#1251bf1fdeb628eae775c5395c36ab08e794accf"
+  integrity sha512-r+gS/L32FYIHyPPnzBO2BvXTgFNjZ1muax8zgoPS5V76LHA4/IfOlpEbkiHKnoxBBWcbMctDCFaGTGZqLCh7wQ==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
