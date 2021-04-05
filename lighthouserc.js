@@ -12,6 +12,8 @@ module.exports = {
       target: 'lhci',
       serverBaseUrl: 'https://lhci.stiforr.tech/',
       token: process.env.LHCI_TOKEN,
+      'basicAuth.username': process.env.LHCI_USER,
+      'basicAuth.password': process.env.LHCI_PASS,
     },
   },
 };
