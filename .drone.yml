@@ -5,7 +5,7 @@ name: default
 steps:
   - name: restore-cache-with-filesystem
     image: meltwater/drone-cache:dev
-    pull: true
+    pull: "always"
     settings:
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
@@ -31,7 +31,7 @@ steps:
         path: /tmp/cache
 
   - name: install
-    image: node
+    image: node:lts-buster-slim
     commands:
       - yarn install --frozen-lockfile
     when:
@@ -47,7 +47,7 @@ steps:
       - restore-cache-with-filesystem
 
   - name: build
-    image: node
+    image: node:lts-buster-slim
     commands:
       - yarn build
     when:
@@ -69,7 +69,7 @@ steps:
 
   - name: rebuild-cache-with-filesystem
     image: meltwater/drone-cache:dev
-    pull: true
+    pull: "always"
     settings:
       rebuild: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
@@ -97,21 +97,34 @@ steps:
       - install
       - build
 
-  # - name: tests
-  #   image: cypress/included:6.5.0
-  #   commands:
-  #     - cypress install
-  #     - yarn test:e2e:ci
-  #   environment:
-  #     DATO_API_TOKEN:
-  #       from_secret: DATO_API_TOKEN
-  #     GATSBY_SENTRY_DSN:
-  #       from_secret: GATSBY_SENTRY_DSN
-  #   depends_on:
-  #     - install
+  - name: Test Chrome
+    image: cypress/included:7.1.0
+    commands:
+      - cypress install
+      - yarn test:e2e:ci-chrome
+    environment:
+      DATO_API_TOKEN:
+        from_secret: DATO_API_TOKEN
+      GATSBY_SENTRY_DSN:
+        from_secret: GATSBY_SENTRY_DSN
+    depends_on:
+      - install
+
+  - name: Test Firefox
+    image: cypress/included:7.1.0
+    commands:
+      - cypress install
+      - yarn test:e2e:ci-firefox
+    environment:
+      DATO_API_TOKEN:
+        from_secret: DATO_API_TOKEN
+      GATSBY_SENTRY_DSN:
+        from_secret: GATSBY_SENTRY_DSN
+    depends_on:
+      - install
 
   - name: deploy
-    image: node
+    image: node:lts-buster-slim
     commands:
       - yarn global add firebase-tools firebase-ci
       - firebase-ci deploy
@@ -146,6 +159,8 @@ steps:
     depends_on:
       - build
       - deploy
+      - "Test Chrome"
+      - "Test Firefox"
 
 volumes:
   - name: cache
