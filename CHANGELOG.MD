@@ -1,3 +1,10 @@
+# [8.1.0](https://github.com/insuusvenerati/treats-portfolio/compare/8.0.1...8.1.0) (2021-04-24)
+
+
+### Features
+
+* update all deps ([df4298e](https://github.com/insuusvenerati/treats-portfolio/commit/df4298e8e271e0dd8ef675b1614796280b20ff73))
+
 # [8.1.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.0.1-develop.1...8.1.0-develop.1) (2021-04-24)
 
 
