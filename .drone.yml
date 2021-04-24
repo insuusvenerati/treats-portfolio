@@ -98,10 +98,10 @@ steps:
       - build
 
   - name: Test Chrome
-    image: cypress/browsers:7.1.0
+    image: cypress/included:7.1.0
     commands:
       - cypress install
-      - yarn test:e2e:ci
+      - yarn test:e2e:ci-chrome
     environment:
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
@@ -111,10 +111,10 @@ steps:
       - install
 
   - name: Test Firefox
-    image: cypress/browsers:node14.16.0-chrome89-ff86
+    image: cypress/included:7.1.0
     commands:
       - cypress install
-      - yarn test:e2e:ci
+      - yarn test:e2e:ci-firefox
     environment:
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
