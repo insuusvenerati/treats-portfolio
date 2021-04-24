@@ -98,7 +98,7 @@ steps:
       - build
 
   - name: tests
-    image: cypress/included:7.1.0
+    image: cypress/browsers:7.1.0
     commands:
       - cypress install
       - yarn test:e2e:ci
