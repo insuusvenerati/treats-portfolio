@@ -1,3 +1,10 @@
+## [8.1.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.1.0...8.1.1) (2021-04-24)
+
+
+### Bug Fixes
+
+* update firebase branch name ([b36ea8b](https://github.com/insuusvenerati/treats-portfolio/commit/b36ea8b5e68f8eb5e495dc421dcd192140c4c74c))
+
 # [8.1.0](https://github.com/insuusvenerati/treats-portfolio/compare/8.0.1...8.1.0) (2021-04-24)
 
 
