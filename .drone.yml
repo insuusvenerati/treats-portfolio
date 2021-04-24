@@ -159,6 +159,8 @@ steps:
     depends_on:
       - build
       - deploy
+      - "Test Chrome"
+      - "Test Firefox"
 
 volumes:
   - name: cache
