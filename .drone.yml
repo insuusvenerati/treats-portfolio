@@ -142,7 +142,7 @@ steps:
       - build
 
   - name: semantic-release
-    image: node:lts-buster-slim
+    image: node
     commands:
       - yarn semantic-release
     when:
