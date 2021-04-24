@@ -31,7 +31,7 @@ steps:
         path: /tmp/cache
 
   - name: install
-    image: node:lts-alpine3.10
+    image: node:lts-buster-slim
     commands:
       - yarn install --frozen-lockfile
     when:
@@ -47,7 +47,7 @@ steps:
       - restore-cache-with-filesystem
 
   - name: build
-    image: node:lts-alpine3.10
+    image: node:lts-buster-slim
     commands:
       - yarn build
     when:
@@ -111,7 +111,7 @@ steps:
   #     - install
 
   - name: deploy
-    image: node:lts-alpine3.10
+    image: node:lts-buster-slim
     commands:
       - yarn global add firebase-tools firebase-ci
       - firebase-ci deploy
@@ -129,7 +129,7 @@ steps:
       - build
 
   - name: semantic-release
-    image: node:lts-alpine3.10
+    image: node:lts-buster-slim
     commands:
       - yarn semantic-release
     when:
