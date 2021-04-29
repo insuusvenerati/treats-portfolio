@@ -2,10 +2,15 @@ kind: pipeline
 type: docker
 name: default
 
+trigger:
+  branch:
+    exclude:
+      - renovate/*
+
 steps:
   - name: restore-cache-with-filesystem
     image: meltwater/drone-cache:dev
-    pull: "always"
+    pull: 'always'
     settings:
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
@@ -17,10 +22,6 @@ steps:
         - 'node_modules'
         - '.cache'
         - 'public'
-    when:
-      branch:
-        exclude:
-          - 'renovate/*'
     environment:
       AWS_ACCESS_KEY_ID:
         from_secret: aws_access_key_id
@@ -41,8 +42,6 @@ steps:
           - develop
           - 'feature/*'
           - 'hotfix/*'
-        exlude:
-          - 'renovate/*'
     depends_on:
       - restore-cache-with-filesystem
 
@@ -57,8 +56,6 @@ steps:
           - develop
           - 'feature/*'
           - 'hotfix/*'
-        exlude:
-          - 'renovate/*'
     environment:
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
@@ -69,7 +66,7 @@ steps:
 
   - name: rebuild-cache-with-filesystem
     image: meltwater/drone-cache:dev
-    pull: "always"
+    pull: 'always'
     settings:
       rebuild: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
@@ -84,10 +81,6 @@ steps:
     volumes:
       - name: cache
         path: /tmp/cache
-    when:
-      branch:
-        exclude:
-          - 'renovate/*'
     environment:
       AWS_ACCESS_KEY_ID:
         from_secret: aws_access_key_id
@@ -159,8 +152,8 @@ steps:
     depends_on:
       - build
       - deploy
-      - "Test Chrome"
-      - "Test Firefox"
+      - 'Test Chrome'
+      - 'Test Firefox'
 
 volumes:
   - name: cache
