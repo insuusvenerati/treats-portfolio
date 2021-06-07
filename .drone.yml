@@ -82,6 +82,7 @@ steps:
         - 'node_modules'
         - '.cache'
         - 'public'
+        - /root/.cache
     volumes:
       - name: cache
         path: /tmp/cache
