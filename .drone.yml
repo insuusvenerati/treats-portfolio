@@ -147,7 +147,6 @@ steps:
       - build
       - deploy
       - 'Test Chrome'
-      - 'Test Firefox'
 
 volumes:
   - name: cache
