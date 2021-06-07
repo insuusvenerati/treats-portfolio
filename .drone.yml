@@ -17,6 +17,7 @@ steps:
         - 'node_modules'
         - '.cache'
         - 'public'
+        - /root/.cache
     when:
       branch:
         exclude:
