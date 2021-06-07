@@ -2,16 +2,20 @@ module.exports = {
   ci: {
     collect: {
       staticDistDir: './public',
-      url: ['http://localhost/', 'http://localhost/about'],
+      url: ['http://localhost/', 'http://localhost/about', 'http://localhost/visdev'],
       isSinglePageApplication: true,
     },
-    assert: {
-      preset: 'lighthouse:recommended',
-    },
+    // assert: {
+    //   preset: 'lighthouse:recommended',
+    // },
     upload: {
       target: 'lhci',
-      serverBaseUrl: 'https://secret-lake-49706.herokuapp.com/',
-      token: process.env.LCHI_TOKEN,
+      serverBaseUrl: 'https://lhci.stiforr.tech/',
+      token: process.env.LHCI_TOKEN,
+      basicAuth: {
+        username: process.env.LHCI_USER,
+        password: process.env.LHCI_PASS,
+      },
     },
   },
 };

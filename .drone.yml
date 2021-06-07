@@ -3,28 +3,57 @@ type: docker
 name: default
 
 steps:
+  - name: restore-cache-with-filesystem
+    image: meltwater/drone-cache:dev
+    pull: "always"
+    settings:
+      restore: true
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      archive_format: 'gzip'
+      bucket: stiforr-drone-cache
+      region: us-east-1
+      # filesystem_cache_root: "/tmp/cache"
+      mount:
+        - 'node_modules'
+        - '.cache'
+        - 'public'
+    when:
+      branch:
+        exclude:
+          - 'renovate/*'
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: aws_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: aws_secret_access_key
+    volumes:
+      - name: cache
+        path: /tmp/cache
+
   - name: install
-    image: node
+    image: node:lts-buster-slim
     commands:
       - yarn install --frozen-lockfile
     when:
       branch:
         include:
-          - master
+          - main
           - develop
           - 'feature/*'
           - 'hotfix/*'
         exlude:
           - 'renovate/*'
+    depends_on:
+      - restore-cache-with-filesystem
 
   - name: build
-    image: node
+    image: node:lts-buster-slim
     commands:
       - yarn build
     when:
       branch:
         include:
-          - master
+          - main
           - develop
           - 'feature/*'
           - 'hotfix/*'
@@ -38,21 +67,64 @@ steps:
     depends_on:
       - install
 
-  # - name: tests
-  #   image: cypress/included:6.5.0
-  #   commands:
-  #     - cypress install
-  #     - yarn test:e2e:ci
-  #   environment:
-  #     DATO_API_TOKEN:
-  #       from_secret: DATO_API_TOKEN
-  #     GATSBY_SENTRY_DSN:
-  #       from_secret: GATSBY_SENTRY_DSN
-  #   depends_on:
-  #     - install
+  - name: rebuild-cache-with-filesystem
+    image: meltwater/drone-cache:dev
+    pull: "always"
+    settings:
+      rebuild: true
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      archive_format: 'gzip'
+      bucket: stiforr-drone-cache
+      region: us-east-1
+      # filesystem_cache_root: "/tmp/cache"
+      mount:
+        - 'node_modules'
+        - '.cache'
+        - 'public'
+    volumes:
+      - name: cache
+        path: /tmp/cache
+    when:
+      branch:
+        exclude:
+          - 'renovate/*'
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: aws_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: aws_secret_access_key
+    depends_on:
+      - install
+      - build
+
+  - name: Test Chrome
+    image: cypress/included:7.1.0
+    commands:
+      - cypress install
+      - yarn test:e2e:ci-chrome
+    environment:
+      DATO_API_TOKEN:
+        from_secret: DATO_API_TOKEN
+      GATSBY_SENTRY_DSN:
+        from_secret: GATSBY_SENTRY_DSN
+    depends_on:
+      - install
+
+  - name: Test Firefox
+    image: cypress/included:7.1.0
+    commands:
+      - cypress install
+      - yarn test:e2e:ci-firefox
+    environment:
+      DATO_API_TOKEN:
+        from_secret: DATO_API_TOKEN
+      GATSBY_SENTRY_DSN:
+        from_secret: GATSBY_SENTRY_DSN
+    depends_on:
+      - install
 
   - name: deploy
-    image: node
+    image: node:lts-buster-slim
     commands:
       - yarn global add firebase-tools firebase-ci
       - firebase-ci deploy
@@ -61,27 +133,7 @@ steps:
         from_secret: FIREBASE_TOKEN
     when:
       branch:
-        - master
-      event:
-        exclude:
-          - pull_request
-          - tag
-    depends_on:
-      - build
-
-  - name: deploy_preview
-    image: node
-    commands:
-      - yarn global add firebase-tools firebase-ci
-      - firebase use default
-      - firebase hosting:channel:deploy "${DRONE_BRANCH}"
-    environment:
-      FIREBASE_TOKEN:
-        from_secret: FIREBASE_TOKEN
-    when:
-      branch:
-        - 'feature/*'
-        - develop
+        - main
       event:
         exclude:
           - pull_request
@@ -95,7 +147,8 @@ steps:
       - yarn semantic-release
     when:
       branch:
-        - master
+        - main
+        - develop
       event:
         exclude:
           - pull_request
@@ -106,3 +159,10 @@ steps:
     depends_on:
       - build
       - deploy
+      - "Test Chrome"
+      - "Test Firefox"
+
+volumes:
+  - name: cache
+    host:
+      path: /var/lib/cache

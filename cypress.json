@@ -3,5 +3,10 @@
   "integrationFolder": "cypress/e2e",
   "requestTimeout": 10000,
   "projectId": "1b5izy",
-  "video": true
+  "video": false,
+  "experimentalStudio": true,
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  }
 }

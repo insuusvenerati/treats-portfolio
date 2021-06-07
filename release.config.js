@@ -2,6 +2,7 @@
 require('dotenv').config({ path: `.env` });
 
 module.exports = {
+  branches: ['main', { name: 'develop', prerelease: true }],
   repositoryUrl: 'https://github.com/insuusvenerati/treats-portfolio',
   tagFormat: '${version}',
   plugins: [
@@ -18,6 +19,13 @@ module.exports = {
       '@semantic-release/npm',
       {
         npmPublish: false,
+      },
+    ],
+    [
+      '@semantic-release/git',
+      {
+        assets: ['package.json', 'CHANGELOG.MD'],
+        message: 'chore(release): ${nextRelease.version} [CI SKIP]\n\n${nextRelease.notes}',
       },
     ],
   ],
