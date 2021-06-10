@@ -1,3 +1,13 @@
+# [8.2.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.1.1...8.2.0-develop.1) (2021-06-10)
+
+
+### Features
+
+* update contact and api deps ([e82b53c](https://github.com/insuusvenerati/treats-portfolio/commit/e82b53ce68e0d51995ed8c7ed18479554dede0a4))
+* update gatsby deps ([b455a27](https://github.com/insuusvenerati/treats-portfolio/commit/b455a27ba59d11b19aa4f98343b0bbf587cf80fc))
+* update image order ([b92ea41](https://github.com/insuusvenerati/treats-portfolio/commit/b92ea41c82d9cf53d2a461a14a62178bc343b97d))
+
+# [8.1.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.1.0-develop.1...8.1.0-develop.2) (2021-06-07)
 ## [8.1.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.1.0...8.1.1) (2021-04-24)
 
 
@@ -10,6 +20,8 @@
 
 ### Features
 
+* update contact and api deps ([e82b53c](https://github.com/insuusvenerati/treats-portfolio/commit/e82b53ce68e0d51995ed8c7ed18479554dede0a4))
+* update gatsby deps ([b455a27](https://github.com/insuusvenerati/treats-portfolio/commit/b455a27ba59d11b19aa4f98343b0bbf587cf80fc))
 * update all deps ([df4298e](https://github.com/insuusvenerati/treats-portfolio/commit/df4298e8e271e0dd8ef675b1614796280b20ff73))
 
 # [8.1.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.0.1-develop.1...8.1.0-develop.1) (2021-04-24)

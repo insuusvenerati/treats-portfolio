@@ -19,7 +19,6 @@ steps:
       region: us-east-1
       # filesystem_cache_root: "/tmp/cache"
       mount:
-        - 'node_modules'
         - '.cache'
         - 'public'
     environment:
@@ -75,7 +74,6 @@ steps:
       region: us-east-1
       # filesystem_cache_root: "/tmp/cache"
       mount:
-        - 'node_modules'
         - '.cache'
         - 'public'
     volumes:
@@ -95,19 +93,6 @@ steps:
     commands:
       - cypress install
       - yarn test:e2e:ci-chrome
-    environment:
-      DATO_API_TOKEN:
-        from_secret: DATO_API_TOKEN
-      GATSBY_SENTRY_DSN:
-        from_secret: GATSBY_SENTRY_DSN
-    depends_on:
-      - install
-
-  - name: Test Firefox
-    image: cypress/included:7.1.0
-    commands:
-      - cypress install
-      - yarn test:e2e:ci-firefox
     environment:
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
@@ -153,9 +138,13 @@ steps:
       - build
       - deploy
       - 'Test Chrome'
-      - 'Test Firefox'
 
 volumes:
   - name: cache
     host:
       path: /var/lib/cache
+
+trigger:
+  branch:
+    exclude:
+      - renovate/*
