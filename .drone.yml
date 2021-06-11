@@ -139,12 +139,21 @@ steps:
       - deploy
       - 'Test Chrome'
 
+  - name: sentry-release
+    image: stiforr/ci-tools:latest
+    commands:
+      - export SENTRY_RELEASE=$DRONE_TAG
+      - export SENTRY_ENVIRONMENT=$(/scripts/environment.sh)
+      - sentry-cli releases new -p $SENTRY_PROJECT $SENTRY_RELEASE
+      - sentry-cli releases set-commits $SENTRY_RELEASE --auto
+      - sentry-cli releases files $SENTRY_RELEASE upload-sourcemaps ./public
+      - sentry-cli releases finalize $SENTRY_RELEASE
+      - sentry-cli releases deploys $SENTRY_RELEASE new -e $SENTRY_ENVIRONMENT
+    when:
+      event:
+        - tag
+
 volumes:
   - name: cache
     host:
       path: /var/lib/cache
-
-trigger:
-  branch:
-    exclude:
-      - renovate/*
