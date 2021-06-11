@@ -7,7 +7,7 @@ describe('Sidebar contains correct content', () => {
   });
   it('has correct links', () => {
     cy.get('[data-cy=sidebar-menu]').contains('bg & illustration');
-    cy.get('[data-cy=sidebar-menu]').contains('visdev');
+    cy.get('[data-cy=sidebar-menu]').contains('sketchbook');
     cy.get('[data-cy=sidebar-menu]').contains('about & contact');
   });
   it('has correct icons', () => {
