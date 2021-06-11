@@ -2573,7 +2573,7 @@
     "@sentry/utils" "6.6.0"
     tslib "^1.9.3"
 
-"@sentry/cli@1.66.0":
+"@sentry/cli@1.66.0", "@sentry/cli@^1.64.1":
   version "1.66.0"
   resolved "https://npm.stiforr.tech/@sentry%2fcli/-/cli-1.66.0.tgz#0526f1bc1c0570ce72ed817190af92f3b63a2e9a"
   integrity sha512-2pZ+JHnvKqwyJWcGkKg/gCM/zURYronAnruBNllI+rH2g5IL0N90deMmjB1xcqXS66J222+MPTtWrGEK1Vl0/w==
@@ -2657,6 +2657,13 @@
   dependencies:
     "@sentry/types" "6.6.0"
     tslib "^1.9.3"
+
+"@sentry/webpack-plugin@^1.15.1":
+  version "1.15.1"
+  resolved "https://npm.stiforr.tech/@sentry%2fwebpack-plugin/-/webpack-plugin-1.15.1.tgz#deb014fce8c1b51811100f25ec9050dd03addd9b"
+  integrity sha512-/Z06MJDXyWcN2+CbeDTMDwVzySjgZWQajOke773TvpkgqdtkeT1eYBsA+pfsje+ZE1prEgrZdlH/L9HdM1odnQ==
+  dependencies:
+    "@sentry/cli" "^1.64.1"
 
 "@sideway/address@^4.1.0":
   version "4.1.1"
