@@ -1,3 +1,10 @@
+# [8.2.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.2.0-develop.1...8.2.0-develop.2) (2021-06-11)
+
+
+### Features
+
+* change visdev page to sketchbook ([fd4676c](https://github.com/insuusvenerati/treats-portfolio/commit/fd4676c2f3c36b47374efe3a88daa76399f33aa4))
+
 # [8.2.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.1.1...8.2.0-develop.1) (2021-06-10)
 
 
