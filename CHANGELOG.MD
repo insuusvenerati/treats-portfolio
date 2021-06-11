@@ -1,3 +1,10 @@
+# [8.3.0-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0-develop.2...8.3.0-develop.3) (2021-06-11)
+
+
+### Features
+
+* update sentry release command ([407084c](https://github.com/insuusvenerati/treats-portfolio/commit/407084c0e3c1ebeb779e37f700d7473a09424d48))
+
 # [8.3.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0-develop.1...8.3.0-develop.2) (2021-06-11)
 
 
