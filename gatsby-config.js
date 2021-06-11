@@ -57,7 +57,7 @@ const plugins = [
   {
     resolve: `gatsby-plugin-offline`,
     options: {
-      precachePages: [`/visdev/`, `/about/`, '/'],
+      precachePages: [`/sketchbook/`, `/about/`, '/'],
     },
   },
   {
