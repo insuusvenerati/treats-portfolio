@@ -1,3 +1,10 @@
+# [8.3.0-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0-develop.3...8.3.0-develop.4) (2021-06-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency gatsby-plugin-sitemap to v4 ([463d40b](https://github.com/insuusvenerati/treats-portfolio/commit/463d40bd7f75336583c783e2ac5b3884293e4f52))
+
 # [8.3.0-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0-develop.2...8.3.0-develop.3) (2021-06-11)
 
 
