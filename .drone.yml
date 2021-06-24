@@ -141,6 +141,8 @@ steps:
 
   - name: sentry-release
     image: stiforr/ci-tools:latest
+    depends_on:
+      - "build"
     environment:
       SENTRY_PROJECT:
         from_secret: SENTRY_PROJECT
@@ -159,6 +161,18 @@ steps:
     when:
       event:
         - tag
+
+  - name: docker
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      repo: stiforr/treats-portfolio
+      auto_tag: true
+      tags:
+        - latest
 
   - name: discord notification
     image: appleboy/drone-discord
