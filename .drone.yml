@@ -144,6 +144,10 @@ steps:
     environment:
       SENTRY_PROJECT:
         from_secret: SENTRY_PROJECT
+      SENTRY_AUTH_TOKEN:
+        from_secret: SENTRY_AUTH_TOKEN
+      SENTRY_ORG:
+        from_secret: SENTRY_ORG
     commands:
       - export SENTRY_RELEASE=$DRONE_TAG
       - export SENTRY_ENVIRONMENT=$(/scripts/environment.sh)
