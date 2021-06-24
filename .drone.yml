@@ -141,6 +141,9 @@ steps:
 
   - name: sentry-release
     image: stiforr/ci-tools:latest
+    environment:
+      SENTRY_PROJECT:
+        from_secret: SENTRY_PROJECT
     commands:
       - export SENTRY_RELEASE=$DRONE_TAG
       - export SENTRY_ENVIRONMENT=$(/scripts/environment.sh)
