@@ -119,6 +119,11 @@ steps:
     depends_on:
       - build
 
+  - name: Helm Package
+    image: stiforr/ci-tools:latest
+    commands:
+      - helm package k8s/treats-portfolio
+
   - name: semantic-release
     image: node
     commands:
@@ -174,11 +179,6 @@ steps:
       auto_tag: true
       tags:
         - latest
-
-  - name: Helm Package
-    image: stiforr/ci-tools:latest
-    commands:
-      - helm package k8s/treats-portfolio
 
   - name: discord notification
     image: appleboy/drone-discord
