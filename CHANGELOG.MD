@@ -1,3 +1,10 @@
+# [8.3.0-develop.10](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0-develop.9...8.3.0-develop.10) (2021-06-25)
+
+
+### Features
+
+* add api token to docker as build arg ([9208c83](https://github.com/insuusvenerati/treats-portfolio/commit/9208c83832f972861d6751f3c8c37692176e6e6c))
+
 # [8.3.0-develop.9](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0-develop.8...8.3.0-develop.9) (2021-06-25)
 
 
