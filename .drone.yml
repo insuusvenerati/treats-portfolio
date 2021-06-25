@@ -170,6 +170,9 @@ steps:
 
   - name: docker
     image: plugins/docker
+    environment:
+      DATO_API_TOKEN:
+        from_secret: DATO_API_TOKEN
     settings:
       username:
         from_secret: docker_username
