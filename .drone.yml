@@ -179,6 +179,8 @@ steps:
       password:
         from_secret: docker_password
       repo: stiforr/treats-portfolio
+      build_args_from_env:
+        - DATO_API_TOKEN
       auto_tag: true
       tags:
         - latest
