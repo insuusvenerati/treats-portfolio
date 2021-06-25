@@ -1,11 +1,22 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 require('dotenv').config({ path: `.env` });
+const yaml = require('yaml');
+const fs = require('fs');
+
+const chart = fs.readFileSync('./k8s/treats-portfolio/Chart.yaml', 'utf8');
+const chartVersion = yaml.parse(chart);
 
 module.exports = {
   branches: ['main', { name: 'develop', prerelease: true }],
   repositoryUrl: 'https://github.com/insuusvenerati/treats-portfolio',
   tagFormat: '${version}',
   plugins: [
+    [
+      'semantic-release-helm',
+      {
+        chartPath: './k8s/treats-portfolio',
+      },
+    ],
     [
       '@semantic-release/changelog',
       {
@@ -24,8 +35,8 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['package.json', 'CHANGELOG.MD'],
-        message: 'chore(release): ${nextRelease.version} [CI SKIP]\n\n${nextRelease.notes}',
+        assets: ['package.json', 'CHANGELOG.MD', `treats-portfolio-${chartVersion.version}.tgz`],
+        message: 'chore(release): ${nextRelease.version}\n\n${nextRelease.notes}',
       },
     ],
   ],

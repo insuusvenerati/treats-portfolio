@@ -138,11 +138,12 @@ steps:
       - build
       - deploy
       - 'Test Chrome'
+      - 'Helm Package'
 
   - name: sentry-release
     image: stiforr/ci-tools:latest
     depends_on:
-      - "build"
+      - 'build'
     environment:
       SENTRY_PROJECT:
         from_secret: SENTRY_PROJECT
@@ -173,6 +174,11 @@ steps:
       auto_tag: true
       tags:
         - latest
+
+  - name: Helm Package
+    image: stiforr/ci-tools:latest
+    commands:
+      - helm package k8s/treats-portfolio
 
   - name: discord notification
     image: appleboy/drone-discord
