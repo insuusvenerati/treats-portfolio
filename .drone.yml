@@ -119,16 +119,10 @@ steps:
     depends_on:
       - build
 
-  - name: Helm Package
+  - name: semantic-release
     image: stiforr/ci-tools:latest
-    depends_on:
-      - 'semantic-release'
     commands:
       - helm package k8s/treats-portfolio
-
-  - name: semantic-release
-    image: node
-    commands:
       - yarn semantic-release
     when:
       branch:
@@ -145,7 +139,6 @@ steps:
       - build
       - deploy
       - 'Test Chrome'
-      - 'Helm Package'
 
   - name: sentry-release
     image: stiforr/ci-tools:latest
