@@ -1,3 +1,10 @@
+# [8.3.0-develop.9](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0-develop.8...8.3.0-develop.9) (2021-06-25)
+
+
+### Features
+
+* test chart version bump ([995ced7](https://github.com/insuusvenerati/treats-portfolio/commit/995ced7af0b0b7a1e996924c279a5b0852c0496d))
+
 # [8.3.0-develop.8](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0-develop.7...8.3.0-develop.8) (2021-06-25)
 
 
