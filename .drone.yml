@@ -121,6 +121,8 @@ steps:
 
   - name: Helm Package
     image: stiforr/ci-tools:latest
+    depends_on:
+      - 'semantic-release'
     commands:
       - helm package k8s/treats-portfolio
 
