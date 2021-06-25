@@ -1,3 +1,10 @@
+# [8.3.0-develop.11](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0-develop.10...8.3.0-develop.11) (2021-06-25)
+
+
+### Features
+
+* update release assets ([bfb58cb](https://github.com/insuusvenerati/treats-portfolio/commit/bfb58cbc07978e3d9479716a8d8422b764731307))
+
 # [8.3.0-develop.10](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0-develop.9...8.3.0-develop.10) (2021-06-25)
 
 
