@@ -2449,10 +2449,10 @@
     micromatch "^4.0.0"
     p-reduce "^2.0.0"
 
-"@semantic-release/github@7.2.1":
-  version "7.2.1"
-  resolved "https://npm.stiforr.tech/@semantic-release%2fgithub/-/github-7.2.1.tgz#e833245746413e0830b65112331ca0a00b35cf95"
-  integrity sha512-+gOhbaG4T3xJb6aTZu1/7KvCmYKRChkasdIyFWdaGaTWVeGpdl4o0zMviV1z3kRcgPOSXeqjHSQ6SOQAfHQiDw==
+"@semantic-release/github@7.2.3":
+  version "7.2.3"
+  resolved "https://npm.stiforr.tech/@semantic-release%2fgithub/-/github-7.2.3.tgz#20a83abd42dca43d97f03553de970eac72856c85"
+  integrity sha512-lWjIVDLal+EQBzy697ayUNN8MoBpp+jYIyW2luOdqn5XBH4d9bQGfTnjuLyzARZBHejqh932HVjiH/j4+R7VHw==
   dependencies:
     "@octokit/rest" "^18.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -2460,7 +2460,7 @@
     bottleneck "^2.18.1"
     debug "^4.0.0"
     dir-glob "^3.0.0"
-    fs-extra "^9.0.0"
+    fs-extra "^10.0.0"
     globby "^11.0.0"
     http-proxy-agent "^4.0.0"
     https-proxy-agent "^5.0.0"
@@ -2493,15 +2493,15 @@
     p-retry "^4.0.0"
     url-join "^4.0.0"
 
-"@semantic-release/npm@7.1.1":
-  version "7.1.1"
-  resolved "https://npm.stiforr.tech/@semantic-release%2fnpm/-/npm-7.1.1.tgz#90a0970f12b963fa846e5cdf896e6c7d996c1a64"
-  integrity sha512-zTYAno1j49XiH+uAVCY47dKOJAagA/MaJb26FFIfNujNHw3GYXk3ygsFa5CSa55xsO0qEMLcsDX3f3ByCg6nZw==
+"@semantic-release/npm@7.1.3":
+  version "7.1.3"
+  resolved "https://npm.stiforr.tech/@semantic-release%2fnpm/-/npm-7.1.3.tgz#1d64c41ff31b100299029c766ecc4d1f03aa5f5b"
+  integrity sha512-x52kQ/jR09WjuWdaTEHgQCvZYMOTx68WnS+TZ4fya5ZAJw4oRtJETtrvUw10FdfM28d/keInQdc66R1Gw5+OEQ==
   dependencies:
     "@semantic-release/error" "^2.2.0"
     aggregate-error "^3.0.0"
     execa "^5.0.0"
-    fs-extra "^9.0.0"
+    fs-extra "^10.0.0"
     lodash "^4.17.15"
     nerf-dart "^1.0.0"
     normalize-url "^6.0.0"
@@ -2531,17 +2531,17 @@
     semver "^7.1.2"
     tempy "^1.0.0"
 
-"@semantic-release/release-notes-generator@9.0.2":
-  version "9.0.2"
-  resolved "https://npm.stiforr.tech/@semantic-release%2frelease-notes-generator/-/release-notes-generator-9.0.2.tgz#a00da9f984b6d42d16e037ecd529f58665cde938"
-  integrity sha512-xGFSidhGqB27uwgWCU6y0gbf4r/no5flOAkJyFFc4+bPf8S+LfAVm7xhhlK5VPXLt2Iu1RBH8F+IgMK2ah5YpA==
+"@semantic-release/release-notes-generator@9.0.3":
+  version "9.0.3"
+  resolved "https://npm.stiforr.tech/@semantic-release%2frelease-notes-generator/-/release-notes-generator-9.0.3.tgz#d541221c6512e9619f25ba8079527e34288e6904"
+  integrity sha512-hMZyddr0u99OvM2SxVOIelHzly+PP3sYtJ8XOLHdMp8mrluN5/lpeTnIO27oeCYdupY/ndoGfvrqDjHqkSyhVg==
   dependencies:
     conventional-changelog-angular "^5.0.0"
     conventional-changelog-writer "^4.0.0"
     conventional-commits-filter "^2.0.0"
     conventional-commits-parser "^3.0.0"
     debug "^4.0.0"
-    get-stream "^5.0.0"
+    get-stream "^6.0.0"
     import-from "^3.0.0"
     into-stream "^6.0.0"
     lodash "^4.17.4"
@@ -2573,7 +2573,7 @@
     "@sentry/utils" "6.6.0"
     tslib "^1.9.3"
 
-"@sentry/cli@1.66.0":
+"@sentry/cli@1.66.0", "@sentry/cli@^1.64.1":
   version "1.66.0"
   resolved "https://npm.stiforr.tech/@sentry%2fcli/-/cli-1.66.0.tgz#0526f1bc1c0570ce72ed817190af92f3b63a2e9a"
   integrity sha512-2pZ+JHnvKqwyJWcGkKg/gCM/zURYronAnruBNllI+rH2g5IL0N90deMmjB1xcqXS66J222+MPTtWrGEK1Vl0/w==
@@ -2657,6 +2657,13 @@
   dependencies:
     "@sentry/types" "6.6.0"
     tslib "^1.9.3"
+
+"@sentry/webpack-plugin@^1.15.1":
+  version "1.15.1"
+  resolved "https://npm.stiforr.tech/@sentry%2fwebpack-plugin/-/webpack-plugin-1.15.1.tgz#deb014fce8c1b51811100f25ec9050dd03addd9b"
+  integrity sha512-/Z06MJDXyWcN2+CbeDTMDwVzySjgZWQajOke773TvpkgqdtkeT1eYBsA+pfsje+ZE1prEgrZdlH/L9HdM1odnQ==
+  dependencies:
+    "@sentry/cli" "^1.64.1"
 
 "@sideway/address@^4.1.0":
   version "4.1.1"
@@ -3128,6 +3135,11 @@
   resolved "https://npm.stiforr.tech/@types%2fnode/-/node-14.14.41.tgz#d0b939d94c1d7bd53d04824af45f1139b8c45615"
   integrity sha512-dueRKfaJL4RTtSa7bWeTK1M+VH+Gns73oCgzvYfHZywRCoPSd8EkXBL0mZ9unPTveBn+D9phZBaxuzpwjWkW0g==
 
+"@types/node@^15.0.1":
+  version "15.12.1"
+  resolved "https://npm.stiforr.tech/@types%2fnode/-/node-15.12.1.tgz#9b60797dee1895383a725f828a869c86c6caa5c2"
+  integrity sha512-zyxJM8I1c9q5sRMtVF+zdd13Jt6RU4r4qfhTd7lQubyThvLfx6yYekWSQjGCGV2Tkecgxnlpl/DNlb6Hg+dmEw==
+
 "@types/node@^8.5.7":
   version "8.10.66"
   resolved "https://npm.stiforr.tech/@types%2fnode/-/node-8.10.66.tgz#dd035d409df322acc83dff62a602f12a5783bbb3"
@@ -3215,6 +3227,13 @@
   integrity sha512-8gBudvllD2A/c0CcEX/BivIDorHFt5UI5m46TsNj8DjWCCTTZT74kEe4g+QsY7P/B9WdO98d82zZgXO/RQzu2Q==
   dependencies:
     "@types/glob" "*"
+    "@types/node" "*"
+
+"@types/sax@^1.2.1":
+  version "1.2.1"
+  resolved "https://npm.stiforr.tech/@types%2fsax/-/sax-1.2.1.tgz#e0248be936ece791a82db1a57f3fb5f7c87e8172"
+  integrity sha512-dqYdvN7Sbw8QT/0Ci5rhjE4/iCMJEM0Y9rHpCu+gGXD9Lwbz28t6HI2yegsB6BoV1sShRMU6lAmAcgRjmFy7LA==
+  dependencies:
     "@types/node" "*"
 
 "@types/scheduler@*":
@@ -3691,7 +3710,7 @@ agentkeepalive@^4.1.3:
     depd "^1.1.2"
     humanize-ms "^1.2.1"
 
-aggregate-error@^3.0.0:
+aggregate-error@^3.0.0, aggregate-error@^3.1.0:
   version "3.1.0"
   resolved "https://npm.stiforr.tech/aggregate-error/-/aggregate-error-3.1.0.tgz#92670ff50f5359bdb7a3e0d40d0ec30c5737687a"
   integrity sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA==
@@ -3912,12 +3931,22 @@ arg@^4.1.0:
   resolved "https://npm.stiforr.tech/arg/-/arg-4.1.3.tgz#269fc7ad5b8e42cb63c896d5666017261c144089"
   integrity sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==
 
+arg@^5.0.0:
+  version "5.0.0"
+  resolved "https://npm.stiforr.tech/arg/-/arg-5.0.0.tgz#a20e2bb5710e82950a516b3f933fee5ed478be90"
+  integrity sha512-4P8Zm2H+BRS+c/xX1LrHw0qKpEhdlZjLCgWy+d78T9vqa2Z2SiD2wMrYuWIAFy5IZUD7nnNXroRttz+0RzlrzQ==
+
 argparse@^1.0.7:
   version "1.0.10"
   resolved "https://npm.stiforr.tech/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
   integrity sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   dependencies:
     sprintf-js "~1.0.2"
+
+argparse@^2.0.1:
+  version "2.0.1"
+  resolved "https://npm.stiforr.tech/argparse/-/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
+  integrity sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==
 
 argv-formatter@~1.0.0:
   version "1.0.0"
@@ -9002,6 +9031,15 @@ fs-extra@>=8.1.0, fs-extra@^9.0.0, fs-extra@^9.1.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
+fs-extra@^10.0.0:
+  version "10.0.0"
+  resolved "https://npm.stiforr.tech/fs-extra/-/fs-extra-10.0.0.tgz#9ff61b655dde53fb34a82df84bb214ce802e17c1"
+  integrity sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^2.0.0"
+
 fs-extra@^4.0.2:
   version "4.0.3"
   resolved "https://npm.stiforr.tech/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
@@ -9316,16 +9354,15 @@ gatsby-plugin-sharp@^3.3.1:
     svgo "1.3.2"
     uuid "3.4.0"
 
-gatsby-plugin-sitemap@^3.3.0:
-  version "3.3.0"
-  resolved "https://npm.stiforr.tech/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-3.3.0.tgz#c269e2f9032802b8984addde90488541a0a2e7b0"
-  integrity sha512-ChkAeyOIzmWOWmeaLexDRMSH6fmEG46jEi5N8xN85AsbCanz36HY7IZxsjlSdDsLOuoG3RofvStoCDjz8ECCOQ==
+gatsby-plugin-sitemap@^4.0.0:
+  version "4.2.0"
+  resolved "https://npm.stiforr.tech/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-4.2.0.tgz#2d7a176bdbfda37f31ebc35d3cf80b75b36f4a3e"
+  integrity sha512-xI4ez2aC7/4JWoPdDMK0ntF+mVCt+UF9pgAaXUXWwkNng1MfrC1cyau5Gjl2ZVyceHgMaNSFQcLyupnpA0dB+Q==
   dependencies:
     "@babel/runtime" "^7.12.5"
     common-tags "^1.8.0"
     minimatch "^3.0.4"
-    pify "^3.0.0"
-    sitemap "^1.13.0"
+    sitemap "^7.0.0"
 
 gatsby-plugin-theme-ui@^0.9.1:
   version "0.9.1"
@@ -12037,6 +12074,13 @@ js-yaml@3.14.1, js-yaml@^3.11.0, js-yaml@^3.13.1:
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
+
+js-yaml@^4.1.0:
+  version "4.1.0"
+  resolved "https://npm.stiforr.tech/js-yaml/-/js-yaml-4.1.0.tgz#c1fb65f8f5017901cdd2c951864ba18458a10602"
+  integrity sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==
+  dependencies:
+    argparse "^2.0.1"
 
 jsbn@~0.1.0:
   version "0.1.1"
@@ -15699,6 +15743,14 @@ path-type@^4.0.0:
   resolved "https://npm.stiforr.tech/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+path@^0.12.7:
+  version "0.12.7"
+  resolved "https://npm.stiforr.tech/path/-/path-0.12.7.tgz#d4dc2a506c4ce2197eb481ebfcd5b36c0140b10f"
+  integrity sha1-1NwqUGxM4hl+tIHr/NWzbAFAsQ8=
+  dependencies:
+    process "^0.11.1"
+    util "^0.10.3"
+
 pause-stream@0.0.11:
   version "0.0.11"
   resolved "https://npm.stiforr.tech/pause-stream/-/pause-stream-0.0.11.tgz#fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445"
@@ -16279,7 +16331,7 @@ process-on-spawn@^1.0.0:
   dependencies:
     fromentries "^1.2.0"
 
-process@^0.11.10, process@~0.11.0:
+process@^0.11.1, process@^0.11.10, process@~0.11.0:
   version "0.11.10"
   resolved "https://npm.stiforr.tech/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
   integrity sha1-czIwDoQBYb2j5podHZGn1LwW8YI=
@@ -17750,10 +17802,21 @@ selfsigned@^1.10.8:
   dependencies:
     node-forge "^0.10.0"
 
-semantic-release@17.4.2:
-  version "17.4.2"
-  resolved "https://npm.stiforr.tech/semantic-release/-/semantic-release-17.4.2.tgz#b5147b5a629c227b7074ad4cc89920a14cb08c96"
-  integrity sha512-TPLWuoe2L2DmgnQEh+OLWW5V1T+ZAa1xWuHXsuPAWEko0BqSdLPl+5+BlQ+D5Bp27S5gDJ1//Y1tgbmvUhnOCw==
+semantic-release-helm@^2.0.2:
+  version "2.0.2"
+  resolved "https://npm.stiforr.tech/semantic-release-helm/-/semantic-release-helm-2.0.2.tgz#2b3ca9ddd37cc5201854fcac7d2d4d19f174d278"
+  integrity sha512-srOBuj+/hhEv7iboLYZitmxp6J01xYT4s30eMwFbgnQgbV6Ir5Sj1WhkL22dXdgMTGXPgJmSp55L89aSZHgnUw==
+  dependencies:
+    aggregate-error "^3.1.0"
+    execa "^5.0.0"
+    js-yaml "^4.1.0"
+    path "^0.12.7"
+    semver "^7.3.4"
+
+semantic-release@17.4.3:
+  version "17.4.3"
+  resolved "https://npm.stiforr.tech/semantic-release/-/semantic-release-17.4.3.tgz#e01b2d0c0adaf5a6cc427359f1df755d1e908927"
+  integrity sha512-lTOUSrkbaQ+TRs3+BmtJhLtPSyiO7iTGmh5SyuEFqNO8HQbQ4nzXg4UlPrDQasO/C0eFK/V0eCbOzJdjtKBOYw==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -17771,7 +17834,7 @@ semantic-release@17.4.2:
     git-log-parser "^1.2.0"
     hook-std "^2.0.0"
     hosted-git-info "^4.0.0"
-    lodash "^4.17.15"
+    lodash "^4.17.21"
     marked "^2.0.0"
     marked-terminal "^4.1.1"
     micromatch "^4.0.2"
@@ -18071,13 +18134,15 @@ sisteransi@^1.0.5:
   resolved "https://npm.stiforr.tech/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
   integrity sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
 
-sitemap@^1.13.0:
-  version "1.13.0"
-  resolved "https://npm.stiforr.tech/sitemap/-/sitemap-1.13.0.tgz#569cbe2180202926a62a266cd3de09c9ceb43f83"
-  integrity sha1-Vpy+IYAgKSamKiZs094Jyc60P4M=
+sitemap@^7.0.0:
+  version "7.0.0"
+  resolved "https://npm.stiforr.tech/sitemap/-/sitemap-7.0.0.tgz#022bef4df8cba42e38e1fe77039f234cab0372b6"
+  integrity sha512-Ud0jrRQO2k7fEtPAM+cQkBKoMvxQyPKNXKDLn8tRVHxRCsdDQ2JZvw+aZ5IRYYQVAV9iGxEar6boTwZzev+x3g==
   dependencies:
-    underscore "^1.7.0"
-    url-join "^1.1.0"
+    "@types/node" "^15.0.1"
+    "@types/sax" "^1.2.1"
+    arg "^5.0.0"
+    sax "^1.2.4"
 
 slash@^3.0.0:
   version "3.0.0"
@@ -19710,7 +19775,7 @@ underscore.string@^3.3.5:
     sprintf-js "^1.0.3"
     util-deprecate "^1.0.2"
 
-underscore@^1.7.0, underscore@^1.9.1:
+underscore@^1.9.1:
   version "1.12.0"
   resolved "https://npm.stiforr.tech/underscore/-/underscore-1.12.0.tgz#4814940551fc80587cef7840d1ebb0f16453be97"
   integrity sha512-21rQzss/XPMjolTiIezSu3JAjgagXKROtNrYFEOWK109qY1Uv2tVjPTZ1ci2HgvQDA16gHYSthQIJfB+XId/rQ==
@@ -20076,11 +20141,6 @@ urix@^0.1.0:
   resolved "https://npm.stiforr.tech/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
 
-url-join@^1.1.0:
-  version "1.1.0"
-  resolved "https://npm.stiforr.tech/url-join/-/url-join-1.1.0.tgz#741c6c2f4596c4830d6718460920d0c92202dc78"
-  integrity sha1-dBxsL0WWxIMNZxhGCSDQySIC3Hg=
-
 url-join@^4.0.0:
   version "4.0.1"
   resolved "https://npm.stiforr.tech/url-join/-/url-join-4.0.1.tgz#b642e21a2646808ffa178c4c5fda39844e12cde7"
@@ -20187,7 +20247,7 @@ util@0.10.3:
   dependencies:
     inherits "2.0.1"
 
-util@~0.10.1:
+util@^0.10.3, util@~0.10.1:
   version "0.10.4"
   resolved "https://npm.stiforr.tech/util/-/util-0.10.4.tgz#3aa0125bfe668a4672de58857d3ace27ecb76901"
   integrity sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==
@@ -20919,6 +20979,11 @@ yaml@^1.10.0, yaml@^1.7.2, yaml@^1.8.3:
   version "1.10.0"
   resolved "https://npm.stiforr.tech/yaml/-/yaml-1.10.0.tgz#3b593add944876077d4d683fee01081bd9fff31e"
   integrity sha512-yr2icI4glYaNG+KWONODapy2/jDdMSDnrONSjblABjD9B4Z5LgiircSt8m8sRZFNi08kG9Sm0uSHtEmP3zaEGg==
+
+yaml@^1.10.2:
+  version "1.10.2"
+  resolved "https://npm.stiforr.tech/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
+  integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
 
 yargs-parser@^13.1.2:
   version "13.1.2"

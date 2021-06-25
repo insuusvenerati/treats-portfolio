@@ -119,6 +119,11 @@ steps:
     depends_on:
       - build
 
+  - name: Helm Package
+    image: stiforr/ci-tools:latest
+    commands:
+      - helm package k8s/treats-portfolio
+
   - name: semantic-release
     image: node
     commands:
@@ -138,13 +143,57 @@ steps:
       - build
       - deploy
       - 'Test Chrome'
+      - 'Helm Package'
+
+  - name: sentry-release
+    image: stiforr/ci-tools:latest
+    depends_on:
+      - 'build'
+    environment:
+      SENTRY_PROJECT:
+        from_secret: SENTRY_PROJECT
+      SENTRY_AUTH_TOKEN:
+        from_secret: SENTRY_AUTH_TOKEN
+      SENTRY_ORG:
+        from_secret: SENTRY_ORG
+    commands:
+      - export SENTRY_RELEASE=$DRONE_TAG
+      - export SENTRY_ENVIRONMENT=$(/scripts/environment.sh)
+      - sentry-cli --auth-token $SENTRY_AUTH_TOKEN releases new $SENTRY_RELEASE -p $SENTRY_PROJECT
+      - sentry-cli --auth-token $SENTRY_AUTH_TOKEN releases set-commits $SENTRY_RELEASE --auto
+      - sentry-cli --auth-token $SENTRY_AUTH_TOKEN releases files $SENTRY_RELEASE upload-sourcemaps ./public
+      - sentry-cli --auth-token $SENTRY_AUTH_TOKEN releases finalize $SENTRY_RELEASE
+      - sentry-cli --auth-token $SENTRY_AUTH_TOKEN releases deploys $SENTRY_RELEASE new -e $SENTRY_ENVIRONMENT
+    when:
+      event:
+        - tag
+
+  - name: docker
+    image: plugins/docker
+    environment:
+      DATO_API_TOKEN:
+        from_secret: DATO_API_TOKEN
+    settings:
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      repo: stiforr/treats-portfolio
+      build_args_from_env:
+        - DATO_API_TOKEN
+      auto_tag: true
+      tags:
+        - latest
+
+  - name: discord notification
+    image: appleboy/drone-discord
+    settings:
+      webhook_id:
+        from_secret: discord_webhook_id
+      webhook_token:
+        from_secret: discord_webhook_token
 
 volumes:
   - name: cache
     host:
       path: /var/lib/cache
-
-trigger:
-  branch:
-    exclude:
-      - renovate/*
