@@ -25,7 +25,17 @@ module.exports = {
     ],
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
-    '@semantic-release/github',
+    [
+      '@semantic-release/github',
+      {
+        assets: [
+          {
+            path: `treats-portfolio-${chartVersion.version}.tgz`,
+            label: 'Helm Package',
+          },
+        ],
+      },
+    ],
     [
       '@semantic-release/npm',
       {
@@ -35,7 +45,7 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['package.json', 'CHANGELOG.MD', `treats-portfolio-${chartVersion.version}.tgz`],
+        assets: ['package.json', 'CHANGELOG.MD', 'k8s/treats-portfolio/Chart.yaml'],
         message: 'chore(release): [CI SKIP] ${nextRelease.version}\n\n${nextRelease.notes}',
       },
     ],
