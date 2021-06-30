@@ -1,3 +1,17 @@
+# [8.4.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.1...8.4.0-develop.2) (2021-06-30)
+
+
+### Features
+
+* test commit ([f72c356](https://github.com/insuusvenerati/treats-portfolio/commit/f72c356828fdbd7b24622c91ff004074a071eb08))
+
+# [8.4.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.1...8.4.0-develop.2) (2021-06-30)
+
+
+### Features
+
+* test commit ([f72c356](https://github.com/insuusvenerati/treats-portfolio/commit/f72c356828fdbd7b24622c91ff004074a071eb08))
+
 # [8.4.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0...8.4.0-develop.1) (2021-06-25)
 
 
