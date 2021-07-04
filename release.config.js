@@ -15,6 +15,7 @@ module.exports = {
       'semantic-release-helm',
       {
         chartPath: './k8s/treats-portfolio',
+        package: true,
       },
     ],
     [

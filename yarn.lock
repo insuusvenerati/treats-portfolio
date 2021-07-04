@@ -2718,6 +2718,11 @@
     escape-string-regexp "^2.0.0"
     lodash.deburr "^4.1.0"
 
+"@stiforr/treats-config@^1.0.1":
+  version "1.0.1"
+  resolved "https://npm.stiforr.tech/@stiforr%2ftreats-config/-/treats-config-1.0.1.tgz#61c84db2b818eadde46307220a56a108de190208"
+  integrity sha512-HW4/w+vzblESy/SmTFKQHBD3XnNm0aCYcFYz229fa/sZ+tw3tP+3P/bVuQJfzFPM+929mUZt4R6W4W8fVzflAA==
+
 "@styled-system/background@^5.1.2":
   version "5.1.2"
   resolved "https://npm.stiforr.tech/@styled-system%2fbackground/-/background-5.1.2.tgz#75c63d06b497ab372b70186c0bf608d62847a2ba"

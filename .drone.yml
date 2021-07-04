@@ -102,7 +102,7 @@ steps:
       - install
 
   - name: deploy
-    image: node:lts-buster-slim
+    image: stiforr/ci-tools:latest
     commands:
       - yarn global add firebase-tools firebase-ci
       - firebase-ci deploy
@@ -122,7 +122,6 @@ steps:
   - name: semantic-release
     image: stiforr/ci-tools:latest
     commands:
-      - helm package k8s/treats-portfolio
       - yarn semantic-release
     when:
       branch:
