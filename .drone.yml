@@ -139,6 +139,14 @@ steps:
       - deploy
       - 'Test Chrome'
 
+  - name: Helm Package
+    image: stiforr/ci-tools:latest
+    commands:
+      - helm package k8s/treats-portfolio
+      - ls -la
+    depends_on:
+      - semantic-release
+
   - name: sentry-release
     image: stiforr/ci-tools:latest
     depends_on:
