@@ -4,6 +4,7 @@ require('dotenv').config({
 const packageJson = require('./package.json');
 
 const plugins = [
+  `gatsby-plugin-client-side-redirect`,
   'gatsby-plugin-react-helmet',
   `gatsby-plugin-robots-txt`,
   `gatsby-plugin-sitemap`,

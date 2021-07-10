@@ -12,6 +12,7 @@
     "gatsby": "^3.6.2",
     "gatsby-cli": "^3.6.0",
     "gatsby-image": "^3.6.0",
+    "gatsby-plugin-client-side-redirect": "^1.1.0",
     "gatsby-plugin-google-analytics": "^3.3.0",
     "gatsby-plugin-manifest": "^3.3.0",
     "gatsby-plugin-offline": "^4.3.0",
