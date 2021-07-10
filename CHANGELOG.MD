@@ -1,3 +1,10 @@
+# [8.4.0-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.3...8.4.0-develop.4) (2021-07-08)
+
+
+### Features
+
+* test helm packaging ([9cd8e49](https://github.com/insuusvenerati/treats-portfolio/commit/9cd8e4964905585be31966c164ab741707f65f07))
+
 # [8.4.0-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.2...8.4.0-develop.3) (2021-06-30)
 
 
