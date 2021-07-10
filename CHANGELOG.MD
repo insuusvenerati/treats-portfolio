@@ -1,3 +1,10 @@
+# [8.4.0-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.4...8.4.0-develop.5) (2021-07-10)
+
+
+### Features
+
+* add redirect plugin to support ambassador ([1baa042](https://github.com/insuusvenerati/treats-portfolio/commit/1baa042bd37a9a16f9a371908b2ba42975d72842))
+
 # [8.4.0-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.3...8.4.0-develop.4) (2021-07-08)
 
 
