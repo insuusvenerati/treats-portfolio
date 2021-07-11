@@ -1,3 +1,10 @@
+# [8.4.0-develop.6](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.5...8.4.0-develop.6) (2021-07-11)
+
+
+### Features
+
+* add support for path prefix ([f1068c0](https://github.com/insuusvenerati/treats-portfolio/commit/f1068c0c7172f6a654319cec7a2d86c28ec06a0b))
+
 # [8.4.0-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.4...8.4.0-develop.5) (2021-07-10)
 
 
