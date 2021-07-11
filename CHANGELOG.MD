@@ -1,3 +1,10 @@
+# [8.4.0-develop.7](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.6...8.4.0-develop.7) (2021-07-11)
+
+
+### Features
+
+* move fonts to their own stylesheet ([4644d41](https://github.com/insuusvenerati/treats-portfolio/commit/4644d41d517a0f86da44c67cc253632395194146))
+
 # [8.4.0-develop.6](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.5...8.4.0-develop.6) (2021-07-11)
 
 
