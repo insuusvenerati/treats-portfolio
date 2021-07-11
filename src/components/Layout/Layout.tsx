@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import React, { useState } from 'react';
 import 'react-image-lightbox/style.css';
+import '../../styles/fonts.css';
 import useLayoutData from '../../hooks/useLayoutData';
 import ImageTooltip from '../ImageTooltip/ImageTooltip';
 import Img from 'gatsby-image';
