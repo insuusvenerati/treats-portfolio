@@ -204,6 +204,14 @@ steps:
         from_secret: discord_webhook_id
       webhook_token:
         from_secret: discord_webhook_token
+      message: >
+        {{#success build.status}}
+          Docker build completed successfully!
+        {{else}}
+          Docker build failed
+        {{/success}}
+    depends_on:
+      - 'docker'
 
 volumes:
   - name: cache
