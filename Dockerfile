@@ -9,7 +9,7 @@ ENV DATO_API_TOKEN ${DATO_API_TOKEN}
 
 ADD . .
 RUN yarn \
-  && gatsby build
+  && gatsby build --prefix-paths
 
 FROM gatsbyjs/gatsby
 COPY --from=build /app/public /pub
