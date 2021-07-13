@@ -1,3 +1,10 @@
+# [8.4.0-develop.12](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.11...8.4.0-develop.12) (2021-07-13)
+
+
+### Features
+
+* add annotations to service via values ([d9f904f](https://github.com/insuusvenerati/treats-portfolio/commit/d9f904f9f63ab5079a117355e2b46cc0738a64cc))
+
 # [8.4.0-develop.11](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.10...8.4.0-develop.11) (2021-07-13)
 
 
