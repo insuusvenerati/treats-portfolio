@@ -1,3 +1,10 @@
+# [8.4.0-develop.11](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.10...8.4.0-develop.11) (2021-07-13)
+
+
+### Features
+
+* add rollouts annotations to service ([c588bdf](https://github.com/insuusvenerati/treats-portfolio/commit/c588bdfaec74351b21a5563d4b6534fd32d4203c))
+
 # [8.4.0-develop.10](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.9...8.4.0-develop.10) (2021-07-13)
 
 
