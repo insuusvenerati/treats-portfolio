@@ -1,3 +1,10 @@
+# [8.4.0-develop.13](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.12...8.4.0-develop.13) (2021-07-13)
+
+
+### Features
+
+* untemplate deployment name ([293faf8](https://github.com/insuusvenerati/treats-portfolio/commit/293faf88356469649f03eb3d559db71e2178cb4b))
+
 # [8.4.0-develop.12](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.11...8.4.0-develop.12) (2021-07-13)
 
 
