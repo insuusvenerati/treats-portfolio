@@ -1,3 +1,10 @@
+# [8.4.0-develop.9](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.8...8.4.0-develop.9) (2021-07-13)
+
+
+### Features
+
+* undo moving fonts to subdir ([b0f70b6](https://github.com/insuusvenerati/treats-portfolio/commit/b0f70b601d589c24061443bab6bd151f8093ff11))
+
 # [8.4.0-develop.8](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.7...8.4.0-develop.8) (2021-07-13)
 
 
