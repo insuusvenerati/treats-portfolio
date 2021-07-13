@@ -4,8 +4,10 @@ metadata:
   name: {{ include "treats-portfolio.fullname" . }}
   labels:
     {{- include "treats-portfolio.labels" . | nindent 4 }}
+  {{- with .Values.service.annotations }}
   annotations:
-    {{ .Values.service.annotations }}
+    {{- toYaml . | nindent 4 }}
+  {{- end}}
 spec:
   type: {{ .Values.service.type }}
   ports:
