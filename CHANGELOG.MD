@@ -1,3 +1,10 @@
+# [8.4.0-develop.8](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.7...8.4.0-develop.8) (2021-07-13)
+
+
+### Features
+
+* update font paths to match prefix ([f52e5a9](https://github.com/insuusvenerati/treats-portfolio/commit/f52e5a9bce79451f5dfa583c5f7afa7239dd6e4d))
+
 # [8.4.0-develop.7](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.6...8.4.0-develop.7) (2021-07-11)
 
 
