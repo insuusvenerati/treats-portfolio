@@ -77,5 +77,5 @@ module.exports = {
     title: 'Laura Norwood',
   },
   plugins,
-  pathPrefix: '/treats',
+  // pathPrefix: '/treats',
 };
