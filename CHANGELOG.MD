@@ -1,3 +1,10 @@
+# [8.4.0-develop.15](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.14...8.4.0-develop.15) (2021-07-17)
+
+
+### Features
+
+* update fonts path ([1774aac](https://github.com/insuusvenerati/treats-portfolio/commit/1774aac50c92d5aee939733d6ca2d2c1cd3a7d33))
+
 # [8.4.0-develop.14](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.13...8.4.0-develop.14) (2021-07-16)
 
 
