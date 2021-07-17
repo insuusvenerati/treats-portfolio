@@ -50,6 +50,10 @@ service:
     a8r.io/rollouts.deployment: 'treats-portfolio'
     a8r.io/rollouts.mappings: 'treats'
 
+ambassador:
+  enabled: false
+  host: treats.stage.stiforr.tech
+
 ingress:
   enabled: false
   className: ''

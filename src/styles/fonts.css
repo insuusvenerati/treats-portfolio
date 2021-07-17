@@ -2,8 +2,8 @@
   font-family: 'Mulish';
   font-style: normal;
   font-weight: 400;
-  src: url('/treats/fonts/mulish-v1-latin-regular.woff2') format('woff2');
-  src: url('/treats/fonts/mulish-v1-latin-regular.woff') format('woff');
+  src: url('/fonts/mulish-v1-latin-regular.woff2') format('woff2');
+  src: url('/fonts/mulish-v1-latin-regular.woff') format('woff');
 }
 
 @font-face {
@@ -11,8 +11,8 @@
   font-style: normal;
   font-weight: 400;
   src: local('Montserrat Regular'), local('Montserrat-Regular');
-  src: url('/treats/fonts/montserrat-v15-latin-regular.woff2') format('woff2');
-  src: url('/treats/fonts/montserrat-v15-latin-regular.woff') format('woff');
+  src: url('/fonts/montserrat-v15-latin-regular.woff2') format('woff2');
+  src: url('/fonts/montserrat-v15-latin-regular.woff') format('woff');
 }
 
 @font-face {
@@ -20,6 +20,6 @@
   font-style: normal;
   font-weight: 700;
   src: local('Montserrat Bold'), local('Montserrat-Bold');
-  src: url('/treats/fonts/montserrat-v15-latin-700.woff2') format('woff2');
-  src: url('/treats/fonts/montserrat-v15-latin-700.woff') format('woff');
+  src: url('/fonts/montserrat-v15-latin-700.woff2') format('woff2');
+  src: url('/fonts/montserrat-v15-latin-700.woff') format('woff');
 }
