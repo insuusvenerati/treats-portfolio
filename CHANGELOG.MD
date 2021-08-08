@@ -1,3 +1,10 @@
+# [8.4.0-develop.17](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.16...8.4.0-develop.17) (2021-08-08)
+
+
+### Bug Fixes
+
+* add flagger support ([f1a7445](https://github.com/insuusvenerati/treats-portfolio/commit/f1a744580c2fe791fb9b15e7f019fa0a766cfa90))
+
 # [8.4.0-develop.16](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.15...8.4.0-develop.16) (2021-08-08)
 
 
