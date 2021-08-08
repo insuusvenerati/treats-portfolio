@@ -23,7 +23,8 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ''
 
-podAnnotations: {}
+podAnnotations:
+  linkerd.io/inject: enabled
 
 podSecurityContext:
   {}
@@ -42,13 +43,7 @@ service:
   type: ClusterIP
   port: 80
   annotations:
-    a8r.io/rollouts.scm.branch: 'develop'
-    a8r.io/rollouts.scm.path: 'k8s/treats-portfolio'
-    a8r.io/repository: 'git@github.com:insuusvenerati/treats-portfolio.git'
-    a8r.io/rollouts.image-repo.type: 'dockerhub'
-    a8r.io/rollouts.image-repo.name: 'stiforr/treats-portfolio'
-    a8r.io/rollouts.deployment: 'treats-portfolio'
-    a8r.io/rollouts.mappings: 'treats'
+    linkerd.io/inject: enabled
 
 ambassador:
   enabled: false
