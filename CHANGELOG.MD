@@ -1,3 +1,10 @@
+# [8.4.0-develop.16](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.15...8.4.0-develop.16) (2021-08-08)
+
+
+### Features
+
+* add linkerd annotation ([9c61b83](https://github.com/insuusvenerati/treats-portfolio/commit/9c61b83164d52d4ac820d7cf205d2d27fbc2bb7a))
+
 # [8.4.0-develop.15](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.14...8.4.0-develop.15) (2021-07-17)
 
 
