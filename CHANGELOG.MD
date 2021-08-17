@@ -1,4 +1,5 @@
 # [8.4.0-develop.17](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.16...8.4.0-develop.17) (2021-08-08)
+# [8.4.0](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0...8.4.0) (2021-06-25)
 
 
 ### Bug Fixes
@@ -112,10 +113,22 @@
 
 # [8.4.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.1...8.4.0-develop.2) (2021-06-30)
 
+* **deps:** update dependency gatsby-plugin-sitemap to v4 ([463d40b](https://github.com/insuusvenerati/treats-portfolio/commit/463d40bd7f75336583c783e2ac5b3884293e4f52))
+
 
 ### Features
 
 * test commit ([f72c356](https://github.com/insuusvenerati/treats-portfolio/commit/f72c356828fdbd7b24622c91ff004074a071eb08))
+* add api token to docker as build arg ([9208c83](https://github.com/insuusvenerati/treats-portfolio/commit/9208c83832f972861d6751f3c8c37692176e6e6c))
+* test chart version assets ([70cb45e](https://github.com/insuusvenerati/treats-portfolio/commit/70cb45e42cc2c5b674721197fd97f0dfca625e50))
+* test chart version bump ([995ced7](https://github.com/insuusvenerati/treats-portfolio/commit/995ced7af0b0b7a1e996924c279a5b0852c0496d))
+* test sentry release ([f331984](https://github.com/insuusvenerati/treats-portfolio/commit/f331984dde7ed5bbfbcabe33c8973faeac78f8cb))
+* test version bump ([ee8ebb1](https://github.com/insuusvenerati/treats-portfolio/commit/ee8ebb103d756045b643442b2047fa1a04c53b42))
+* test version bump 2 ([50333d7](https://github.com/insuusvenerati/treats-portfolio/commit/50333d709c2e34ff890f0adaad62a58b24aeadfb))
+* test version bump 2 ([d1d7442](https://github.com/insuusvenerati/treats-portfolio/commit/d1d7442ebd87b81e561a0a44e14cfa6ec5098078))
+* update release assets ([bfb58cb](https://github.com/insuusvenerati/treats-portfolio/commit/bfb58cbc07978e3d9479716a8d8422b764731307))
+* update sentry release command ([407084c](https://github.com/insuusvenerati/treats-portfolio/commit/407084c0e3c1ebeb779e37f700d7473a09424d48))
+
 
 # [8.4.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0...8.4.0-develop.1) (2021-06-25)
 
