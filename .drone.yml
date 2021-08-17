@@ -102,7 +102,7 @@ steps:
       - install
 
   - name: deploy
-    image: node:lts-buster-slim
+    image: stiforr/ci-tools:latest
     commands:
       - yarn global add firebase-tools firebase-ci
       - firebase-ci deploy
@@ -119,13 +119,8 @@ steps:
     depends_on:
       - build
 
-  - name: Helm Package
-    image: stiforr/ci-tools:latest
-    commands:
-      - helm package k8s/treats-portfolio
-
   - name: semantic-release
-    image: node
+    image: stiforr/ci-tools:latest
     commands:
       - yarn semantic-release
     when:
@@ -143,7 +138,24 @@ steps:
       - build
       - deploy
       - 'Test Chrome'
-      - 'Helm Package'
+
+  - name: Helm Package
+    image: stiforr/ci-tools:latest
+    commands:
+      - helm package k8s/treats-portfolio
+    depends_on:
+      - semantic-release
+
+  # - name: Helm Push
+  #   image: stiforr/ci-tools:latest
+  #   commands:
+  #     - git clone https://github.com/insuusvenerati/charts.git
+  #     - git add *.tgz
+  #     - |
+  #       git commit -m chore: add helm package
+  #     # - git push -u origin main
+  #   depends_on:
+  #     - 'Helm Package'
 
   - name: sentry-release
     image: stiforr/ci-tools:latest
@@ -192,6 +204,14 @@ steps:
         from_secret: discord_webhook_id
       webhook_token:
         from_secret: discord_webhook_token
+      message: >
+        {{#success build.status}}
+          Docker build completed successfully!
+        {{else}}
+          Docker build failed
+        {{/success}}
+    depends_on:
+      - 'docker'
 
 volumes:
   - name: cache

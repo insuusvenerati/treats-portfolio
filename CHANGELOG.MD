@@ -1,13 +1,150 @@
+# [8.5.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0...8.5.0-develop.1) (2021-08-17)
+
+
+### Bug Fixes
+
+* add flagger support ([f1a7445](https://github.com/insuusvenerati/treats-portfolio/commit/f1a744580c2fe791fb9b15e7f019fa0a766cfa90))
+
+
+### Features
+
+* add annotations to service via values ([d9f904f](https://github.com/insuusvenerati/treats-portfolio/commit/d9f904f9f63ab5079a117355e2b46cc0738a64cc))
+* add linkerd annotation ([9c61b83](https://github.com/insuusvenerati/treats-portfolio/commit/9c61b83164d52d4ac820d7cf205d2d27fbc2bb7a))
+* add redirect plugin to support ambassador ([1baa042](https://github.com/insuusvenerati/treats-portfolio/commit/1baa042bd37a9a16f9a371908b2ba42975d72842))
+* add rollouts annotations ([0c96c51](https://github.com/insuusvenerati/treats-portfolio/commit/0c96c51a939e401e70e9fd9d8f41a9707c5e0d93))
+* add rollouts annotations to service ([c588bdf](https://github.com/insuusvenerati/treats-portfolio/commit/c588bdfaec74351b21a5563d4b6534fd32d4203c))
+* add support for path prefix ([f1068c0](https://github.com/insuusvenerati/treats-portfolio/commit/f1068c0c7172f6a654319cec7a2d86c28ec06a0b))
+* disable helm push ([ebfca55](https://github.com/insuusvenerati/treats-portfolio/commit/ebfca559b7a717d51616039265d4e2ff2da8430f))
+* move fonts to their own stylesheet ([4644d41](https://github.com/insuusvenerati/treats-portfolio/commit/4644d41d517a0f86da44c67cc253632395194146))
+* test commit ([f72c356](https://github.com/insuusvenerati/treats-portfolio/commit/f72c356828fdbd7b24622c91ff004074a071eb08))
+* test commit 2 ([e5dc167](https://github.com/insuusvenerati/treats-portfolio/commit/e5dc16717a1ed8063c428ccf1280a4d6f1bc5623))
+* test helm packaging ([9cd8e49](https://github.com/insuusvenerati/treats-portfolio/commit/9cd8e4964905585be31966c164ab741707f65f07))
+* undo moving fonts to subdir ([b0f70b6](https://github.com/insuusvenerati/treats-portfolio/commit/b0f70b601d589c24061443bab6bd151f8093ff11))
+* untemplate deployment name ([293faf8](https://github.com/insuusvenerati/treats-portfolio/commit/293faf88356469649f03eb3d559db71e2178cb4b))
+* update font paths to match prefix ([f52e5a9](https://github.com/insuusvenerati/treats-portfolio/commit/f52e5a9bce79451f5dfa583c5f7afa7239dd6e4d))
+* update fonts path ([1774aac](https://github.com/insuusvenerati/treats-portfolio/commit/1774aac50c92d5aee939733d6ca2d2c1cd3a7d33))
+
+# [8.4.0-develop.17](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.16...8.4.0-develop.17) (2021-08-08)
 # [8.4.0](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0...8.4.0) (2021-06-25)
 
 
 ### Bug Fixes
+
+* add flagger support ([f1a7445](https://github.com/insuusvenerati/treats-portfolio/commit/f1a744580c2fe791fb9b15e7f019fa0a766cfa90))
+
+# [8.4.0-develop.16](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.15...8.4.0-develop.16) (2021-08-08)
+
+
+### Features
+
+* add linkerd annotation ([9c61b83](https://github.com/insuusvenerati/treats-portfolio/commit/9c61b83164d52d4ac820d7cf205d2d27fbc2bb7a))
+
+# [8.4.0-develop.15](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.14...8.4.0-develop.15) (2021-07-17)
+
+
+### Features
+
+* update fonts path ([1774aac](https://github.com/insuusvenerati/treats-portfolio/commit/1774aac50c92d5aee939733d6ca2d2c1cd3a7d33))
+
+# [8.4.0-develop.14](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.13...8.4.0-develop.14) (2021-07-16)
+
+
+### Features
+
+* disable helm push ([ebfca55](https://github.com/insuusvenerati/treats-portfolio/commit/ebfca559b7a717d51616039265d4e2ff2da8430f))
+
+# [8.4.0-develop.13](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.12...8.4.0-develop.13) (2021-07-13)
+
+
+### Features
+
+* untemplate deployment name ([293faf8](https://github.com/insuusvenerati/treats-portfolio/commit/293faf88356469649f03eb3d559db71e2178cb4b))
+
+# [8.4.0-develop.12](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.11...8.4.0-develop.12) (2021-07-13)
+
+
+### Features
+
+* add annotations to service via values ([d9f904f](https://github.com/insuusvenerati/treats-portfolio/commit/d9f904f9f63ab5079a117355e2b46cc0738a64cc))
+
+# [8.4.0-develop.11](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.10...8.4.0-develop.11) (2021-07-13)
+
+
+### Features
+
+* add rollouts annotations to service ([c588bdf](https://github.com/insuusvenerati/treats-portfolio/commit/c588bdfaec74351b21a5563d4b6534fd32d4203c))
+
+# [8.4.0-develop.10](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.9...8.4.0-develop.10) (2021-07-13)
+
+
+### Features
+
+* add rollouts annotations ([0c96c51](https://github.com/insuusvenerati/treats-portfolio/commit/0c96c51a939e401e70e9fd9d8f41a9707c5e0d93))
+
+# [8.4.0-develop.9](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.8...8.4.0-develop.9) (2021-07-13)
+
+
+### Features
+
+* undo moving fonts to subdir ([b0f70b6](https://github.com/insuusvenerati/treats-portfolio/commit/b0f70b601d589c24061443bab6bd151f8093ff11))
+
+# [8.4.0-develop.8](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.7...8.4.0-develop.8) (2021-07-13)
+
+
+### Features
+
+* update font paths to match prefix ([f52e5a9](https://github.com/insuusvenerati/treats-portfolio/commit/f52e5a9bce79451f5dfa583c5f7afa7239dd6e4d))
+
+# [8.4.0-develop.7](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.6...8.4.0-develop.7) (2021-07-11)
+
+
+### Features
+
+* move fonts to their own stylesheet ([4644d41](https://github.com/insuusvenerati/treats-portfolio/commit/4644d41d517a0f86da44c67cc253632395194146))
+
+# [8.4.0-develop.6](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.5...8.4.0-develop.6) (2021-07-11)
+
+
+### Features
+
+* add support for path prefix ([f1068c0](https://github.com/insuusvenerati/treats-portfolio/commit/f1068c0c7172f6a654319cec7a2d86c28ec06a0b))
+
+# [8.4.0-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.4...8.4.0-develop.5) (2021-07-10)
+
+
+### Features
+
+* add redirect plugin to support ambassador ([1baa042](https://github.com/insuusvenerati/treats-portfolio/commit/1baa042bd37a9a16f9a371908b2ba42975d72842))
+
+# [8.4.0-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.3...8.4.0-develop.4) (2021-07-08)
+
+
+### Features
+
+* test helm packaging ([9cd8e49](https://github.com/insuusvenerati/treats-portfolio/commit/9cd8e4964905585be31966c164ab741707f65f07))
+
+# [8.4.0-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.2...8.4.0-develop.3) (2021-06-30)
+
+
+### Features
+
+* test commit 2 ([e5dc167](https://github.com/insuusvenerati/treats-portfolio/commit/e5dc16717a1ed8063c428ccf1280a4d6f1bc5623))
+
+# [8.4.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.1...8.4.0-develop.2) (2021-06-30)
+
+
+### Features
+
+* test commit ([f72c356](https://github.com/insuusvenerati/treats-portfolio/commit/f72c356828fdbd7b24622c91ff004074a071eb08))
+
+# [8.4.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0-develop.1...8.4.0-develop.2) (2021-06-30)
 
 * **deps:** update dependency gatsby-plugin-sitemap to v4 ([463d40b](https://github.com/insuusvenerati/treats-portfolio/commit/463d40bd7f75336583c783e2ac5b3884293e4f52))
 
 
 ### Features
 
+* test commit ([f72c356](https://github.com/insuusvenerati/treats-portfolio/commit/f72c356828fdbd7b24622c91ff004074a071eb08))
 * add api token to docker as build arg ([9208c83](https://github.com/insuusvenerati/treats-portfolio/commit/9208c83832f972861d6751f3c8c37692176e6e6c))
 * test chart version assets ([70cb45e](https://github.com/insuusvenerati/treats-portfolio/commit/70cb45e42cc2c5b674721197fd97f0dfca625e50))
 * test chart version bump ([995ced7](https://github.com/insuusvenerati/treats-portfolio/commit/995ced7af0b0b7a1e996924c279a5b0852c0496d))
@@ -17,6 +154,7 @@
 * test version bump 2 ([d1d7442](https://github.com/insuusvenerati/treats-portfolio/commit/d1d7442ebd87b81e561a0a44e14cfa6ec5098078))
 * update release assets ([bfb58cb](https://github.com/insuusvenerati/treats-portfolio/commit/bfb58cbc07978e3d9479716a8d8422b764731307))
 * update sentry release command ([407084c](https://github.com/insuusvenerati/treats-portfolio/commit/407084c0e3c1ebeb779e37f700d7473a09424d48))
+
 
 # [8.4.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.3.0...8.4.0-develop.1) (2021-06-25)
 

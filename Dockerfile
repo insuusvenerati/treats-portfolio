@@ -8,8 +8,8 @@ ARG DATO_API_TOKEN
 ENV DATO_API_TOKEN ${DATO_API_TOKEN}
 
 ADD . .
-RUN yarn install --frozen-lockfile \
-  && gatsby build
+RUN yarn \
+  && gatsby build --prefix-paths
 
 FROM gatsbyjs/gatsby
 COPY --from=build /app/public /pub

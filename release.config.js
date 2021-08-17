@@ -11,6 +11,7 @@ module.exports = {
   repositoryUrl: 'https://github.com/insuusvenerati/treats-portfolio',
   tagFormat: '${version}',
   plugins: [
+    '@semantic-release/commit-analyzer',
     [
       'semantic-release-helm',
       {
@@ -23,16 +24,15 @@ module.exports = {
         changelogFile: 'CHANGELOG.MD',
       },
     ],
-    '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     [
       '@semantic-release/github',
       {
         assets: [
-          {
-            path: `treats-portfolio-${chartVersion.version}.tgz`,
-            label: 'Helm Package',
-          },
+          // {
+          //   path: `treats-portfolio-${chartVersion.version}.tgz`,
+          //   label: 'Helm Package',
+          // },
         ],
       },
     ],
