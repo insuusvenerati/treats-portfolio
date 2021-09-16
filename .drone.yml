@@ -8,27 +8,27 @@ trigger:
       - renovate/*
 
 steps:
-  - name: restore-cache-with-filesystem
-    image: meltwater/drone-cache:dev
-    pull: 'always'
-    settings:
-      restore: true
-      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
-      archive_format: 'gzip'
-      bucket: stiforr-drone-cache
-      region: us-east-1
-      # filesystem_cache_root: "/tmp/cache"
-      mount:
-        - '.cache'
-        - 'public'
-    environment:
-      AWS_ACCESS_KEY_ID:
-        from_secret: aws_access_key_id
-      AWS_SECRET_ACCESS_KEY:
-        from_secret: aws_secret_access_key
-    volumes:
-      - name: cache
-        path: /tmp/cache
+  # - name: restore-cache-with-filesystem
+  #   image: meltwater/drone-cache:dev
+  #   pull: 'always'
+  #   settings:
+  #     restore: true
+  #     cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+  #     archive_format: 'gzip'
+  #     bucket: stiforr-drone-cache
+  #     region: us-east-1
+  #     # filesystem_cache_root: "/tmp/cache"
+  #     mount:
+  #       - '.cache'
+  #       - 'public'
+  #   environment:
+  #     AWS_ACCESS_KEY_ID:
+  #       from_secret: aws_access_key_id
+  #     AWS_SECRET_ACCESS_KEY:
+  #       from_secret: aws_secret_access_key
+  #   volumes:
+  #     - name: cache
+  #       path: /tmp/cache
 
   - name: install
     image: node:lts-buster-slim
@@ -41,8 +41,8 @@ steps:
           - develop
           - 'feature/*'
           - 'hotfix/*'
-    depends_on:
-      - restore-cache-with-filesystem
+    # depends_on:
+    #   - restore-cache-with-filesystem
 
   - name: build
     image: node:lts-buster-slim
@@ -63,30 +63,30 @@ steps:
     depends_on:
       - install
 
-  - name: rebuild-cache-with-filesystem
-    image: meltwater/drone-cache:dev
-    pull: 'always'
-    settings:
-      rebuild: true
-      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
-      archive_format: 'gzip'
-      bucket: stiforr-drone-cache
-      region: us-east-1
-      # filesystem_cache_root: "/tmp/cache"
-      mount:
-        - '.cache'
-        - 'public'
-    volumes:
-      - name: cache
-        path: /tmp/cache
-    environment:
-      AWS_ACCESS_KEY_ID:
-        from_secret: aws_access_key_id
-      AWS_SECRET_ACCESS_KEY:
-        from_secret: aws_secret_access_key
-    depends_on:
-      - install
-      - build
+  # - name: rebuild-cache-with-filesystem
+  #   image: meltwater/drone-cache:dev
+  #   pull: 'always'
+  #   settings:
+  #     rebuild: true
+  #     cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+  #     archive_format: 'gzip'
+  #     bucket: stiforr-drone-cache
+  #     region: us-east-1
+  #     # filesystem_cache_root: "/tmp/cache"
+  #     mount:
+  #       - '.cache'
+  #       - 'public'
+  #   volumes:
+  #     - name: cache
+  #       path: /tmp/cache
+  #   environment:
+  #     AWS_ACCESS_KEY_ID:
+  #       from_secret: aws_access_key_id
+  #     AWS_SECRET_ACCESS_KEY:
+  #       from_secret: aws_secret_access_key
+  #   depends_on:
+  #     - install
+  #     - build
 
   - name: Test Chrome
     image: cypress/included:7.1.0
@@ -212,8 +212,7 @@ steps:
         {{/success}}
     depends_on:
       - 'docker'
-
-volumes:
-  - name: cache
-    host:
-      path: /var/lib/cache
+# volumes:
+#   - name: cache
+#     host:
+#       path: /var/lib/cache
