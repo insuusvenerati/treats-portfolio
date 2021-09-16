@@ -58,8 +58,6 @@ steps:
     environment:
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
-      GATSBY_SENTRY_DSN:
-        from_secret: GATSBY_SENTRY_DSN
     depends_on:
       - install
 
@@ -96,8 +94,6 @@ steps:
     environment:
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
-      GATSBY_SENTRY_DSN:
-        from_secret: GATSBY_SENTRY_DSN
     depends_on:
       - install
 
