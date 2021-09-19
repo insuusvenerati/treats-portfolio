@@ -97,23 +97,23 @@ steps:
     depends_on:
       - install
 
-  - name: deploy
-    image: stiforr/ci-tools:latest
-    commands:
-      - yarn global add firebase-tools firebase-ci
-      - firebase-ci deploy
-    environment:
-      FIREBASE_TOKEN:
-        from_secret: FIREBASE_TOKEN
-    when:
-      branch:
-        - main
-      event:
-        exclude:
-          - pull_request
-          - tag
-    depends_on:
-      - build
+  # - name: deploy
+  #   image: stiforr/ci-tools:latest
+  #   commands:
+  #     - yarn global add firebase-tools firebase-ci
+  #     - firebase-ci deploy
+  #   environment:
+  #     FIREBASE_TOKEN:
+  #       from_secret: FIREBASE_TOKEN
+  #   when:
+  #     branch:
+  #       - main
+  #     event:
+  #       exclude:
+  #         - pull_request
+  #         - tag
+  #   depends_on:
+  #     - build
 
   - name: semantic-release
     image: stiforr/ci-tools:latest
@@ -132,7 +132,7 @@ steps:
         from_secret: GH_TOKEN
     depends_on:
       - build
-      - deploy
+      # - deploy
       - 'Test Chrome'
 
   - name: Helm Package
