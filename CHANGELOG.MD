@@ -1,3 +1,13 @@
+# [8.5.0-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.2...8.5.0-develop.3) (2021-09-20)
+
+
+### Bug Fixes
+
+* disable ci cache ([c236608](https://github.com/insuusvenerati/treats-portfolio/commit/c236608a82ddb4e403cda20af9e130ce23226a06))
+* regen yarn.lock ([0f43b4e](https://github.com/insuusvenerati/treats-portfolio/commit/0f43b4eb35000eb9a86de83284c467eead259fc5))
+* remove npmrc ([6605a6b](https://github.com/insuusvenerati/treats-portfolio/commit/6605a6bc2b3e6b1e10ee3743940be9fb68f46a3c))
+* remove unused token references ([fc08a86](https://github.com/insuusvenerati/treats-portfolio/commit/fc08a8633284e3caa4e52c41c6124a6c3881a4a7))
+
 # [8.5.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.1...8.5.0-develop.2) (2021-08-18)
 
 
