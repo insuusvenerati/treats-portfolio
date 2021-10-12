@@ -1,3 +1,10 @@
+# [8.5.0-develop.6](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.5...8.5.0-develop.6) (2021-10-12)
+
+
+### Bug Fixes
+
+* add drone cache support ([d0401ef](https://github.com/insuusvenerati/treats-portfolio/commit/d0401efa3caeaefe54cd37279d52dec0c611e038))
+
 # [8.5.0-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.4...8.5.0-develop.5) (2021-10-12)
 
 
