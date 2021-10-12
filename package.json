@@ -1,7 +1,7 @@
 {
   "name": "gatsby-datocms-demo",
   "description": "Gatsby DatoCMS creative portfolio demo",
-  "version": "8.5.0-develop.6",
+  "version": "8.5.0-develop.7",
   "author": "Stefano Verna <s.verna@datocms.com>",
   "private": "true",
   "dependencies": {

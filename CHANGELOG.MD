@@ -1,3 +1,10 @@
+# [8.5.0-develop.7](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.6...8.5.0-develop.7) (2021-10-12)
+
+
+### Bug Fixes
+
+* move helm push to a script ([0db63f0](https://github.com/insuusvenerati/treats-portfolio/commit/0db63f073f3fcb4310700884b697a3b993db4b01))
+
 # [8.5.0-develop.6](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.5...8.5.0-develop.6) (2021-10-12)
 
 
