@@ -1,3 +1,10 @@
+# [8.5.0-develop.8](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.7...8.5.0-develop.8) (2021-10-12)
+
+
+### Bug Fixes
+
+* always pull ci tools image ([f1d9a28](https://github.com/insuusvenerati/treats-portfolio/commit/f1d9a28f15e6234045ad6bfe581cd83cb63fb4e6))
+
 # [8.5.0-develop.7](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.6...8.5.0-develop.7) (2021-10-12)
 
 
