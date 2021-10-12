@@ -111,6 +111,7 @@ steps:
 
   - name: semantic-release
     image: stiforr/ci-tools:latest
+    pull: 'always'
     commands:
       - yarn semantic-release
     when:
@@ -131,6 +132,7 @@ steps:
 
   - name: Helm Package
     image: stiforr/ci-tools:latest
+    pull: 'always'
     commands:
       - helm package k8s/treats-portfolio
     depends_on:
@@ -138,6 +140,7 @@ steps:
 
   - name: Helm Push
     image: stiforr/ci-tools:latest
+    pull: 'always'
     commands:
       - /scripts/helm-push.sh
       # - git push -u origin main
@@ -146,6 +149,7 @@ steps:
 
   - name: sentry-release
     image: stiforr/ci-tools:latest
+    pull: 'always'
     depends_on:
       - 'build'
     environment:
