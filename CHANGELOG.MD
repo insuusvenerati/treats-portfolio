@@ -1,3 +1,10 @@
+# [8.5.0-develop.9](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.8...8.5.0-develop.9) (2021-10-12)
+
+
+### Bug Fixes
+
+* update citools repo ([27ac0d7](https://github.com/insuusvenerati/treats-portfolio/commit/27ac0d706b73806d32dc35f4ffdde0ebf64b83c7))
+
 # [8.5.0-develop.8](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.7...8.5.0-develop.8) (2021-10-12)
 
 
