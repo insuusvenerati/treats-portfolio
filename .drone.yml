@@ -146,8 +146,9 @@ steps:
     image: stiforr/ci-tools:latest
     commands:
       - git clone https://github.com/insuusvenerati/charts.git
+      - mv *.tgz charts
       - cd charts
-      - git add ../*.tgz
+      - git add *.tgz
       - |
         git commit -m ${DRONE_REPO_NAME} update app version ${DRONE_TAG}
       # - git push -u origin main
