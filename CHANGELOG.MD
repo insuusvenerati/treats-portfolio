@@ -1,3 +1,10 @@
+# [8.5.0-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.3...8.5.0-develop.4) (2021-10-12)
+
+
+### Bug Fixes
+
+* update ci helm actions ([2f41452](https://github.com/insuusvenerati/treats-portfolio/commit/2f41452f28a0481b6e5f29f38506663a89d7cd6a))
+
 # [8.5.0-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.2...8.5.0-develop.3) (2021-09-20)
 
 
