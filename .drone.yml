@@ -139,12 +139,7 @@ steps:
   - name: Helm Push
     image: stiforr/ci-tools:latest
     commands:
-      - git clone https://github.com/insuusvenerati/charts.git
-      - mv ${DRONE_REPO_NAME}-${DRONE_TAG}.tgz charts
-      - cd charts
-      - git add ${DRONE_REPO_NAME}-${DRONE_TAG}.tgz
-      - |
-        git commit -m ${DRONE_REPO_NAME} update app version ${DRONE_TAG}
+      - /scripts/helm-push.sh
       # - git push -u origin main
     depends_on:
       - 'Helm Package'
