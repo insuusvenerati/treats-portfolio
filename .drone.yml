@@ -142,16 +142,17 @@ steps:
     depends_on:
       - semantic-release
 
-  # - name: Helm Push
-  #   image: stiforr/ci-tools:latest
-  #   commands:
-  #     - git clone https://github.com/insuusvenerati/charts.git
-  #     - git add *.tgz
-  #     - |
-  #       git commit -m chore: add helm package
-  #     # - git push -u origin main
-  #   depends_on:
-  #     - 'Helm Package'
+  - name: Helm Push
+    image: stiforr/ci-tools:latest
+    commands:
+      - git clone https://github.com/insuusvenerati/charts.git
+      - cd charts
+      - git add ../*.tgz
+      - |
+        git commit -m ${DRONE_REPO_NAME} update app version ${DRONE_TAG}
+      # - git push -u origin main
+    depends_on:
+      - 'Helm Package'
 
   - name: sentry-release
     image: stiforr/ci-tools:latest

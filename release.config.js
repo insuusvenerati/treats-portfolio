@@ -45,7 +45,7 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['package.json', 'CHANGELOG.MD', 'k8s/treats-portfolio/Chart.yaml'],
+        assets: ['package.json', 'CHANGELOG.MD'],
         message: 'chore(release): [CI SKIP] ${nextRelease.version}\n\n${nextRelease.notes}',
       },
     ],
