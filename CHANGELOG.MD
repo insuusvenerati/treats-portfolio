@@ -1,3 +1,10 @@
+# [8.5.0-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.4...8.5.0-develop.5) (2021-10-12)
+
+
+### Bug Fixes
+
+* move chart tarball to charts repo dir ([a79162d](https://github.com/insuusvenerati/treats-portfolio/commit/a79162d9a7dd49e64f86c73726f62692e54953ae))
+
 # [8.5.0-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.3...8.5.0-develop.4) (2021-10-12)
 
 
