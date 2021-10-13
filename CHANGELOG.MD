@@ -1,3 +1,10 @@
+# [8.5.0-develop.10](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.9...8.5.0-develop.10) (2021-10-13)
+
+
+### Bug Fixes
+
+* test version bump ([973f9ec](https://github.com/insuusvenerati/treats-portfolio/commit/973f9ec39a38f173d5f8004ae9d40d22d32a447f))
+
 # [8.5.0-develop.9](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.8...8.5.0-develop.9) (2021-10-12)
 
 
