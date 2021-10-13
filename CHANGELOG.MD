@@ -1,3 +1,11 @@
+# [8.5.0-develop.13](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.12...8.5.0-develop.13) (2021-10-13)
+
+
+### Bug Fixes
+
+* exclude several ci steps on tag ([0007a9c](https://github.com/insuusvenerati/treats-portfolio/commit/0007a9cc4713abcfd85690ece508d068dbd4207d))
+* package helm chart into github release ([ebd0531](https://github.com/insuusvenerati/treats-portfolio/commit/ebd053171292c18118215a8e6dc851bd60b7f7f5))
+
 # [8.5.0-develop.12](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.11...8.5.0-develop.12) (2021-10-13)
 
 
