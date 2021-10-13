@@ -1,3 +1,10 @@
+# [8.5.0-develop.11](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.10...8.5.0-develop.11) (2021-10-13)
+
+
+### Bug Fixes
+
+* update yarn.lock ([5c1d71d](https://github.com/insuusvenerati/treats-portfolio/commit/5c1d71ddb8243f081294aa2704660df54c92ea71))
+
 # [8.5.0-develop.10](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.9...8.5.0-develop.10) (2021-10-13)
 
 
