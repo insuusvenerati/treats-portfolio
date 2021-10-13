@@ -11,6 +11,10 @@ steps:
   - name: restore-cache-with-filesystem
     image: meltwater/drone-cache:dev
     pull: 'always'
+    when:
+      event:
+        exclude:
+          - tag
     settings:
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
@@ -38,6 +42,9 @@ steps:
           - develop
           - 'feature/*'
           - 'hotfix/*'
+      event:
+        exclude:
+          - tag
     depends_on:
       - restore-cache-with-filesystem
 
@@ -146,6 +153,18 @@ steps:
       # - git push -u origin main
     depends_on:
       - 'Helm Package'
+
+  - name: Trigger Charts
+    image: plugins/downstream
+    settings:
+      server: https://drone.k8s.stiforr.tech
+      fork: true
+      token:
+        from_secret: drone_token
+      repositories:
+        - insuusvenerati/charts
+    depends_on:
+      - 'Helm Push'
 
   - name: sentry-release
     image: stiforr/ci-tools:0.0.1
