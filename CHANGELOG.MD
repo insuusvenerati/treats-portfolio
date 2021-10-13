@@ -1,3 +1,10 @@
+# [8.5.0-develop.12](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.11...8.5.0-develop.12) (2021-10-13)
+
+
+### Bug Fixes
+
+* use updated ci tools image ([8388d9b](https://github.com/insuusvenerati/treats-portfolio/commit/8388d9b815b94d93cecf73ca4ad6ede699cfd564))
+
 # [8.5.0-develop.11](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.10...8.5.0-develop.11) (2021-10-13)
 
 
