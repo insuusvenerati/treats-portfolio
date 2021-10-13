@@ -92,7 +92,7 @@ steps:
       - install
 
   # - name: deploy
-  #   image: ghcr.io/insuusvenerati/ci-tools:main
+  #   image: stiforr/ci-tools:0.0.1
   #   commands:
   #     - yarn global add firebase-tools firebase-ci
   #     - firebase-ci deploy
@@ -110,7 +110,7 @@ steps:
   #     - build
 
   - name: semantic-release
-    image: ghcr.io/insuusvenerati/ci-tools:main
+    image: stiforr/ci-tools:0.0.1
     pull: 'always'
     commands:
       - yarn semantic-release
@@ -131,7 +131,7 @@ steps:
       - 'Test Chrome'
 
   - name: Helm Package
-    image: ghcr.io/insuusvenerati/ci-tools:main
+    image: stiforr/ci-tools:0.0.1
     pull: 'always'
     commands:
       - helm package k8s/treats-portfolio
@@ -139,7 +139,7 @@ steps:
       - semantic-release
 
   - name: Helm Push
-    image: ghcr.io/insuusvenerati/ci-tools:main
+    image: stiforr/ci-tools:0.0.1
     pull: 'always'
     commands:
       - /scripts/helm-push.sh
@@ -148,7 +148,7 @@ steps:
       - 'Helm Package'
 
   - name: sentry-release
-    image: ghcr.io/insuusvenerati/ci-tools:main
+    image: stiforr/ci-tools:0.0.1
     pull: 'always'
     depends_on:
       - 'build'
