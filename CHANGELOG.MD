@@ -1,3 +1,10 @@
+# [8.5.0-develop.14](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.13...8.5.0-develop.14) (2021-10-14)
+
+
+### Bug Fixes
+
+* push charts to oci registry ([4a55bb0](https://github.com/insuusvenerati/treats-portfolio/commit/4a55bb0a7bd4f420614840af210b8ab009beba30))
+
 # [8.5.0-develop.13](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.12...8.5.0-develop.13) (2021-10-13)
 
 
