@@ -9,7 +9,7 @@ trigger:
 
 steps:
   - name: restore-cache-with-filesystem
-    image: meltwater/drone-cache:dev
+    image: plugins/s3-cache
     pull: 'always'
     volumes:
       - name: cache
@@ -27,11 +27,15 @@ steps:
         - './.cache'
         - './public'
         - '/usr/local/share/.cache'
-    environment:
-      AWS_ACCESS_KEY_ID:
+      access_key:
         from_secret: minio_access_key_id
-      AWS_SECRET_ACCESS_KEY:
+      secret_key:
         from_secret: minio_secret_access_key
+    # environment:
+    #   AWS_ACCESS_KEY_ID:
+    #     from_secret: minio_access_key_id
+    #   AWS_SECRET_ACCESS_KEY:
+    #     from_secret: minio_secret_access_key
 
   - name: install
     image: node:lts-buster-slim
@@ -75,7 +79,7 @@ steps:
       - install
 
   - name: rebuild-cache-with-filesystem
-    image: meltwater/drone-cache:dev
+    image: plugins/s3-cache
     pull: 'always'
     volumes:
       - name: cache
@@ -97,11 +101,15 @@ steps:
         - './.cache'
         - './public'
         - '/usr/local/share/.cache'
-    environment:
-      AWS_ACCESS_KEY_ID:
+      access_key:
         from_secret: minio_access_key_id
-      AWS_SECRET_ACCESS_KEY:
+      secret_key:
         from_secret: minio_secret_access_key
+    # environment:
+    #   AWS_ACCESS_KEY_ID:
+    #     from_secret: minio_access_key_id
+    #   AWS_SECRET_ACCESS_KEY:
+    #     from_secret: minio_secret_access_key
     depends_on:
       - install
       - build
