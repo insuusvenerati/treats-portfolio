@@ -11,6 +11,9 @@ steps:
   - name: restore-cache-with-filesystem
     image: meltwater/drone-cache:dev
     pull: 'always'
+    volumes:
+      - name: cache
+        path: /usr/local/share/.cache
     settings:
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
@@ -30,6 +33,9 @@ steps:
 
   - name: install
     image: node:lts-buster-slim
+    volumes:
+      - name: cache
+        path: /usr/local/share/.cache
     commands:
       - yarn install --frozen-lockfile
       - yarn cache dir
@@ -69,6 +75,9 @@ steps:
   - name: rebuild-cache-with-filesystem
     image: meltwater/drone-cache:dev
     pull: 'always'
+    volumes:
+      - name: cache
+        path: /usr/local/share/.cache
     when:
       event:
         exclude:
@@ -236,7 +245,8 @@ steps:
   #       {{/success}}
   #   depends_on:
   #     - 'docker'
-# volumes:
-#   - name: cache
-#     host:
-#       path: /var/lib/cache
+
+volumes:
+  - name: cache
+    host:
+      path: /tmp/drone/cache
