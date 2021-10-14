@@ -23,8 +23,7 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ''
 
-podAnnotations:
-  linkerd.io/inject: enabled
+podAnnotations: {}
 
 podSecurityContext:
   {}
@@ -42,15 +41,14 @@ securityContext:
 service:
   type: ClusterIP
   port: 80
-  annotations:
-    linkerd.io/inject: enabled
+  annotations: {}
 
 ambassador:
   enabled: false
   host: treats.stage.stiforr.tech
 
 flagger:
-  enabled: true
+  enabled: false
   analysis:
     interval: 10s
     threshold: 5
@@ -69,19 +67,18 @@ flagger:
 ingress:
   enabled: false
   className: ''
-  annotations:
-    {}
+  annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: chart-example.local
+    - host: domain.tld
       paths:
         - path: /
           pathType: ImplementationSpecific
-  tls: []
-  #  - secretName: chart-example-tls
+  # tls:
+  #  - secretName: treats-cert
   #    hosts:
-  #      - chart-example.local
+  #      - treats.home.stiforr.tech
 
 resources:
   {}
