@@ -1,3 +1,10 @@
+# [8.5.0-develop.15](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.14...8.5.0-develop.15) (2021-10-14)
+
+
+### Bug Fixes
+
+* allows restore cache on tags ([074afa5](https://github.com/insuusvenerati/treats-portfolio/commit/074afa5fff8f14f6f8d6e7c5a1ae263727c263e1))
+
 # [8.5.0-develop.14](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.13...8.5.0-develop.14) (2021-10-14)
 
 
