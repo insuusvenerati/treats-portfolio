@@ -136,7 +136,7 @@ steps:
   #     - build
 
   - name: semantic-release
-    image: stiforr/ci-tools:0.0.2
+    image: stiforr/ci-tools:0.0.3
     pull: 'always'
     commands:
       - yarn semantic-release
@@ -161,7 +161,7 @@ steps:
       - 'Test Chrome'
 
   - name: Helm Package
-    image: stiforr/ci-tools:0.0.2
+    image: stiforr/ci-tools:0.0.3
     pull: 'always'
     commands:
       - helm package k8s/treats-portfolio
@@ -169,7 +169,7 @@ steps:
       - semantic-release
 
   - name: Helm Push
-    image: stiforr/ci-tools:0.0.2
+    image: stiforr/ci-tools:0.0.3
     pull: 'always'
     commands:
       - /scripts/helm-push.sh
@@ -178,7 +178,7 @@ steps:
       - 'Helm Package'
 
   - name: sentry-release
-    image: stiforr/ci-tools:0.0.2
+    image: stiforr/ci-tools:0.0.3
     pull: 'always'
     depends_on:
       - 'build'
