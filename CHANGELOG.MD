@@ -1,3 +1,10 @@
+# [8.5.0-develop.16](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.15...8.5.0-develop.16) (2021-10-14)
+
+
+### Bug Fixes
+
+* update values.yaml ([176302f](https://github.com/insuusvenerati/treats-portfolio/commit/176302fcd4a5834998ab6285364d63ad5e8505d7))
+
 # [8.5.0-develop.15](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.14...8.5.0-develop.15) (2021-10-14)
 
 
