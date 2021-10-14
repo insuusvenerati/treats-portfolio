@@ -59,6 +59,9 @@ steps:
           - develop
           - 'feature/*'
           - 'hotfix/*'
+      event:
+        exclude:
+          - tag
     environment:
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
@@ -68,6 +71,10 @@ steps:
   - name: rebuild-cache-with-filesystem
     image: meltwater/drone-cache:dev
     pull: 'always'
+    when:
+      event:
+        exclude:
+          - tag
     settings:
       rebuild: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
@@ -89,6 +96,10 @@ steps:
 
   - name: Test Chrome
     image: cypress/included:7.1.0
+    when:
+      event:
+        exclude:
+          - tag
     commands:
       - cypress install
       - yarn test:e2e:ci-chrome
@@ -137,34 +148,34 @@ steps:
       # - deploy
       - 'Test Chrome'
 
-  - name: Helm Package
-    image: stiforr/ci-tools:0.0.1
-    pull: 'always'
-    commands:
-      - helm package k8s/treats-portfolio
-    depends_on:
-      - semantic-release
+  # - name: Helm Package
+  #   image: stiforr/ci-tools:0.0.1
+  #   pull: 'always'
+  #   commands:
+  #     - helm package k8s/treats-portfolio
+  #   depends_on:
+  #     - semantic-release
 
-  - name: Helm Push
-    image: stiforr/ci-tools:0.0.1
-    pull: 'always'
-    commands:
-      - /scripts/helm-push.sh
-      # - git push -u origin main
-    depends_on:
-      - 'Helm Package'
+  # - name: Helm Push
+  #   image: stiforr/ci-tools:0.0.1
+  #   pull: 'always'
+  #   commands:
+  #     - /scripts/helm-push.sh
+  #     # - git push -u origin main
+  #   depends_on:
+  #     - 'Helm Package'
 
-  - name: Trigger Charts
-    image: plugins/downstream
-    settings:
-      server: https://drone.k8s.stiforr.tech
-      fork: true
-      token:
-        from_secret: drone_token
-      repositories:
-        - insuusvenerati/charts
-    depends_on:
-      - 'Helm Push'
+  # - name: Trigger Charts
+  #   image: plugins/downstream
+  #   settings:
+  #     server: https://drone.k8s.stiforr.tech
+  #     fork: true
+  #     token:
+  #       from_secret: drone_token
+  #     repositories:
+  #       - insuusvenerati/charts
+  #   depends_on:
+  #     - 'Helm Push'
 
   - name: sentry-release
     image: stiforr/ci-tools:0.0.1

@@ -19,6 +19,7 @@ module.exports = {
       'semantic-release-helm',
       {
         chartPath: './k8s/treats-portfolio',
+        registry: 'https://registry.k8s.stiforr.tech/stiforr/treats-portfolio',
       },
     ],
     [
@@ -48,7 +49,7 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['package.json', 'CHANGELOG.MD'],
+        assets: ['package.json', 'CHANGELOG.MD', 'k8s/treats-portfolio/Chart.yaml'],
         message: 'chore(release): [CI SKIP] ${nextRelease.version}\n\n${nextRelease.notes}',
       },
     ],
