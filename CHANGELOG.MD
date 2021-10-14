@@ -1,3 +1,16 @@
+# [8.5.0-develop.22](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.21...8.5.0-develop.22) (2021-10-14)
+
+
+### Bug Fixes
+
+* add path-style flag for minio ([c887cf9](https://github.com/insuusvenerati/treats-portfolio/commit/c887cf9a1248cb9135b743a4a9d0c750bbecb6a4))
+* attempt to use alternative cache plugin ([187d5fb](https://github.com/insuusvenerati/treats-portfolio/commit/187d5fb1447c8dfc9a6d3c1b51b68725d25f9076))
+* attempt to use local minio install ([6191e7f](https://github.com/insuusvenerati/treats-portfolio/commit/6191e7f51ee44d3717008db20b3dd8a98302fab8))
+* return to using docker runner ([98d4419](https://github.com/insuusvenerati/treats-portfolio/commit/98d4419833deda1c4439776a624bd7917d7d8a65))
+* update minio url ([6063ccd](https://github.com/insuusvenerati/treats-portfolio/commit/6063ccdb95886e577d31f5a935c01c845f2a7da2))
+* update s3 url ([9fb7ccd](https://github.com/insuusvenerati/treats-portfolio/commit/9fb7ccd73073be5d1210bf3f48b3cb429b0a44d8))
+* use k8s runner ([2f33bda](https://github.com/insuusvenerati/treats-portfolio/commit/2f33bda86800cf886b61521dcc3e1ea9ca4f8690))
+
 # [8.5.0-develop.21](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.20...8.5.0-develop.21) (2021-10-14)
 
 
