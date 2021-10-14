@@ -19,7 +19,7 @@ module.exports = {
       'semantic-release-helm',
       {
         chartPath: './k8s/treats-portfolio',
-        registry: 'registry.k8s.stiforr.tech/stiforr/treats-portfolio',
+        // registry: 'registry.k8s.stiforr.tech/stiforr/treats-portfolio',
       },
     ],
     [
