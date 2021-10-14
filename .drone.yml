@@ -136,7 +136,7 @@ steps:
   #     - build
 
   - name: semantic-release
-    image: stiforr/ci-tools:0.0.1
+    image: stiforr/ci-tools:0.0.2
     pull: 'always'
     commands:
       - yarn semantic-release
@@ -160,37 +160,25 @@ steps:
       # - deploy
       - 'Test Chrome'
 
-  # - name: Helm Package
-  #   image: stiforr/ci-tools:0.0.1
-  #   pull: 'always'
-  #   commands:
-  #     - helm package k8s/treats-portfolio
-  #   depends_on:
-  #     - semantic-release
+  - name: Helm Package
+    image: stiforr/ci-tools:0.0.2
+    pull: 'always'
+    commands:
+      - helm package k8s/treats-portfolio
+    depends_on:
+      - semantic-release
 
-  # - name: Helm Push
-  #   image: stiforr/ci-tools:0.0.1
-  #   pull: 'always'
-  #   commands:
-  #     - /scripts/helm-push.sh
-  #     # - git push -u origin main
-  #   depends_on:
-  #     - 'Helm Package'
-
-  # - name: Trigger Charts
-  #   image: plugins/downstream
-  #   settings:
-  #     server: https://drone.k8s.stiforr.tech
-  #     fork: true
-  #     token:
-  #       from_secret: drone_token
-  #     repositories:
-  #       - insuusvenerati/charts
-  #   depends_on:
-  #     - 'Helm Push'
+  - name: Helm Push
+    image: stiforr/ci-tools:0.0.2
+    pull: 'always'
+    commands:
+      - /scripts/helm-push.sh
+      # - git push -u origin main
+    depends_on:
+      - 'Helm Package'
 
   - name: sentry-release
-    image: stiforr/ci-tools:0.0.1
+    image: stiforr/ci-tools:0.0.2
     pull: 'always'
     depends_on:
       - 'build'
