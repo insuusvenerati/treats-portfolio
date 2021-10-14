@@ -18,6 +18,7 @@ steps:
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       archive_format: 'gzip'
+      endpoint: http://minio.minio.svc.cluster.local:9000
       bucket: stiforr-drone-cache
       region: us-east-1
       # filesystem_cache_root: "/tmp/cache"
@@ -27,9 +28,9 @@ steps:
         - '/usr/local/share/.cache'
     environment:
       AWS_ACCESS_KEY_ID:
-        from_secret: aws_access_key_id
+        from_secret: minio_access_key_id
       AWS_SECRET_ACCESS_KEY:
-        from_secret: aws_secret_access_key
+        from_secret: minio_secret_access_key
 
   - name: install
     image: node:lts-buster-slim
@@ -84,6 +85,7 @@ steps:
           - tag
     settings:
       rebuild: true
+      endpoint: http://minio.minio.svc.cluster.local:9000
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       archive_format: 'gzip'
       bucket: stiforr-drone-cache
@@ -95,9 +97,9 @@ steps:
         - '/usr/local/share/.cache'
     environment:
       AWS_ACCESS_KEY_ID:
-        from_secret: aws_access_key_id
+        from_secret: minio_access_key_id
       AWS_SECRET_ACCESS_KEY:
-        from_secret: aws_secret_access_key
+        from_secret: minio_secret_access_key
     depends_on:
       - install
       - build
