@@ -1,3 +1,10 @@
+# [8.5.0-develop.20](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.19...8.5.0-develop.20) (2021-10-14)
+
+
+### Bug Fixes
+
+* disable helm push from semantic-release ([26d3adb](https://github.com/insuusvenerati/treats-portfolio/commit/26d3adb25ef876eb80292a046b41652062036684))
+
 # [8.5.0-develop.19](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.18...8.5.0-develop.19) (2021-10-14)
 
 
