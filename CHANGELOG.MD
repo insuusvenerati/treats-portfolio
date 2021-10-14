@@ -1,3 +1,10 @@
+# [8.5.0-develop.19](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.18...8.5.0-develop.19) (2021-10-14)
+
+
+### Bug Fixes
+
+* updates ci to use new helm push strategy ([71f1b54](https://github.com/insuusvenerati/treats-portfolio/commit/71f1b543cfac0db8a11993add70721c69be1b385))
+
 # [8.5.0-develop.18](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.17...8.5.0-develop.18) (2021-10-14)
 
 
