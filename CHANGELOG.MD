@@ -1,3 +1,11 @@
+# [8.5.0-develop.17](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.16...8.5.0-develop.17) (2021-10-14)
+
+
+### Bug Fixes
+
+* check yarn cache dir ([9e4d7af](https://github.com/insuusvenerati/treats-portfolio/commit/9e4d7af8dc5b2ab3e5a9d9c0a0ab7471ce713532))
+* fixes helm registry url ([fcad2d9](https://github.com/insuusvenerati/treats-portfolio/commit/fcad2d903cd050ad3f7075ca625b42bf97ea2f5f))
+
 # [8.5.0-develop.16](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.15...8.5.0-develop.16) (2021-10-14)
 
 
