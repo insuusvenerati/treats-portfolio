@@ -1,3 +1,10 @@
+# [8.5.0-develop.18](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.17...8.5.0-develop.18) (2021-10-14)
+
+
+### Bug Fixes
+
+* mount yarn cache as a volume ([d88f119](https://github.com/insuusvenerati/treats-portfolio/commit/d88f119bcf1f223c537e2c80bdc7a9bfacd076da))
+
 # [8.5.0-develop.17](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.16...8.5.0-develop.17) (2021-10-14)
 
 
