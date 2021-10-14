@@ -32,7 +32,7 @@ steps:
     image: node:lts-buster-slim
     commands:
       - yarn install --frozen-lockfile
-      - ls -la /root
+      - yarn cache dir
     when:
       branch:
         include:
