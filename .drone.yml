@@ -1,5 +1,5 @@
 kind: pipeline
-type: docker
+type: kubernetes
 name: default
 
 trigger:
@@ -163,10 +163,6 @@ steps:
     environment:
       GH_TOKEN:
         from_secret: GH_TOKEN
-      REGISTRY_USERNAME:
-        from_secret: REGISTRY_USERNAME
-      REGISTRY_PASSWORD:
-        from_secret: REGISTRY_PASSWORD
     depends_on:
       - build
       # - deploy
