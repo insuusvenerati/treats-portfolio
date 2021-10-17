@@ -9,7 +9,7 @@ trigger:
 
 steps:
   - name: restore-cache-with-filesystem
-    image: meltwater/drone-cache:dev
+    image: meltwater/drone-cache:v1
     pull: 'always'
     volumes:
       - name: cache
@@ -79,7 +79,7 @@ steps:
       - install
 
   - name: rebuild-cache-with-filesystem
-    image: meltwater/drone-cache:dev
+    image: meltwater/drone-cache:v1
     pull: 'always'
     volumes:
       - name: cache
