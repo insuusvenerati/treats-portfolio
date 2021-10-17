@@ -15,7 +15,6 @@ steps:
       - name: cache
         path: /usr/local/share/.cache
     settings:
-      debug: true
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       archive_format: 'gzip'
@@ -29,15 +28,15 @@ steps:
         - './public'
         - '/usr/local/share/.cache'
         - './node_modules'
-      access_key:
+      # access_key:
+      #   from_secret: minio_access_key_id
+      # secret_key:
+      #   from_secret: minio_secret_access_key
+    environment:
+      AWS_ACCESS_KEY_ID:
         from_secret: minio_access_key_id
-      secret_key:
+      AWS_SECRET_ACCESS_KEY:
         from_secret: minio_secret_access_key
-    # environment:
-    #   AWS_ACCESS_KEY_ID:
-    #     from_secret: minio_access_key_id
-    #   AWS_SECRET_ACCESS_KEY:
-    #     from_secret: minio_secret_access_key
 
   - name: install
     image: node:lts-buster-slim
@@ -90,7 +89,6 @@ steps:
         exclude:
           - tag
     settings:
-      debug: true
       rebuild: true
       path-style: true
       endpoint: http://minio-home.minio.svc.cluster.local:9000
@@ -104,15 +102,15 @@ steps:
         - './public'
         - '/usr/local/share/.cache'
         - './node_modules'
-      access_key:
+      # access_key:
+      #   from_secret: minio_access_key_id
+      # secret_key:
+      #   from_secret: minio_secret_access_key
+    environment:
+      AWS_ACCESS_KEY_ID:
         from_secret: minio_access_key_id
-      secret_key:
+      AWS_SECRET_ACCESS_KEY:
         from_secret: minio_secret_access_key
-    # environment:
-    #   AWS_ACCESS_KEY_ID:
-    #     from_secret: minio_access_key_id
-    #   AWS_SECRET_ACCESS_KEY:
-    #     from_secret: minio_secret_access_key
     depends_on:
       - install
       - build
