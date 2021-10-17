@@ -19,7 +19,7 @@ steps:
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       archive_format: 'gzip'
       path-style: true
-      endpoint: https://api.s3.k8s.stiforr.tech
+      endpoint: http://minio.minio.svc.cluster.local:9000
       bucket: stiforr-drone-cache
       region: us-east-1
       # filesystem_cache_root: "/tmp/cache"
@@ -91,7 +91,7 @@ steps:
     settings:
       rebuild: true
       path-style: true
-      endpoint: https://api.s3.k8s.stiforr.tech
+      endpoint: http://minio.minio.svc.cluster.local:9000
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       archive_format: 'gzip'
       bucket: stiforr-drone-cache
