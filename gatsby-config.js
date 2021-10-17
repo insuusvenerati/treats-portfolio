@@ -50,12 +50,6 @@ const plugins = [
     },
   },
   {
-    resolve: `gatsby-plugin-google-analytics`,
-    options: {
-      trackingId: `UA-110954146-2`,
-    },
-  },
-  {
     resolve: `gatsby-plugin-offline`,
     options: {
       precachePages: [`/sketchbook/`, `/about/`, '/'],
