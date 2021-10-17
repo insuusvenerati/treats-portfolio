@@ -28,6 +28,7 @@ steps:
         - './.cache'
         - './public'
         - '/usr/local/share/.cache'
+        - './node_modules'
       access_key:
         from_secret: minio_access_key_id
       secret_key:
@@ -45,7 +46,6 @@ steps:
         path: /usr/local/share/.cache
     commands:
       - yarn install --frozen-lockfile
-      - yarn cache dir
     when:
       branch:
         include:
@@ -104,6 +104,7 @@ steps:
         - './.cache'
         - './public'
         - '/usr/local/share/.cache'
+        - './node_modules'
       access_key:
         from_secret: minio_access_key_id
       secret_key:
