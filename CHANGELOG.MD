@@ -1,3 +1,10 @@
+# [8.5.0-develop.26](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.25...8.5.0-develop.26) (2021-10-17)
+
+
+### Bug Fixes
+
+* enable pull option for drone cache ([fdbd500](https://github.com/insuusvenerati/treats-portfolio/commit/fdbd500ded50f46dd5889278056f4352f98e8226))
+
 # [8.5.0-develop.25](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.24...8.5.0-develop.25) (2021-10-17)
 
 
