@@ -9,20 +9,20 @@ trigger:
 
 steps:
   - name: restore-cache-with-filesystem
-    image: meltwater/drone-cache:v1
+    image: meltwater/drone-cache:v1.2.2
     pull: 'always'
     volumes:
       - name: cache
         path: /usr/local/share/.cache
     settings:
       restore: true
+      debug: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       archive_format: 'gzip'
       path-style: true
       endpoint: http://minio-home.minio.svc.cluster.local:9000
       bucket: insuusvenerati
       region: us-east-1
-      # filesystem_cache_root: "/tmp/cache"
       mount:
         - './.cache'
         - './public'
@@ -79,7 +79,7 @@ steps:
       - install
 
   - name: rebuild-cache-with-filesystem
-    image: meltwater/drone-cache:v1
+    image: meltwater/drone-cache:v1.2.2
     pull: 'always'
     volumes:
       - name: cache
@@ -90,6 +90,7 @@ steps:
           - tag
     settings:
       rebuild: true
+      debug: true
       path-style: true
       endpoint: http://minio-home.minio.svc.cluster.local:9000
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
