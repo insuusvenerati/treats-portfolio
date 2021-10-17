@@ -1,3 +1,10 @@
+# [8.5.0-develop.25](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.24...8.5.0-develop.25) (2021-10-17)
+
+
+### Bug Fixes
+
+* debug cache restore issues ([c88a06d](https://github.com/insuusvenerati/treats-portfolio/commit/c88a06d8e2aad90257c0b139a4d6c99974db8365))
+
 # [8.5.0-develop.24](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.23...8.5.0-develop.24) (2021-10-17)
 
 
