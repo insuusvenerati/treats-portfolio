@@ -1,3 +1,13 @@
+# [8.5.0-develop.29](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.28...8.5.0-develop.29) (2021-10-17)
+
+
+### Bug Fixes
+
+* cache node_modules in ci ([fede9d2](https://github.com/insuusvenerati/treats-portfolio/commit/fede9d2c9f3a6b7da3edac8febec58960f31b150))
+* cleanup cypress testing ([2c943a9](https://github.com/insuusvenerati/treats-portfolio/commit/2c943a9b9e08535def5b64c3b94fc26a25315ca5))
+* push helm charts via s3 ([48385b1](https://github.com/insuusvenerati/treats-portfolio/commit/48385b158132886a273f79f3e5cdf71362e16d95))
+* troubleshoot long yarn install ([bbe3bc4](https://github.com/insuusvenerati/treats-portfolio/commit/bbe3bc41b1426da15ea2996d9be65631ea41d9de))
+
 # [8.5.0-develop.28](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.27...8.5.0-develop.28) (2021-10-17)
 
 
