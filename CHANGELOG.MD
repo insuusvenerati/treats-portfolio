@@ -1,3 +1,11 @@
+# [8.5.0-develop.28](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.27...8.5.0-develop.28) (2021-10-17)
+
+
+### Bug Fixes
+
+* attempt to restore yarn cache ([d1b1b82](https://github.com/insuusvenerati/treats-portfolio/commit/d1b1b827f2ffa765a5735bbd657109987125501e))
+* remove firebase references ([3ff9bde](https://github.com/insuusvenerati/treats-portfolio/commit/3ff9bde8051e4fe0f47395b1b3a0f22d516fe0cc))
+
 # [8.5.0-develop.27](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.26...8.5.0-develop.27) (2021-10-17)
 
 
