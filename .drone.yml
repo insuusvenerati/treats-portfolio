@@ -45,7 +45,7 @@ steps:
       - name: cache
         path: /usr/local/share/.cache
     commands:
-      - yarn install --frozen-lockfile --verbose
+      - yarn install --frozen-lockfile
     when:
       branch:
         include:
