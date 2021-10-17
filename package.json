@@ -42,15 +42,14 @@
     "clean": "gatsby clean",
     "lint": "eslint --ext .tsx src/",
     "cy:open": "cypress open",
-    "cy:run:chrome": "cypress run --record --key 53382e56-8748-4616-9383-d52bf321dd41 --browser chrome",
-    "cy:run:firefox": "cypress run --record --key 53382e56-8748-4616-9383-d52bf321dd41 --browser firefox",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
     "test:e2e:ci-chrome": "start-server-and-test develop http://localhost:8000 cy:run:chrome",
     "test:e2e:ci-firefox": "start-server-and-test develop http://localhost:8000 cy:run:firefox",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@cypress/code-coverage": "3.9.4",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/commit-analyzer": "8.0.1",
     "@semantic-release/git": "9.0.0",
