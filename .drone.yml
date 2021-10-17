@@ -133,7 +133,7 @@ steps:
       - install
 
   - name: semantic-release
-    image: stiforr/ci-tools:0.0.4
+    image: stiforr/ci-tools:0.0.5
     pull: 'always'
     commands:
       - yarn semantic-release
@@ -154,7 +154,7 @@ steps:
       - 'Test Chrome'
 
   - name: Helm Package
-    image: stiforr/ci-tools:0.0.4
+    image: stiforr/ci-tools:0.0.5
     pull: 'always'
     commands:
       - helm package k8s/treats-portfolio
@@ -162,16 +162,28 @@ steps:
       - semantic-release
 
   - name: Helm Push
-    image: stiforr/ci-tools:0.0.4
+    image: stiforr/ci-tools:0.0.5
     pull: 'always'
     commands:
       - /scripts/helm-push.sh
       # - git push -u origin main
     depends_on:
       - 'Helm Package'
+    environment:
+      CHART_REPO_NAME:
+        from_secret: CHART_REPO_NAME
+      CHART_REPO_URL:
+        from_secret: CHART_REPO_URL
+      AWS_ACCESS_KEY_ID:
+        from_secret: minio_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: minio_secret_access_key
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_ENDPOINT: http://minio.minio.svc.cluster.local:9000
+      AWS_DISABLE_SSL: 'true'
 
   - name: sentry-release
-    image: stiforr/ci-tools:0.0.4
+    image: stiforr/ci-tools:0.0.5
     pull: 'always'
     depends_on:
       - 'build'
