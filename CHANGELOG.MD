@@ -1,3 +1,11 @@
+# [8.5.0-develop.23](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.22...8.5.0-develop.23) (2021-10-17)
+
+
+### Bug Fixes
+
+* switch to using temp volume mounts ([9fd7000](https://github.com/insuusvenerati/treats-portfolio/commit/9fd70001b199dfcbc0033f0e17f40bda8d95bdf1))
+* use k8s runner ([078aff6](https://github.com/insuusvenerati/treats-portfolio/commit/078aff6ebcff55b1cbe9499bcb80dc705cc770c9))
+
 # [8.5.0-develop.22](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.21...8.5.0-develop.22) (2021-10-14)
 
 
