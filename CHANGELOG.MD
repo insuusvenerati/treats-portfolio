@@ -1,3 +1,10 @@
+# [8.5.0-develop.24](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.23...8.5.0-develop.24) (2021-10-17)
+
+
+### Bug Fixes
+
+* uses internal s3 url ([731479c](https://github.com/insuusvenerati/treats-portfolio/commit/731479c032138375a706325e2521f1928fb5cc4a))
+
 # [8.5.0-develop.23](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.22...8.5.0-develop.23) (2021-10-17)
 
 
