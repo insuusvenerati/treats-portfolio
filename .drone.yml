@@ -26,7 +26,7 @@ steps:
       mount:
         - './.cache'
         - './public'
-        - '/usr/local/share/.cache'
+        # - '/usr/local/share/.cache'
       access_key:
         from_secret: minio_access_key_id
       secret_key:
@@ -244,5 +244,4 @@ steps:
 
 volumes:
   - name: cache
-    host:
-      path: /tmp/drone/cache
+    temp: {}
