@@ -15,6 +15,7 @@ steps:
       - name: cache
         path: /usr/local/share/.cache
     settings:
+      debug: true
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       archive_format: 'gzip'
@@ -89,6 +90,7 @@ steps:
         exclude:
           - tag
     settings:
+      debug: true
       rebuild: true
       path-style: true
       endpoint: http://minio.minio.svc.cluster.local:9000
