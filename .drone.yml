@@ -91,6 +91,7 @@ steps:
           - tag
     settings:
       debug: true
+      pull: true
       rebuild: true
       path-style: true
       endpoint: http://minio.minio.svc.cluster.local:9000
