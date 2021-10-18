@@ -45,8 +45,8 @@
     "cy:run:chrome": "cypress run --browser chrome",
     "cy:run:firefox": "cypress run --browser firefox",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "test:e2e:ci-chrome": "start-server-and-test develop http://localhost:8000 cy:run:chrome",
-    "test:e2e:ci-firefox": "start-server-and-test develop http://localhost:8000 cy:run:firefox",
+    "test:e2e:ci-chrome": "CYPRESS_SUPPORT=y yarn build && start-server-and-test serve http://localhost:9000 cy:run:chrome",
+    "test:e2e:ci-firefox": "CYPRESS_SUPPORT=y yarn build && start-server-and-test serve http://localhost:9000 cy:run:firefox",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
