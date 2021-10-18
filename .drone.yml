@@ -130,6 +130,7 @@ steps:
         from_secret: DATO_API_TOKEN
     depends_on:
       - install
+      - build
 
   - name: semantic-release
     image: stiforr/ci-tools:0.0.6
