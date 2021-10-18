@@ -1,3 +1,10 @@
+# [8.5.0-develop.34](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.33...8.5.0-develop.34) (2021-10-18)
+
+
+### Bug Fixes
+
+* update ci tools image ([676a5a5](https://github.com/insuusvenerati/treats-portfolio/commit/676a5a5d3bc6a45581b48880e5e70ad9e965a540))
+
 # [8.5.0-develop.33](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.32...8.5.0-develop.33) (2021-10-18)
 
 
