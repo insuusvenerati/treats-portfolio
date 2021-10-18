@@ -133,7 +133,7 @@ steps:
       - build
 
   - name: semantic-release
-    image: stiforr/ci-tools:0.0.6
+    image: stiforr/ci-tools:0.0.7
     pull: 'always'
     commands:
       - yarn semantic-release
@@ -154,7 +154,7 @@ steps:
       - 'Test Chrome'
 
   - name: Helm Package
-    image: stiforr/ci-tools:0.0.6
+    image: stiforr/ci-tools:0.0.7
     pull: 'always'
     when:
       event:
@@ -166,7 +166,7 @@ steps:
       - semantic-release
 
   - name: Helm Push
-    image: stiforr/ci-tools:0.0.6
+    image: stiforr/ci-tools:0.0.7
     pull: 'always'
     when:
       event:
@@ -191,7 +191,7 @@ steps:
       AWS_DISABLE_SSL: 'true'
 
   - name: sentry-release
-    image: stiforr/ci-tools:0.0.6
+    image: stiforr/ci-tools:0.0.7
     pull: 'always'
     depends_on:
       - 'build'
