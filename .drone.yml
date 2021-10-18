@@ -20,9 +20,7 @@ steps:
         path: /usr/local/share/.cache
     settings:
       restore: true
-      debug: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
-      archive_format: 'gzip'
       path-style: true
       endpoint: http://minio-home.minio.svc.cluster.local:9000
       bucket: insuusvenerati
@@ -36,11 +34,6 @@ steps:
         from_secret: minio_access_key_id
       secret_key:
         from_secret: minio_secret_access_key
-    # environment:
-    #   AWS_ACCESS_KEY_ID:
-    #     from_secret: minio_access_key_id
-    #   AWS_SECRET_ACCESS_KEY:
-    #     from_secret: minio_secret_access_key
 
   - name: install
     image: node:lts-buster-slim
@@ -50,12 +43,6 @@ steps:
     commands:
       - yarn install --frozen-lockfile
     when:
-      branch:
-        include:
-          - main
-          - develop
-          - 'feature/*'
-          - 'hotfix/*'
       event:
         exclude:
           - tag
@@ -67,12 +54,6 @@ steps:
     commands:
       - yarn build
     when:
-      branch:
-        include:
-          - main
-          - develop
-          - 'feature/*'
-          - 'hotfix/*'
       event:
         exclude:
           - tag
@@ -111,11 +92,6 @@ steps:
         from_secret: minio_access_key_id
       secret_key:
         from_secret: minio_secret_access_key
-    # environment:
-    #   AWS_ACCESS_KEY_ID:
-    #     from_secret: minio_access_key_id
-    #   AWS_SECRET_ACCESS_KEY:
-    #     from_secret: minio_secret_access_key
     depends_on:
       - install
       - build
@@ -154,7 +130,6 @@ steps:
         from_secret: GH_TOKEN
     depends_on:
       - build
-      # - deploy
       - 'Test Chrome'
 
   - name: Helm Package
@@ -178,7 +153,6 @@ steps:
           - tag
     commands:
       - /scripts/helm-push.sh
-      # - git push -u origin main
     depends_on:
       - 'Helm Package'
     environment:
@@ -191,7 +165,7 @@ steps:
       AWS_SECRET_ACCESS_KEY:
         from_secret: minio_secret_access_key
       AWS_DEFAULT_REGION: us-east-1
-      AWS_ENDPOINT: http://minio.minio.svc.cluster.local:9000
+      AWS_ENDPOINT: http://minio-home.minio.svc.cluster.local:9000
       AWS_DISABLE_SSL: 'true'
 
   - name: sentry-release
