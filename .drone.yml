@@ -156,6 +156,10 @@ steps:
   - name: Helm Package
     image: stiforr/ci-tools:0.0.6
     pull: 'always'
+    when:
+      event:
+        include:
+          - tag
     commands:
       - helm package k8s/treats-portfolio
     depends_on:
@@ -164,6 +168,10 @@ steps:
   - name: Helm Push
     image: stiforr/ci-tools:0.0.6
     pull: 'always'
+    when:
+      event:
+        include:
+          - tag
     commands:
       - /scripts/helm-push.sh
       # - git push -u origin main
