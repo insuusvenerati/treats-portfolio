@@ -1,3 +1,10 @@
+# [8.5.0-develop.32](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.31...8.5.0-develop.32) (2021-10-18)
+
+
+### Bug Fixes
+
+* run tests after build ([058feba](https://github.com/insuusvenerati/treats-portfolio/commit/058feba2e3f81b6a75b002ca4504ca2b555582d1))
+
 # [8.5.0-develop.31](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.30...8.5.0-develop.31) (2021-10-18)
 
 
