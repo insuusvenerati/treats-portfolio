@@ -132,13 +132,27 @@ steps:
       - build
       - 'Test Chrome'
 
+volumes:
+  - name: cache
+    temp: {}
+
+---
+kind: pipeline
+type: kubernetes
+name: publish
+
+depends_on:
+  - default
+
+trigger:
+  event:
+    include:
+      - tag
+
+steps:
   - name: Helm Package
     image: stiforr/ci-tools:0.0.7
     pull: 'always'
-    when:
-      event:
-        include:
-          - tag
     commands:
       - helm package k8s/treats-portfolio
     depends_on:
@@ -147,10 +161,6 @@ steps:
   - name: Helm Push
     image: stiforr/ci-tools:0.0.7
     pull: 'always'
-    when:
-      event:
-        include:
-          - tag
     commands:
       - /scripts/helm-push.sh
     depends_on:
@@ -182,9 +192,6 @@ steps:
         from_secret: SENTRY_ORG
     commands:
       - /scripts/sentry-release.sh
-    when:
-      event:
-        - tag
 
   - name: docker
     image: plugins/docker
@@ -202,7 +209,3 @@ steps:
       auto_tag: true
       tags:
         - latest
-
-volumes:
-  - name: cache
-    temp: {}
