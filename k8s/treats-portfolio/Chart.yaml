@@ -2,5 +2,5 @@ apiVersion: v2
 name: treats-portfolio
 description: A Helm chart for Kubernetes
 type: application
-version: 0.20.24
-appVersion: 8.5.0-develop.35
+version: 0.20.25
+appVersion: 8.5.0-develop.36

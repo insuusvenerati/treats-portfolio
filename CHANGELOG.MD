@@ -1,3 +1,10 @@
+# [8.5.0-develop.36](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.35...8.5.0-develop.36) (2021-10-18)
+
+
+### Bug Fixes
+
+* split ci into pipelines ([9d70623](https://github.com/insuusvenerati/treats-portfolio/commit/9d70623693622c2d3cfe2fe9f0f05690495ff344))
+
 # [8.5.0-develop.35](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.34...8.5.0-develop.35) (2021-10-18)
 
 
