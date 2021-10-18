@@ -1,3 +1,10 @@
+# [8.5.0-develop.38](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.37...8.5.0-develop.38) (2021-10-18)
+
+
+### Bug Fixes
+
+* update cypress tests ([7c05338](https://github.com/insuusvenerati/treats-portfolio/commit/7c05338c568a694b8bef12beef80c43b7c2f9039))
+
 # [8.5.0-develop.37](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.36...8.5.0-develop.37) (2021-10-18)
 
 
