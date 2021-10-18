@@ -11,6 +11,10 @@ steps:
   - name: restore-cache-with-filesystem
     image: plugins/s3-cache
     pull: 'always'
+    when:
+      event:
+        exclude:
+          - tag
     volumes:
       - name: cache
         path: /usr/local/share/.cache
