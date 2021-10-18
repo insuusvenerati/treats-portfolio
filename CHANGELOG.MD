@@ -1,3 +1,10 @@
+# [8.5.0-develop.35](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.34...8.5.0-develop.35) (2021-10-18)
+
+
+### Bug Fixes
+
+* uses correct minio endpoint ([092ffd2](https://github.com/insuusvenerati/treats-portfolio/commit/092ffd2de5eb9d11cdab7fe211a18586d3786c7d))
+
 # [8.5.0-develop.34](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.33...8.5.0-develop.34) (2021-10-18)
 
 
