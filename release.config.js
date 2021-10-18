@@ -31,14 +31,14 @@ module.exports = {
     '@semantic-release/release-notes-generator',
     [
       '@semantic-release/github',
-      {
-        assets: [
-          {
-            path: `treats-portfolio-${chartVersion.version}.tgz`,
-            label: 'Helm Package',
-          },
-        ],
-      },
+      // {
+      //   assets: [
+      //     {
+      //       path: `treats-portfolio-${chartVersion.version}.tgz`,
+      //       label: 'Helm Package',
+      //     },
+      //   ],
+      // },
     ],
     [
       '@semantic-release/npm',
