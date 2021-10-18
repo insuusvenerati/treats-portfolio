@@ -132,7 +132,7 @@ steps:
       - install
 
   - name: semantic-release
-    image: stiforr/ci-tools:0.0.5
+    image: stiforr/ci-tools:0.0.6
     pull: 'always'
     commands:
       - yarn semantic-release
@@ -153,7 +153,7 @@ steps:
       - 'Test Chrome'
 
   - name: Helm Package
-    image: stiforr/ci-tools:0.0.5
+    image: stiforr/ci-tools:0.0.6
     pull: 'always'
     commands:
       - helm package k8s/treats-portfolio
@@ -161,7 +161,7 @@ steps:
       - semantic-release
 
   - name: Helm Push
-    image: stiforr/ci-tools:0.0.5
+    image: stiforr/ci-tools:0.0.6
     pull: 'always'
     commands:
       - /scripts/helm-push.sh
@@ -182,7 +182,7 @@ steps:
       AWS_DISABLE_SSL: 'true'
 
   - name: sentry-release
-    image: stiforr/ci-tools:0.0.5
+    image: stiforr/ci-tools:0.0.6
     pull: 'always'
     depends_on:
       - 'build'
