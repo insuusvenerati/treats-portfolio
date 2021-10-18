@@ -150,13 +150,38 @@ trigger:
       - tag
 
 steps:
+  - name: rebuild-cache-with-filesystem
+    image: plugins/s3-cache
+    pull: 'always'
+    volumes:
+      - name: cache
+        path: /usr/local/share/.cache
+    when:
+      event:
+        exclude:
+          - tag
+    settings:
+      rebuild: true
+      path-style: true
+      endpoint: http://minio-home.minio.svc.cluster.local:9000
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      bucket: insuusvenerati
+      region: us-east-1
+      mount:
+        # - './.cache'
+        - './public'
+        # - '/usr/local/share/.cache'
+        # - './node_modules'
+      access_key:
+        from_secret: minio_access_key_id
+      secret_key:
+        from_secret: minio_secret_access_key
+
   - name: Helm Package
     image: stiforr/ci-tools:0.0.7
     pull: 'always'
     commands:
       - helm package k8s/treats-portfolio
-    depends_on:
-      - semantic-release
 
   - name: Helm Push
     image: stiforr/ci-tools:0.0.7
@@ -181,8 +206,6 @@ steps:
   - name: sentry-release
     image: stiforr/ci-tools:0.0.7
     pull: 'always'
-    depends_on:
-      - 'build'
     environment:
       SENTRY_PROJECT:
         from_secret: SENTRY_PROJECT
@@ -192,6 +215,8 @@ steps:
         from_secret: SENTRY_ORG
     commands:
       - /scripts/sentry-release.sh
+    depends_on:
+      - 'rebuild-cache-with-filesystem'
 
   - name: docker
     image: plugins/docker
