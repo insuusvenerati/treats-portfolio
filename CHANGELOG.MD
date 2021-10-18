@@ -1,3 +1,10 @@
+# [8.5.0-develop.33](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.32...8.5.0-develop.33) (2021-10-18)
+
+
+### Bug Fixes
+
+* only publish helm on tag ([6b12632](https://github.com/insuusvenerati/treats-portfolio/commit/6b12632ebca635de2042a546f2ac07dee371e403))
+
 # [8.5.0-develop.32](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.31...8.5.0-develop.32) (2021-10-18)
 
 
