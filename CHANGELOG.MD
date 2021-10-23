@@ -1,3 +1,11 @@
+# [8.5.0-develop.39](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.38...8.5.0-develop.39) (2021-10-23)
+
+
+### Bug Fixes
+
+* update minio url ([0f23107](https://github.com/insuusvenerati/treats-portfolio/commit/0f23107d16c743ec30b0bd5012871e2acf279ed0))
+* update minio url ([f5141ed](https://github.com/insuusvenerati/treats-portfolio/commit/f5141edb0b1f98d61404ea83f52edc1cec4e8e1c))
+
 # [8.5.0-develop.38](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.37...8.5.0-develop.38) (2021-10-18)
 
 
