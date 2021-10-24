@@ -25,7 +25,7 @@ steps:
       endpoint: http://minio-home.minio.svc.cluster.local:9000
       bucket: insuusvenerati
       region: us-east-1
-      filename: '{{ .Repo.Name }}.tar.gz'
+      filename: ${DRONE_REPO_NAME}.tar.gz
       mount:
         - './.cache'
         - './public'
@@ -79,7 +79,7 @@ steps:
       path-style: true
       endpoint: http://minio-home.minio.svc.cluster.local:9000
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
-      filename: '{{ .Repo.Name }}.tar.gz'
+      filename: ${DRONE_REPO_NAME}.tar.gz
       bucket: insuusvenerati
       region: us-east-1
       # filesystem_cache_root: "/tmp/cache"
