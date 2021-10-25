@@ -1,7 +1,373 @@
-# [8.5.0](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0...8.5.0) (2021-08-17)
+## [8.5.1-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0...8.5.1-develop.1) (2021-10-25)
 
 
 ### Bug Fixes
+
+* add drone cache support ([d0401ef](https://github.com/insuusvenerati/treats-portfolio/commit/d0401efa3caeaefe54cd37279d52dec0c611e038))
+* add path-style flag for minio ([c887cf9](https://github.com/insuusvenerati/treats-portfolio/commit/c887cf9a1248cb9135b743a4a9d0c750bbecb6a4))
+* allows restore cache on tags ([074afa5](https://github.com/insuusvenerati/treats-portfolio/commit/074afa5fff8f14f6f8d6e7c5a1ae263727c263e1))
+* always pull ci tools image ([f1d9a28](https://github.com/insuusvenerati/treats-portfolio/commit/f1d9a28f15e6234045ad6bfe581cd83cb63fb4e6))
+* attempt to restore yarn cache ([d1b1b82](https://github.com/insuusvenerati/treats-portfolio/commit/d1b1b827f2ffa765a5735bbd657109987125501e))
+* attempt to use alternative cache plugin ([187d5fb](https://github.com/insuusvenerati/treats-portfolio/commit/187d5fb1447c8dfc9a6d3c1b51b68725d25f9076))
+* attempt to use local minio install ([6191e7f](https://github.com/insuusvenerati/treats-portfolio/commit/6191e7f51ee44d3717008db20b3dd8a98302fab8))
+* cache filename quotes ([44da37b](https://github.com/insuusvenerati/treats-portfolio/commit/44da37ba1f8e6c9c5a42770aefb4a4c26925e613))
+* cache node_modules in ci ([fede9d2](https://github.com/insuusvenerati/treats-portfolio/commit/fede9d2c9f3a6b7da3edac8febec58960f31b150))
+* check yarn cache dir ([9e4d7af](https://github.com/insuusvenerati/treats-portfolio/commit/9e4d7af8dc5b2ab3e5a9d9c0a0ab7471ce713532))
+* cleanup cypress testing ([2c943a9](https://github.com/insuusvenerati/treats-portfolio/commit/2c943a9b9e08535def5b64c3b94fc26a25315ca5))
+* debug cache restore issues ([1131885](https://github.com/insuusvenerati/treats-portfolio/commit/11318850b700329b314407797b3f68ad85c37acf))
+* debug cache restore issues ([c88a06d](https://github.com/insuusvenerati/treats-portfolio/commit/c88a06d8e2aad90257c0b139a4d6c99974db8365))
+* disable ci cache ([c236608](https://github.com/insuusvenerati/treats-portfolio/commit/c236608a82ddb4e403cda20af9e130ce23226a06))
+* disable helm push from semantic-release ([26d3adb](https://github.com/insuusvenerati/treats-portfolio/commit/26d3adb25ef876eb80292a046b41652062036684))
+* disable verbose yarn install ([6bbcbb8](https://github.com/insuusvenerati/treats-portfolio/commit/6bbcbb8e124293c88f425c13a635f6242a9c9c05))
+* enable pull option for drone cache ([fdbd500](https://github.com/insuusvenerati/treats-portfolio/commit/fdbd500ded50f46dd5889278056f4352f98e8226))
+* exclude several ci steps on tag ([0007a9c](https://github.com/insuusvenerati/treats-portfolio/commit/0007a9cc4713abcfd85690ece508d068dbd4207d))
+* fixes helm registry url ([fcad2d9](https://github.com/insuusvenerati/treats-portfolio/commit/fcad2d903cd050ad3f7075ca625b42bf97ea2f5f))
+* mount yarn cache as a volume ([d88f119](https://github.com/insuusvenerati/treats-portfolio/commit/d88f119bcf1f223c537e2c80bdc7a9bfacd076da))
+* move chart tarball to charts repo dir ([a79162d](https://github.com/insuusvenerati/treats-portfolio/commit/a79162d9a7dd49e64f86c73726f62692e54953ae))
+* move helm push to a script ([0db63f0](https://github.com/insuusvenerati/treats-portfolio/commit/0db63f073f3fcb4310700884b697a3b993db4b01))
+* only publish helm on tag ([6b12632](https://github.com/insuusvenerati/treats-portfolio/commit/6b12632ebca635de2042a546f2ac07dee371e403))
+* package helm chart into github release ([ebd0531](https://github.com/insuusvenerati/treats-portfolio/commit/ebd053171292c18118215a8e6dc851bd60b7f7f5))
+* pr's failing on cache restore ([9227215](https://github.com/insuusvenerati/treats-portfolio/commit/9227215c2ef30e7a84b4e2a482b2ec77e86520b1))
+* push charts to oci registry ([4a55bb0](https://github.com/insuusvenerati/treats-portfolio/commit/4a55bb0a7bd4f420614840af210b8ab009beba30))
+* push helm charts via s3 ([48385b1](https://github.com/insuusvenerati/treats-portfolio/commit/48385b158132886a273f79f3e5cdf71362e16d95))
+* regen yarn.lock ([0f43b4e](https://github.com/insuusvenerati/treats-portfolio/commit/0f43b4eb35000eb9a86de83284c467eead259fc5))
+* remove firebase references ([3ff9bde](https://github.com/insuusvenerati/treats-portfolio/commit/3ff9bde8051e4fe0f47395b1b3a0f22d516fe0cc))
+* remove npmrc ([6605a6b](https://github.com/insuusvenerati/treats-portfolio/commit/6605a6bc2b3e6b1e10ee3743940be9fb68f46a3c))
+* remove unused token references ([fc08a86](https://github.com/insuusvenerati/treats-portfolio/commit/fc08a8633284e3caa4e52c41c6124a6c3881a4a7))
+* restore cache and fix ci deps ([dc83fbd](https://github.com/insuusvenerati/treats-portfolio/commit/dc83fbd6123ee5d1487fe2afe22a35e18bfa05fc))
+* return to using docker runner ([98d4419](https://github.com/insuusvenerati/treats-portfolio/commit/98d4419833deda1c4439776a624bd7917d7d8a65))
+* revert drone cache plugin ([8aa81fa](https://github.com/insuusvenerati/treats-portfolio/commit/8aa81faffd3fb5df56f93dea96cd22cf41777e29))
+* run tests after build ([058feba](https://github.com/insuusvenerati/treats-portfolio/commit/058feba2e3f81b6a75b002ca4504ca2b555582d1))
+* split ci into pipelines ([9d70623](https://github.com/insuusvenerati/treats-portfolio/commit/9d70623693622c2d3cfe2fe9f0f05690495ff344))
+* switch to using temp volume mounts ([9fd7000](https://github.com/insuusvenerati/treats-portfolio/commit/9fd70001b199dfcbc0033f0e17f40bda8d95bdf1))
+* test version bump ([973f9ec](https://github.com/insuusvenerati/treats-portfolio/commit/973f9ec39a38f173d5f8004ae9d40d22d32a447f))
+* test version bump ([eabee57](https://github.com/insuusvenerati/treats-portfolio/commit/eabee57e3e63de8a90b7fdf0bb8698ee3e203c92))
+* troubleshoot long yarn install ([bbe3bc4](https://github.com/insuusvenerati/treats-portfolio/commit/bbe3bc41b1426da15ea2996d9be65631ea41d9de))
+* update ci helm actions ([2f41452](https://github.com/insuusvenerati/treats-portfolio/commit/2f41452f28a0481b6e5f29f38506663a89d7cd6a))
+* update ci tools image ([676a5a5](https://github.com/insuusvenerati/treats-portfolio/commit/676a5a5d3bc6a45581b48880e5e70ad9e965a540))
+* update ci tools image ([dac4ca4](https://github.com/insuusvenerati/treats-portfolio/commit/dac4ca41e7e573eb6a90c116c6553777022e00d0))
+* update ci tools image ([f35c5fe](https://github.com/insuusvenerati/treats-portfolio/commit/f35c5feb8d8839012b52b40c027441af1ca78c4e))
+* update ci tools image ([092c44b](https://github.com/insuusvenerati/treats-portfolio/commit/092c44b3034ed282b95e52ee04fc82f4359d7f38))
+* update citools repo ([27ac0d7](https://github.com/insuusvenerati/treats-portfolio/commit/27ac0d706b73806d32dc35f4ffdde0ebf64b83c7))
+* update cypress tests ([7c05338](https://github.com/insuusvenerati/treats-portfolio/commit/7c05338c568a694b8bef12beef80c43b7c2f9039))
+* update drone cache image version ([d3b7558](https://github.com/insuusvenerati/treats-portfolio/commit/d3b755824b0b42f8010251c9ff99622616eb0d58))
+* update drone cache settings ([6db024e](https://github.com/insuusvenerati/treats-portfolio/commit/6db024eafa146d052ca975143fa6d72a22c19bcf))
+* update minio url ([0f23107](https://github.com/insuusvenerati/treats-portfolio/commit/0f23107d16c743ec30b0bd5012871e2acf279ed0))
+* update minio url ([f5141ed](https://github.com/insuusvenerati/treats-portfolio/commit/f5141edb0b1f98d61404ea83f52edc1cec4e8e1c))
+* update minio url ([f2d5626](https://github.com/insuusvenerati/treats-portfolio/commit/f2d5626a452d43b757a9f113b7e7dd7da1555806))
+* update minio url ([6063ccd](https://github.com/insuusvenerati/treats-portfolio/commit/6063ccdb95886e577d31f5a935c01c845f2a7da2))
+* update s3 url ([9fb7ccd](https://github.com/insuusvenerati/treats-portfolio/commit/9fb7ccd73073be5d1210bf3f48b3cb429b0a44d8))
+* update values.yaml ([176302f](https://github.com/insuusvenerati/treats-portfolio/commit/176302fcd4a5834998ab6285364d63ad5e8505d7))
+* update yarn.lock ([5c1d71d](https://github.com/insuusvenerati/treats-portfolio/commit/5c1d71ddb8243f081294aa2704660df54c92ea71))
+* updates ci to use new helm push strategy ([71f1b54](https://github.com/insuusvenerati/treats-portfolio/commit/71f1b543cfac0db8a11993add70721c69be1b385))
+* use alternate cache plugin ([4822467](https://github.com/insuusvenerati/treats-portfolio/commit/48224679ec5b0a758e20525bcf490d21af1031a7))
+* use k8s runner ([078aff6](https://github.com/insuusvenerati/treats-portfolio/commit/078aff6ebcff55b1cbe9499bcb80dc705cc770c9))
+* use k8s runner ([2f33bda](https://github.com/insuusvenerati/treats-portfolio/commit/2f33bda86800cf886b61521dcc3e1ea9ca4f8690))
+* use proper env var syntax ([0b18679](https://github.com/insuusvenerati/treats-portfolio/commit/0b1867942590bc524c2cb74b28674bb1149298cd))
+* use updated ci tools image ([8388d9b](https://github.com/insuusvenerati/treats-portfolio/commit/8388d9b815b94d93cecf73ca4ad6ede699cfd564))
+* uses correct minio endpoint ([092ffd2](https://github.com/insuusvenerati/treats-portfolio/commit/092ffd2de5eb9d11cdab7fe211a18586d3786c7d))
+* uses internal s3 url ([731479c](https://github.com/insuusvenerati/treats-portfolio/commit/731479c032138375a706325e2521f1928fb5cc4a))
+
+# [8.5.0-develop.40](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.39...8.5.0-develop.40) (2021-10-24)
+
+# [8.5.0](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0...8.5.0) (2021-08-17)
+
+
+
+### Bug Fixes
+
+* cache filename quotes ([44da37b](https://github.com/insuusvenerati/treats-portfolio/commit/44da37ba1f8e6c9c5a42770aefb4a4c26925e613))
+* pr's failing on cache restore ([9227215](https://github.com/insuusvenerati/treats-portfolio/commit/9227215c2ef30e7a84b4e2a482b2ec77e86520b1))
+* use proper env var syntax ([0b18679](https://github.com/insuusvenerati/treats-portfolio/commit/0b1867942590bc524c2cb74b28674bb1149298cd))
+
+# [8.5.0-develop.39](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.38...8.5.0-develop.39) (2021-10-23)
+
+
+### Bug Fixes
+
+* update minio url ([0f23107](https://github.com/insuusvenerati/treats-portfolio/commit/0f23107d16c743ec30b0bd5012871e2acf279ed0))
+* update minio url ([f5141ed](https://github.com/insuusvenerati/treats-portfolio/commit/f5141edb0b1f98d61404ea83f52edc1cec4e8e1c))
+
+# [8.5.0-develop.38](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.37...8.5.0-develop.38) (2021-10-18)
+
+
+### Bug Fixes
+
+* update cypress tests ([7c05338](https://github.com/insuusvenerati/treats-portfolio/commit/7c05338c568a694b8bef12beef80c43b7c2f9039))
+
+# [8.5.0-develop.37](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.36...8.5.0-develop.37) (2021-10-18)
+
+
+### Bug Fixes
+
+* restore cache and fix ci deps ([dc83fbd](https://github.com/insuusvenerati/treats-portfolio/commit/dc83fbd6123ee5d1487fe2afe22a35e18bfa05fc))
+
+# [8.5.0-develop.36](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.35...8.5.0-develop.36) (2021-10-18)
+
+
+### Bug Fixes
+
+* split ci into pipelines ([9d70623](https://github.com/insuusvenerati/treats-portfolio/commit/9d70623693622c2d3cfe2fe9f0f05690495ff344))
+
+# [8.5.0-develop.35](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.34...8.5.0-develop.35) (2021-10-18)
+
+
+### Bug Fixes
+
+* uses correct minio endpoint ([092ffd2](https://github.com/insuusvenerati/treats-portfolio/commit/092ffd2de5eb9d11cdab7fe211a18586d3786c7d))
+
+# [8.5.0-develop.34](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.33...8.5.0-develop.34) (2021-10-18)
+
+
+### Bug Fixes
+
+* update ci tools image ([676a5a5](https://github.com/insuusvenerati/treats-portfolio/commit/676a5a5d3bc6a45581b48880e5e70ad9e965a540))
+
+# [8.5.0-develop.33](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.32...8.5.0-develop.33) (2021-10-18)
+
+
+### Bug Fixes
+
+* only publish helm on tag ([6b12632](https://github.com/insuusvenerati/treats-portfolio/commit/6b12632ebca635de2042a546f2ac07dee371e403))
+
+# [8.5.0-develop.32](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.31...8.5.0-develop.32) (2021-10-18)
+
+
+### Bug Fixes
+
+* run tests after build ([058feba](https://github.com/insuusvenerati/treats-portfolio/commit/058feba2e3f81b6a75b002ca4504ca2b555582d1))
+
+# [8.5.0-develop.31](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.30...8.5.0-develop.31) (2021-10-18)
+
+
+### Bug Fixes
+
+* update ci tools image ([dac4ca4](https://github.com/insuusvenerati/treats-portfolio/commit/dac4ca41e7e573eb6a90c116c6553777022e00d0))
+
+# [8.5.0-develop.30](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.29...8.5.0-develop.30) (2021-10-17)
+
+
+### Bug Fixes
+
+* debug cache restore issues ([1131885](https://github.com/insuusvenerati/treats-portfolio/commit/11318850b700329b314407797b3f68ad85c37acf))
+* disable verbose yarn install ([6bbcbb8](https://github.com/insuusvenerati/treats-portfolio/commit/6bbcbb8e124293c88f425c13a635f6242a9c9c05))
+* revert drone cache plugin ([8aa81fa](https://github.com/insuusvenerati/treats-portfolio/commit/8aa81faffd3fb5df56f93dea96cd22cf41777e29))
+* update drone cache image version ([d3b7558](https://github.com/insuusvenerati/treats-portfolio/commit/d3b755824b0b42f8010251c9ff99622616eb0d58))
+* update drone cache settings ([6db024e](https://github.com/insuusvenerati/treats-portfolio/commit/6db024eafa146d052ca975143fa6d72a22c19bcf))
+* update minio url ([f2d5626](https://github.com/insuusvenerati/treats-portfolio/commit/f2d5626a452d43b757a9f113b7e7dd7da1555806))
+* use alternate cache plugin ([4822467](https://github.com/insuusvenerati/treats-portfolio/commit/48224679ec5b0a758e20525bcf490d21af1031a7))
+
+# [8.5.0-develop.29](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.28...8.5.0-develop.29) (2021-10-17)
+
+
+### Bug Fixes
+
+* cache node_modules in ci ([fede9d2](https://github.com/insuusvenerati/treats-portfolio/commit/fede9d2c9f3a6b7da3edac8febec58960f31b150))
+* cleanup cypress testing ([2c943a9](https://github.com/insuusvenerati/treats-portfolio/commit/2c943a9b9e08535def5b64c3b94fc26a25315ca5))
+* push helm charts via s3 ([48385b1](https://github.com/insuusvenerati/treats-portfolio/commit/48385b158132886a273f79f3e5cdf71362e16d95))
+* troubleshoot long yarn install ([bbe3bc4](https://github.com/insuusvenerati/treats-portfolio/commit/bbe3bc41b1426da15ea2996d9be65631ea41d9de))
+
+# [8.5.0-develop.28](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.27...8.5.0-develop.28) (2021-10-17)
+
+
+### Bug Fixes
+
+* attempt to restore yarn cache ([d1b1b82](https://github.com/insuusvenerati/treats-portfolio/commit/d1b1b827f2ffa765a5735bbd657109987125501e))
+* remove firebase references ([3ff9bde](https://github.com/insuusvenerati/treats-portfolio/commit/3ff9bde8051e4fe0f47395b1b3a0f22d516fe0cc))
+
+# [8.5.0-develop.27](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.26...8.5.0-develop.27) (2021-10-17)
+
+
+### Bug Fixes
+
+* update ci tools image ([f35c5fe](https://github.com/insuusvenerati/treats-portfolio/commit/f35c5feb8d8839012b52b40c027441af1ca78c4e))
+
+# [8.5.0-develop.26](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.25...8.5.0-develop.26) (2021-10-17)
+
+
+### Bug Fixes
+
+* enable pull option for drone cache ([fdbd500](https://github.com/insuusvenerati/treats-portfolio/commit/fdbd500ded50f46dd5889278056f4352f98e8226))
+
+# [8.5.0-develop.25](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.24...8.5.0-develop.25) (2021-10-17)
+
+
+### Bug Fixes
+
+* debug cache restore issues ([c88a06d](https://github.com/insuusvenerati/treats-portfolio/commit/c88a06d8e2aad90257c0b139a4d6c99974db8365))
+
+# [8.5.0-develop.24](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.23...8.5.0-develop.24) (2021-10-17)
+
+
+### Bug Fixes
+
+* uses internal s3 url ([731479c](https://github.com/insuusvenerati/treats-portfolio/commit/731479c032138375a706325e2521f1928fb5cc4a))
+
+# [8.5.0-develop.23](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.22...8.5.0-develop.23) (2021-10-17)
+
+
+### Bug Fixes
+
+* switch to using temp volume mounts ([9fd7000](https://github.com/insuusvenerati/treats-portfolio/commit/9fd70001b199dfcbc0033f0e17f40bda8d95bdf1))
+* use k8s runner ([078aff6](https://github.com/insuusvenerati/treats-portfolio/commit/078aff6ebcff55b1cbe9499bcb80dc705cc770c9))
+
+# [8.5.0-develop.22](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.21...8.5.0-develop.22) (2021-10-14)
+
+
+### Bug Fixes
+
+* add path-style flag for minio ([c887cf9](https://github.com/insuusvenerati/treats-portfolio/commit/c887cf9a1248cb9135b743a4a9d0c750bbecb6a4))
+* attempt to use alternative cache plugin ([187d5fb](https://github.com/insuusvenerati/treats-portfolio/commit/187d5fb1447c8dfc9a6d3c1b51b68725d25f9076))
+* attempt to use local minio install ([6191e7f](https://github.com/insuusvenerati/treats-portfolio/commit/6191e7f51ee44d3717008db20b3dd8a98302fab8))
+* return to using docker runner ([98d4419](https://github.com/insuusvenerati/treats-portfolio/commit/98d4419833deda1c4439776a624bd7917d7d8a65))
+* update minio url ([6063ccd](https://github.com/insuusvenerati/treats-portfolio/commit/6063ccdb95886e577d31f5a935c01c845f2a7da2))
+* update s3 url ([9fb7ccd](https://github.com/insuusvenerati/treats-portfolio/commit/9fb7ccd73073be5d1210bf3f48b3cb429b0a44d8))
+* use k8s runner ([2f33bda](https://github.com/insuusvenerati/treats-portfolio/commit/2f33bda86800cf886b61521dcc3e1ea9ca4f8690))
+
+# [8.5.0-develop.21](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.20...8.5.0-develop.21) (2021-10-14)
+
+
+### Bug Fixes
+
+* update ci tools image ([092c44b](https://github.com/insuusvenerati/treats-portfolio/commit/092c44b3034ed282b95e52ee04fc82f4359d7f38))
+
+# [8.5.0-develop.20](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.19...8.5.0-develop.20) (2021-10-14)
+
+
+### Bug Fixes
+
+* disable helm push from semantic-release ([26d3adb](https://github.com/insuusvenerati/treats-portfolio/commit/26d3adb25ef876eb80292a046b41652062036684))
+
+# [8.5.0-develop.19](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.18...8.5.0-develop.19) (2021-10-14)
+
+
+### Bug Fixes
+
+* updates ci to use new helm push strategy ([71f1b54](https://github.com/insuusvenerati/treats-portfolio/commit/71f1b543cfac0db8a11993add70721c69be1b385))
+
+# [8.5.0-develop.18](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.17...8.5.0-develop.18) (2021-10-14)
+
+
+### Bug Fixes
+
+* mount yarn cache as a volume ([d88f119](https://github.com/insuusvenerati/treats-portfolio/commit/d88f119bcf1f223c537e2c80bdc7a9bfacd076da))
+
+# [8.5.0-develop.17](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.16...8.5.0-develop.17) (2021-10-14)
+
+
+### Bug Fixes
+
+* check yarn cache dir ([9e4d7af](https://github.com/insuusvenerati/treats-portfolio/commit/9e4d7af8dc5b2ab3e5a9d9c0a0ab7471ce713532))
+* fixes helm registry url ([fcad2d9](https://github.com/insuusvenerati/treats-portfolio/commit/fcad2d903cd050ad3f7075ca625b42bf97ea2f5f))
+
+# [8.5.0-develop.16](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.15...8.5.0-develop.16) (2021-10-14)
+
+
+### Bug Fixes
+
+* update values.yaml ([176302f](https://github.com/insuusvenerati/treats-portfolio/commit/176302fcd4a5834998ab6285364d63ad5e8505d7))
+
+# [8.5.0-develop.15](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.14...8.5.0-develop.15) (2021-10-14)
+
+
+### Bug Fixes
+
+* allows restore cache on tags ([074afa5](https://github.com/insuusvenerati/treats-portfolio/commit/074afa5fff8f14f6f8d6e7c5a1ae263727c263e1))
+
+# [8.5.0-develop.14](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.13...8.5.0-develop.14) (2021-10-14)
+
+
+### Bug Fixes
+
+* push charts to oci registry ([4a55bb0](https://github.com/insuusvenerati/treats-portfolio/commit/4a55bb0a7bd4f420614840af210b8ab009beba30))
+
+# [8.5.0-develop.13](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.12...8.5.0-develop.13) (2021-10-13)
+
+
+### Bug Fixes
+
+* exclude several ci steps on tag ([0007a9c](https://github.com/insuusvenerati/treats-portfolio/commit/0007a9cc4713abcfd85690ece508d068dbd4207d))
+* package helm chart into github release ([ebd0531](https://github.com/insuusvenerati/treats-portfolio/commit/ebd053171292c18118215a8e6dc851bd60b7f7f5))
+
+# [8.5.0-develop.12](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.11...8.5.0-develop.12) (2021-10-13)
+
+
+### Bug Fixes
+
+* use updated ci tools image ([8388d9b](https://github.com/insuusvenerati/treats-portfolio/commit/8388d9b815b94d93cecf73ca4ad6ede699cfd564))
+
+# [8.5.0-develop.11](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.10...8.5.0-develop.11) (2021-10-13)
+
+
+### Bug Fixes
+
+* update yarn.lock ([5c1d71d](https://github.com/insuusvenerati/treats-portfolio/commit/5c1d71ddb8243f081294aa2704660df54c92ea71))
+
+# [8.5.0-develop.10](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.9...8.5.0-develop.10) (2021-10-13)
+
+
+### Bug Fixes
+
+* test version bump ([973f9ec](https://github.com/insuusvenerati/treats-portfolio/commit/973f9ec39a38f173d5f8004ae9d40d22d32a447f))
+
+# [8.5.0-develop.9](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.8...8.5.0-develop.9) (2021-10-12)
+
+
+### Bug Fixes
+
+* update citools repo ([27ac0d7](https://github.com/insuusvenerati/treats-portfolio/commit/27ac0d706b73806d32dc35f4ffdde0ebf64b83c7))
+
+# [8.5.0-develop.8](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.7...8.5.0-develop.8) (2021-10-12)
+
+
+### Bug Fixes
+
+* always pull ci tools image ([f1d9a28](https://github.com/insuusvenerati/treats-portfolio/commit/f1d9a28f15e6234045ad6bfe581cd83cb63fb4e6))
+
+# [8.5.0-develop.7](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.6...8.5.0-develop.7) (2021-10-12)
+
+
+### Bug Fixes
+
+* move helm push to a script ([0db63f0](https://github.com/insuusvenerati/treats-portfolio/commit/0db63f073f3fcb4310700884b697a3b993db4b01))
+
+# [8.5.0-develop.6](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.5...8.5.0-develop.6) (2021-10-12)
+
+
+### Bug Fixes
+
+* add drone cache support ([d0401ef](https://github.com/insuusvenerati/treats-portfolio/commit/d0401efa3caeaefe54cd37279d52dec0c611e038))
+
+# [8.5.0-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.4...8.5.0-develop.5) (2021-10-12)
+
+
+### Bug Fixes
+
+* move chart tarball to charts repo dir ([a79162d](https://github.com/insuusvenerati/treats-portfolio/commit/a79162d9a7dd49e64f86c73726f62692e54953ae))
+
+# [8.5.0-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.3...8.5.0-develop.4) (2021-10-12)
+
+
+### Bug Fixes
+
+* update ci helm actions ([2f41452](https://github.com/insuusvenerati/treats-portfolio/commit/2f41452f28a0481b6e5f29f38506663a89d7cd6a))
+
+# [8.5.0-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.2...8.5.0-develop.3) (2021-09-20)
+
+
+### Bug Fixes
+
+* disable ci cache ([c236608](https://github.com/insuusvenerati/treats-portfolio/commit/c236608a82ddb4e403cda20af9e130ce23226a06))
+* regen yarn.lock ([0f43b4e](https://github.com/insuusvenerati/treats-portfolio/commit/0f43b4eb35000eb9a86de83284c467eead259fc5))
+* remove npmrc ([6605a6b](https://github.com/insuusvenerati/treats-portfolio/commit/6605a6bc2b3e6b1e10ee3743940be9fb68f46a3c))
+* remove unused token references ([fc08a86](https://github.com/insuusvenerati/treats-portfolio/commit/fc08a8633284e3caa4e52c41c6124a6c3881a4a7))
+
+# [8.5.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0-develop.1...8.5.0-develop.2) (2021-08-18)
+
+
+### Bug Fixes
+
+* test version bump ([eabee57](https://github.com/insuusvenerati/treats-portfolio/commit/eabee57e3e63de8a90b7fdf0bb8698ee3e203c92))
 
 * add flagger support ([f1a7445](https://github.com/insuusvenerati/treats-portfolio/commit/f1a744580c2fe791fb9b15e7f019fa0a766cfa90))
 
@@ -23,6 +389,7 @@
 * untemplate deployment name ([293faf8](https://github.com/insuusvenerati/treats-portfolio/commit/293faf88356469649f03eb3d559db71e2178cb4b))
 * update font paths to match prefix ([f52e5a9](https://github.com/insuusvenerati/treats-portfolio/commit/f52e5a9bce79451f5dfa583c5f7afa7239dd6e4d))
 * update fonts path ([1774aac](https://github.com/insuusvenerati/treats-portfolio/commit/1774aac50c92d5aee939733d6ca2d2c1cd3a7d33))
+
 
 # [8.5.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.4.0...8.5.0-develop.1) (2021-08-17)
 

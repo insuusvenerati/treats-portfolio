@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-var-requires */
 require('dotenv').config({ path: `.env` });
 const yaml = require('yaml');
@@ -16,6 +19,7 @@ module.exports = {
       'semantic-release-helm',
       {
         chartPath: './k8s/treats-portfolio',
+        // registry: 'registry.k8s.stiforr.tech/stiforr/treats-portfolio',
       },
     ],
     [
@@ -27,14 +31,14 @@ module.exports = {
     '@semantic-release/release-notes-generator',
     [
       '@semantic-release/github',
-      {
-        assets: [
-          // {
-          //   path: `treats-portfolio-${chartVersion.version}.tgz`,
-          //   label: 'Helm Package',
-          // },
-        ],
-      },
+      // {
+      //   assets: [
+      //     {
+      //       path: `treats-portfolio-${chartVersion.version}.tgz`,
+      //       label: 'Helm Package',
+      //     },
+      //   ],
+      // },
     ],
     [
       '@semantic-release/npm',

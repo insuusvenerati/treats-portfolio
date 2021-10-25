@@ -12,4 +12,5 @@ RUN yarn \
   && gatsby build --prefix-paths
 
 FROM gatsbyjs/gatsby
+RUN apk add curl
 COPY --from=build /app/public /pub

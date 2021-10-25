@@ -1,5 +1,5 @@
 kind: pipeline
-type: docker
+type: kubernetes
 name: default
 
 trigger:
@@ -9,38 +9,44 @@ trigger:
 
 steps:
   - name: restore-cache-with-filesystem
-    image: meltwater/drone-cache:dev
+    image: plugins/s3-cache
     pull: 'always'
+    when:
+      event:
+        exclude:
+          - tag
+    volumes:
+      - name: cache
+        path: /usr/local/share/.cache
     settings:
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
-      archive_format: 'gzip'
-      bucket: stiforr-drone-cache
+      path-style: true
+      endpoint: http://minio-home.minio.svc.cluster.local:9000
+      bucket: insuusvenerati
       region: us-east-1
-      # filesystem_cache_root: "/tmp/cache"
+      filename: ${DRONE_REPO_NAME}.tar.gz
       mount:
-        - '.cache'
-        - 'public'
-    environment:
-      AWS_ACCESS_KEY_ID:
-        from_secret: aws_access_key_id
-      AWS_SECRET_ACCESS_KEY:
-        from_secret: aws_secret_access_key
-    volumes:
-      - name: cache
-        path: /tmp/cache
+        - './.cache'
+        - './public'
+        - '/usr/local/share/.cache'
+        - './node_modules'
+      access_key:
+        from_secret: minio_access_key_id
+      secret_key:
+        from_secret: minio_secret_access_key
 
   - name: install
     image: node:lts-buster-slim
+    volumes:
+      - name: cache
+        path: /usr/local/share/.cache
     commands:
       - yarn install --frozen-lockfile
     when:
-      branch:
-        include:
-          - main
-          - develop
-          - 'feature/*'
-          - 'hotfix/*'
+      event:
+        exclude:
+          - tag
     depends_on:
       - restore-cache-with-filesystem
 
@@ -49,78 +55,66 @@ steps:
     commands:
       - yarn build
     when:
-      branch:
-        include:
-          - main
-          - develop
-          - 'feature/*'
-          - 'hotfix/*'
+      event:
+        exclude:
+          - tag
     environment:
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
-      GATSBY_SENTRY_DSN:
-        from_secret: GATSBY_SENTRY_DSN
     depends_on:
       - install
 
   - name: rebuild-cache-with-filesystem
-    image: meltwater/drone-cache:dev
+    image: plugins/s3-cache
     pull: 'always'
+    volumes:
+      - name: cache
+        path: /usr/local/share/.cache
+    when:
+      event:
+        exclude:
+          - tag
     settings:
       rebuild: true
+      path-style: true
+      endpoint: http://minio-home.minio.svc.cluster.local:9000
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
-      archive_format: 'gzip'
-      bucket: stiforr-drone-cache
+      filename: ${DRONE_REPO_NAME}.tar.gz
+      bucket: insuusvenerati
       region: us-east-1
       # filesystem_cache_root: "/tmp/cache"
       mount:
-        - '.cache'
-        - 'public'
-    volumes:
-      - name: cache
-        path: /tmp/cache
-    environment:
-      AWS_ACCESS_KEY_ID:
-        from_secret: aws_access_key_id
-      AWS_SECRET_ACCESS_KEY:
-        from_secret: aws_secret_access_key
+        - './.cache'
+        - './public'
+        - '/usr/local/share/.cache'
+        - './node_modules'
+      access_key:
+        from_secret: minio_access_key_id
+      secret_key:
+        from_secret: minio_secret_access_key
     depends_on:
       - install
       - build
 
   - name: Test Chrome
     image: cypress/included:7.1.0
+    when:
+      event:
+        exclude:
+          - tag
     commands:
       - cypress install
       - yarn test:e2e:ci-chrome
     environment:
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
-      GATSBY_SENTRY_DSN:
-        from_secret: GATSBY_SENTRY_DSN
     depends_on:
       - install
-
-  - name: deploy
-    image: stiforr/ci-tools:latest
-    commands:
-      - yarn global add firebase-tools firebase-ci
-      - firebase-ci deploy
-    environment:
-      FIREBASE_TOKEN:
-        from_secret: FIREBASE_TOKEN
-    when:
-      branch:
-        - main
-      event:
-        exclude:
-          - pull_request
-          - tag
-    depends_on:
       - build
 
   - name: semantic-release
-    image: stiforr/ci-tools:latest
+    image: stiforr/ci-tools:0.0.7
+    pull: 'always'
     commands:
       - yarn semantic-release
     when:
@@ -136,31 +130,82 @@ steps:
         from_secret: GH_TOKEN
     depends_on:
       - build
-      - deploy
       - 'Test Chrome'
 
+volumes:
+  - name: cache
+    temp: {}
+
+---
+kind: pipeline
+type: kubernetes
+name: publish
+
+depends_on:
+  - default
+
+trigger:
+  event:
+    include:
+      - tag
+
+steps:
+  - name: rebuild-cache-with-filesystem
+    image: plugins/s3-cache
+    pull: 'always'
+    volumes:
+      - name: cache
+        path: /usr/local/share/.cache
+    when:
+      event:
+        exclude:
+          - tag
+    settings:
+      rebuild: true
+      path-style: true
+      endpoint: http://minio-home.minio.svc.cluster.local:9000
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      bucket: insuusvenerati
+      region: us-east-1
+      mount:
+        # - './.cache'
+        - './public'
+        # - '/usr/local/share/.cache'
+        # - './node_modules'
+      access_key:
+        from_secret: minio_access_key_id
+      secret_key:
+        from_secret: minio_secret_access_key
+
   - name: Helm Package
-    image: stiforr/ci-tools:latest
+    image: stiforr/ci-tools:0.0.7
+    pull: 'always'
     commands:
       - helm package k8s/treats-portfolio
-    depends_on:
-      - semantic-release
 
-  # - name: Helm Push
-  #   image: stiforr/ci-tools:latest
-  #   commands:
-  #     - git clone https://github.com/insuusvenerati/charts.git
-  #     - git add *.tgz
-  #     - |
-  #       git commit -m chore: add helm package
-  #     # - git push -u origin main
-  #   depends_on:
-  #     - 'Helm Package'
+  - name: Helm Push
+    image: stiforr/ci-tools:0.0.7
+    pull: 'always'
+    commands:
+      - /scripts/helm-push.sh
+    depends_on:
+      - 'Helm Package'
+    environment:
+      CHART_REPO_NAME:
+        from_secret: CHART_REPO_NAME
+      CHART_REPO_URL:
+        from_secret: CHART_REPO_URL
+      AWS_ACCESS_KEY_ID:
+        from_secret: minio_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: minio_secret_access_key
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_ENDPOINT: http://minio-home.minio.svc.cluster.local:9000
+      AWS_DISABLE_SSL: 'true'
 
   - name: sentry-release
-    image: stiforr/ci-tools:latest
-    depends_on:
-      - 'build'
+    image: stiforr/ci-tools:0.0.7
+    pull: 'always'
     environment:
       SENTRY_PROJECT:
         from_secret: SENTRY_PROJECT
@@ -169,16 +214,9 @@ steps:
       SENTRY_ORG:
         from_secret: SENTRY_ORG
     commands:
-      - export SENTRY_RELEASE=$DRONE_TAG
-      - export SENTRY_ENVIRONMENT=$(/scripts/environment.sh)
-      - sentry-cli --auth-token $SENTRY_AUTH_TOKEN releases new $SENTRY_RELEASE -p $SENTRY_PROJECT
-      - sentry-cli --auth-token $SENTRY_AUTH_TOKEN releases set-commits $SENTRY_RELEASE --auto
-      - sentry-cli --auth-token $SENTRY_AUTH_TOKEN releases files $SENTRY_RELEASE upload-sourcemaps ./public
-      - sentry-cli --auth-token $SENTRY_AUTH_TOKEN releases finalize $SENTRY_RELEASE
-      - sentry-cli --auth-token $SENTRY_AUTH_TOKEN releases deploys $SENTRY_RELEASE new -e $SENTRY_ENVIRONMENT
-    when:
-      event:
-        - tag
+      - /scripts/sentry-release.sh
+    depends_on:
+      - 'rebuild-cache-with-filesystem'
 
   - name: docker
     image: plugins/docker
@@ -196,24 +234,3 @@ steps:
       auto_tag: true
       tags:
         - latest
-
-  - name: discord notification
-    image: appleboy/drone-discord
-    settings:
-      webhook_id:
-        from_secret: discord_webhook_id
-      webhook_token:
-        from_secret: discord_webhook_token
-      message: >
-        {{#success build.status}}
-          Docker build completed successfully!
-        {{else}}
-          Docker build failed
-        {{/success}}
-    depends_on:
-      - 'docker'
-
-volumes:
-  - name: cache
-    host:
-      path: /var/lib/cache
