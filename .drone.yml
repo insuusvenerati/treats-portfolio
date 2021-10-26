@@ -113,7 +113,7 @@ steps:
       - build
 
   - name: semantic-release
-    image: stiforr/ci-tools:0.0.7
+    image: stiforr/ci-tools:1
     pull: 'always'
     commands:
       - yarn semantic-release
@@ -169,13 +169,13 @@ steps:
         from_secret: minio_secret_access_key
 
   - name: Helm Package
-    image: stiforr/ci-tools:0.0.7
+    image: stiforr/ci-tools:1
     pull: 'always'
     commands:
       - helm package k8s/treats-portfolio
 
   - name: Helm Push
-    image: stiforr/ci-tools:0.0.7
+    image: stiforr/ci-tools:1
     pull: 'always'
     commands:
       - /scripts/helm-push.sh
@@ -195,7 +195,7 @@ steps:
       AWS_DISABLE_SSL: 'true'
 
   - name: sentry-release
-    image: stiforr/ci-tools:0.0.7
+    image: stiforr/ci-tools:1
     pull: 'always'
     environment:
       SENTRY_PROJECT:
