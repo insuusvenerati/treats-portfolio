@@ -1,3 +1,10 @@
+## [8.5.2-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.1...8.5.2-develop.1) (2021-10-26)
+
+
+### Bug Fixes
+
+* **deps:** update gatsby monorepo ([8f0bb68](https://github.com/insuusvenerati/treats-portfolio/commit/8f0bb68ae7a6bbf981b90cac891f9314e9af9dbc))
+
 ## [8.5.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0...8.5.1) (2021-10-25)
 
 
