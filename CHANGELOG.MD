@@ -1,3 +1,10 @@
+## [8.5.2-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.2...8.5.2-develop.3) (2021-10-26)
+
+
+### Bug Fixes
+
+* restore cache on publish pipeline ([94dca1b](https://github.com/insuusvenerati/treats-portfolio/commit/94dca1bcc569f01c401ba3c9640d16f34106bbd7))
+
 ## [8.5.2-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.1...8.5.2-develop.2) (2021-10-26)
 
 
