@@ -207,7 +207,7 @@ steps:
     commands:
       - /scripts/sentry-release.sh
     depends_on:
-      - 'rebuild-cache-with-filesystem'
+      - 'restore-cache-with-filesystem'
 
   - name: docker
     image: plugins/docker
