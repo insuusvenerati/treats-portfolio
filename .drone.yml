@@ -11,6 +11,10 @@ steps:
   - name: restore-cache-with-filesystem
     image: plugins/s3-cache
     pull: 'always'
+    when:
+      event:
+        exclude:
+          - tag
     volumes:
       - name: cache
         path: /usr/local/share/.cache
@@ -146,28 +150,19 @@ trigger:
       - tag
 
 steps:
-  - name: rebuild-cache-with-filesystem
+  - name: restore-cache-with-filesystem
     image: plugins/s3-cache
     pull: 'always'
-    volumes:
-      - name: cache
-        path: /usr/local/share/.cache
-    when:
-      event:
-        exclude:
-          - tag
     settings:
-      rebuild: true
+      restore: true
+      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       path-style: true
       endpoint: http://minio-home.minio.svc.cluster.local:9000
-      cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       bucket: insuusvenerati
       region: us-east-1
+      filename: ${DRONE_REPO_NAME}.tar.gz
       mount:
-        # - './.cache'
         - './public'
-        # - '/usr/local/share/.cache'
-        # - './node_modules'
       access_key:
         from_secret: minio_access_key_id
       secret_key:
