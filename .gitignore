@@ -18,3 +18,4 @@ cypress/videos
 coverage
 .nyc_output
 .firebase
+*.iml
