@@ -1,3 +1,10 @@
+## [8.5.2-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.1...8.5.2-develop.2) (2021-10-26)
+
+
+### Bug Fixes
+
+* restore cache on tags ([35d1071](https://github.com/insuusvenerati/treats-portfolio/commit/35d1071a96fde384521cabcf49a200e088dae47c))
+
 ## [8.5.2-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.1...8.5.2-develop.1) (2021-10-26)
 
 
