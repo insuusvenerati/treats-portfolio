@@ -6,6 +6,7 @@
   "private": "true",
   "dependencies": {
     "@sentry/gatsby": "^6.6.0",
+    "@sentry/tracing": "^6.13.3",
     "axios": "^0.21.1",
     "gatsby": "^4.0.0",
     "gatsby-cli": "^4.0.0",
