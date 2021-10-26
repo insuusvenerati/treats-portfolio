@@ -1,3 +1,10 @@
+## [8.5.2-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.4...8.5.2-develop.5) (2021-10-26)
+
+
+### Bug Fixes
+
+* enable sentry tracing ([b58d933](https://github.com/insuusvenerati/treats-portfolio/commit/b58d933eb4c0ca29cbf1f5807ffe810e0a2b49a6))
+
 ## [8.5.2-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.3...8.5.2-develop.4) (2021-10-26)
 
 
