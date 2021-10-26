@@ -1,3 +1,10 @@
+## [8.5.2-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.3...8.5.2-develop.4) (2021-10-26)
+
+
+### Bug Fixes
+
+* incorrect pipeline dependency ([0a1c8f4](https://github.com/insuusvenerati/treats-portfolio/commit/0a1c8f4ff7a7f73b787fed3f0cfbbe6443b07df4))
+
 ## [8.5.2-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.2...8.5.2-develop.3) (2021-10-26)
 
 
