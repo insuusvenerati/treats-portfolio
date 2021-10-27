@@ -1,3 +1,10 @@
+# [8.6.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.5...8.6.0-develop.1) (2021-10-27)
+
+
+### Features
+
+* upgrade to yarn v3 ([5d57a8d](https://github.com/insuusvenerati/treats-portfolio/commit/5d57a8d3efca4dda15078200dac265a84772cb2d))
+
 ## [8.5.2-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.4...8.5.2-develop.5) (2021-10-26)
 
 
