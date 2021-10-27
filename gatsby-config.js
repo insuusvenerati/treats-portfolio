@@ -60,7 +60,7 @@ const plugins = [
     options: {
       dsn: 'https://50863e41f2c94ac38144e896197d498f@o122225.ingest.sentry.io/4167682',
       release: packageJson.version,
-      traceSampleRate: 0.8,
+      tracesSampleRate: 0.8,
     },
   },
   // `gatsby-plugin-codegen`,
