@@ -9,6 +9,10 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: {{ include "treats-portfolio.fullname" . }}
+  autoscalerRef:
+    apiVersion: autoscaling/v2beta2
+    kind: HorizontalPodAutoscaler
+    name: {{ include "treats-portfolio.fullname" . }}
   service:
     port: {{ .Values.service.port }}
   {{- with .Values.flagger.analysis }}
