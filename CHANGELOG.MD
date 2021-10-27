@@ -1,3 +1,10 @@
+# [8.6.0-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.2...8.6.0-develop.3) (2021-10-27)
+
+
+### Bug Fixes
+
+* remove sentry webpack dependency ([5a548c4](https://github.com/insuusvenerati/treats-portfolio/commit/5a548c4d704794c3d752d9e0663f99eaa3f575e8))
+
 # [8.6.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.1...8.6.0-develop.2) (2021-10-27)
 
 
