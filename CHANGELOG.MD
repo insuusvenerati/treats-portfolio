@@ -1,3 +1,10 @@
+# [8.6.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.1...8.6.0-develop.2) (2021-10-27)
+
+
+### Bug Fixes
+
+* fixes sentry tracing option typo ([964670d](https://github.com/insuusvenerati/treats-portfolio/commit/964670d8cc1dfda06c67be8ad71d8cde1469ced4))
+
 # [8.6.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.5...8.6.0-develop.1) (2021-10-27)
 
 
