@@ -1,3 +1,10 @@
+# [8.6.0-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.3...8.6.0-develop.4) (2021-10-28)
+
+
+### Bug Fixes
+
+* removes replicas from kubernetes deployment ([0c10fba](https://github.com/insuusvenerati/treats-portfolio/commit/0c10fba42e4ef60628e6ffa444b169f1f4110c6c))
+
 # [8.6.0-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.2...8.6.0-develop.3) (2021-10-27)
 
 
