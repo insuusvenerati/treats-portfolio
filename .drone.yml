@@ -22,7 +22,7 @@ steps:
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       path-style: true
-      endpoint: http://minio-home.minio.svc.cluster.local:9000
+      endpoint: https://api.minio.home.stiforr.tech
       bucket: insuusvenerati
       region: us-east-1
       filename: ${DRONE_REPO_NAME}.tar.gz
@@ -77,7 +77,7 @@ steps:
     settings:
       rebuild: true
       path-style: true
-      endpoint: http://minio-home.minio.svc.cluster.local:9000
+      endpoint: https://api.minio.home.stiforr.tech
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       filename: ${DRONE_REPO_NAME}.tar.gz
       bucket: insuusvenerati
