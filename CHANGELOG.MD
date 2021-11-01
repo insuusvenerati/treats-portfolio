@@ -1,3 +1,10 @@
+# [8.6.0-develop.6](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.5...8.6.0-develop.6) (2021-11-01)
+
+
+### Bug Fixes
+
+* uses docker runner ([7fd2a48](https://github.com/insuusvenerati/treats-portfolio/commit/7fd2a488fcfdc8c7152153919b161976800eaa0e))
+
 # [8.6.0-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.4...8.6.0-develop.5) (2021-11-01)
 
 
