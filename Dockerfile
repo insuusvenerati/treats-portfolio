@@ -1,6 +1,4 @@
-FROM node:14-buster-slim as build
-
-RUN yarn global add gatsby-cli
+FROM node:lts as build
 
 WORKDIR /app
 
@@ -9,8 +7,9 @@ ENV DATO_API_TOKEN ${DATO_API_TOKEN}
 
 ADD . .
 RUN yarn \
-  && gatsby build --prefix-paths
+  && yarn build
 
 FROM gatsbyjs/gatsby
+
 RUN apk add curl
 COPY --from=build /app/public /pub
