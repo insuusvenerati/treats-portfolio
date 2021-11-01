@@ -95,7 +95,7 @@ steps:
       - build
 
   - name: Test Chrome
-    image: cypress/included:7.1.0
+    image: cypress/included:8.7.0
     when:
       event:
         exclude:
@@ -155,7 +155,7 @@ steps:
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       path-style: true
-      endpoint: http://minio-home.minio.svc.cluster.local:9000
+      endpoint: https://api.minio.home.stiforr.tech
       bucket: insuusvenerati
       region: us-east-1
       filename: ${DRONE_REPO_NAME}.tar.gz
