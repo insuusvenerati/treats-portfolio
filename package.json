@@ -46,11 +46,12 @@
     "cy:run:chrome": "cypress run --browser chrome",
     "cy:run:firefox": "cypress run --browser firefox",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "test:e2e:ci-chrome": "CYPRESS_SUPPORT=y yarn build && start-server-and-test serve http://localhost:9000 cy:run:chrome",
-    "test:e2e:ci-firefox": "CYPRESS_SUPPORT=y yarn build && start-server-and-test serve http://localhost:9000 cy:run:firefox",
+    "test:e2e:ci-chrome": "start-server-and-test serve http://localhost:9000 cy:run:chrome",
+    "test:e2e:ci-firefox": "start-server-and-test serve http://localhost:9000 cy:run:firefox",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
+    "@cypress/webpack-preprocessor": "^5.9.1",
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/commit-analyzer": "9.0.1",
     "@semantic-release/git": "10.0.1",
@@ -69,6 +70,7 @@
     "eslint": "8.1.0",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-react": "7.26.1",
+    "pnp-webpack-plugin": "^1.7.0",
     "prettier": "2.4.1",
     "semantic-release": "18.0.0",
     "semantic-release-helm": "^2.1.0",

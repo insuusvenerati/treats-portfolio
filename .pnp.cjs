@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@cypress/webpack-preprocessor", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.9.1"],
             ["@semantic-release/changelog", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:6.0.1"],
             ["@semantic-release/commit-analyzer", "virtual:26bef7164f48d044764cd43116294384229ad2f2c35b46556537f1ef43382b779f272bad9f935bedb8d5f0cd3bb5d71fbb788a0376f8f210aee6a1927e0d4392#npm:9.0.1"],
             ["@semantic-release/git", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:10.0.1"],
@@ -71,6 +72,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-source-datocms", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:3.0.6"],
             ["gatsby-theme-contact", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:3.0.0"],
             ["gatsby-transformer-remark", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.0.0"],
+            ["pnp-webpack-plugin", "npm:1.7.0"],
             ["prettier", "npm:2.4.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:17.0.2"],
@@ -2682,6 +2684,43 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tough-cookie", "npm:2.5.0"],
             ["tunnel-agent", "npm:0.6.0"],
             ["uuid", "npm:8.3.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@cypress/webpack-preprocessor", [
+        ["npm:5.9.1", {
+          "packageLocation": "./.yarn/cache/@cypress-webpack-preprocessor-npm-5.9.1-6e29c2cd89-60f0e4482d.zip/node_modules/@cypress/webpack-preprocessor/",
+          "packageDependencies": [
+            ["@cypress/webpack-preprocessor", "npm:5.9.1"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.9.1", {
+          "packageLocation": "./.yarn/__virtual__/@cypress-webpack-preprocessor-virtual-6d68d66bfa/0/cache/@cypress-webpack-preprocessor-npm-5.9.1-6e29c2cd89-60f0e4482d.zip/node_modules/@cypress/webpack-preprocessor/",
+          "packageDependencies": [
+            ["@cypress/webpack-preprocessor", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.9.1"],
+            ["@babel/core", null],
+            ["@babel/preset-env", null],
+            ["@types/babel-loader", null],
+            ["@types/babel__core", null],
+            ["@types/babel__preset-env", null],
+            ["@types/webpack", null],
+            ["babel-loader", null],
+            ["bluebird", "npm:3.7.2"],
+            ["debug", "virtual:428f325a939c2653ad822eb3d75efb02ac311523dd0d4f9645afc39ea00bd86eceac35a9d59c9b6977d76b670a4ef0ae057ea572338a44729aa592711a8c05a3#npm:4.3.2"],
+            ["lodash", "npm:4.17.21"],
+            ["webpack", null]
+          ],
+          "packagePeers": [
+            "@babel/core",
+            "@babel/preset-env",
+            "@types/babel-loader",
+            "@types/babel__core",
+            "@types/babel__preset-env",
+            "@types/webpack",
+            "babel-loader",
+            "webpack"
           ],
           "linkType": "HARD",
         }]
@@ -13831,6 +13870,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["gatsby-datocms-demo", "workspace:."],
+            ["@cypress/webpack-preprocessor", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.9.1"],
             ["@semantic-release/changelog", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:6.0.1"],
             ["@semantic-release/commit-analyzer", "virtual:26bef7164f48d044764cd43116294384229ad2f2c35b46556537f1ef43382b779f272bad9f935bedb8d5f0cd3bb5d71fbb788a0376f8f210aee6a1927e0d4392#npm:9.0.1"],
             ["@semantic-release/git", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:10.0.1"],
@@ -13867,6 +13907,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-source-datocms", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:3.0.6"],
             ["gatsby-theme-contact", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:3.0.0"],
             ["gatsby-transformer-remark", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.0.0"],
+            ["pnp-webpack-plugin", "npm:1.7.0"],
             ["prettier", "npm:2.4.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:17.0.2"],
@@ -21308,6 +21349,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["pnp-webpack-plugin", [
+        ["npm:1.7.0", {
+          "packageLocation": "./.yarn/cache/pnp-webpack-plugin-npm-1.7.0-f6c94efb72-a41716d136.zip/node_modules/pnp-webpack-plugin/",
+          "packageDependencies": [
+            ["pnp-webpack-plugin", "npm:1.7.0"],
+            ["ts-pnp", "virtual:f6c94efb72da698edc23c95ed60dce17fd5eefc9b285f3b3aee8db345bcd495351cf161d6ba8d0f66984085c26681fa41ddd68a1b7d366f81606ea5d8745bd42#npm:1.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["posix-character-classes", [
         ["npm:0.1.1", {
           "packageLocation": "./.yarn/cache/posix-character-classes-npm-0.1.1-3e228a6e15-dedb99913c.zip/node_modules/posix-character-classes/",
@@ -26290,6 +26341,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["source-map-support", "npm:0.5.20"],
             ["typescript", null],
             ["yn", "npm:3.1.1"]
+          ],
+          "packagePeers": [
+            "@types/typescript",
+            "typescript"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["ts-pnp", [
+        ["npm:1.2.0", {
+          "packageLocation": "./.yarn/cache/ts-pnp-npm-1.2.0-43620de7df-c2a698b85d.zip/node_modules/ts-pnp/",
+          "packageDependencies": [
+            ["ts-pnp", "npm:1.2.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:f6c94efb72da698edc23c95ed60dce17fd5eefc9b285f3b3aee8db345bcd495351cf161d6ba8d0f66984085c26681fa41ddd68a1b7d366f81606ea5d8745bd42#npm:1.2.0", {
+          "packageLocation": "./.yarn/__virtual__/ts-pnp-virtual-04186d9d5c/0/cache/ts-pnp-npm-1.2.0-43620de7df-c2a698b85d.zip/node_modules/ts-pnp/",
+          "packageDependencies": [
+            ["ts-pnp", "virtual:f6c94efb72da698edc23c95ed60dce17fd5eefc9b285f3b3aee8db345bcd495351cf161d6ba8d0f66984085c26681fa41ddd68a1b7d366f81606ea5d8745bd42#npm:1.2.0"],
+            ["@types/typescript", null],
+            ["typescript", null]
           ],
           "packagePeers": [
             "@types/typescript",
