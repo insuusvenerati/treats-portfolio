@@ -1,3 +1,10 @@
+# [8.6.0-develop.9](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.8...8.6.0-develop.9) (2021-11-01)
+
+
+### Bug Fixes
+
+* increases canary deployment time ([be47249](https://github.com/insuusvenerati/treats-portfolio/commit/be47249407c4f3cda9f3296f2c359be30a892fba))
+
 # [8.6.0-develop.8](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.7...8.6.0-develop.8) (2021-11-01)
 
 
