@@ -15,6 +15,9 @@ steps:
       event:
         exclude:
           - tag
+    volumes:
+      - name: cache
+        path: /usr/local/share/.cache
     settings:
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
@@ -26,6 +29,8 @@ steps:
       mount:
         - './.cache'
         - './public'
+        - '/usr/local/share/.cache'
+        - './node_modules'
       access_key:
         from_secret: minio_access_key_id
       secret_key:
@@ -33,6 +38,9 @@ steps:
 
   - name: install
     image: node:lts-buster-slim
+    volumes:
+      - name: cache
+        path: /usr/local/share/.cache
     commands:
       - yarn install --frozen-lockfile
     when:
@@ -59,6 +67,9 @@ steps:
   - name: rebuild-cache-with-filesystem
     image: plugins/s3-cache
     pull: 'always'
+    volumes:
+      - name: cache
+        path: /usr/local/share/.cache
     when:
       event:
         exclude:
@@ -75,6 +86,8 @@ steps:
       mount:
         - './.cache'
         - './public'
+        - '/usr/local/share/.cache'
+        - './node_modules'
       access_key:
         from_secret: minio_access_key_id
       secret_key:
@@ -118,6 +131,10 @@ steps:
     depends_on:
       - build
       - 'Test Chrome'
+
+volumes:
+  - name: cache
+    temp: {}
 
 ---
 kind: pipeline
