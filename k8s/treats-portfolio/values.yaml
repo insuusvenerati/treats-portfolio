@@ -48,7 +48,7 @@ ambassador:
 flagger:
   enabled: false
   analysis:
-    interval: 10s
+    interval: 1m
     threshold: 5
     stepWeight: 10
     maxWeight: 100
