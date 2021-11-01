@@ -8,7 +8,7 @@ const plugins = [
   'gatsby-plugin-react-helmet',
   `gatsby-plugin-robots-txt`,
   `gatsby-plugin-sitemap`,
-  `gatsby-plugin-typescript`,
+  // `gatsby-plugin-typescript`,
   {
     resolve: `gatsby-theme-contact`,
     options: {
