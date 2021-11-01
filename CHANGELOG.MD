@@ -1,3 +1,10 @@
+# [8.6.0-develop.8](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.7...8.6.0-develop.8) (2021-11-01)
+
+
+### Bug Fixes
+
+* adds helm repo credentials ([26c50e9](https://github.com/insuusvenerati/treats-portfolio/commit/26c50e987c1217f74980dd7c8ba530809195ed46))
+
 # [8.6.0-develop.7](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.6...8.6.0-develop.7) (2021-11-01)
 
 
