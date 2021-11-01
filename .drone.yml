@@ -182,6 +182,10 @@ steps:
     environment:
       CHART_REPO_NAME:
         from_secret: CHART_REPO_NAME
+      HELM_REPO_USERNAME:
+        from_secret: HELM_REPO_USERNAME
+      HELM_REPO_PASSWORD:
+        from_secret: HELM_REPO_PASSWORD
       CHART_REPO_URL:
         from_secret: CHART_REPO_URL
       AWS_ACCESS_KEY_ID:
