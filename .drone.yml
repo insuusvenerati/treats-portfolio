@@ -136,7 +136,7 @@ volumes:
 
 ---
 kind: pipeline
-type: kubernetes
+type: docker
 name: publish
 
 depends_on:
