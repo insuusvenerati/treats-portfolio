@@ -1,3 +1,13 @@
+# [8.6.0-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.4...8.6.0-develop.5) (2021-11-01)
+
+
+### Bug Fixes
+
+* hacks cypress to work with pnp ([2e0a1f0](https://github.com/insuusvenerati/treats-portfolio/commit/2e0a1f01f3ddbe8c7f3e7cf30122893120546483)), closes [/github.com/cypress-io/cypress/issues/8008#issuecomment-840733324](https://github.com//github.com/cypress-io/cypress/issues/8008/issues/issuecomment-840733324)
+* removes node_modules from cache ([defc49f](https://github.com/insuusvenerati/treats-portfolio/commit/defc49f868abfb29b603685473d2ff7377a61189))
+* shadow gatsby-theme-contact to fix pnp issue ([25b7947](https://github.com/insuusvenerati/treats-portfolio/commit/25b79476094df6579f46ef7afd555ce2b78e8a80))
+* various cypress fixes ([cfce07b](https://github.com/insuusvenerati/treats-portfolio/commit/cfce07bcf557b15a9e1f58cf68859abd440376d6))
+
 # [8.6.0-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.3...8.6.0-develop.4) (2021-10-28)
 
 
