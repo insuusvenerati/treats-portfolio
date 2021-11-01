@@ -1,3 +1,10 @@
+# [8.6.0-develop.7](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.6...8.6.0-develop.7) (2021-11-01)
+
+
+### Bug Fixes
+
+* updates dockerfile to use node lts image ([27669cc](https://github.com/insuusvenerati/treats-portfolio/commit/27669ccb4d7104bf6905751840226da944afcf19))
+
 # [8.6.0-develop.6](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.5...8.6.0-develop.6) (2021-11-01)
 
 
