@@ -30,7 +30,6 @@ steps:
         - './.cache'
         - './public'
         - '/usr/local/share/.cache'
-        - './node_modules'
       access_key:
         from_secret: minio_access_key_id
       secret_key:
@@ -87,7 +86,6 @@ steps:
         - './.cache'
         - './public'
         - '/usr/local/share/.cache'
-        - './node_modules'
       access_key:
         from_secret: minio_access_key_id
       secret_key:
