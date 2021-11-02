@@ -1,3 +1,10 @@
+# [8.6.0-develop.10](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.9...8.6.0-develop.10) (2021-11-02)
+
+
+### Bug Fixes
+
+* adds istio gateway to flagger canary ([0c12032](https://github.com/insuusvenerati/treats-portfolio/commit/0c120324bc7ed257ff6a0c3c3ddbf9403dae08fb))
+
 # [8.6.0-develop.9](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.8...8.6.0-develop.9) (2021-11-01)
 
 
