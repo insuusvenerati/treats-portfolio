@@ -6,8 +6,10 @@ metadata:
   labels:
   {{- include "treats-portfolio.labels" . | nindent 4 }}
 spec:
+  {{with .Values.istio.hosts }}
   hosts:
-    - "*"
+    {{- toYaml . | nindent 4 }}
+  {{- end}}
   http:
     - name: "{{ include "treats-portfolio.name" . }}"
       route:

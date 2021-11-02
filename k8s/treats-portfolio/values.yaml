@@ -60,7 +60,7 @@ flagger:
 
 istio:
   enabled: false
-
+  hosts: []
 ingress:
   enabled: false
   className: ''
