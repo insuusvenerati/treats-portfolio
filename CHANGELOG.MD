@@ -1,3 +1,10 @@
+# [8.6.0-develop.13](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.12...8.6.0-develop.13) (2021-11-02)
+
+
+### Bug Fixes
+
+* adds hosts values ([18fd240](https://github.com/insuusvenerati/treats-portfolio/commit/18fd2408c2d86ec31edc065173163e4d941070a4))
+
 # [8.6.0-develop.12](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.11...8.6.0-develop.12) (2021-11-02)
 
 
