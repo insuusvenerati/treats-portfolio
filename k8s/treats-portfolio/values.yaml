@@ -41,10 +41,6 @@ service:
   port: 80
   annotations: {}
 
-ambassador:
-  enabled: false
-  host: treats.stage.stiforr.tech
-
 flagger:
   enabled: false
   analysis:
