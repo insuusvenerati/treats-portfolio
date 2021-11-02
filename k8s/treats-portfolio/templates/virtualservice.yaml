@@ -17,6 +17,4 @@ spec:
       route:
         - destination:
             host: {{ include "treats-portfolio.name" . }}
-            subset: v1
-          weight: 100
 {{- end}}
