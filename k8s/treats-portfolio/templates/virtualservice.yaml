@@ -10,6 +10,8 @@ spec:
   hosts:
     {{- toYaml . | nindent 4 }}
   {{- end}}
+  gateways:
+    - "istio-system/public-gateway"
   http:
     - name: "{{ include "treats-portfolio.name" . }}"
       route:
