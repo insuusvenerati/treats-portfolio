@@ -1,3 +1,10 @@
+# [8.6.0-develop.12](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.11...8.6.0-develop.12) (2021-11-02)
+
+
+### Bug Fixes
+
+* fixes conflicting virtual service name ([b54b83c](https://github.com/insuusvenerati/treats-portfolio/commit/b54b83c7e22bcba5b86a0e5525a49b7ccd689804))
+
 # [8.6.0-develop.11](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.10...8.6.0-develop.11) (2021-11-02)
 
 
