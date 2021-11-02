@@ -58,6 +58,9 @@ flagger:
           max: 500
         interval: 1m
 
+istio:
+  enabled: false
+
 ingress:
   enabled: false
   className: ''

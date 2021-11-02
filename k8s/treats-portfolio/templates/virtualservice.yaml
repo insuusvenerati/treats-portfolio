@@ -1,0 +1,18 @@
+{{ if .Values.istio.enabled }}
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ include "treats-portfolio.fullname" . }}
+  labels:
+  {{- include "treats-portfolio.labels" . | nindent 4 }}
+spec:
+  hosts:
+    - "*"
+  http:
+    - name: "{{ include "treats-portfolio.name" . }}"
+      route:
+        - destination:
+            host: {{ include "treats-portfolio.name" . }}
+            subset: v1
+          weight: 100
+{{- end}}
