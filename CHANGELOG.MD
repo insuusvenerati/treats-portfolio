@@ -1,3 +1,10 @@
+# [8.6.0-develop.11](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.10...8.6.0-develop.11) (2021-11-02)
+
+
+### Bug Fixes
+
+* add istio virtual service ([c712d5c](https://github.com/insuusvenerati/treats-portfolio/commit/c712d5c191323b0eada2d480bb82857359cfb851))
+
 # [8.6.0-develop.10](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.9...8.6.0-develop.10) (2021-11-02)
 
 
