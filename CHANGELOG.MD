@@ -1,3 +1,10 @@
+# [8.6.0-develop.15](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.14...8.6.0-develop.15) (2021-11-02)
+
+
+### Bug Fixes
+
+* clean up virtual service ([3a853be](https://github.com/insuusvenerati/treats-portfolio/commit/3a853be6fe5ef16e8b06aa8234dcb0b5b2236178))
+
 # [8.6.0-develop.14](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.13...8.6.0-develop.14) (2021-11-02)
 
 
