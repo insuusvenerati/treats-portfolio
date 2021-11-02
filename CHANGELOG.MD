@@ -1,3 +1,10 @@
+# [8.6.0-develop.14](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.13...8.6.0-develop.14) (2021-11-02)
+
+
+### Bug Fixes
+
+* adds gateway to virtualservice ([3cee6e9](https://github.com/insuusvenerati/treats-portfolio/commit/3cee6e9d9d1eacac00d93e8b2a96c3466905b1a8))
+
 # [8.6.0-develop.13](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.12...8.6.0-develop.13) (2021-11-02)
 
 
