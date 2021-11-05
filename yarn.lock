@@ -3190,9 +3190,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/cli@npm:1.70.1":
-  version: 1.70.1
-  resolution: "@sentry/cli@npm:1.70.1"
+"@sentry/cli@npm:1.71.0":
+  version: 1.71.0
+  resolution: "@sentry/cli@npm:1.71.0"
   dependencies:
     https-proxy-agent: ^5.0.0
     mkdirp: ^0.5.5
@@ -3202,7 +3202,7 @@ __metadata:
     proxy-from-env: ^1.1.0
   bin:
     sentry-cli: bin/sentry-cli
-  checksum: 83551e5bff18b1480e45c87276439b7697118ce26da9ddac4783bfabce3e5567e4af505eba12eda2b30d0ddfb0e337dcb4d9a2948e84a869c0b90a61be90f2b1
+  checksum: 6575ada045873ef22ae72902aea46a73228d5d75ec827b596b002a44fc1079bc301ff79b433b5718999d573cbf787145ce63f364434b26045579daa30de91771
   languageName: node
   linkType: hard
 
@@ -9980,7 +9980,7 @@ __metadata:
     "@semantic-release/github": 8.0.1
     "@semantic-release/npm": 8.0.2
     "@semantic-release/release-notes-generator": 10.0.2
-    "@sentry/cli": 1.70.1
+    "@sentry/cli": 1.71.0
     "@sentry/gatsby": ^6.13.3
     "@sentry/tracing": ^6.13.3
     "@types/node": 16.11.6
