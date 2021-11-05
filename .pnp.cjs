@@ -42,7 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/github", "virtual:26bef7164f48d044764cd43116294384229ad2f2c35b46556537f1ef43382b779f272bad9f935bedb8d5f0cd3bb5d71fbb788a0376f8f210aee6a1927e0d4392#npm:8.0.1"],
             ["@semantic-release/npm", "virtual:26bef7164f48d044764cd43116294384229ad2f2c35b46556537f1ef43382b779f272bad9f935bedb8d5f0cd3bb5d71fbb788a0376f8f210aee6a1927e0d4392#npm:8.0.2"],
             ["@semantic-release/release-notes-generator", "virtual:26bef7164f48d044764cd43116294384229ad2f2c35b46556537f1ef43382b779f272bad9f935bedb8d5f0cd3bb5d71fbb788a0376f8f210aee6a1927e0d4392#npm:10.0.2"],
-            ["@sentry/cli", "npm:1.70.1"],
+            ["@sentry/cli", "npm:1.71.0"],
             ["@sentry/gatsby", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:6.13.3"],
             ["@sentry/tracing", "npm:6.13.3"],
             ["@types/node", "npm:16.11.6"],
@@ -5342,10 +5342,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@sentry/cli", [
-        ["npm:1.70.1", {
-          "packageLocation": "./.yarn/unplugged/@sentry-cli-npm-1.70.1-4ed41bca8a/node_modules/@sentry/cli/",
+        ["npm:1.71.0", {
+          "packageLocation": "./.yarn/unplugged/@sentry-cli-npm-1.71.0-53223fce72/node_modules/@sentry/cli/",
           "packageDependencies": [
-            ["@sentry/cli", "npm:1.70.1"],
+            ["@sentry/cli", "npm:1.71.0"],
             ["https-proxy-agent", "npm:5.0.0"],
             ["mkdirp", "npm:0.5.5"],
             ["node-fetch", "npm:2.6.2"],
@@ -13877,7 +13877,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/github", "virtual:26bef7164f48d044764cd43116294384229ad2f2c35b46556537f1ef43382b779f272bad9f935bedb8d5f0cd3bb5d71fbb788a0376f8f210aee6a1927e0d4392#npm:8.0.1"],
             ["@semantic-release/npm", "virtual:26bef7164f48d044764cd43116294384229ad2f2c35b46556537f1ef43382b779f272bad9f935bedb8d5f0cd3bb5d71fbb788a0376f8f210aee6a1927e0d4392#npm:8.0.2"],
             ["@semantic-release/release-notes-generator", "virtual:26bef7164f48d044764cd43116294384229ad2f2c35b46556537f1ef43382b779f272bad9f935bedb8d5f0cd3bb5d71fbb788a0376f8f210aee6a1927e0d4392#npm:10.0.2"],
-            ["@sentry/cli", "npm:1.70.1"],
+            ["@sentry/cli", "npm:1.71.0"],
             ["@sentry/gatsby", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:6.13.3"],
             ["@sentry/tracing", "npm:6.13.3"],
             ["@types/node", "npm:16.11.6"],
