@@ -95,7 +95,7 @@ steps:
       - build
 
   - name: Test Chrome
-    image: cypress/included:8.7.0
+    image: cypress/included:9.0.0
     when:
       event:
         exclude:
