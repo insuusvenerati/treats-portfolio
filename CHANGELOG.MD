@@ -1,3 +1,12 @@
+# [8.6.0-develop.16](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.15...8.6.0-develop.16) (2021-11-15)
+
+
+### Bug Fixes
+
+* downgrade to eslint 7 ([08a9991](https://github.com/insuusvenerati/treats-portfolio/commit/08a9991328cc9429435f1993cf701538b3b9dcd3))
+* remove unnecessary yarn install command from dockerfile ([5c91d0f](https://github.com/insuusvenerati/treats-portfolio/commit/5c91d0fef0a8935795ddeded6fd479cfb05da9cc))
+* remove unused error boundary ([b2a96d6](https://github.com/insuusvenerati/treats-portfolio/commit/b2a96d67b7c0ab5a00e531cbdb1e366a2573bbb5))
+
 # [8.6.0-develop.15](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.14...8.6.0-develop.15) (2021-11-02)
 
 
