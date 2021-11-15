@@ -6,8 +6,7 @@ ARG DATO_API_TOKEN
 ENV DATO_API_TOKEN ${DATO_API_TOKEN}
 
 ADD . .
-RUN yarn \
-  && yarn build
+RUN yarn build
 
 FROM gatsbyjs/gatsby
 
