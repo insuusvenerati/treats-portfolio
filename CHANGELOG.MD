@@ -1,3 +1,10 @@
+# [8.6.0-develop.17](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.16...8.6.0-develop.17) (2021-11-18)
+
+
+### Bug Fixes
+
+* readd yarn install to Dockerfile ([2ee46d3](https://github.com/insuusvenerati/treats-portfolio/commit/2ee46d3b96409ae3a1341cfcb117cb0660689b10))
+
 # [8.6.0-develop.16](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.15...8.6.0-develop.16) (2021-11-15)
 
 
