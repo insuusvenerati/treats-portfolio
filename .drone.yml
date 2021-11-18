@@ -216,6 +216,7 @@ steps:
   - name: docker
     image: plugins/docker
     environment:
+      DOCKER_BUILDKIT: 1
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
     settings:
