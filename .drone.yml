@@ -216,16 +216,19 @@ steps:
   - name: docker
     image: plugins/docker
     environment:
+      BUILDKIT_INLINE_CACHE: 1
       DOCKER_BUILDKIT: 1
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
     settings:
+      cache_from: stiforr/treats-portfolio
       username:
         from_secret: docker_username
       password:
         from_secret: docker_password
       repo: stiforr/treats-portfolio
       build_args_from_env:
+        - BUILDKIT_INLINE_CACHE
         - DATO_API_TOKEN
       auto_tag: true
       tags:
