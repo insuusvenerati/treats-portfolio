@@ -1,3 +1,10 @@
+# [8.6.0-develop.20](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.19...8.6.0-develop.20) (2021-11-18)
+
+
+### Bug Fixes
+
+* adds cache from capability ([c1b9ac4](https://github.com/insuusvenerati/treats-portfolio/commit/c1b9ac4e9cb4da8df941c402d867d0837ed240e0))
+
 # [8.6.0-develop.19](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.18...8.6.0-develop.19) (2021-11-18)
 
 
