@@ -1,3 +1,10 @@
+# [8.6.0-develop.18](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.17...8.6.0-develop.18) (2021-11-18)
+
+
+### Bug Fixes
+
+* adds missing chart location env ([b7a0cbf](https://github.com/insuusvenerati/treats-portfolio/commit/b7a0cbf627e7c2e4adae43415b17d305c5e759a9))
+
 # [8.6.0-develop.17](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.16...8.6.0-develop.17) (2021-11-18)
 
 
