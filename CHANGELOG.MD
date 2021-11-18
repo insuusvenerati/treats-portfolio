@@ -1,3 +1,10 @@
+# [8.6.0-develop.19](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.18...8.6.0-develop.19) (2021-11-18)
+
+
+### Bug Fixes
+
+* enable docker build kit ([a460b05](https://github.com/insuusvenerati/treats-portfolio/commit/a460b05dfca2373887d694069df0fe43d4a19d76))
+
 # [8.6.0-develop.18](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.17...8.6.0-develop.18) (2021-11-18)
 
 
