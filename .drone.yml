@@ -180,6 +180,8 @@ steps:
     depends_on:
       - 'Helm Package'
     environment:
+      CHART_LOCATION:
+        from_secret: CHART_LOCATION
       CHART_REPO_NAME:
         from_secret: CHART_REPO_NAME
       HELM_REPO_USERNAME:
