@@ -1,3 +1,15 @@
+# [8.6.0-develop.21](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.20...8.6.0-develop.21) (2021-11-28)
+
+
+### Bug Fixes
+
+* updates knative service spec ([ae1f58e](https://github.com/insuusvenerati/treats-portfolio/commit/ae1f58e3df8632d3417f4a73a84cfbfd29de0625))
+
+
+### Features
+
+* uses knative to deploy app ([7c774da](https://github.com/insuusvenerati/treats-portfolio/commit/7c774da1eddacedd2e141811d6f1937fd77bdab1))
+
 # [8.6.0-develop.20](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.19...8.6.0-develop.20) (2021-11-18)
 
 
