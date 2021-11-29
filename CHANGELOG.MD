@@ -1,3 +1,10 @@
+# [8.6.0-develop.22](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.21...8.6.0-develop.22) (2021-11-29)
+
+
+### Bug Fixes
+
+* update helm chart ([cf6fe14](https://github.com/insuusvenerati/treats-portfolio/commit/cf6fe1474fa328704a948c81c71a17ee277335f7))
+
 # [8.6.0-develop.21](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.20...8.6.0-develop.21) (2021-11-28)
 
 
