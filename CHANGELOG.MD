@@ -1,3 +1,10 @@
+# [8.6.0-develop.23](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.22...8.6.0-develop.23) (2021-11-29)
+
+
+### Bug Fixes
+
+* remove unused helm chart test ([638400f](https://github.com/insuusvenerati/treats-portfolio/commit/638400f255d256a6947eb76b975b3acf853ae95c))
+
 # [8.6.0-develop.22](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.21...8.6.0-develop.22) (2021-11-29)
 
 
