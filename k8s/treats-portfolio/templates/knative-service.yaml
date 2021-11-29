@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       annotations:
-        autoscaling.knative.dev/minScale: {{ .Values.minScale }}
+        autoscaling.knative.dev/minScale: {{ .Values.minScale | quote }}
       labels:
       {{- include "treats-portfolio.labels" . | nindent 8 }}
     spec:
