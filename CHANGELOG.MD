@@ -1,3 +1,10 @@
+# [8.6.0-develop.24](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.23...8.6.0-develop.24) (2021-11-29)
+
+
+### Bug Fixes
+
+* remove notes.txt ([814c44a](https://github.com/insuusvenerati/treats-portfolio/commit/814c44ab6d0a75be95b92d5d668602a248b9b7c6))
+
 # [8.6.0-develop.23](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.22...8.6.0-develop.23) (2021-11-29)
 
 
