@@ -1,3 +1,10 @@
+# [8.6.0-develop.26](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.25...8.6.0-develop.26) (2021-11-29)
+
+
+### Bug Fixes
+
+* service labels indentation ([6a599bf](https://github.com/insuusvenerati/treats-portfolio/commit/6a599bfeb12f1237b549e849ceb44ad531d62a6c))
+
 # [8.6.0-develop.25](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.24...8.6.0-develop.25) (2021-11-29)
 
 
