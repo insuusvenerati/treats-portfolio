@@ -1,3 +1,10 @@
+# [8.6.0-develop.25](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.24...8.6.0-develop.25) (2021-11-29)
+
+
+### Bug Fixes
+
+* add version label to chart ([ff1e1f6](https://github.com/insuusvenerati/treats-portfolio/commit/ff1e1f6fe68b18c32e58e5ec284393df808c0f54))
+
 # [8.6.0-develop.24](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.23...8.6.0-develop.24) (2021-11-29)
 
 
