@@ -1,3 +1,10 @@
+# [8.6.0-develop.27](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.26...8.6.0-develop.27) (2021-11-29)
+
+
+### Bug Fixes
+
+* change service annotation value to string ([112e67f](https://github.com/insuusvenerati/treats-portfolio/commit/112e67f055262c2f14852679118e1dbd8e631d7e))
+
 # [8.6.0-develop.26](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.25...8.6.0-develop.26) (2021-11-29)
 
 
