@@ -3,7 +3,10 @@
     "module": "commonjs",
     "target": "esnext",
     "jsx": "preserve",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "strict": false,
     "noEmit": true,
     "isolatedModules": true,
@@ -12,6 +15,18 @@
     "skipLibCheck": true,
     "allowJs": true
   },
-   "exclude": ["node_modules", "public", ".cache", "cypress/**/*"],
-   "include": ["src/**/*", ".eslintrc.js", "cypress/**/*"]
+  "exclude": [
+    "node_modules",
+    "public",
+    ".cache"
+  ],
+  "include": [
+    "src/**/*",
+    ".eslintrc.js",
+    "cypress/**/*",
+    "__tests__/**/*",
+    "__mocks__/**/*",
+    "__generated__/**/*",
+    "./*.js"
+  ]
 }

@@ -6,3 +6,4 @@ gatsby-browser.js
 cypress/**/*
 instrumented
 webpack.config.js
+.yarn
