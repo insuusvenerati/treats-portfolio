@@ -75,6 +75,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-plugin-sass", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.0.0"],
             ["gatsby-plugin-sharp", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:4.0.1"],
             ["gatsby-plugin-sitemap", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.0.0"],
+            ["gatsby-plugin-vercel", "npm:1.0.3"],
             ["gatsby-source-datocms", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:3.0.11"],
             ["gatsby-theme-contact", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:3.0.0"],
             ["gatsby-transformer-remark", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.0.0"],
@@ -4624,6 +4625,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@babel/runtime", [
+        ["npm:7.12.1", {
+          "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.12.1-b069f70b16-fb4b4c8f70.zip/node_modules/@babel/runtime/",
+          "packageDependencies": [
+            ["@babel/runtime", "npm:7.12.1"],
+            ["regenerator-runtime", "npm:0.13.9"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:7.15.4", {
           "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.15.4-52ce5bf6ea-c408254304.zip/node_modules/@babel/runtime/",
           "packageDependencies": [
@@ -16720,6 +16729,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-plugin-sass", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.0.0"],
             ["gatsby-plugin-sharp", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:4.0.1"],
             ["gatsby-plugin-sitemap", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.0.0"],
+            ["gatsby-plugin-vercel", "npm:1.0.3"],
             ["gatsby-source-datocms", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:3.0.11"],
             ["gatsby-theme-contact", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:3.0.0"],
             ["gatsby-transformer-remark", "virtual:9228b22fdaa5825e801023307b853f29dabd65290ebcc221157f38fef2e2fc28991249883b9679678d0081ac9f5698ee07667287acdf3062e007e518900537e8#npm:5.0.0"],
@@ -17256,6 +17266,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [
             "@types/gatsby",
             "gatsby"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["gatsby-plugin-vercel", [
+        ["npm:1.0.3", {
+          "packageLocation": "./.yarn/cache/gatsby-plugin-vercel-npm-1.0.3-213fc72320-dc6a052aab.zip/node_modules/gatsby-plugin-vercel/",
+          "packageDependencies": [
+            ["gatsby-plugin-vercel", "npm:1.0.3"],
+            ["@babel/runtime", "npm:7.12.1"],
+            ["web-vitals", "npm:0.2.4"]
           ],
           "linkType": "HARD",
         }]
@@ -31143,6 +31164,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/web-namespaces-npm-1.1.4-a6dfacb865-5149842ccb.zip/node_modules/web-namespaces/",
           "packageDependencies": [
             ["web-namespaces", "npm:1.1.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["web-vitals", [
+        ["npm:0.2.4", {
+          "packageLocation": "./.yarn/cache/web-vitals-npm-0.2.4-c7d1bfe073-128a4e8773.zip/node_modules/web-vitals/",
+          "packageDependencies": [
+            ["web-vitals", "npm:0.2.4"]
           ],
           "linkType": "HARD",
         }]
