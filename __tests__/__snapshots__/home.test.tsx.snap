@@ -502,7 +502,7 @@ https://www.datocms-assets.com/23328/1595107435-mail.png?dpr=1&fm=webp&w=208 208
             className="social social--cat grow"
             data-event="click"
             data-for="catGenerator"
-            data-tip={true}
+            data-tip="true"
             style={
               Object {
                 "cursor": "pointer",
