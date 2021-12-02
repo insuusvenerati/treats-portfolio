@@ -23,10 +23,9 @@
   "include": [
     "src/**/*",
     ".eslintrc.js",
-    "cypress/**/*",
-    "__tests__/**/*",
-    "__mocks__/**/*",
-    "__generated__/**/*",
+    "__tests__/*.tsx",
+    "__mocks__/*.js",
+    "__generated__/*.ts",
     "./*.js"
   ]
 }
