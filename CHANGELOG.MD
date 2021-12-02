@@ -1,3 +1,257 @@
+# [8.6.0-develop.29](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.28...8.6.0-develop.29) (2021-12-02)
+
+
+### Bug Fixes
+
+* update pages to use new layout component ([d3150e2](https://github.com/insuusvenerati/treats-portfolio/commit/d3150e22299ad4179e700c3554c9517a0d9f15be))
+* update test npm script ([add10db](https://github.com/insuusvenerati/treats-portfolio/commit/add10db87fc3ee107a752f43d3132790b9bfb092))
+
+
+### Features
+
+* improves tests ([ba8a281](https://github.com/insuusvenerati/treats-portfolio/commit/ba8a281ae7b71e1bcef682a46b85eef1ea6361e3))
+
+# [8.6.0-develop.28](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.27...8.6.0-develop.28) (2021-12-02)
+
+
+### Features
+
+* gallery images now use gatsby-image-plugin ([0dd9ffd](https://github.com/insuusvenerati/treats-portfolio/commit/0dd9ffdadea4ec234ba1547a1f8ec63cdd678deb))
+
+# [8.6.0-develop.27](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.26...8.6.0-develop.27) (2021-11-29)
+
+
+### Bug Fixes
+
+* change service annotation value to string ([112e67f](https://github.com/insuusvenerati/treats-portfolio/commit/112e67f055262c2f14852679118e1dbd8e631d7e))
+
+# [8.6.0-develop.26](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.25...8.6.0-develop.26) (2021-11-29)
+
+
+### Bug Fixes
+
+* service labels indentation ([6a599bf](https://github.com/insuusvenerati/treats-portfolio/commit/6a599bfeb12f1237b549e849ceb44ad531d62a6c))
+
+# [8.6.0-develop.25](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.24...8.6.0-develop.25) (2021-11-29)
+
+
+### Bug Fixes
+
+* add version label to chart ([ff1e1f6](https://github.com/insuusvenerati/treats-portfolio/commit/ff1e1f6fe68b18c32e58e5ec284393df808c0f54))
+
+# [8.6.0-develop.24](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.23...8.6.0-develop.24) (2021-11-29)
+
+
+### Bug Fixes
+
+* remove notes.txt ([814c44a](https://github.com/insuusvenerati/treats-portfolio/commit/814c44ab6d0a75be95b92d5d668602a248b9b7c6))
+
+# [8.6.0-develop.23](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.22...8.6.0-develop.23) (2021-11-29)
+
+
+### Bug Fixes
+
+* remove unused helm chart test ([638400f](https://github.com/insuusvenerati/treats-portfolio/commit/638400f255d256a6947eb76b975b3acf853ae95c))
+
+# [8.6.0-develop.22](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.21...8.6.0-develop.22) (2021-11-29)
+
+
+### Bug Fixes
+
+* update helm chart ([cf6fe14](https://github.com/insuusvenerati/treats-portfolio/commit/cf6fe1474fa328704a948c81c71a17ee277335f7))
+
+# [8.6.0-develop.21](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.20...8.6.0-develop.21) (2021-11-28)
+
+
+### Bug Fixes
+
+* updates knative service spec ([ae1f58e](https://github.com/insuusvenerati/treats-portfolio/commit/ae1f58e3df8632d3417f4a73a84cfbfd29de0625))
+
+
+### Features
+
+* uses knative to deploy app ([7c774da](https://github.com/insuusvenerati/treats-portfolio/commit/7c774da1eddacedd2e141811d6f1937fd77bdab1))
+
+# [8.6.0-develop.20](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.19...8.6.0-develop.20) (2021-11-18)
+
+
+### Bug Fixes
+
+* adds cache from capability ([c1b9ac4](https://github.com/insuusvenerati/treats-portfolio/commit/c1b9ac4e9cb4da8df941c402d867d0837ed240e0))
+
+# [8.6.0-develop.19](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.18...8.6.0-develop.19) (2021-11-18)
+
+
+### Bug Fixes
+
+* enable docker build kit ([a460b05](https://github.com/insuusvenerati/treats-portfolio/commit/a460b05dfca2373887d694069df0fe43d4a19d76))
+
+# [8.6.0-develop.18](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.17...8.6.0-develop.18) (2021-11-18)
+
+
+### Bug Fixes
+
+* adds missing chart location env ([b7a0cbf](https://github.com/insuusvenerati/treats-portfolio/commit/b7a0cbf627e7c2e4adae43415b17d305c5e759a9))
+
+# [8.6.0-develop.17](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.16...8.6.0-develop.17) (2021-11-18)
+
+
+### Bug Fixes
+
+* readd yarn install to Dockerfile ([2ee46d3](https://github.com/insuusvenerati/treats-portfolio/commit/2ee46d3b96409ae3a1341cfcb117cb0660689b10))
+
+# [8.6.0-develop.16](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.15...8.6.0-develop.16) (2021-11-15)
+
+
+### Bug Fixes
+
+* downgrade to eslint 7 ([08a9991](https://github.com/insuusvenerati/treats-portfolio/commit/08a9991328cc9429435f1993cf701538b3b9dcd3))
+* remove unnecessary yarn install command from dockerfile ([5c91d0f](https://github.com/insuusvenerati/treats-portfolio/commit/5c91d0fef0a8935795ddeded6fd479cfb05da9cc))
+* remove unused error boundary ([b2a96d6](https://github.com/insuusvenerati/treats-portfolio/commit/b2a96d67b7c0ab5a00e531cbdb1e366a2573bbb5))
+
+# [8.6.0-develop.15](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.14...8.6.0-develop.15) (2021-11-02)
+
+
+### Bug Fixes
+
+* clean up virtual service ([3a853be](https://github.com/insuusvenerati/treats-portfolio/commit/3a853be6fe5ef16e8b06aa8234dcb0b5b2236178))
+
+# [8.6.0-develop.14](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.13...8.6.0-develop.14) (2021-11-02)
+
+
+### Bug Fixes
+
+* adds gateway to virtualservice ([3cee6e9](https://github.com/insuusvenerati/treats-portfolio/commit/3cee6e9d9d1eacac00d93e8b2a96c3466905b1a8))
+
+# [8.6.0-develop.13](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.12...8.6.0-develop.13) (2021-11-02)
+
+
+### Bug Fixes
+
+* adds hosts values ([18fd240](https://github.com/insuusvenerati/treats-portfolio/commit/18fd2408c2d86ec31edc065173163e4d941070a4))
+
+# [8.6.0-develop.12](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.11...8.6.0-develop.12) (2021-11-02)
+
+
+### Bug Fixes
+
+* fixes conflicting virtual service name ([b54b83c](https://github.com/insuusvenerati/treats-portfolio/commit/b54b83c7e22bcba5b86a0e5525a49b7ccd689804))
+
+# [8.6.0-develop.11](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.10...8.6.0-develop.11) (2021-11-02)
+
+
+### Bug Fixes
+
+* add istio virtual service ([c712d5c](https://github.com/insuusvenerati/treats-portfolio/commit/c712d5c191323b0eada2d480bb82857359cfb851))
+
+# [8.6.0-develop.10](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.9...8.6.0-develop.10) (2021-11-02)
+
+
+### Bug Fixes
+
+* adds istio gateway to flagger canary ([0c12032](https://github.com/insuusvenerati/treats-portfolio/commit/0c120324bc7ed257ff6a0c3c3ddbf9403dae08fb))
+
+# [8.6.0-develop.9](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.8...8.6.0-develop.9) (2021-11-01)
+
+
+### Bug Fixes
+
+* increases canary deployment time ([be47249](https://github.com/insuusvenerati/treats-portfolio/commit/be47249407c4f3cda9f3296f2c359be30a892fba))
+
+# [8.6.0-develop.8](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.7...8.6.0-develop.8) (2021-11-01)
+
+
+### Bug Fixes
+
+* adds helm repo credentials ([26c50e9](https://github.com/insuusvenerati/treats-portfolio/commit/26c50e987c1217f74980dd7c8ba530809195ed46))
+
+# [8.6.0-develop.7](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.6...8.6.0-develop.7) (2021-11-01)
+
+
+### Bug Fixes
+
+* updates dockerfile to use node lts image ([27669cc](https://github.com/insuusvenerati/treats-portfolio/commit/27669ccb4d7104bf6905751840226da944afcf19))
+
+# [8.6.0-develop.6](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.5...8.6.0-develop.6) (2021-11-01)
+
+
+### Bug Fixes
+
+* uses docker runner ([7fd2a48](https://github.com/insuusvenerati/treats-portfolio/commit/7fd2a488fcfdc8c7152153919b161976800eaa0e))
+
+# [8.6.0-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.4...8.6.0-develop.5) (2021-11-01)
+
+
+### Bug Fixes
+
+* hacks cypress to work with pnp ([2e0a1f0](https://github.com/insuusvenerati/treats-portfolio/commit/2e0a1f01f3ddbe8c7f3e7cf30122893120546483)), closes [/github.com/cypress-io/cypress/issues/8008#issuecomment-840733324](https://github.com//github.com/cypress-io/cypress/issues/8008/issues/issuecomment-840733324)
+* removes node_modules from cache ([defc49f](https://github.com/insuusvenerati/treats-portfolio/commit/defc49f868abfb29b603685473d2ff7377a61189))
+* shadow gatsby-theme-contact to fix pnp issue ([25b7947](https://github.com/insuusvenerati/treats-portfolio/commit/25b79476094df6579f46ef7afd555ce2b78e8a80))
+* various cypress fixes ([cfce07b](https://github.com/insuusvenerati/treats-portfolio/commit/cfce07bcf557b15a9e1f58cf68859abd440376d6))
+
+# [8.6.0-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.3...8.6.0-develop.4) (2021-10-28)
+
+
+### Bug Fixes
+
+* removes replicas from kubernetes deployment ([0c10fba](https://github.com/insuusvenerati/treats-portfolio/commit/0c10fba42e4ef60628e6ffa444b169f1f4110c6c))
+
+# [8.6.0-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.2...8.6.0-develop.3) (2021-10-27)
+
+
+### Bug Fixes
+
+* remove sentry webpack dependency ([5a548c4](https://github.com/insuusvenerati/treats-portfolio/commit/5a548c4d704794c3d752d9e0663f99eaa3f575e8))
+
+# [8.6.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.1...8.6.0-develop.2) (2021-10-27)
+
+
+### Bug Fixes
+
+* fixes sentry tracing option typo ([964670d](https://github.com/insuusvenerati/treats-portfolio/commit/964670d8cc1dfda06c67be8ad71d8cde1469ced4))
+
+# [8.6.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.5...8.6.0-develop.1) (2021-10-27)
+
+
+### Features
+
+* upgrade to yarn v3 ([5d57a8d](https://github.com/insuusvenerati/treats-portfolio/commit/5d57a8d3efca4dda15078200dac265a84772cb2d))
+
+## [8.5.2-develop.5](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.4...8.5.2-develop.5) (2021-10-26)
+
+
+### Bug Fixes
+
+* enable sentry tracing ([b58d933](https://github.com/insuusvenerati/treats-portfolio/commit/b58d933eb4c0ca29cbf1f5807ffe810e0a2b49a6))
+
+## [8.5.2-develop.4](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.3...8.5.2-develop.4) (2021-10-26)
+
+
+### Bug Fixes
+
+* incorrect pipeline dependency ([0a1c8f4](https://github.com/insuusvenerati/treats-portfolio/commit/0a1c8f4ff7a7f73b787fed3f0cfbbe6443b07df4))
+
+## [8.5.2-develop.3](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.2...8.5.2-develop.3) (2021-10-26)
+
+
+### Bug Fixes
+
+* restore cache on publish pipeline ([94dca1b](https://github.com/insuusvenerati/treats-portfolio/commit/94dca1bcc569f01c401ba3c9640d16f34106bbd7))
+
+## [8.5.2-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.2-develop.1...8.5.2-develop.2) (2021-10-26)
+
+
+### Bug Fixes
+
+* restore cache on tags ([35d1071](https://github.com/insuusvenerati/treats-portfolio/commit/35d1071a96fde384521cabcf49a200e088dae47c))
+
+## [8.5.2-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.1...8.5.2-develop.1) (2021-10-26)
+
+
+### Bug Fixes
+
+* **deps:** update gatsby monorepo ([8f0bb68](https://github.com/insuusvenerati/treats-portfolio/commit/8f0bb68ae7a6bbf981b90cac891f9314e9af9dbc))
+
 ## [8.5.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.0...8.5.1) (2021-10-25)
 
 

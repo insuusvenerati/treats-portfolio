@@ -8,7 +8,7 @@ const plugins = [
   'gatsby-plugin-react-helmet',
   `gatsby-plugin-robots-txt`,
   `gatsby-plugin-sitemap`,
-  `gatsby-plugin-typescript`,
+  // `gatsby-plugin-typescript`,
   {
     resolve: `gatsby-theme-contact`,
     options: {
@@ -60,8 +60,10 @@ const plugins = [
     options: {
       dsn: 'https://50863e41f2c94ac38144e896197d498f@o122225.ingest.sentry.io/4167682',
       release: packageJson.version,
+      tracesSampleRate: 0.8,
     },
   },
+  `gatsby-plugin-image`,
   // `gatsby-plugin-codegen`,
 ];
 

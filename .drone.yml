@@ -1,5 +1,5 @@
 kind: pipeline
-type: kubernetes
+type: docker
 name: default
 
 trigger:
@@ -22,7 +22,7 @@ steps:
       restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       path-style: true
-      endpoint: http://minio-home.minio.svc.cluster.local:9000
+      endpoint: https://api.minio.home.stiforr.tech
       bucket: insuusvenerati
       region: us-east-1
       filename: ${DRONE_REPO_NAME}.tar.gz
@@ -30,7 +30,6 @@ steps:
         - './.cache'
         - './public'
         - '/usr/local/share/.cache'
-        - './node_modules'
       access_key:
         from_secret: minio_access_key_id
       secret_key:
@@ -77,7 +76,7 @@ steps:
     settings:
       rebuild: true
       path-style: true
-      endpoint: http://minio-home.minio.svc.cluster.local:9000
+      endpoint: https://api.minio.home.stiforr.tech
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
       filename: ${DRONE_REPO_NAME}.tar.gz
       bucket: insuusvenerati
@@ -87,7 +86,6 @@ steps:
         - './.cache'
         - './public'
         - '/usr/local/share/.cache'
-        - './node_modules'
       access_key:
         from_secret: minio_access_key_id
       secret_key:
@@ -96,24 +94,20 @@ steps:
       - install
       - build
 
-  - name: Test Chrome
-    image: cypress/included:7.1.0
+  - name: Snapshot tests
+    image: node:lts-buster-slim
     when:
       event:
         exclude:
           - tag
     commands:
-      - cypress install
-      - yarn test:e2e:ci-chrome
-    environment:
-      DATO_API_TOKEN:
-        from_secret: DATO_API_TOKEN
+      - yarn test
     depends_on:
       - install
       - build
 
   - name: semantic-release
-    image: stiforr/ci-tools:0.0.7
+    image: stiforr/ci-tools:1
     pull: 'always'
     commands:
       - yarn semantic-release
@@ -130,15 +124,15 @@ steps:
         from_secret: GH_TOKEN
     depends_on:
       - build
-      - 'Test Chrome'
+      - 'Snapshot tests'
 
 volumes:
   - name: cache
-    temp: {}
+    temp: { }
 
 ---
 kind: pipeline
-type: kubernetes
+type: docker
 name: publish
 
 depends_on:
@@ -150,49 +144,46 @@ trigger:
       - tag
 
 steps:
-  - name: rebuild-cache-with-filesystem
+  - name: restore-cache-with-filesystem
     image: plugins/s3-cache
     pull: 'always'
-    volumes:
-      - name: cache
-        path: /usr/local/share/.cache
-    when:
-      event:
-        exclude:
-          - tag
     settings:
-      rebuild: true
-      path-style: true
-      endpoint: http://minio-home.minio.svc.cluster.local:9000
+      restore: true
       cache_key: '{{ .Repo.Name }}-{{ checksum "yarn.lock" }}'
+      path-style: true
+      endpoint: https://api.minio.home.stiforr.tech
       bucket: insuusvenerati
       region: us-east-1
+      filename: ${DRONE_REPO_NAME}.tar.gz
       mount:
-        # - './.cache'
         - './public'
-        # - '/usr/local/share/.cache'
-        # - './node_modules'
       access_key:
         from_secret: minio_access_key_id
       secret_key:
         from_secret: minio_secret_access_key
 
   - name: Helm Package
-    image: stiforr/ci-tools:0.0.7
+    image: stiforr/ci-tools:1
     pull: 'always'
     commands:
       - helm package k8s/treats-portfolio
 
   - name: Helm Push
-    image: stiforr/ci-tools:0.0.7
+    image: stiforr/ci-tools:1
     pull: 'always'
     commands:
       - /scripts/helm-push.sh
     depends_on:
       - 'Helm Package'
     environment:
+      CHART_LOCATION:
+        from_secret: CHART_LOCATION
       CHART_REPO_NAME:
         from_secret: CHART_REPO_NAME
+      HELM_REPO_USERNAME:
+        from_secret: HELM_REPO_USERNAME
+      HELM_REPO_PASSWORD:
+        from_secret: HELM_REPO_PASSWORD
       CHART_REPO_URL:
         from_secret: CHART_REPO_URL
       AWS_ACCESS_KEY_ID:
@@ -204,7 +195,7 @@ steps:
       AWS_DISABLE_SSL: 'true'
 
   - name: sentry-release
-    image: stiforr/ci-tools:0.0.7
+    image: stiforr/ci-tools:1
     pull: 'always'
     environment:
       SENTRY_PROJECT:
@@ -216,20 +207,24 @@ steps:
     commands:
       - /scripts/sentry-release.sh
     depends_on:
-      - 'rebuild-cache-with-filesystem'
+      - 'restore-cache-with-filesystem'
 
   - name: docker
     image: plugins/docker
     environment:
+      BUILDKIT_INLINE_CACHE: 1
+      DOCKER_BUILDKIT: 1
       DATO_API_TOKEN:
         from_secret: DATO_API_TOKEN
     settings:
+      cache_from: stiforr/treats-portfolio
       username:
         from_secret: docker_username
       password:
         from_secret: docker_password
       repo: stiforr/treats-portfolio
       build_args_from_env:
+        - BUILDKIT_INLINE_CACHE
         - DATO_API_TOKEN
       auto_tag: true
       tags:
