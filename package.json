@@ -43,7 +43,7 @@
     "serve": "gatsby serve --host=0.0.0.0",
     "clean": "gatsby clean",
     "lint": "eslint --ext .tsx */**/*.{ts,tsx}",
-    "test": "jest --watch",
+    "test": "jest",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
