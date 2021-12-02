@@ -1,7 +1,8 @@
+const packageJson = require('./package.json');
+
 require('dotenv').config({
   path: '.env',
 });
-const packageJson = require('./package.json');
 
 const plugins = [
   `gatsby-plugin-client-side-redirect`,
@@ -63,7 +64,28 @@ const plugins = [
       tracesSampleRate: 0.8,
     },
   },
-  // `gatsby-plugin-codegen`,
+  {
+    resolve: `gatsby-plugin-graphql-codegen`,
+    options: {
+      // codegen: process.env.NODE_ENV === 'development',
+      failOnError: false,
+      fileName: `__generated__/graphql-types.d.ts`,
+    },
+  },
+  // {
+  //   resolve: `gatsby-plugin-typegen`,
+  //   options: {
+  //     outputPath: `__generated__/gatsby-types.d.ts`,
+  //     language: `typescript`,
+  //     autoFix: false,
+  //     emitSchema: {
+  //       '__generated__/gatsby-introspection.json': true,
+  //     },
+  //     emitPluginDocuments: {
+  //       '__generated__/gatsby-plugin-documents.graphql': true,
+  //     },
+  //   },
+  // },
 ];
 
 module.exports = {
