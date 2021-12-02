@@ -1,5 +1,6 @@
 import React from 'react';
-import Img, { FluidObject } from 'gatsby-image';
+import { FluidObject } from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import {
   BGTags_desktopBgImage_edges,
   BGTags_desktopBgImage_edges_node,
@@ -19,19 +20,26 @@ type ImageCardProps = {
   sources?: Array<Sources>;
 };
 
-const ImageCard: React.FC<ImageCardProps> = ({ edges, node, setPhotoIndex, setOpen, isOpen, sources }) => {
+const ImageCard = ({
+  edges,
+  node,
+  setPhotoIndex,
+  setOpen,
+  isOpen,
+  gatsbyImageData,
+}: ImageCardProps): JSX.Element => {
   return (
     <>
       <div role="presentation" className="showcase__item">
         <figure
           onClick={() => {
-            setPhotoIndex(edges.findIndex((edge) => edge.node.id === node.id));
+            setPhotoIndex(edges.nodes.findIndex((edge) => edge.id === node.id));
             setOpen(!isOpen);
           }}
           className="card"
         >
           <div>
-            <Img fluid={sources} className="card__image" />
+            <GatsbyImage alt="temp alt" className="card__image" image={gatsbyImageData} />
           </div>
         </figure>
       </div>
