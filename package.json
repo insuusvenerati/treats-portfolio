@@ -44,12 +44,6 @@
     "clean": "gatsby clean",
     "lint": "eslint --ext .tsx */**/*.{ts,tsx}",
     "test": "jest --watch",
-    "cy:open": "cypress open",
-    "cy:run:chrome": "cypress run --browser chrome",
-    "cy:run:firefox": "cypress run --browser firefox",
-    "test:e2e": "start-server-and-test develop http://localhost:9000 cy:open",
-    "test:e2e:ci-chrome": "start-server-and-test serve http://localhost:9000 cy:run:chrome",
-    "test:e2e:ci-firefox": "start-server-and-test serve http://localhost:9000 cy:run:firefox",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
