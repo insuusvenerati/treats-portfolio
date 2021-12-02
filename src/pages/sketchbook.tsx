@@ -1,12 +1,12 @@
 import React from 'react';
 import { PageProps } from 'gatsby';
-import Layout from '../components/Layout';
 import VisdevImageContainer from '../components/VisdevImageContainer';
+import { LayoutData } from '../components/LayoutData';
 
 const SketchbookPage: React.FC<PageProps> = () => (
-  <Layout>
+  <LayoutData>
     <VisdevImageContainer />
-  </Layout>
+  </LayoutData>
 );
 
 export default SketchbookPage;

@@ -4,21 +4,20 @@ import { HelmetDatoCms } from 'gatsby-source-datocms';
 import React, { useState } from 'react';
 import 'react-image-lightbox/style.css';
 import '../../styles/fonts.css';
-import useLayoutData from '../../hooks/useLayoutData';
 import ImageTooltip from '../ImageTooltip/ImageTooltip';
 import Img from 'gatsby-image';
+import { LayoutQuery } from '../../hooks/__generated__/LayoutQuery';
 
-const Layout: React.FC = ({ children }) => {
-  const [showMenu, setShowMenu] = useState(false);
+const Layout: React.FC<{ data: LayoutQuery }> = ({ children, data }) => {
   const {
     datoCmsSite,
     datoCmsHome,
     allDatoCmsSocialProfile,
     sidebar,
     catImages: { nodes: catImages },
-  } = useLayoutData();
+  } = data;
+  const [showMenu, setShowMenu] = useState(false);
   const [catImage, setCatImage] = useState(catImages[0].fixed);
-
   const generateCatImageHandler = () => {
     const randomCatImage = catImages[Math.floor(Math.random() * catImages.length)].fixed;
     setCatImage(randomCatImage);
@@ -76,7 +75,7 @@ const Layout: React.FC = ({ children }) => {
             ))}
             <a style={{ width: '55px' }}>
               <span
-                data-tip
+                data-tip="true"
                 data-event="click"
                 data-for="catGenerator"
                 className="social social--cat grow"
