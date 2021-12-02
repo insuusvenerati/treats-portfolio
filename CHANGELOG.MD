@@ -1,3 +1,10 @@
+# [8.6.0-develop.28](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.27...8.6.0-develop.28) (2021-12-02)
+
+
+### Features
+
+* gallery images now use gatsby-image-plugin ([0dd9ffd](https://github.com/insuusvenerati/treats-portfolio/commit/0dd9ffdadea4ec234ba1547a1f8ec63cdd678deb))
+
 # [8.6.0-develop.27](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.26...8.6.0-develop.27) (2021-11-29)
 
 
