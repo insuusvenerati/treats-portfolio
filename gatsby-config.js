@@ -63,6 +63,7 @@ const plugins = [
       tracesSampleRate: 0.8,
     },
   },
+  `gatsby-plugin-image`,
   // `gatsby-plugin-codegen`,
 ];
 

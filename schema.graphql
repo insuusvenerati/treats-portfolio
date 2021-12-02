@@ -85,6 +85,65 @@ type DatoCmsAsset implements Node {
     fixed(forceBlurhash: Boolean, height: Int, imgixParams: DatoCmsImgixParams, width: Int = 400): DatoCmsFixed
     fluid(forceBlurhash: Boolean, imgixParams: DatoCmsImgixParams, maxHeight: Int, maxWidth: Int = 800, sizes: String): DatoCmsFluid
     format: String
+    gatsbyImageData(
+        """
+
+        If set along with width or height, this will set the value of the other dimension to match the provided aspect ratio, cropping the image if needed.
+        If neither width or height is provided, height will be set based on the intrinsic width of the source image.
+        """
+        aspectRatio: Float,
+        "Background color applied to the wrapper, or when \"letterboxing\" an image to another aspect ratio."
+        backgroundColor: String,
+        """
+
+        Specifies the image widths to generate. You should rarely need to change this. For FIXED and CONSTRAINED images it is better to allow these to be determined automatically,
+        based on the image size. For FULL_WIDTH images this can be used to override the default, which is determined by the plugin.
+        It will never generate any images larger than the source.
+        """
+        breakpoints: [Int],
+        forceBlurhash: Boolean,
+        "If set, the height of the generated image. If omitted, it is calculated from the supplied width, matching the aspect ratio of the source image."
+        height: Int,
+        imgixParams: DatoCmsImgixParams,
+        """
+
+        The layout for the image.
+        FIXED: A static image sized, that does not resize according to the screen width
+        FULL_WIDTH: The image resizes to fit its container. Pass a "sizes" option if it isn't going to be the full width of the screen.
+        CONSTRAINED: Resizes to fit its container, up to a maximum width, at which point it will remain fixed in size.
+        """
+        layout: GatsbyImageLayout,
+        """
+
+        A list of image pixel densities to generate for FIXED and CONSTRAINED images. You should rarely need to change this. It will never generate images larger than the source, and will always include a 1x image.
+        Default is [ 1, 2 ] for fixed images, meaning 1x, 2x, 3x, and [0.25, 0.5, 1, 2] for fluid. In this case, an image with a fluid layout and width = 400 would generate images at 100, 200, 400 and 800px wide.
+        Ignored for FULL_WIDTH, which uses breakpoints instead.
+        """
+        outputPixelDensities: [Float],
+        """
+
+        Format of generated placeholder, displayed while the main image loads.
+        DOMINANT_COLOR: a solid color, calculated from the dominant color of the image (default).
+        BLURRED: a blurred, low resolution image, encoded as a base64 data URI
+        TRACED_SVG: a low-resolution traced SVG of the image. Note that this will download the image at build time for processing.
+        NONE: no placeholder. Set "backgroundColor" to use a fixed background color.
+        """
+        placeholder: DatoImagePlaceholder,
+        """
+
+        The "sizes" property, passed to the img tag. This describes the display size of the image.
+        This does not affect the generated images, but is used by the browser to decide which images to download. You can leave this blank for fixed images, or if the responsive image
+        container will be the full width of the screen. In these cases we will generate an appropriate value.
+        """
+        sizes: String,
+        """
+
+        The display width of the generated image for layout = FIXED, and the display width of the largest image for layout = CONSTRAINED.
+        The actual largest image resolution will be this value multiplied by the largest value in outputPixelDensities
+        Ignored if layout = FULL_WIDTH.
+        """
+        width: Int
+    ): JSON
     height: Int
     id: ID!
     internal: Internal!
@@ -266,6 +325,65 @@ type DatoCmsFileField {
     fluid(forceBlurhash: Boolean, imgixParams: DatoCmsImgixParams, maxHeight: Int, maxWidth: Int = 800, sizes: String): DatoCmsFluid
     focalPoint: DatoCmsFocalPoint
     format: String
+    gatsbyImageData(
+        """
+
+        If set along with width or height, this will set the value of the other dimension to match the provided aspect ratio, cropping the image if needed.
+        If neither width or height is provided, height will be set based on the intrinsic width of the source image.
+        """
+        aspectRatio: Float,
+        "Background color applied to the wrapper, or when \"letterboxing\" an image to another aspect ratio."
+        backgroundColor: String,
+        """
+
+        Specifies the image widths to generate. You should rarely need to change this. For FIXED and CONSTRAINED images it is better to allow these to be determined automatically,
+        based on the image size. For FULL_WIDTH images this can be used to override the default, which is determined by the plugin.
+        It will never generate any images larger than the source.
+        """
+        breakpoints: [Int],
+        forceBlurhash: Boolean,
+        "If set, the height of the generated image. If omitted, it is calculated from the supplied width, matching the aspect ratio of the source image."
+        height: Int,
+        imgixParams: DatoCmsImgixParams,
+        """
+
+        The layout for the image.
+        FIXED: A static image sized, that does not resize according to the screen width
+        FULL_WIDTH: The image resizes to fit its container. Pass a "sizes" option if it isn't going to be the full width of the screen.
+        CONSTRAINED: Resizes to fit its container, up to a maximum width, at which point it will remain fixed in size.
+        """
+        layout: GatsbyImageLayout,
+        """
+
+        A list of image pixel densities to generate for FIXED and CONSTRAINED images. You should rarely need to change this. It will never generate images larger than the source, and will always include a 1x image.
+        Default is [ 1, 2 ] for fixed images, meaning 1x, 2x, 3x, and [0.25, 0.5, 1, 2] for fluid. In this case, an image with a fluid layout and width = 400 would generate images at 100, 200, 400 and 800px wide.
+        Ignored for FULL_WIDTH, which uses breakpoints instead.
+        """
+        outputPixelDensities: [Float],
+        """
+
+        Format of generated placeholder, displayed while the main image loads.
+        DOMINANT_COLOR: a solid color, calculated from the dominant color of the image (default).
+        BLURRED: a blurred, low resolution image, encoded as a base64 data URI
+        TRACED_SVG: a low-resolution traced SVG of the image. Note that this will download the image at build time for processing.
+        NONE: no placeholder. Set "backgroundColor" to use a fixed background color.
+        """
+        placeholder: DatoImagePlaceholder,
+        """
+
+        The "sizes" property, passed to the img tag. This describes the display size of the image.
+        This does not affect the generated images, but is used by the browser to decide which images to download. You can leave this blank for fixed images, or if the responsive image
+        container will be the full width of the screen. In these cases we will generate an appropriate value.
+        """
+        sizes: String,
+        """
+
+        The display width of the generated image for layout = FIXED, and the display width of the largest image for layout = CONSTRAINED.
+        The actual largest image resolution will be this value multiplied by the largest value in outputPixelDensities
+        Ignored if layout = FULL_WIDTH.
+        """
+        width: Int
+    ): JSON
     height: Int
     isImage: Boolean
     mimeType: String
@@ -1097,7 +1215,7 @@ type Query {
     allSiteSiteMetadata(filter: SiteSiteMetadataFilterInput, limit: Int, skip: Int, sort: SiteSiteMetadataSortInput): SiteSiteMetadataConnection!
     allThemeUiConfig(filter: ThemeUiConfigFilterInput, limit: Int, skip: Int, sort: ThemeUiConfigSortInput): ThemeUiConfigConnection!
     datoCmsAboutPage(bio: StringQueryOperatorInput, bioNode: DatoCmsTextNodeFilterInput, children: NodeFilterListInput, gatsbypreview: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, locale: StringQueryOperatorInput, meta: DatoCmsMetaFieldFilterInput, model: DatoCmsModelFilterInput, originalId: StringQueryOperatorInput, parent: NodeFilterInput, photo: DatoCmsFileFieldFilterInput, seoMetaTags: DatoCmsSeoMetaTagsFilterInput, seoSettings: DatoCmsSeoFieldFilterInput, subtitle: StringQueryOperatorInput, title: StringQueryOperatorInput): DatoCmsAboutPage
-    datoCmsAsset(author: StringQueryOperatorInput, basename: StringQueryOperatorInput, blurhash: StringQueryOperatorInput, children: NodeFilterListInput, colors: DatoCmsColorFieldFilterListInput, copyright: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, exifInfo: JSONQueryOperatorInput, filename: StringQueryOperatorInput, fixed: DatoCmsFixedFilterInput, fluid: DatoCmsFluidFilterInput, format: StringQueryOperatorInput, height: IntQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isImage: BooleanQueryOperatorInput, mimeType: StringQueryOperatorInput, notes: StringQueryOperatorInput, originalId: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, resolutions: DatoCmsFixedFilterInput, size: IntQueryOperatorInput, sizes: DatoCmsFluidFilterInput, smartTags: StringQueryOperatorInput, tags: StringQueryOperatorInput, url: StringQueryOperatorInput, video: DatoCmsAssetVideoFilterInput, width: IntQueryOperatorInput): DatoCmsAsset
+    datoCmsAsset(author: StringQueryOperatorInput, basename: StringQueryOperatorInput, blurhash: StringQueryOperatorInput, children: NodeFilterListInput, colors: DatoCmsColorFieldFilterListInput, copyright: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, exifInfo: JSONQueryOperatorInput, filename: StringQueryOperatorInput, fixed: DatoCmsFixedFilterInput, fluid: DatoCmsFluidFilterInput, format: StringQueryOperatorInput, gatsbyImageData: JSONQueryOperatorInput, height: IntQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isImage: BooleanQueryOperatorInput, mimeType: StringQueryOperatorInput, notes: StringQueryOperatorInput, originalId: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, resolutions: DatoCmsFixedFilterInput, size: IntQueryOperatorInput, sizes: DatoCmsFluidFilterInput, smartTags: StringQueryOperatorInput, tags: StringQueryOperatorInput, url: StringQueryOperatorInput, video: DatoCmsAssetVideoFilterInput, width: IntQueryOperatorInput): DatoCmsAsset
     datoCmsFaviconMetaTags(children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, tags: JSONQueryOperatorInput): DatoCmsFaviconMetaTags
     datoCmsField(apiKey: StringQueryOperatorInput, appeareance: JSONQueryOperatorInput, children: NodeFilterListInput, defaultValue: JSONQueryOperatorInput, fieldType: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, label: StringQueryOperatorInput, localized: BooleanQueryOperatorInput, originalId: StringQueryOperatorInput, parent: NodeFilterInput, position: IntQueryOperatorInput, validators: JSONQueryOperatorInput): DatoCmsField
     datoCmsHome(children: NodeFilterListInput, copyright: StringQueryOperatorInput, gatsbypreview: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, introText: StringQueryOperatorInput, introTextNode: DatoCmsTextNodeFilterInput, locale: StringQueryOperatorInput, meta: DatoCmsMetaFieldFilterInput, model: DatoCmsModelFilterInput, originalId: StringQueryOperatorInput, parent: NodeFilterInput, seoMetaTags: DatoCmsSeoMetaTagsFilterInput, seoSettings: DatoCmsSeoFieldFilterInput): DatoCmsHome
@@ -1745,6 +1863,7 @@ enum DatoCmsAboutPageFieldsEnum {
     photo___focalPoint___x @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     photo___focalPoint___y @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     photo___format
+    photo___gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     photo___height
     photo___isImage
     photo___mimeType
@@ -1853,6 +1972,7 @@ enum DatoCmsAboutPageFieldsEnum {
     seoSettings___image___fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___fluid___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___format
+    seoSettings___image___gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___height
     seoSettings___image___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1974,6 +2094,7 @@ enum DatoCmsAssetFieldsEnum {
     fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     fluid___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     format
+    gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     height
     id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
@@ -2590,6 +2711,7 @@ enum DatoCmsHomeFieldsEnum {
     seoSettings___image___fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___fluid___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___format
+    seoSettings___image___gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___height
     seoSettings___image___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
@@ -2960,6 +3082,7 @@ enum DatoCmsSiteFieldsEnum {
     globalSeo___fallbackSeo___image___exifInfo
     globalSeo___fallbackSeo___image___filename
     globalSeo___fallbackSeo___image___format
+    globalSeo___fallbackSeo___image___gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     globalSeo___fallbackSeo___image___height
     globalSeo___fallbackSeo___image___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     globalSeo___fallbackSeo___image___isImage
@@ -3108,6 +3231,7 @@ enum DatoCmsSocialProfileFieldsEnum {
     icon___focalPoint___x @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     icon___focalPoint___y @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     icon___format
+    icon___gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     icon___height
     icon___isImage
     icon___mimeType
@@ -3578,6 +3702,7 @@ enum DatoCmsWorkFieldsEnum {
     coverImage___focalPoint___x @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     coverImage___focalPoint___y @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     coverImage___format
+    coverImage___gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     coverImage___height
     coverImage___isImage
     coverImage___mimeType
@@ -3844,6 +3969,7 @@ enum DatoCmsWorkFieldsEnum {
     gallery___focalPoint___x @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     gallery___focalPoint___y @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     gallery___format
+    gallery___gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     gallery___height
     gallery___isImage
     gallery___mimeType
@@ -4074,6 +4200,7 @@ enum DatoCmsWorkFieldsEnum {
     seoSettings___image___fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___fluid___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___format
+    seoSettings___image___gatsbyImageData @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___height
     seoSettings___image___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     seoSettings___image___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
@@ -4122,6 +4249,13 @@ enum DatoCmsWorkFieldsEnum {
     seoSettings___twitterCard
     slug
     title
+}
+
+enum DatoImagePlaceholder {
+    BLURRED
+    DOMINANT_COLOR
+    NONE
+    TRACED_SVG
 }
 
 enum DirectoryFieldsEnum {
@@ -4362,6 +4496,28 @@ enum FileFieldsEnum {
     size
     sourceInstanceName
     uid
+}
+
+enum GatsbyImageFormat {
+    AUTO
+    AVIF
+    JPG
+    NO_CHANGE
+    PNG
+    WEBP
+}
+
+enum GatsbyImageLayout {
+    CONSTRAINED
+    FIXED
+    FULL_WIDTH
+}
+
+enum GatsbyImagePlaceholder {
+    BLURRED
+    DOMINANT_COLOR
+    NONE
+    TRACED_SVG
 }
 
 enum MarkdownExcerptFormats {
@@ -5293,6 +5449,7 @@ input DatoCmsAssetFilterInput {
     fixed: DatoCmsFixedFilterInput
     fluid: DatoCmsFluidFilterInput
     format: StringQueryOperatorInput
+    gatsbyImageData: JSONQueryOperatorInput
     height: IntQueryOperatorInput
     id: StringQueryOperatorInput
     internal: InternalFilterInput
@@ -5388,6 +5545,7 @@ input DatoCmsFileFieldFilterInput {
     fluid: DatoCmsFluidFilterInput
     focalPoint: DatoCmsFocalPointFilterInput
     format: StringQueryOperatorInput
+    gatsbyImageData: JSONQueryOperatorInput
     height: IntQueryOperatorInput
     isImage: BooleanQueryOperatorInput
     mimeType: StringQueryOperatorInput
