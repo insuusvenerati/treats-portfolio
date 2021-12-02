@@ -94,18 +94,14 @@ steps:
       - install
       - build
 
-  - name: Test Chrome
-    image: cypress/included:9.0.0
+  - name: Snapshot tests
+    image: node:lts-buster-slim
     when:
       event:
         exclude:
           - tag
     commands:
-      - cypress install
-      - yarn test:e2e:ci-chrome
-    environment:
-      DATO_API_TOKEN:
-        from_secret: DATO_API_TOKEN
+      - yarn test
     depends_on:
       - install
       - build
@@ -128,11 +124,11 @@ steps:
         from_secret: GH_TOKEN
     depends_on:
       - build
-      - 'Test Chrome'
+      - 'Snapshot tests'
 
 volumes:
   - name: cache
-    temp: {}
+    temp: { }
 
 ---
 kind: pipeline
