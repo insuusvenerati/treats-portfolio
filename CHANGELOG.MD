@@ -1,3 +1,16 @@
+# [8.6.0-develop.29](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.28...8.6.0-develop.29) (2021-12-02)
+
+
+### Bug Fixes
+
+* update pages to use new layout component ([d3150e2](https://github.com/insuusvenerati/treats-portfolio/commit/d3150e22299ad4179e700c3554c9517a0d9f15be))
+* update test npm script ([add10db](https://github.com/insuusvenerati/treats-portfolio/commit/add10db87fc3ee107a752f43d3132790b9bfb092))
+
+
+### Features
+
+* improves tests ([ba8a281](https://github.com/insuusvenerati/treats-portfolio/commit/ba8a281ae7b71e1bcef682a46b85eef1ea6361e3))
+
 # [8.6.0-develop.28](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0-develop.27...8.6.0-develop.28) (2021-12-02)
 
 
