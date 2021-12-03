@@ -1,23 +1,13 @@
 import React from 'react';
-import { FluidObject } from 'gatsby-image';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import {
-  BGTags_desktopBgImage_edges,
-  BGTags_desktopBgImage_edges_node,
-} from '../../hooks/__generated__/BGTags';
-
-type Sources = {
-  fluid: FluidObject;
-  media: string;
-};
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 type ImageCardProps = {
   setOpen: (isOpen: boolean) => void;
   setPhotoIndex: (photoIndex: number) => void;
   isOpen: boolean;
-  edges: Array<BGTags_desktopBgImage_edges>;
-  node: BGTags_desktopBgImage_edges_node;
-  sources?: Array<Sources>;
+  edges: any;
+  node: Pick<GatsbyTypes.DatoCmsAsset, 'gatsbyImageData' | 'id' | 'url'>;
+  gatsbyImageData: IGatsbyImageData;
 };
 
 const ImageCard = ({

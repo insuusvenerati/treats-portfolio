@@ -1,8 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { LayoutQuery } from './__generated__/LayoutQuery';
 
-const useLayoutData = (): LayoutQuery => {
-  return useStaticQuery<LayoutQuery>(
+const useLayoutData = () => {
+  return useStaticQuery<GatsbyTypes.LayoutQueryQuery>(
     graphql`
       query LayoutQuery {
         datoCmsSite {
@@ -10,12 +9,12 @@ const useLayoutData = (): LayoutQuery => {
             siteName
           }
           faviconMetaTags {
-            ...GatsbyDatoCmsFaviconMetaTags
+            tags
           }
         }
         datoCmsHome {
           seoMetaTags {
-            ...GatsbyDatoCmsSeoMetaTags
+            tags
           }
           introTextNode {
             childMarkdownRemark {
@@ -25,37 +24,24 @@ const useLayoutData = (): LayoutQuery => {
           copyright
         }
         allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
-          edges {
-            node {
-              profileType
-              url
-              icon {
-                fluid(maxWidth: 60, imgixParams: { fm: "webp" }) {
-                  ...GatsbyDatoCmsFluid_noBase64
-                }
-              }
+          nodes {
+            url
+            icon {
+              gatsbyImageData(placeholder: NONE, width: 60)
             }
+            profileType
           }
         }
-        sidebar: allDatoCmsAsset(filter: { tags: { eq: "sidebar" } }) {
-          nodes {
-            fixed(width: 225) {
-              ...GatsbyDatoCmsFixed_noBase64
-              src
-            }
-          }
+        sidebar: datoCmsAsset(tags: { eq: "sidebar" }) {
+          url
         }
         catImages: allDatoCmsAsset(filter: { tags: { eq: "cats" } }) {
           nodes {
-            fixed(width: 149) {
-              ...GatsbyDatoCmsFixed_noBase64
-            }
+            gatsbyImageData(width: 149)
           }
         }
         catIcon: datoCmsAsset(tags: { eq: "caticon" }) {
-          fixed(width: 60, imgixParams: { fm: "webp" }) {
-            ...GatsbyDatoCmsFixed_noBase64
-          }
+          gatsbyImageData(width: 60)
         }
       }
     `,

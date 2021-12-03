@@ -11,8 +11,6 @@ const BgImageContainer = (): JSX.Element => {
   const [isOpen, setOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
-  console.log('gatsbyImages', gatsbyImages);
-
   return (
     <>
       <Masonry className="showcase">

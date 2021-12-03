@@ -5,21 +5,16 @@ import React, { useState } from 'react';
 import 'react-image-lightbox/style.css';
 import '../../styles/fonts.css';
 import ImageTooltip from '../ImageTooltip/ImageTooltip';
-import Img from 'gatsby-image';
-import { LayoutQuery } from '../../hooks/__generated__/LayoutQuery';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-const Layout: React.FC<{ data: LayoutQuery }> = ({ children, data }) => {
-  const {
-    datoCmsSite,
-    datoCmsHome,
-    allDatoCmsSocialProfile,
-    sidebar,
-    catImages: { nodes: catImages },
-  } = data;
+const Layout: React.FC<{ data: GatsbyTypes.LayoutQueryQuery }> = ({ children, data }) => {
+  const { datoCmsSite, datoCmsHome, allDatoCmsSocialProfile, sidebar, catImages } = data;
   const [showMenu, setShowMenu] = useState(false);
-  const [catImage, setCatImage] = useState(catImages[0].fixed);
+  const [catImage, setCatImage] = useState(catImages.nodes[0].gatsbyImageData);
+
   const generateCatImageHandler = () => {
-    const randomCatImage = catImages[Math.floor(Math.random() * catImages.length)].fixed;
+    const randomCatImage =
+      catImages.nodes[Math.floor(Math.random() * catImages.nodes.length)].gatsbyImageData;
     setCatImage(randomCatImage);
   };
 
@@ -27,13 +22,11 @@ const Layout: React.FC<{ data: LayoutQuery }> = ({ children, data }) => {
     <div className={`container ${showMenu ? 'is-open' : ''}`}>
       <HelmetDatoCms favicon={datoCmsSite.faviconMetaTags} seo={datoCmsHome.seoMetaTags} />
 
-      <div data-cy="sidebar-container" className="container__sidebar">
+      <div className="container__sidebar">
         <ImageTooltip generateRandomCatImageHandler={generateCatImageHandler} catImage={catImage} />
-        <div style={{ backgroundImage: `url(${sidebar.nodes[0].fixed.src})` }} className={`sidebar`}>
+        <div style={{ backgroundImage: `url(${sidebar.url})` }} className={`sidebar`}>
           <h6 style={{ fontFamily: 'Montserrat' }} className="sidebar__title">
-            <Link data-cy="site-title" to="/">
-              {datoCmsSite.globalSeo.siteName}
-            </Link>
+            <Link to="/">{datoCmsSite.globalSeo.siteName}</Link>
           </h6>
           <div
             className="sidebar__intro"
@@ -41,7 +34,7 @@ const Layout: React.FC<{ data: LayoutQuery }> = ({ children, data }) => {
               __html: datoCmsHome.introTextNode.childMarkdownRemark.html,
             }}
           />
-          <ul data-cy="sidebar-menu" className="sidebar__menu">
+          <ul className="sidebar__menu">
             <li>
               <Link activeStyle={{ color: '#5d6b5b' }} to="/">
                 bg & illustration
@@ -58,8 +51,8 @@ const Layout: React.FC<{ data: LayoutQuery }> = ({ children, data }) => {
               </Link>
             </li>
           </ul>
-          <div data-cy="icon-row" className="centered">
-            {allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
+          <div className="centered">
+            {allDatoCmsSocialProfile.nodes.map((profile) => (
               <a
                 className={`social grow`}
                 key={profile.profileType}
@@ -70,7 +63,7 @@ const Layout: React.FC<{ data: LayoutQuery }> = ({ children, data }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Img alt={profile.profileType} fluid={profile.icon.fluid} />
+                <GatsbyImage image={profile.icon.gatsbyImageData} alt={profile.profileType} />
               </a>
             ))}
             <a style={{ width: '55px' }}>
