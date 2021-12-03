@@ -1,3 +1,11 @@
+# [8.7.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0...8.7.0-develop.1) (2021-12-03)
+
+
+### Features
+
+* autogenerate types and use them ([a6dd8b0](https://github.com/insuusvenerati/treats-portfolio/commit/a6dd8b0d56232ce947e3532adeaaedc21fadb83c))
+* remove obselete snapshot ([1441256](https://github.com/insuusvenerati/treats-portfolio/commit/1441256a6fa754423d1e228ed336a6c314afc116))
+
 # [8.6.0](https://github.com/insuusvenerati/treats-portfolio/compare/8.5.1...8.6.0) (2021-12-02)
 
 
