@@ -2,7 +2,7 @@ import React from 'react';
 import Intro from './intro';
 import Form from './form';
 
-const ContactPage: React.FC = () => {
+const ContactPage = (): JSX.Element => {
   return (
     <section
       sx={{

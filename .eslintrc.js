@@ -13,7 +13,6 @@ module.exports = {
     'plugin:jest/recommended',
     // 'plugin:jsx-a11y/recommended',
   ],
-
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -29,7 +28,7 @@ module.exports = {
     'no-console': 'error',
     '@typescript-eslint/unbound-method': 0,
     'jest/no-mocks-import': 0,
-    'react/react-in-jsx-scope': 0
+    'react/react-in-jsx-scope': 0,
   },
   settings: {
     react: {

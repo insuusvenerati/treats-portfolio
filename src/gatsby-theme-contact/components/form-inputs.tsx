@@ -3,8 +3,8 @@ import { Input, Label, Textarea } from 'theme-ui';
 
 type LabeledInputProps = {
   label: string;
-  as?: ForwardRefExoticComponent<unknown>;
-  // name: string;
+  as?: ForwardRefExoticComponent<{ name: string; id: string }>;
+  name: string;
   required?: boolean;
   minLength?: number;
   rows?: number;
@@ -12,7 +12,7 @@ type LabeledInputProps = {
   type?: string;
 };
 
-const LabeledInput: React.FC<LabeledInputProps> = ({ as = Input, label, ...props }) => {
+const LabeledInput = ({ as = Input, label, ...props }: LabeledInputProps): JSX.Element => {
   const name: string = label.toLowerCase();
   const Component = as;
   return (
@@ -23,27 +23,12 @@ const LabeledInput: React.FC<LabeledInputProps> = ({ as = Input, label, ...props
   );
 };
 
-const FormInput: React.FC = () => {
+const FormInput = (): JSX.Element => {
   return (
     <>
+      <LabeledInput name="name" label="Name" type="text" required placeholder="Enter your name" />
+      <LabeledInput name="email" label="Email" type="email" required placeholder="Enter your email" />
       <LabeledInput
-        data-cy="input-name"
-        name="name"
-        label="Name"
-        type="text"
-        required
-        placeholder="Enter your name"
-      />
-      <LabeledInput
-        data-cy="input-email"
-        name="email"
-        label="Email"
-        type="email"
-        required
-        placeholder="Enter your email"
-      />
-      <LabeledInput
-        data-cy="input-message"
         name="message"
         label="Message"
         as={Textarea}
