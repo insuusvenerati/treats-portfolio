@@ -93,5 +93,8 @@
     "type": "git",
     "url": "https://github.com/insuusvenerati/treats-portfolio.git"
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.1.1",
+  "volta": {
+    "node": "16.13.1"
+  }
 }

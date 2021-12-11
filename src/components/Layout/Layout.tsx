@@ -6,6 +6,7 @@ import 'react-image-lightbox/style.css';
 import '../../styles/fonts.css';
 import ImageTooltip from '../ImageTooltip/ImageTooltip';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import Helmet from 'react-helmet';
 
 const Layout: React.FC<{ data: GatsbyTypes.LayoutQueryQuery }> = ({ children, data }) => {
   const { datoCmsSite, datoCmsHome, allDatoCmsSocialProfile, sidebar, catImages } = data;
@@ -20,6 +21,16 @@ const Layout: React.FC<{ data: GatsbyTypes.LayoutQueryQuery }> = ({ children, da
 
   return (
     <div className={`container ${showMenu ? 'is-open' : ''}`}>
+      {process.env.NODE_ENV === 'production' ? (
+        <Helmet>
+          <script
+            async
+            defer
+            data-website-id="73ffafda-f8f8-4091-8a71-54f9663bd972"
+            src="https://analytics-production-aaf0.up.railway.app/umami.js"
+          />
+        </Helmet>
+      ) : null}
       <HelmetDatoCms favicon={datoCmsSite.faviconMetaTags} seo={datoCmsHome.seoMetaTags} />
 
       <div className="container__sidebar">
