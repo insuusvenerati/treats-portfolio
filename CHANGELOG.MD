@@ -1,3 +1,10 @@
+# [8.7.0-develop.2](https://github.com/insuusvenerati/treats-portfolio/compare/8.7.0-develop.1...8.7.0-develop.2) (2021-12-11)
+
+
+### Features
+
+* add umami analytics ([d4ea33e](https://github.com/insuusvenerati/treats-portfolio/commit/d4ea33e968ed44fddaf84078d82b1d53e90d929b))
+
 # [8.7.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0...8.7.0-develop.1) (2021-12-03)
 
 
