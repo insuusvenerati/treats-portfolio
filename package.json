@@ -1,7 +1,7 @@
 {
   "name": "gatsby-datocms-demo",
   "description": "Gatsby DatoCMS creative portfolio demo",
-  "version": "8.6.0",
+  "version": "8.7.0-develop.2",
   "author": "Stefano Verna <s.verna@datocms.com>",
   "dependencies": {
     "@sentry/gatsby": "^6.13.3",
@@ -42,9 +42,14 @@
     "develop": "gatsby develop --port 9000",
     "serve": "gatsby serve --host=0.0.0.0",
     "clean": "gatsby clean",
-    "lint": "eslint --ext .tsx */**/*.{ts,tsx}",
+    "lint": "eslint --ext .tsx src/**/*.{ts,tsx}",
     "test": "jest",
     "semantic-release": "semantic-release"
+  },
+  "resolutions": {
+    "apollo/graphql": "15.6.1",
+    "apollo-language-server/graphql": "15.6.1",
+    "gatsby-recipes/graphql": "15.6.1"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.16.0",
@@ -64,6 +69,7 @@
     "@types/theme-ui": "0.6.0",
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
+    "apollo": "^2.33.9",
     "babel-jest": "^27.4.2",
     "babel-preset-gatsby": "^2.3.0",
     "dotenv": "10.0.0",
@@ -71,6 +77,7 @@
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-react": "7.26.1",
+    "gatsby-plugin-typegen": "^2.2.4",
     "gatsby-plugin-vercel": "^1.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
@@ -86,5 +93,8 @@
     "type": "git",
     "url": "https://github.com/insuusvenerati/treats-portfolio.git"
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.1.1",
+  "volta": {
+    "node": "16.13.1"
+  }
 }

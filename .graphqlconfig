@@ -1,14 +1,20 @@
 {
   "name": "Gatsby",
   "schemaPath": "schema.graphql",
+  "includes": [
+    "./node_modules/gatsby-source-datocms/fragments/*.js",
+    "./node_modules/gatsby-source-datocms/fragments/__generated__/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
+  ],
   "extensions": {
     "endpoints": {
-      "Default GraphQL Endpoint": {
-        "url": "http://localhost:8000/___graphql",
+      "Local": {
+        "url": "http://localhost:9000/___graphql",
         "headers": {
           "user-agent": "JS GraphQL"
         },
-        "introspect": false
+        "introspect": true
       }
     }
   }

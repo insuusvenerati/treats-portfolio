@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import CatGenerator from '../CatGenerator/CatGenerator';
-import { FixedObject } from 'gatsby-image';
 
-const ImageTooltip: React.FC<{ catImage: FixedObject; generateRandomCatImageHandler: () => void }> = ({
+const ImageTooltip: React.FC<{ catImage: never; generateRandomCatImageHandler: () => void }> = ({
   catImage,
   generateRandomCatImageHandler,
 }) => {

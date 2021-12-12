@@ -1,0 +1,116 @@
+query {
+  themeUiConfig(id: { eq: "gatsby-plugin-theme-ui-config" }) {
+    preset
+    prismPreset
+  }
+}
+{
+  site {
+    siteMetadata {
+      social {
+        url
+        name
+      }
+    }
+  }
+}
+fragment GatsbyDatoCmsResolutions on DatoCmsFixed {
+  base64
+  width
+  height
+  src
+  srcSet
+}
+
+fragment GatsbyDatoCmsResolutions_tracedSVG on DatoCmsFixed {
+  tracedSVG
+  width
+  height
+  src
+  srcSet
+}
+
+fragment GatsbyDatoCmsResolutions_noBase64 on DatoCmsFixed {
+  width
+  height
+  src
+  srcSet
+}
+
+fragment GatsbyDatoCmsSizes on DatoCmsFluid {
+  base64
+  aspectRatio
+  src
+  srcSet
+  sizes
+}
+
+fragment GatsbyDatoCmsSizes_tracedSVG on DatoCmsFluid {
+  tracedSVG
+  aspectRatio
+  src
+  srcSet
+  sizes
+}
+
+fragment GatsbyDatoCmsSizes_noBase64 on DatoCmsFluid {
+  aspectRatio
+  src
+  srcSet
+  sizes
+}
+
+fragment GatsbyDatoCmsFixed on DatoCmsFixed {
+  base64
+  width
+  height
+  aspectRatio
+  src
+  srcSet
+}
+
+fragment GatsbyDatoCmsFixed_tracedSVG on DatoCmsFixed {
+  tracedSVG
+  width
+  height
+  aspectRatio
+  src
+  srcSet
+}
+
+fragment GatsbyDatoCmsFixed_noBase64 on DatoCmsFixed {
+  width
+  height
+  src
+  srcSet
+  aspectRatio
+}
+
+fragment GatsbyDatoCmsFluid on DatoCmsFluid {
+  base64
+  aspectRatio
+  src
+  srcSet
+  sizes
+}
+
+fragment GatsbyDatoCmsFluid_tracedSVG on DatoCmsFluid {
+  tracedSVG
+  aspectRatio
+  src
+  srcSet
+  sizes
+}
+
+fragment GatsbyDatoCmsFluid_noBase64 on DatoCmsFluid {
+  aspectRatio
+  src
+  srcSet
+  sizes
+}
+fragment GatsbyDatoCmsSeoMetaTags on DatoCmsSeoMetaTags {
+  tags
+}
+fragment GatsbyDatoCmsFaviconMetaTags on DatoCmsFaviconMetaTags {
+  tags
+}
