@@ -6,6 +6,9 @@ trigger:
   branch:
     exclude:
       - renovate/*
+  event:
+    exclude:
+      - promote
 
 steps:
   - name: restore-cache-with-filesystem
