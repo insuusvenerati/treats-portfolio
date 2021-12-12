@@ -47,9 +47,9 @@
     "semantic-release": "semantic-release"
   },
   "resolutions": {
-    "apollo/graphql": "15.6.1",
-    "apollo-language-server/graphql": "15.6.1",
-    "gatsby-recipes/graphql": "15.6.1"
+    "apollo/graphql": "16.1.0",
+    "apollo-language-server/graphql": "16.1.0",
+    "gatsby-recipes/graphql": "16.1.0"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.16.0",
