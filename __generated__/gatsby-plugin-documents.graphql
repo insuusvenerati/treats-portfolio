@@ -108,9 +108,9 @@ fragment GatsbyDatoCmsFluid_noBase64 on DatoCmsFluid {
   srcSet
   sizes
 }
-fragment GatsbyDatoCmsSeoMetaTags on DatoCmsSeoMetaTags {
+fragment GatsbyDatoCmsFaviconMetaTags on DatoCmsFaviconMetaTags {
   tags
 }
-fragment GatsbyDatoCmsFaviconMetaTags on DatoCmsFaviconMetaTags {
+fragment GatsbyDatoCmsSeoMetaTags on DatoCmsSeoMetaTags {
   tags
 }

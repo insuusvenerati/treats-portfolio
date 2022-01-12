@@ -8043,11 +8043,6 @@ type DatoCmsModelSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
 type GatsbyDatoCmsSeoMetaTagsFragment = Pick<DatoCmsSeoMetaTags, 'tags'>;
 
 type GatsbyDatoCmsSizesFragment = Pick<DatoCmsFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
@@ -8060,25 +8055,15 @@ type AboutQueryQuery = { readonly about: Maybe<(
     & { readonly seoMetaTags: Maybe<GatsbyDatoCmsSeoMetaTagsFragment>, readonly photo: Maybe<{ readonly fluid: Maybe<GatsbyDatoCmsSizesFragment> }>, readonly bioNode: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }> }
   )> };
 
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type Unnamed_1_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<ReadonlyArray<Maybe<Pick<Social, 'url' | 'name'>>>> }> }> };
-
-type BGTagsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BGTagsQuery = { readonly gatsbyImages: { readonly nodes: ReadonlyArray<Pick<DatoCmsAsset, 'gatsbyImageData' | 'id' | 'url'>> } };
-
-type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type Unnamed_2_Query = { readonly themeUiConfig: Maybe<Pick<ThemeUiConfig, 'preset' | 'prismPreset'>> };
-
-type VisdevTagsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type VisdevTagsQuery = { readonly gatsbyImages: { readonly nodes: ReadonlyArray<Pick<DatoCmsAsset, 'gatsbyImageData' | 'id' | 'url'>> } };
 
 type LayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -8090,6 +8075,26 @@ type LayoutQueryQuery = { readonly datoCmsSite: Maybe<{ readonly globalSeo: Mayb
       Pick<DatoCmsSocialProfile, 'url' | 'profileType'>
       & { readonly icon: Maybe<Pick<DatoCmsFileField, 'gatsbyImageData'>> }
     )> }, readonly sidebar: Maybe<Pick<DatoCmsAsset, 'url'>>, readonly catImages: { readonly nodes: ReadonlyArray<Pick<DatoCmsAsset, 'gatsbyImageData'>> }, readonly catIcon: Maybe<Pick<DatoCmsAsset, 'gatsbyImageData'>> };
+
+type BGTagsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BGTagsQuery = { readonly gatsbyImages: { readonly nodes: ReadonlyArray<Pick<DatoCmsAsset, 'gatsbyImageData' | 'id' | 'url'>> } };
+
+type VisdevTagsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type VisdevTagsQuery = { readonly gatsbyImages: { readonly nodes: ReadonlyArray<Pick<DatoCmsAsset, 'gatsbyImageData' | 'id' | 'url'>> } };
+
+type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_2_Query = { readonly themeUiConfig: Maybe<Pick<ThemeUiConfig, 'preset' | 'prismPreset'>> };
+
+type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_3_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<ReadonlyArray<Maybe<Pick<Social, 'url' | 'name'>>>> }> }> };
 
 type GatsbyDatoCmsResolutionsFragment = Pick<DatoCmsFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -8112,11 +8117,6 @@ type GatsbyDatoCmsFluidFragment = Pick<DatoCmsFluid, 'base64' | 'aspectRatio' | 
 type GatsbyDatoCmsFluid_tracedSVGFragment = Pick<DatoCmsFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyDatoCmsFluid_noBase64Fragment = Pick<DatoCmsFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
-
-type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type Unnamed_3_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<ReadonlyArray<Maybe<Pick<Social, 'url' | 'name'>>>> }> }> };
 
 type GatsbyDatoCmsFaviconMetaTagsFragment = Pick<DatoCmsFaviconMetaTags, 'tags'>;
 
