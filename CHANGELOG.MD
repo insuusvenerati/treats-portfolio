@@ -1,3 +1,10 @@
+# [8.8.0-develop.1](https://github.com/insuusvenerati/treats-portfolio/compare/8.7.0...8.8.0-develop.1) (2022-01-12)
+
+
+### Features
+
+* **sidebar:** remove instagram ([e364e1f](https://github.com/insuusvenerati/treats-portfolio/commit/e364e1ffbc9404be77cf03dead3066a254f9bc70))
+
 # [8.7.0](https://github.com/insuusvenerati/treats-portfolio/compare/8.6.0...8.7.0) (2021-12-12)
 
 
