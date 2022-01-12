@@ -247,6 +247,8 @@ type Directory_ctimeArgs = {
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
+  readonly port: Maybe<Scalars['Int']>;
+  readonly host: Maybe<Scalars['String']>;
   readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly pathPrefix: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
@@ -1329,6 +1331,8 @@ type Query_allDirectoryArgs = {
 type Query_siteArgs = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  port: Maybe<IntQueryOperatorInput>;
+  host: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -2475,6 +2479,8 @@ type SiteFieldsEnum =
   | 'siteMetadata.internal.mediaType'
   | 'siteMetadata.internal.owner'
   | 'siteMetadata.internal.type'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2608,6 +2614,8 @@ type SiteGroupConnection_groupArgs = {
 type SiteFilterInput = {
   readonly buildTime: Maybe<DateQueryOperatorInput>;
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  readonly port: Maybe<IntQueryOperatorInput>;
+  readonly host: Maybe<StringQueryOperatorInput>;
   readonly polyfill: Maybe<BooleanQueryOperatorInput>;
   readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
@@ -8035,15 +8043,27 @@ type DatoCmsModelSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type GatsbyDatoCmsSeoMetaTagsFragment = Pick<DatoCmsSeoMetaTags, 'tags'>;
+
+type GatsbyDatoCmsSizesFragment = Pick<DatoCmsFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type AboutQueryQuery = { readonly about: Maybe<(
+    Pick<DatoCmsAboutPage, 'title' | 'subtitle'>
+    & { readonly seoMetaTags: Maybe<GatsbyDatoCmsSeoMetaTagsFragment>, readonly photo: Maybe<{ readonly fluid: Maybe<GatsbyDatoCmsSizesFragment> }>, readonly bioNode: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }> }
+  )> };
+
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type Unnamed_1_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<ReadonlyArray<Maybe<Pick<Social, 'url' | 'name'>>>> }> }> };
-
-type BGTagsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BGTagsQuery = { readonly gatsbyImages: { readonly nodes: ReadonlyArray<Pick<DatoCmsAsset, 'gatsbyImageData' | 'id' | 'url'>> } };
 
 type LayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -8056,36 +8076,31 @@ type LayoutQueryQuery = { readonly datoCmsSite: Maybe<{ readonly globalSeo: Mayb
       & { readonly icon: Maybe<Pick<DatoCmsFileField, 'gatsbyImageData'>> }
     )> }, readonly sidebar: Maybe<Pick<DatoCmsAsset, 'url'>>, readonly catImages: { readonly nodes: ReadonlyArray<Pick<DatoCmsAsset, 'gatsbyImageData'>> }, readonly catIcon: Maybe<Pick<DatoCmsAsset, 'gatsbyImageData'>> };
 
-type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+type BGTagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_2_Query = { readonly themeUiConfig: Maybe<Pick<ThemeUiConfig, 'preset' | 'prismPreset'>> };
+type BGTagsQuery = { readonly gatsbyImages: { readonly nodes: ReadonlyArray<Pick<DatoCmsAsset, 'gatsbyImageData' | 'id' | 'url'>> } };
 
 type VisdevTagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type VisdevTagsQuery = { readonly gatsbyImages: { readonly nodes: ReadonlyArray<Pick<DatoCmsAsset, 'gatsbyImageData' | 'id' | 'url'>> } };
 
+type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_2_Query = { readonly themeUiConfig: Maybe<Pick<ThemeUiConfig, 'preset' | 'prismPreset'>> };
+
 type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type Unnamed_3_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<ReadonlyArray<Maybe<Pick<Social, 'url' | 'name'>>>> }> }> };
-
-type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type AboutQueryQuery = { readonly about: Maybe<(
-    Pick<DatoCmsAboutPage, 'title' | 'subtitle'>
-    & { readonly seoMetaTags: Maybe<GatsbyDatoCmsSeoMetaTagsFragment>, readonly photo: Maybe<{ readonly fluid: Maybe<GatsbyDatoCmsSizesFragment> }>, readonly bioNode: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }> }
-  )> };
 
 type GatsbyDatoCmsResolutionsFragment = Pick<DatoCmsFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 type GatsbyDatoCmsResolutions_tracedSVGFragment = Pick<DatoCmsFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 type GatsbyDatoCmsResolutions_noBase64Fragment = Pick<DatoCmsFixed, 'width' | 'height' | 'src' | 'srcSet'>;
-
-type GatsbyDatoCmsSizesFragment = Pick<DatoCmsFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyDatoCmsSizes_tracedSVGFragment = Pick<DatoCmsFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
@@ -8104,7 +8119,5 @@ type GatsbyDatoCmsFluid_tracedSVGFragment = Pick<DatoCmsFluid, 'tracedSVG' | 'as
 type GatsbyDatoCmsFluid_noBase64Fragment = Pick<DatoCmsFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyDatoCmsFaviconMetaTagsFragment = Pick<DatoCmsFaviconMetaTags, 'tags'>;
-
-type GatsbyDatoCmsSeoMetaTagsFragment = Pick<DatoCmsSeoMetaTags, 'tags'>;
 
 }
