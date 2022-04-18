@@ -26,9 +26,9 @@ const Layout: React.FC<{ data: GatsbyTypes.LayoutQueryQuery }> = ({ children, da
           <script
             async
             defer
-            data-website-id="73ffafda-f8f8-4091-8a71-54f9663bd972"
-            src="https://analytics-production-aaf0.up.railway.app/umami.js"
-          />
+            data-website-id="33710c93-c45f-4deb-be9a-9da0159640ff"
+            src="https://analytics.stiforr.tech/umami.js"
+          ></script>
         </Helmet>
       ) : null}
       <HelmetDatoCms favicon={datoCmsSite.faviconMetaTags} seo={datoCmsHome.seoMetaTags} />
